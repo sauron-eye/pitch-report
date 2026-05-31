@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Cricket's Paper of Record</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── TOKENS ── */
+:root {
+  --bg:        #F5F0E8;
+  --bg2:       #EDE7DC;
+  --bg3:       #E2DBCE;
+  --surface:   #FFFFFF;
+  --ink:       #14100A;
+  --ink2:      #2E2820;
+  --ink3:      #5C5448;
+  --ink4:      #8C8478;
+  --rule:      #D4CCC0;
+  --accent:    #B8431A;
+  --accent2:   #8C1F0A;
+  --gold:      #9A7820;
+  --gold2:     #C4A040;
+  --green:     #1A5C2A;
+  --nav-h:     64px;
+  --max:       1280px;
+  --trans:     0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg:        #0E0B07;
+  --bg2:       #161209;
+  --bg3:       #1E1A12;
+  --surface:   #1A1610;
+  --ink:       #F0EAE0;
+  --ink2:      #D8D0C4;
+  --ink3:      #A09888;
+  --ink4:      #6A6258;
+  --rule:      #2A2418;
+  --accent:    #D45A28;
+  --accent2:   #F07040;
+  --gold:      #C4A040;
+  --gold2:     #E8C060;
+  --green:     #3A9050;
+}
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--trans), color var(--trans);
+  overflow-x: hidden;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--ink2);
+  color: var(--ink4);
+  padding: 0.4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background var(--trans);
+}
+
+[data-theme="dark"] .topbar { background: #080604; }
+
+.topbar-left { display: flex; gap: 2rem; align-items: center; }
+.topbar-left span { color: var(--gold2); }
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: var(--bg);
+  border-bottom: 3px solid var(--ink);
+  padding: 2rem 2rem 1.4rem;
+  position: relative;
+  transition: background var(--trans), border-color var(--trans);
+}
+
+.masthead-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.masthead-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.masthead-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+
+.masthead-edition {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--ink3);
+  margin-top: 0.2rem;
+}
+
+.wordmark {
+  text-align: center;
+}
+
+.wordmark h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  transition: color var(--trans);
+}
+
+.wordmark h1 .the {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.65em;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  color: var(--accent);
+}
+
+.wordmark-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.wordmark-rule::before,
+.wordmark-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+  max-width: 60px;
+}
+
+.wordmark-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.masthead-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle {
+  cursor: pointer;
+  background: var(--bg3);
+  border: 1px solid var(--rule);
+  border-radius: 24px;
+  width: 52px;
+  height: 28px;
+  position: relative;
+  transition: background var(--trans), border-color var(--trans);
+  flex-shrink: 0;
+}
+
+.theme-toggle::after {
+  content: '☀️';
+  position: absolute;
+  top: 3px; left: 4px;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, content 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  line-height: 20px;
+  text-align: center;
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  content: '🌙';
+  transform: translateX(24px);
+}
+
+/* ── NAV ── */
+.nav-wrap {
+  background: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background var(--trans);
+}
+
+[data-theme="dark"] .nav-wrap { background: #060402; border-bottom: 1px solid #1A1610; }
+
+.nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  height: var(--nav-h);
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar { display: none; }
+
+.nav a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  padding: 0 1.2rem;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.nav a:hover { color: rgba(255,255,255,0.9); }
+.nav a.active { color: #fff; border-bottom-color: var(--accent); }
+
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* ── HERO ── */
+.hero-section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Lead story */
+.hero-lead {
+  padding-right: 2.5rem;
+  border-right: 1px solid var(--rule);
+  padding-bottom: 2.5rem;
+}
+
+.section-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+
+.section-flag::after {
+  content: '';
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-lead h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.9rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  transition: color var(--trans);
+}
+
+.hero-lead h2 em { font-style: italic; color: var(--accent); }
+
+.hero-lead .deck {
+  font-family: 'Spectral', serif;
+  font-size: 1.02rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink3);
+  margin-bottom: 1.4rem;
+  border-left: 3px solid var(--gold);
+  padding-left: 1rem;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.byline-chip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink4);
+}
+
+.byline-chip strong { color: var(--ink2); }
+
+.tag-chip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  background: var(--bg3);
+  color: var(--ink3);
+  transition: background var(--trans);
+}
+
+.tag-chip.red { background: var(--accent); color: #fff; }
+.tag-chip.green { background: var(--green); color: #fff; }
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 1px;
+  transition: gap 0.2s;
+}
+
+.read-more:hover { gap: 0.8rem; }
+
+/* Hero right column — 3 stories stacked */
+.hero-stack {
+  padding-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stack-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+}
+
+.stack-item:last-child { border-bottom: none; }
+
+.stack-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  transition: color 0.2s;
+}
+
+.stack-item:hover h3 { color: var(--accent); }
+
+.stack-item p {
+  font-family: 'Spectral', serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--ink3);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.stack-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: var(--accent);
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-label {
+  background: var(--ink);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ticker-track {
+  display: flex;
+  animation: ticker 40s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ticker-item::after {
+  content: '·';
+  margin-left: 1.5rem;
+  opacity: 0.5;
+}
+
+/* ── GRID SECTION ── */
+.section-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.section-header .sh-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-header a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  margin-bottom: 2px;
+}
+
+.card-grid.four { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--bg);
+  padding: 1.6rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.card:hover::before { width: 100%; }
+.card:hover { background: var(--bg2); }
+
+.card .section-flag { margin-bottom: 0.8rem; }
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+
+.card:hover h3 { color: var(--accent); }
+
+.card p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink3);
+  margin-bottom: 0.8rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  color: var(--ink4);
+  letter-spacing: 0.05em;
+}
+
+/* ── FEATURED BAND ── */
+.featured-band {
+  background: var(--ink);
+  margin: 0;
+  padding: 3rem 2rem;
+  transition: background var(--trans);
+}
+
+[data-theme="dark"] .featured-band { background: #060402; }
+
+.featured-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr 2px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.fb-divider { background: rgba(255,255,255,0.08); }
+
+.featured-item .section-flag {
+  color: var(--gold2);
+  margin-bottom: 0.8rem;
+}
+
+.featured-item .section-flag::after { background: var(--gold2); }
+
+.featured-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #F0EAE0;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.featured-item:hover h3 { color: var(--gold2); }
+
+.featured-item p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #7A7060;
+  margin-bottom: 0.8rem;
+}
+
+.featured-item .tag-chip {
+  background: rgba(255,255,255,0.08);
+  color: #7A7060;
+}
+
+/* ── SCORECARD ROW ── */
+.scores-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  transition: background var(--trans);
+}
+
+.scores-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scores-inner::-webkit-scrollbar { display: none; }
+
+.score-card {
+  background: var(--bg);
+  padding: 1rem 1.4rem;
+  min-width: 200px;
+  border-left: 3px solid var(--rule);
+  transition: background var(--trans), border-color 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.score-card:hover { border-left-color: var(--accent); }
+
+.score-card .sc-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink4);
+  margin-bottom: 0.4rem;
+}
+
+.score-card .sc-match {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.score-card .sc-score {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.score-card .sc-status {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  color: var(--ink4);
+}
+
+/* ── OPINION STRIP ── */
+.opinion-strip {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.opinion-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  margin-bottom: 2px;
+}
+
+.opinion-card {
+  background: var(--bg);
+  padding: 1.6rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.opinion-card:hover { background: var(--bg2); }
+
+.op-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--bg3);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+  transition: color var(--trans);
+}
+
+.opinion-card:hover .op-number { color: var(--accent); opacity: 0.3; }
+
+.opinion-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.opinion-card:hover h3 { color: var(--accent); }
+
+.op-author {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── SERIES SPOTLIGHT ── */
+.spotlight {
+  background: var(--green);
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .spotlight { background: #0E3018; }
+
+.spotlight::before {
+  content: '🏏';
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8rem;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.spotlight-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+
+.spotlight-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.spotlight-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.spotlight-content h2 em { font-style: italic; color: rgba(255,255,255,0.65); }
+
+.spotlight-content p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.spotlight-series {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: right;
+}
+
+.series-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  display: block;
+}
+
+.series-stat .lbl {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.btn-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.55rem 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-white:hover { background: #fff; color: var(--green); }
+
+/* ── TWO-COL SECTION ── */
+.two-col {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  border-top: 0;
+}
+
+.two-col .main-col {}
+
+.two-col .side-col {}
+
+/* ── ARTICLE LIST ── */
+.article-list { display: flex; flex-direction: column; }
+
+.al-item {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.al-item:hover .al-title { color: var(--accent); }
+
+.al-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--rule);
+  line-height: 1;
+  text-align: right;
+  padding-top: 0.1rem;
+  transition: color var(--trans);
+}
+
+.al-item:hover .al-num { color: var(--accent); opacity: 0.4; }
+
+.al-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+}
+
+.al-meta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  color: var(--ink4);
+  display: flex;
+  gap: 0.8rem;
+}
+
+/* ── SIDEBAR BOX ── */
+.s-box {
+  border: 1px solid var(--rule);
+  margin-bottom: 2rem;
+  background: var(--bg2);
+  transition: background var(--trans), border-color var(--trans);
+}
+
+.s-box-head {
+  background: var(--ink);
+  color: var(--gold2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  transition: background var(--trans);
+}
+
+[data-theme="dark"] .s-box-head { background: #060402; }
+
+.s-box-body { padding: 0.8rem 1rem; }
+
+.s-box-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.s-box-item:last-child { border-bottom: none; }
+
+.s-box-item:hover .s-item-title { color: var(--accent); }
+
+.s-item-title {
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem;
+  color: var(--ink2);
+  line-height: 1.4;
+  transition: color 0.2s;
+  flex: 1;
+}
+
+.s-item-badge {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--ink4);
+  white-space: nowrap;
+}
+
+.poll-option {
+  margin-bottom: 0.7rem;
+}
+
+.poll-option label {
+  font-family: 'Spectral', serif;
+  font-size: 0.88rem;
+  color: var(--ink2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+}
+
+.poll-bar {
+  height: 4px;
+  background: var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: 1.3rem;
+}
+
+.poll-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ── PHOTO ESSAY BANNER ── */
+.photo-essay {
+  max-width: var(--max);
+  margin: 0 auto 0;
+  padding: 0 2rem;
+}
+
+.pe-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: var(--rule);
+  margin-bottom: 2px;
+}
+
+.pe-item {
+  background: var(--bg2);
+  padding: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.2s;
+}
+
+.pe-item:first-child {
+  grid-column: span 2;
+  background: var(--ink2);
+}
+
+[data-theme="dark"] .pe-item:first-child { background: #1E1A10; }
+
+.pe-item:first-child:hover { background: var(--ink); }
+
+.pe-item:not(:first-child):hover { background: var(--bg3); }
+
+.pe-emoji {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 1rem; right: 1rem;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.pe-item:first-child .pe-emoji { opacity: 0.15; font-size: 4rem; }
+
+.pe-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ink);
+  position: relative;
+  transition: color 0.2s;
+}
+
+.pe-item:first-child h3 { font-size: 1.25rem; color: #F0EAE0; }
+.pe-item:not(:first-child):hover h3 { color: var(--accent); }
+
+.pe-item:first-child:hover h3 { color: var(--gold2); }
+
+.pe-item .section-flag { margin-bottom: 0.5rem; }
+.pe-item:first-child .section-flag { color: var(--gold2); }
+.pe-item:first-child .section-flag::after { background: var(--gold2); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  transition: background var(--trans);
+}
+
+[data-theme="dark"] footer { background: #040302; }
+
+.footer-top {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer-brand .wm {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #F0EAE0;
+  margin-bottom: 0.8rem;
+}
+
+.footer-brand .wm span { color: var(--accent); font-style: italic; }
+
+.footer-brand p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #5A5248;
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.footer-col h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  margin-bottom: 1rem;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col li {
+  font-family: 'Spectral', serif;
+  font-size: 0.88rem;
+  color: #5A5248;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-col li:hover { color: #A09888; }
+
+.footer-bottom {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3A3028;
+}
+
+.footer-bottom p span { color: var(--gold2); }
+
+/* ── UTILITIES ── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--rule);
+  margin: 0;
+  transition: background var(--trans);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── FADE IN ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-section { grid-template-columns: 1fr; }
+  .hero-lead { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 0; }
+  .hero-stack { padding-left: 0; padding-top: 1.5rem; }
+  .featured-inner { grid-template-columns: 1fr; }
+  .fb-divider { display: none; }
+  .card-grid.four { grid-template-columns: repeat(2, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .pe-grid { grid-template-columns: repeat(3, 1fr); }
+  .pe-item:first-child { grid-column: span 3; }
+}
+
+@media (max-width: 720px) {
+  .topbar { display: none; }
+  .masthead-inner { grid-template-columns: 1fr; text-align: center; }
+  .masthead-left { display: none; }
+  .masthead-right { justify-content: center; margin-top: -1rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid.four { grid-template-columns: 1fr; }
+  .opinion-grid { grid-template-columns: 1fr 1fr; }
+  .spotlight-inner { grid-template-columns: 1fr; }
+  .spotlight-label { display: none; }
+  .pe-grid { grid-template-columns: 1fr 1fr; }
+  .pe-item:first-child { grid-column: span 2; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .two-col { padding: 0 1rem 2rem; }
+  .section-wrap { padding: 0 1rem; }
+  .hero-section { padding: 1.5rem 1rem 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="live-badge"><span class="live-dot"></span>Live</span>
+    <span>IND vs ENG · 2nd Test · Day 3</span>
+    <span>IND <strong style="color:#C4A040">287/6</strong> · ENG need 412</span>
+  </div>
+  <div>
+    <span>Sunday, 25 Aug 2019</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-left">
+      <div class="masthead-tagline">Est. 2019 · Issue No. 47</div>
+      <div class="masthead-edition">The world's most complete cricket publication</div>
+    </div>
+    <div class="wordmark">
+      <h1><span class="the">The</span> Pitch Report</h1>
+      <div class="wordmark-rule">
+        <div class="wordmark-sub">Cricket's Paper of Record</div>
+      </div>
+    </div>
+    <div class="masthead-right">
+      <div class="theme-toggle" id="themeToggle" title="Toggle dark mode" role="button" tabindex="0" aria-label="Toggle dark mode"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-wrap">
+  <div class="nav">
+    <a href="#" class="active">Home</a>
+    <div class="nav-divider"></div>
+    <a href="#">Match Reports</a>
+    <div class="nav-divider"></div>
+    <a href="#">Test Cricket</a>
+    <div class="nav-divider"></div>
+    <a href="#">ODI & T20</a>
+    <div class="nav-divider"></div>
+    <a href="#">The Ashes</a>
+    <div class="nav-divider"></div>
+    <a href="#">IPL</a>
+    <div class="nav-divider"></div>
+    <a href="#">Opinion</a>
+    <div class="nav-divider"></div>
+    <a href="#">History & Legends</a>
+    <div class="nav-divider"></div>
+    <a href="#">Statistics</a>
+    <div class="nav-divider"></div>
+    <a href="#">Women's Cricket</a>
+    <div class="nav-divider"></div>
+    <a href="#">Podcast</a>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">Score Flash</div>
+  <div class="ticker-track" id="ticker">
+    <span class="ticker-item">IND vs ENG 2nd Test Day 3 — India 287/6 (87 overs) · Jadeja 68*, Pant 54</span>
+    <span class="ticker-item">SA vs AUS 1st ODI — SA won by 4 wickets · Markram 91*</span>
+    <span class="ticker-item">NZ vs PAK T20I — NZ 168/5 · Conway 72 · Raza 2/28</span>
+    <span class="ticker-item">WI vs SL Test, Day 2 — WI 342/8 · SL 201 all out</span>
+    <span class="ticker-item">BBL 2025-26 season schedule announced · Fixtures released</span>
+    <span class="ticker-item">BREAKING: Virat Kohli named in India's squad for England tour</span>
+    <span class="ticker-item">IND vs ENG 2nd Test Day 3 — India 287/6 (87 overs) · Jadeja 68*, Pant 54</span>
+    <span class="ticker-item">SA vs AUS 1st ODI — SA won by 4 wickets · Markram 91*</span>
+    <span class="ticker-item">NZ vs PAK T20I — NZ 168/5 · Conway 72 · Raza 2/28</span>
+    <span class="ticker-item">WI vs SL Test, Day 2 — WI 342/8 · SL 201 all out</span>
+    <span class="ticker-item">BBL 2025-26 season schedule announced · Fixtures released</span>
+    <span class="ticker-item">BREAKING: Virat Kohli named in India's squad for England tour</span>
+  </div>
+</div>
+
+<!-- SCORES ROW -->
+<div class="scores-section">
+  <div class="scores-inner">
+    <div class="score-card">
+      <div class="sc-label">Live · 3rd Test</div>
+      <div class="sc-match">India vs England</div>
+      <div class="sc-score">IND 287/6 · ENG need 412</div>
+      <div class="sc-status">Day 3 · 87 overs bowled</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-label">Completed · 1st ODI</div>
+      <div class="sc-match">South Africa vs Australia</div>
+      <div class="sc-score">SA won by 4 wkts</div>
+      <div class="sc-status">Markram 91* guided SA home</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-label">Completed · T20I</div>
+      <div class="sc-match">New Zealand vs Pakistan</div>
+      <div class="sc-score">NZ 168/5 def. PAK 149</div>
+      <div class="sc-status">NZ won by 19 runs</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-label">Live · 1st Test Day 2</div>
+      <div class="sc-match">West Indies vs Sri Lanka</div>
+      <div class="sc-score">WI 342/8 · SL 201 all out</div>
+      <div class="sc-status">WI lead by 141 runs</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-label">Upcoming · 1st Test</div>
+      <div class="sc-match">Bangladesh vs Zimbabwe</div>
+      <div class="sc-score">Starts in 2 days</div>
+      <div class="sc-status">Chittagong, 27 Aug</div>
+    </div>
+    <div class="score-card">
+      <div class="sc-label">Completed · ODI Series</div>
+      <div class="sc-match">Afghanistan vs Ireland</div>
+      <div class="sc-score">AFG won series 2–1</div>
+      <div class="sc-status">Rashid Khan 7 wkts in 3 games</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero-section fade-in">
+  <div class="hero-lead">
+    <div class="section-flag">Match Report · The Ashes 2019</div>
+    <h2>What Stokes Did at <em>Headingley</em></h2>
+    <p class="deck">Against all arithmetic, against all probability, Benjamin Andrew Stokes walked to the crease and refused — simply and categorically — to accept the game that was already written. 135 not out. One wicket. One man. One Sunday afternoon that will outlast the sport that made it.</p>
+    <div class="hero-meta">
+      <span class="byline-chip">By <strong>Our Cricket Correspondent</strong></span>
+      <span class="tag-chip red">Ashes</span>
+      <span class="tag-chip">Test Cricket</span>
+      <span class="tag-chip">25 Aug 2019</span>
+    </div>
+    <a href="headingley-stokes.html" class="read-more">Read full match report →</a>
+  </div>
+  <div class="hero-stack">
+    <div class="stack-item">
+      <div class="section-flag">Analysis</div>
+      <h3>The WinViz Problem: Why Cricket's Numbers Failed Us at Leeds</h3>
+      <p>When England's probability of victory collapsed to 6%, what did the models miss? A statistical interrogation of the game's most extraordinary improbability.</p>
+      <div class="stack-meta">
+        <span class="tag-chip">Analysis</span>
+        <span class="byline-chip">3 min read</span>
+      </div>
+    </div>
+    <div class="stack-item">
+      <div class="section-flag">Player Profile</div>
+      <h3>Nathan Lyon: The Spinner Who Held the World Cup — And Nearly Held Headingley</h3>
+      <p>His fumble became an image. His bowling, across four days, was magnificent. An honest assessment of Lyon's Headingley, beyond the moment that defined it.</p>
+      <div class="stack-meta">
+        <span class="tag-chip">Profile</span>
+        <span class="byline-chip">6 min read</span>
+      </div>
+    </div>
+    <div class="stack-item">
+      <div class="section-flag">History</div>
+      <h3>Every England Fourth-Innings Miracle at Headingley, Ranked</h3>
+      <p>From Botham 1981 to Stokes 2019 — the ground has a peculiar relationship with the impossible. We revisit each one in sequence.</p>
+      <div class="stack-meta">
+        <span class="tag-chip">History</span>
+        <span class="byline-chip">8 min read</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARDS SECTION -->
+<div class="section-wrap fade-in">
+  <div class="section-header">
+    <h2>Latest Match Reports</h2>
+    <div class="sh-line"></div>
+    <a href="#">All Reports →</a>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="section-flag">Match Report · Test</div>
+      <h3>Bumrah's Masterclass: How India Dismantled England on a Dead Lord's Wicket</h3>
+      <p>Seven wickets across two innings, all of them surgical. Jasprit Bumrah turned an unhelpful surface into a canvas and painted something extraordinary.</p>
+      <div class="card-footer">
+        <span class="tag-chip green">India</span>
+        <span class="card-date">18 Aug 2025</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-flag">Match Report · ODI</div>
+      <h3>Rohit Sharma's 264: The Day the Record Books Were Rewritten in Kolkata</h3>
+      <p>The highest individual ODI score. The biggest partnership. The largest total. One afternoon in November that redefined the limits of the format.</p>
+      <div class="card-footer">
+        <span class="tag-chip red">Record</span>
+        <span class="card-date">13 Nov 2024</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-flag">Match Report · T20I</div>
+      <h3>The Super Over That Cricket Will Never Stop Arguing About</h3>
+      <p>England and New Zealand. 241 runs apiece. A boundary count. The 2019 World Cup final remains the most disputed result in modern cricket history.</p>
+      <div class="card-footer">
+        <span class="tag-chip">World Cup</span>
+        <span class="card-date">14 Jul 2019</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED DARK BAND -->
+<div class="featured-band fade-in">
+  <div class="featured-inner">
+    <div class="featured-item">
+      <div class="section-flag">Long Read</div>
+      <h3>The Art of the Leave: A Philosophical Defence of Cricket's Most Underrated Skill</h3>
+      <p>Leaving the ball outside off stump is not passive. It is, this correspondent argues, the sport's highest expression of tactical intelligence and self-mastery.</p>
+      <span class="tag-chip">Opinion · 12 min</span>
+    </div>
+    <div class="fb-divider"></div>
+    <div class="featured-item">
+      <div class="section-flag">Interview</div>
+      <h3>"I Stopped Trying to Win and Started Trying Not to Lose — Then Winning Became Possible"</h3>
+      <p>Ben Stokes, in conversation, on Headingley, the World Cup final, and the mental architecture required to bat through catastrophe.</p>
+      <span class="tag-chip">Exclusive</span>
+    </div>
+    <div class="fb-divider"></div>
+    <div class="featured-item">
+      <div class="section-flag">History</div>
+      <h3>The Tied Test That Created Modern Cricket: Richie Benaud's Last Day at Brisbane</h3>
+      <p>December 1960. Two days that broke every rule the sport had written for itself and, in breaking them, changed what cricket understood itself to be.</p>
+      <span class="tag-chip">Classic</span>
+    </div>
+  </div>
+</div>
+
+<!-- MORE CARDS -->
+<div class="section-wrap fade-in">
+  <div class="section-header">
+    <h2>Analysis & Features</h2>
+    <div class="sh-line"></div>
+    <a href="#">See All →</a>
+  </div>
+  <div class="card-grid four">
+    <div class="card">
+      <div class="section-flag">Statistics</div>
+      <h3>The GOAT Debate, Settled by Numbers (It Wasn't)</h3>
+      <p>We ran every metric available. Bradman, Tendulkar, Richards, Sobers. The data says something. It does not say what we hoped.</p>
+      <div class="card-footer">
+        <span class="tag-chip">Data</span>
+        <span class="card-date">1 Aug 2025</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-flag">Tactical</div>
+      <h3>Why Jimmy Anderson's 700 Wickets Make No Sense — And Every Sense</h3>
+      <p>He does not bowl fast. He does not spin it. He does not bounce. And yet 700 wickets. A technical exegesis of English cricket's greatest riddle.</p>
+      <div class="card-footer">
+        <span class="tag-chip">England</span>
+        <span class="card-date">22 Jul 2025</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-flag">Women's Cricket</div>
+      <h3>Smriti Mandhana and the Shape of India Women's Future</h3>
+      <p>The left-hander's 135 at Lord's did not merely win a match. It announced a generational shift in Indian women's cricket that was already overdue.</p>
+      <div class="card-footer">
+        <span class="tag-chip green">India</span>
+        <span class="card-date">15 Jul 2025</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="section-flag">IPL</div>
+      <h3>What MI's Dynasty Really Cost: The Hidden Economics of T20 Dominance</h3>
+      <p>Five titles. Billions spent. An unprecedented support structure. The Mumbai Indians built a machine — and this is what went inside it.</p>
+      <div class="card-footer">
+        <span class="tag-chip">IPL</span>
+        <span class="card-date">9 Jul 2025</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERIES SPOTLIGHT -->
+<div class="spotlight fade-in">
+  <div class="spotlight-inner">
+    <div class="spotlight-label">Series Spotlight</div>
+    <div class="spotlight-content">
+      <h2>The Ashes 2019: <em>Every Story, Every Moment</em></h2>
+      <p>From the first delivery at Edgbaston to the final day at The Oval — our complete, match-by-match chronicle of the summer that gave us Stokes at Headingley, Smith's concussion, and a series that ended 2–2 but felt, in the watching, like something richer and stranger than a draw.</p>
+      <a href="#" class="btn-white">Explore Full Series Coverage →</a>
+    </div>
+    <div class="spotlight-series">
+      <div class="series-stat"><span class="num">5</span><span class="lbl">Tests Played</span></div>
+      <div class="series-stat"><span class="num">2–2</span><span class="lbl">Final Result</span></div>
+      <div class="series-stat"><span class="num">47</span><span class="lbl">Articles Published</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PHOTO ESSAY / CATEGORY GRID -->
+<div class="section-wrap fade-in" style="padding-bottom: 0;">
+  <div class="section-header" style="margin-bottom: 0; padding-bottom: 1.5rem;">
+    <h2>Explore by Format</h2>
+    <div class="sh-line"></div>
+  </div>
+</div>
+<div class="photo-essay fade-in">
+  <div class="pe-grid">
+    <div class="pe-item">
+      <span class="pe-emoji">🏏</span>
+      <div class="section-flag">The Long Game</div>
+      <h3>Test Cricket — The Full Archive</h3>
+    </div>
+    <div class="pe-item">
+      <span class="pe-emoji">⚡</span>
+      <div class="section-flag">One-Day</div>
+      <h3>ODI & World Cup</h3>
+    </div>
+    <div class="pe-item">
+      <span class="pe-emoji">🔥</span>
+      <div class="section-flag">Short Format</div>
+      <h3>T20 & IPL</h3>
+    </div>
+    <div class="pe-item">
+      <span class="pe-emoji">👑</span>
+      <div class="section-flag">Legends</div>
+      <h3>History & Icons</h3>
+    </div>
+    <div class="pe-item">
+      <span class="pe-emoji">🎙️</span>
+      <div class="section-flag">Audio</div>
+      <h3>The Pitch Report Podcast</h3>
+    </div>
+  </div>
+</div>
+
+<!-- TWO-COL: Article List + Sidebar -->
+<div class="two-col section-wrap fade-in" style="padding-top: 3rem;">
+  <div class="main-col">
+    <div class="section-header" style="padding-top: 0;">
+      <h2>Most Read This Week</h2>
+      <div class="sh-line"></div>
+    </div>
+    <div class="article-list">
+      <div class="al-item">
+        <span class="al-num">01</span>
+        <div>
+          <div class="al-title">What Stokes Did at Headingley — The Day England Refused to Die</div>
+          <div class="al-meta"><span>Match Report</span><span>Ashes 2019</span><span>25 Aug 2019</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">02</span>
+        <div>
+          <div class="al-title">The Bradman Paradox: Why 99.94 Is Both Everything and Not Enough</div>
+          <div class="al-meta"><span>Long Read</span><span>History</span><span>12 Aug 2025</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">03</span>
+        <div>
+          <div class="al-title">Jofra Archer's Comeback: The Numbers Behind the Fastest Delivery of 2025</div>
+          <div class="al-meta"><span>Analysis</span><span>England</span><span>9 Aug 2025</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">04</span>
+        <div>
+          <div class="al-title">The DRS Revolution: A Decade in Review — Was Technology Cricket's Friend or Its Vandal?</div>
+          <div class="al-meta"><span>Feature</span><span>Technology</span><span>5 Aug 2025</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">05</span>
+        <div>
+          <div class="al-title">India's Fast-Bowling Depth is the Most Remarkable Thing in World Cricket Right Now</div>
+          <div class="al-meta"><span>Opinion</span><span>India</span><span>2 Aug 2025</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">06</span>
+        <div>
+          <div class="al-title">The Art of Captaincy: Tim Paine, Ben Stokes, and the Decisions That Defined the Ashes</div>
+          <div class="al-meta"><span>Analysis</span><span>Ashes 2019</span><span>28 Jul 2025</span></div>
+        </div>
+      </div>
+      <div class="al-item">
+        <span class="al-num">07</span>
+        <div>
+          <div class="al-title">Shoaib Akhtar at 100mph: A First-Person Account of Facing the Rawalpindi Express</div>
+          <div class="al-meta"><span>Memoir</span><span>Legends</span><span>20 Jul 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="side-col">
+    <div class="s-box">
+      <div class="s-box-head">Reader's Poll</div>
+      <div class="s-box-body">
+        <p style="font-family:'Spectral',serif; font-style:italic; font-size:0.88rem; color:var(--ink3); margin-bottom:1rem; line-height:1.5;">The greatest innings in Ashes history?</p>
+        <div class="poll-option">
+          <label><input type="radio" name="poll" value="stokes"> Stokes 135* — Headingley 2019</label>
+          <div class="poll-bar"><div class="poll-fill" style="width:62%"></div></div>
+        </div>
+        <div class="poll-option">
+          <label><input type="radio" name="poll" value="botham"> Botham 149* — Headingley 1981</label>
+          <div class="poll-bar"><div class="poll-fill" style="width:22%"></div></div>
+        </div>
+        <div class="poll-option">
+          <label><input type="radio" name="poll" value="smith"> Steve Smith 144 — Lord's 2019</label>
+          <div class="poll-bar"><div class="poll-fill" style="width:10%"></div></div>
+        </div>
+        <div class="poll-option">
+          <label><input type="radio" name="poll" value="other"> Other</label>
+          <div class="poll-bar"><div class="poll-fill" style="width:6%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-box">
+      <div class="s-box-head">Upcoming Fixtures</div>
+      <div class="s-box-body">
+        <div class="s-box-item">
+          <span class="s-item-title">India vs England — 2nd Test Day 4</span>
+          <span class="s-item-badge">Tomorrow</span>
+        </div>
+        <div class="s-box-item">
+          <span class="s-item-title">SA vs AUS — 2nd ODI</span>
+          <span class="s-item-badge">27 Aug</span>
+        </div>
+        <div class="s-box-item">
+          <span class="s-item-title">BAN vs ZIM — 1st Test</span>
+          <span class="s-item-badge">27 Aug</span>
+        </div>
+        <div class="s-box-item">
+          <span class="s-item-title">NZ vs PAK — 2nd T20I</span>
+          <span class="s-item-badge">28 Aug</span>
+        </div>
+        <div class="s-box-item">
+          <span class="s-item-title">WI vs SL — 1st Test Day 3</span>
+          <span class="s-item-badge">Tomorrow</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="s-box">
+      <div class="s-box-head">On This Day in Cricket</div>
+      <div class="s-box-body">
+        <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.05rem; color:var(--ink); margin-bottom:0.5rem; line-height:1.4;">"The most remarkable day in Headingley's history."</p>
+        <p style="font-family:'Spectral',serif; font-size:0.82rem; color:var(--ink3); line-height:1.6; margin-bottom:0.5rem;">25 August 2019 — Ben Stokes hits 135* to level the Ashes at 1–1 in one of the greatest Test wins in England's history.</p>
+        <span style="font-family:'DM Sans',sans-serif; font-size:0.58rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold);">Read full match report →</span>
+      </div>
+    </div>
+
+    <div class="s-box">
+      <div class="s-box-head">By Country</div>
+      <div class="s-box-body">
+        <div class="s-box-item"><span class="s-item-title">🇮🇳 India</span><span class="s-item-badge">142 articles</span></div>
+        <div class="s-box-item"><span class="s-item-title">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span><span class="s-item-badge">118 articles</span></div>
+        <div class="s-box-item"><span class="s-item-title">🇦🇺 Australia</span><span class="s-item-badge">109 articles</span></div>
+        <div class="s-box-item"><span class="s-item-title">🇵🇰 Pakistan</span><span class="s-item-badge">84 articles</span></div>
+        <div class="s-box-item"><span class="s-item-title">🇿🇦 South Africa</span><span class="s-item-badge">67 articles</span></div>
+        <div class="s-box-item"><span class="s-item-title">🇳🇿 New Zealand</span><span class="s-item-badge">52 articles</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPINION SECTION -->
+<div class="section-wrap fade-in">
+  <div class="section-header">
+    <h2>Opinion & Commentary</h2>
+    <div class="sh-line"></div>
+    <a href="#">All Opinion →</a>
+  </div>
+  <div class="opinion-grid">
+    <div class="opinion-card">
+      <div class="op-number">01</div>
+      <h3>Test cricket is not dying. It is finally becoming what it always wanted to be.</h3>
+      <div class="op-author">Jonathan Lara · Senior Correspondent</div>
+    </div>
+    <div class="opinion-card">
+      <div class="op-number">02</div>
+      <h3>The IPL has ruined Test cricket averages and I will not apologise for saying so.</h3>
+      <div class="op-author">Priya Sharma · Cricket Writer</div>
+    </div>
+    <div class="opinion-card">
+      <div class="op-number">03</div>
+      <h3>Steve Smith is the most technically perfect batsman I have seen in thirty years of covering this sport.</h3>
+      <div class="op-author">Michael Stanton · Chief Correspondent</div>
+    </div>
+    <div class="opinion-card">
+      <div class="op-number">04</div>
+      <h3>Why the Decision Review System has made cricket more human, not less.</h3>
+      <div class="op-author">Ananya Desai · Technology Editor</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="wm"><span>The</span> Pitch Report</div>
+      <p>Cricket's paper of record. Founded on the principle that the sport deserves writing equal to its drama — long-form, considered, and properly done.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Coverage</h4>
+      <ul>
+        <li>Match Reports</li>
+        <li>Test Cricket</li>
+        <li>ODI Cricket</li>
+        <li>T20 & IPL</li>
+        <li>Women's Cricket</li>
+        <li>Under-19</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Features</h4>
+      <ul>
+        <li>Long Reads</li>
+        <li>Opinion</li>
+        <li>History & Legends</li>
+        <li>Interviews</li>
+        <li>Statistics</li>
+        <li>The Archive</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li>Our Writers</li>
+        <li>Editorial Standards</li>
+        <li>Contact Us</li>
+        <li>Contribute</li>
+        <li>Newsletter</li>
+        <li>RSS Feed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p><span>The Pitch Report</span> · Cricket's Paper of Record · Est. 2019</p>
+    <p>Hosted on <span>GitHub Pages</span> · Built with pure HTML &amp; CSS</p>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  const saved = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
+
+  toggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  toggle.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') toggle.click();
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Nav active on click
+  document.querySelectorAll('.nav a').forEach(a => {
+    a.addEventListener('click', function() {
+      document.querySelectorAll('.nav a').forEach(x => x.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Poll interaction
+  document.querySelectorAll('.poll-option input').forEach(input => {
+    input.addEventListener('change', function() {
+      const fills = document.querySelectorAll('.poll-fill');
+      const vals = [62, 22, 10, 6];
+      const idx = [...document.querySelectorAll('.poll-option input')].indexOf(this);
+      // slight bump to selected
+      const newVals = vals.map((v, i) => i === idx ? Math.min(v + 5, 99) : Math.max(v - 1, 2));
+      fills.forEach((f, i) => f.style.width = newVals[i] + '%');
+    });
+  });
+</script>
+</body>
+</html>
