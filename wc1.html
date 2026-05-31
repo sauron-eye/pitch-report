@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs South Africa, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET & ROOT ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:       #F9F5EF;
+  --paper-warm:  #F2EDE3;
+  --ink:         #151209;
+  --ink-deep:    #1E1912;
+  --ink-mid:     #3A342A;
+  --ink-soft:    #5C5448;
+  --ink-ghost:   #9A9288;
+  --rule:        #D4CAB8;
+  --rule-dark:   #B0A898;
+  --green:       #1A4A2E;
+  --green-mid:   #235E3A;
+  --green-lt:    #3A7D52;
+  --green-pale:  #E8F0EB;
+  --gold:        #9B7C20;
+  --gold-lt:     #C4A040;
+  --red:         #8B1A10;
+  --red-lt:      #B83020;
+}
+
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NEWSPAPER HEADER ─────────────────────────── */
+.np-header {
+  background: var(--green);
+  border-bottom: 6px double var(--gold-lt);
+  position: relative;
+  overflow: hidden;
+}
+
+.np-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.015) 2px,
+    rgba(255,255,255,0.015) 4px
+  );
+  pointer-events: none;
+}
+
+.np-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.np-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.np-header-left .edition-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+.np-header-left .date-line {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+
+.masthead-title {
+  text-align: center;
+}
+
+.masthead-title .pub-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: #FAF6EE;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  display: block;
+}
+
+.masthead-title .pub-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.np-header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+}
+
+.np-header-right .price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+.np-header-right .issue {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── SECTION STRIP ────────────────────────────── */
+.section-strip {
+  background: var(--ink);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0.55rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.section-strip .sec-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  white-space: nowrap;
+}
+
+.section-strip .breadcrumb {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: #6A6258;
+  letter-spacing: 0.06em;
+}
+
+.section-strip .breadcrumb span { color: #8A8278; }
+
+/* ── HERO ZONE ────────────────────────────────── */
+.hero {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 0;
+  border-bottom: 3px double var(--rule-dark);
+  padding-bottom: 2rem;
+}
+
+.match-flag {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.flag-pip {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--green-lt);
+  border-radius: 50%;
+}
+
+.match-flag-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-lt);
+}
+
+.hl {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.09;
+  color: var(--ink);
+  letter-spacing: -0.018em;
+  margin-bottom: 1.2rem;
+}
+
+.hl em {
+  font-style: italic;
+  color: var(--green-mid);
+}
+
+.hl .accent { color: var(--red); }
+
+.deck {
+  font-family: 'Spectral', serif;
+  font-size: 1.18rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink-mid);
+  max-width: 740px;
+  padding-left: 1.2rem;
+  border-left: 3px solid var(--green-lt);
+  margin-bottom: 1.8rem;
+}
+
+.byline-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.byline-bar .by {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.byline-bar .by strong { color: var(--ink); }
+
+.byline-bar .loc {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.68rem;
+  color: var(--ink-ghost);
+}
+
+.byline-bar .datestamp {
+  margin-left: auto;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--ink-ghost);
+  letter-spacing: 0.04em;
+}
+
+/* ── SCOREBOARD ───────────────────────────────── */
+.scoreboard {
+  background: var(--green);
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 4px solid var(--gold-lt);
+}
+
+.sb-team {}
+
+.sb-team .nation {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.sb-team .total {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #F5F0E8;
+  display: block;
+  line-height: 1;
+}
+
+.sb-team .total small {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #7A7060;
+}
+
+.sb-team .overs {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: #6A6058;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.sb-vs {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: #4A4438;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sb-result {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  color: #8A8070;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  border-left: 1px solid #2A2820;
+  padding-left: 1.5rem;
+}
+
+.sb-result strong {
+  font-style: normal;
+  color: var(--gold-lt);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ── BODY ─────────────────────────────────────── */
+.body-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── PROSE ────────────────────────────────────── */
+.prose p {
+  font-family: 'Spectral', serif;
+  font-size: 1.05rem;
+  line-height: 1.92;
+  color: var(--ink-mid);
+  margin-bottom: 1.45rem;
+}
+
+.prose p:first-child::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 900;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.1em;
+  margin-top: 0.1em;
+  color: var(--green);
+}
+
+.prose h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 3rem 0 1rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--rule);
+  letter-spacing: -0.01em;
+}
+
+.section-intro {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-lt);
+  margin-bottom: -0.8rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 2px solid var(--rule);
+  display: block;
+}
+
+.prose h2.no-rule {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.prose-rule {
+  border: none;
+  border-top: 3px double var(--rule-dark);
+  margin: 2.5rem 0;
+}
+
+/* ── PULL QUOTES ──────────────────────────────── */
+.pq {
+  margin: 2.8rem 0;
+  padding: 1.5rem 1.8rem;
+  background: var(--green-pale);
+  border-left: 4px solid var(--green-mid);
+  border-right: 1px solid var(--rule);
+}
+
+.pq p {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  font-style: italic;
+  line-height: 1.45 !important;
+  color: var(--green) !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.pq p::first-letter { font-size: inherit !important; float: none !important; color: inherit !important; margin: 0 !important; }
+
+.pq cite {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-lt);
+  font-style: normal;
+}
+
+/* ── INNINGS BREAKDOWN BOX ─────────────────────── */
+.innings-box {
+  background: var(--ink-deep);
+  margin: 2.8rem 0;
+  overflow: hidden;
+}
+
+.innings-box-hd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.6rem;
+  border-bottom: 1px solid #2A2820;
+}
+
+.innings-box-hd h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+.innings-box-hd .innings-total {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #7A7260;
+}
+
+.innings-row {
+  display: grid;
+  grid-template-columns: 1.6rem 1fr auto auto;
+  gap: 0.8rem 1rem;
+  padding: 0.7rem 1.6rem;
+  border-bottom: 1px solid #1E1C16;
+  align-items: baseline;
+}
+
+.innings-row.header {
+  background: #1A1812;
+}
+
+.innings-row.header span {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 0.55rem !important;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #4A4840 !important;
+}
+
+.innings-row:last-child { border-bottom: none; }
+
+.bat-num {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.65rem;
+  color: #4A4438;
+  font-weight: 300;
+}
+
+.bat-name {
+  font-family: 'Spectral', serif;
+  font-size: 0.98rem;
+  color: #D8D0C4;
+  line-height: 1.3;
+}
+
+.bat-name em {
+  font-style: normal;
+  font-size: 0.78rem;
+  color: #8A8278;
+  display: block;
+}
+
+.bat-runs {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-lt);
+  text-align: right;
+}
+
+.bat-balls {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 300;
+  color: #5A5448;
+  text-align: right;
+  min-width: 3rem;
+}
+
+.bat-runs.highlight { color: #E8C060; }
+
+.innings-extras {
+  padding: 0.8rem 1.6rem;
+  border-top: 1px solid #2A2820;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.innings-extras span {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  color: #6A6258;
+}
+
+.innings-extras strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #F5F0E8;
+}
+
+/* ── TIMELINE BOX ─────────────────────────────── */
+.timeline {
+  margin: 2.8rem 0;
+}
+
+.timeline-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-ghost);
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0;
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--rule);
+  align-items: start;
+}
+
+.tl-item:last-child { border-bottom: none; }
+
+.tl-score {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: 0.03em;
+  padding-top: 0.05rem;
+}
+
+.tl-text {
+  font-family: 'Spectral', serif;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.tl-text .who { color: var(--ink); font-weight: 600; }
+.tl-text .note { color: var(--ink-ghost); font-style: italic; font-size: 0.88rem; }
+
+/* ── SIDEBAR ──────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.sbox {
+  border: 1px solid var(--rule);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.sbox-hd {
+  background: var(--green);
+  color: var(--gold-lt);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+}
+
+.sbox-body { padding: 0.8rem 1rem; background: var(--paper-warm); }
+
+.sbox-body ul { list-style: none; }
+
+.sbox-body li {
+  font-family: 'Spectral', serif;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: baseline;
+  line-height: 1.4;
+}
+
+.sbox-body li:last-child { border-bottom: none; }
+
+.sbox-body li .lbl {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-ghost);
+  white-space: nowrap;
+}
+
+.sbox-body li strong {
+  font-weight: 600;
+  color: var(--ink);
+  text-align: right;
+}
+
+.star-stat {
+  padding: 1.2rem 1rem;
+  background: var(--paper-warm);
+  text-align: center;
+}
+
+.star-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--green);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.star-stat .desc {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.snote {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  background: var(--paper-warm);
+  margin-bottom: 2rem;
+}
+
+.snote p {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+.snote cite {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-style: normal;
+}
+
+/* ── FOOTER ───────────────────────────────────── */
+footer {
+  background: var(--green);
+  border-top: 4px double var(--gold-lt);
+  padding: 2rem 2rem;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #3A5040;
+}
+
+footer span { color: var(--gold-lt); }
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 740px) {
+  .np-header-inner { grid-template-columns: 1fr; text-align: center; }
+  .np-header-left, .np-header-right { display: none; }
+  .body-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .sidebar { position: static; }
+  .scoreboard { grid-template-columns: 1fr 1fr; }
+  .sb-result { border-left: none; padding-left: 0; border-top: 1px solid #2A2820; padding-top: 1rem; grid-column: 1 / -1; }
+  .innings-row { grid-template-columns: 1fr auto auto; }
+  .innings-row .bat-num { display: none; }
+  .byline-bar .datestamp { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition</span>
+        <span class="date-line">Thursday, 30 May 2019 · The Oval, London</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 1</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 1 <span>›</span> England vs South Africa</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 1 · The Oval, Kennington</span>
+  </div>
+  <h1 class="hl">
+    A <em>Nation Ignites</em> at The Oval:<br>
+    <span class="accent">Stokes, Archer and England's</span><br>
+    World Cup Declaration
+  </h1>
+  <p class="deck">In the first match of cricket's greatest tournament, England — four years in the rebuilding, a generation in the dreaming — came to The Oval on a grey May morning and produced exactly the kind of performance that favourites are supposed to produce, but rarely do. Ben Stokes played an innings of consummate authority, Jofra Archer bowled with the fury of a man who had spent his life waiting for precisely this stage, and somewhere in the thirty-fifth over, Stokes took a catch that seemed, for a suspended moment, to defy the known laws of athletic possibility.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Our Cricket Correspondent</strong></span>
+    <span class="loc">The Oval, Kennington, London</span>
+    <span class="datestamp">30 May 2019</span>
+  </div>
+</div>
+
+<!-- SCOREBOARD -->
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">England</span>
+    <span class="total">311<small> / 8</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">South Africa</span>
+    <span class="total">207<small> ao</small></span>
+    <span class="overs">39.5 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    England won by 104 runs<br>
+    Stokes 89 · Archer 3–27 · MOM: Stokes
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There are World Cup mornings that arrive already carrying the weight of everything that has led to them, and the thirtieth of May 2019 was emphatically one of them. Four years after their first-round exit at the 2015 tournament — a catastrophe so complete, so humiliating for the world's most lavishly resourced cricket board, that it prompted not merely a change in personnel but a wholesale reimagining of what English one-day cricket could and should be — England walked out at The Oval as the world's number one ranked ODI side and the bookmakers' shortest-priced favourite for the tournament. The pressure of expectation can be a form of ballast or a form of weight. On this particular morning, under the specific grey canopy of a London May sky, with the Duke of Sussex having opened the tournament and the cameras of approximately every cricket-watching nation trained on Kennington, England carried it as though they had always meant to.</p>
+
+    <p>South Africa won the toss. Faf du Plessis, the Proteas captain, was without his most celebrated fast bowler — Dale Steyn, the instrument of terror who might, on another day, have altered the morning entirely, had failed a fitness test and would not feature. Du Plessis, thus deprived of his most potent weapon, chose instead to field first — and then reached for an entirely different kind of surprise. He handed the ball to Imran Tahir. The forty-year-old leg-spinner, the oldest man in the tournament, would bowl the first over of the 2019 Cricket World Cup — the first spinner in the history of the competition to do so. It was the sort of tactical audacity that either looks inspired for approximately forty-five years or catastrophically misjudged by the end of the first over. Du Plessis, in the event, got both.</p>
+
+    <p>Tahir's first delivery went wide. His second found the outside edge of Jonny Bairstow's bat and settled comfortably in the gloves of Quinton de Kock behind the stumps. Bairstow was gone for a golden duck, second ball of the entire World Cup, and Tahir — arms windmilling, tongue extended in the direction of The Oval's Victorian ironwork — was already halfway to the square-leg boundary on a celebration run that the Yorkshire faithful watched with the pained expression of those who feel the punchline had arrived too early. England were one for one. The tournament had barely drawn breath. The scoreboard, like a bad joke, had the look of permanence.</p>
+
+    <div class="pq">
+      <p>"I was probably in the wrong position to start taking that catch. Had I been in the right place it would have been a regulation catch."</p>
+      <cite>Ben Stokes, post-match, on a catch that Nasser Hussain called one of the greatest of all time</cite>
+    </div>
+
+    <h2>Roy and Root: Repairing the China</h2>
+
+    <p>What followed was the particular kind of English recovery that asks the crowd to unclench its collective jaw and simply watch two very good batsmen bat. Jason Roy and Joe Root are not, in temperament, similar cricketers. Roy is a batsman of organised aggression, a player whose preferred mode of operation involves making the bowling attack feel that something unpleasant is about to happen very quickly. Root is something more considered — a craftsman of timing and placement rather than force, a batsman who makes the game look, in Neville Cardus's old formulation, like something that ought to be done at a certain speed rather than done as fast as possible. Together, standing at 1 for 1 on the opening day of a home World Cup against a South African attack missing its best player, they made 106 runs with the unhurried sufficiency of men who understood that panic was not on the agenda.</p>
+
+    <p>Roy reached his half-century from 51 balls — not the thunderous acceleration that crowds had come to expect from him at his most explosive, but a measured, purposeful innings built on the understanding that the pitch was offering the South African seamers enough lateral movement to make careless aggression expensive. He drove crisply through the covers when the length was full, pulled Ngidi off his hips when the bowler dropped short, and accumulated with the controlled patience that distinguished his better World Cup performances from his more cavalier ones. Root, at the other end, was fluency itself — his fifty coming from 56 balls in the manner of a man who had decided, rather early, that he was going to middle the ball for approximately as long as the pitch requested.</p>
+
+    <p>They were dismissed, both of them, in the very same passage that had the feel of a scripted collapse — four runs and two wickets in four balls, England lurching from competence to crisis in the time it takes to score two singles. Roy, on 54, skied Phehlukwayo to Faf du Plessis at mid-off, the catch taken comfortably by the South African captain who had been moved into the cordon for precisely this purpose. Three balls later Root drove loosely at Kagiso Rabada outside off stump and found Duminy's hands at backward point, an airy, unnecessary shot from a batsman who should have known better and perhaps, if asked, would readily concede as much. England were 111 for 3. The pitch, which had seemed to be taming itself into docility, had produced two wickets from nowhere. South Africa had manufactured a crisis from the residue of a settled partnership.</p>
+
+    <h2>Morgan and Stokes: The Engine Room</h2>
+
+    <p>It is in these circumstances — the pitch uncertain, the score compressed, the tail beginning to suggest itself over the horizon — that Eoin Morgan and Ben Stokes are at their most valuable to England. They are, in combination, the most productive fourth-wicket partnership in English ODI cricket over the four years of the Morganian rebuilding project, and what they produced between overs twenty-two and thirty-seven was an innings within an innings — 106 runs for the fourth wicket, a stand of accumulation followed by acceleration that gave England's total its character and its dimensions.</p>
+
+    <p>Morgan batted with the fluency that distinguishes him from most left-handed batsmen in the world: a wristiness and a freedom of arc in his hitting that makes the leg side, in particular, look far more spacious than it has any right to be. He struck Ngidi for two consecutive sixes in the twenty-sixth over — one a magnificent inside-out drive over extra cover that the fielder stationed there didn't so much mistime his run as accept, with admirable philosophic composure, that the ball was going somewhere he was never going to reach. Morgan's fifty came from 50 balls. He looked, with his eye settled and the ball coming on nicely onto the bat, capable of very much more. But Imran Tahir had other ideas — and Aiden Markram, diving forward at deep mid-on to take a low catch that was, in its own modest way, a fine piece of fielding, combined to terminate Morgan's innings at 57. Du Plessis's faith in the leg-spinner had, in the end, yielded its return twice in the same game, from different ends and different angles of attack.</p>
+
+    <p>Stokes, meanwhile, was assembling the innings that would make him the day's central figure. He had come in at number five with England still in an exploratory phase of the innings and had begun with the compact, purposeful restraint of a batsman who has read the conditions correctly and decided that the route to a large score runs through the first thirty balls rather than the first three. His half-century came from 46 balls — the rate accelerating as the partnership matured and the pitch flattened into something more comforting. He struck eight fours and three sixes in his 89, including a pull off Rabada that bisected the deep boundary fielders with the geometric precision of a man who hits the ball where he intends it to go rather than where it deflects, and a straight six off Tahir in the final third of the innings that was, in the economy of its violence, the signature shot of his day. He was dismissed in the forty-ninth over, trapped leg before by Ngidi for 89, a number that felt simultaneously like a disappointment and an achievement — the disappointment of a man four balls from what would have been a World Cup century on home soil, the achievement of an innings that had given England's total the body and the spine it required.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>England Batting — 1st Innings</h3>
+        <span class="innings-total">311 / 8 in 50 overs</span>
+      </div>
+      <div class="innings-row header">
+        <span></span><span>Batsman</span><span>R</span><span>B</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">1</span>
+        <span class="bat-name">JJ Bairstow<em>c De Kock b Tahir</em></span>
+        <span class="bat-runs">0</span>
+        <span class="bat-balls">1</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">2</span>
+        <span class="bat-name">JJ Roy<em>c Du Plessis b Phehlukwayo</em></span>
+        <span class="bat-runs">54</span>
+        <span class="bat-balls">63</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">3</span>
+        <span class="bat-name">JE Root<em>c Duminy b Rabada</em></span>
+        <span class="bat-runs">51</span>
+        <span class="bat-balls">67</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">4</span>
+        <span class="bat-name">EJG Morgan<em>c Markram b Tahir</em></span>
+        <span class="bat-runs">57</span>
+        <span class="bat-balls">61</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">5</span>
+        <span class="bat-name">BA Stokes<em>lbw b Ngidi</em></span>
+        <span class="bat-runs highlight">89</span>
+        <span class="bat-balls">102</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">6</span>
+        <span class="bat-name">JC Buttler<em>b Ngidi (hit-wkt)</em></span>
+        <span class="bat-runs">18</span>
+        <span class="bat-balls">26</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">7</span>
+        <span class="bat-name">MM Ali<em>c Amla b Ngidi</em></span>
+        <span class="bat-runs">13</span>
+        <span class="bat-balls">13</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">8</span>
+        <span class="bat-name">CR Woakes<em>c De Kock b Rabada</em></span>
+        <span class="bat-runs">8</span>
+        <span class="bat-balls">9</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">9</span>
+        <span class="bat-name">LE Plunkett<em>not out</em></span>
+        <span class="bat-runs">9</span>
+        <span class="bat-balls">11</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">10</span>
+        <span class="bat-name">JC Archer<em>not out</em></span>
+        <span class="bat-runs">7</span>
+        <span class="bat-balls">8</span>
+      </div>
+      <div class="innings-extras">
+        <span>Extras: 10 (wd 8, nb 2)</span>
+        <strong>311 / 8</strong>
+      </div>
+    </div>
+
+    <h2>South Africa's False Dawn</h2>
+
+    <p>Three hundred and eleven can look, in the context of the modern ODI game, like a target of deceptive vulnerability. In the years since England reinvented their batting philosophy under Morgan, scores of 350, 380, even 444 had been compiled in conditions far less sympathetic than these. The Oval pitch, by the time South Africa began their chase, had dried and flattened into something that offered the pull shot and the drive with something approaching democratic even-handedness. De Kock and Amla walked out into the late-afternoon light and the target, translated into runs per over, was 6.24 — achievable, in the abstract, for a batting side of South Africa's quality.</p>
+
+    <p>Jofra Archer had different arithmetic in mind. Playing only his fourth ODI — a statistic so remarkable in the context of what he produced that it bears repeating — he ran in from the Vauxhall End with the sustained velocity of a man who had spent his life bowling in the Caribbean heat and now found, in the overcast English afternoon, something very close to his ideal climate. His first few overs were metronomic in their accuracy and incendiary in their pace. In the fourth over, he bowled a bouncer at Hashim Amla — who had scored 5 — that rose from a length with the kind of abrupt, violent trajectory that the batsman's attempted pull shot was nowhere near equipped to deal with. The ball crashed into Amla's helmet with a sound audible to the press box. Amla went down. The crowd went silent. Amla, after extended medical attention, walked from the field to undergo a concussion test — the first formal invocation of cricket's new concussion protocols in a major tournament — and would not return until the chase was already irretrievably compromised.</p>
+
+    <p>With Amla absent, Markram joined De Kock and the partnership proceeded with something approaching controlled confidence. Markram struck two fluent boundaries — a cut and a drive that announced his intentions with some precision — before Archer removed him, caught behind for 10, with a delivery of such sharp late movement off the seam that Markram's edge to de Kock seemed more like a completion of the ball's natural trajectory than any failing of the batsman. Du Plessis, the captain, arrived and lasted 8 runs. Archer bowled him with another short delivery that reared from a slightly wider angle, angled into the South African captain's rib cage, and produced a top edge that carried comfortably to fine leg. Two for forty-four. South Africa's two most experienced batsmen in the top order had contributed 16 between them. The chase, which had looked plausible in the pavilion, was already acquiring the character of an uphill pursuit.</p>
+
+    <p>De Kock held everything together. He is, at his best — and he was very close to his best at The Oval — among the most accomplished wicket-keeper batsmen in the game. His 68 was an innings of controlled counter-attack: the pull shot deployed with timing rather than brute force, the drive through extra cover played with the distinctive wristiness of a left-hander who creates the angle through the turn of his body rather than the extension of his arms. He and Rassie van der Dussen assembled a third-wicket partnership of 85 — the most substantial of the South African innings, the one that gave the target the brief illusion of manageability — and at 129 for 2, the scoreboard said possible. The crowd, which had been enjoying Archer's mastery, was briefly required to consider an alternative story.</p>
+
+    <h2>The Collapse, and the Catch That Defined a Day</h2>
+
+    <p>In fourteen deliveries, spanning the twenty-ninth and thirtieth overs, South Africa lost three wickets for thirteen runs. De Kock pulled Plunkett to long leg and was caught for 68 — the first of three wickets to fall for 15 runs that dragged South Africa from 129 for 2 to 144 for 5 in a passage of cricket so swift that the spectators barely had time to settle between dismissals. Van der Dussen, who had played with quiet competence for his 50, pulled to mid-on and was gone. Duminy, who had been sent in ahead of his nominal position in the order, was quickly cleaned up. The collapse had the particular quality of South African batting collapses: not panicked, exactly, not technically disorganised, but vulnerable in a way that better sides do not permit their middle orders to be — a brittleness at the seams, a tendency, when wickets cluster, for the next man in to arrive at the crease already half-convinced that the game is going against them.</p>
+
+    <p>Amla had returned by this point, cleared by the tournament's medical director to resume his innings. He did so with the stoic determination that has defined his entire career — the back straightened, the chin lifted, the face arranged into the composed, interior-looking expression of a man who has decided to play through circumstances rather than against them. He made 13 before Plunkett, bowling a slower-ball bouncer with more guile than its apparent simplicity suggested, found his edge and gave Buttler the simplest of catches behind the wicket. The innings was unravelling, the crowd stirring to its feet in the intermittent but persistent manner of a crowd that senses a large victory rather than a close one, and then the thirty-fifth over arrived and Ben Stokes did what Ben Stokes does in the largest moments: he produced something that had no right to exist.</p>
+
+    <p>Phehlukwayo came in at number seven and struck Adil Rashid — who had been bowling his leg-spin with considerable craft throughout — in the direction of deep midwicket. It was a hard, well-timed slog-sweep that had the character, from the moment of impact, of a six. Stokes, positioned several metres inside the boundary rope, had misread the length of the shot and found himself, when the ball rose to its apex and began its descent, in entirely the wrong place: the ball was behind him, above his right shoulder, heading for the rope with the inevitability of a well-struck ball that has been aimed at a boundary and is following its natural trajectory. Stokes, running backwards, leapt. He extended his right arm above and behind his head. The ball, improbably, stuck. He tumbled to the ground, rolled several yards toward the rope — such was the force of the shot he had arrested — and came up laughing, the catch still secure in his hand, the boundary safely unbreached. The crowd did not roar so much as erupt, the decibel level at The Oval in those ten seconds approximating something between a crowd watching a decisive wicket and a crowd watching an event that hasn't quite happened yet in cricket and may never quite happen again.</p>
+
+    <p>Nasser Hussain, watching from the Sky Sports commentary box, called it, in the immediate aftermath, one of the greatest catches of all time. Graeme Smith, the former South African captain, described it on BBC Test Match Special as something he had never seen before. Stokes himself, with the disarming candour that makes him simultaneously infuriating and irreplaceable, told reporters that he had almost certainly said a word one cannot repeat in a family newspaper approximately five times in the second before the ball hit his hand, convinced that he had misjudged everything and that the embarrassment would compound itself over the coming days. The crowd's reaction behind him — the noise of twenty-five thousand people processing the impossible in real time — was, he said, the thing he would carry from the day.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">South Africa Chase — Fall of Wickets</div>
+      <div class="tl-item">
+        <span class="tl-score">36</span>
+        <span class="tl-text"><span class="who">Markram c De Kock b Archer 10.</span> <span class="note">Short delivery, top edge to fine leg. Archer's first wicket of the tournament.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">44</span>
+        <span class="tl-text"><span class="who">Du Plessis c fine leg b Archer 8.</span> <span class="note">Another rising delivery, ribs-line, top edge. South Africa's captain gone cheaply.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">129</span>
+        <span class="tl-text"><span class="who">De Kock c long leg b Plunkett 68.</span> <span class="note">Pull shot, well in control until he wasn't. End of SA's best partnership.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">142</span>
+        <span class="tl-text"><span class="who">Duminy b Rashid 3.</span> <span class="note">Played no shot to a turning delivery. Middle stump disturbed.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">144</span>
+        <span class="tl-text"><span class="who">Pretorius run out (Stokes/boundary) 2.</span> <span class="note">Direct hit from Stokes fielding on the rope — second act of brilliance in the field.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">167</span>
+        <span class="tl-text"><span class="who">Van der Dussen c Stokes b Plunkett 50.</span> <span class="note">Mid-on catch. The partnership of 85 with De Kock gave SA hope; his dismissal ended it.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">180</span>
+        <span class="tl-text"><span class="who">Phehlukwayo c Stokes b Rashid 14.</span> <span class="note">The catch. Deep midwicket. One hand. Right arm above the shoulder. The moment of the match.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">193</span>
+        <span class="tl-text"><span class="who">Amla (ret. hurt, ret.) c Buttler b Plunkett 13.</span> <span class="note">Returned after concussion assessment from Archer bouncer; caught behind off slower-ball bouncer.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">207</span>
+        <span class="tl-text"><span class="who">Rabada c Root b Stokes 1 · Tahir c Root b Stokes 0.</span> <span class="note">Two wickets in two balls. Stokes ends the innings and completes his all-round day.</span></span>
+      </div>
+    </div>
+
+    <h2>Archer's Fury, England's New Weapon</h2>
+
+    <p>It is worth pausing, in the accounting of this match, to spend a moment with Jofra Archer's bowling in the manner it deserves — not merely as a footnote to Stokes's day, but as a phenomenon worthy of its own careful examination. Archer had played three ODIs before this one. Three. He was, in the strict statistical sense, a complete novice at this level of the game, a debutant in all but formal classification. What he produced in his seven overs — three wickets for 27 runs, including the bouncer that removed Amla and the two sharp dismissals of Markram and Du Plessis — was not the bowling of a man finding his feet. It was the bowling of a match-winner who has identified the opposition's vulnerability and is prosecuting it without sentiment.</p>
+
+    <p>The deliveries that dismissed Markram and Du Plessis had a common authorship: both were short, both were angled into the right-hander from a trajectory fractionally wider than the batsmen had anticipated, and both produced top edges to the fine-leg region that were, in retrospect, less the products of errors by the batsmen than of balls delivered with a precision that made error more or less inevitable. Archer bowled consistently above 90 miles per hour throughout his spell. The South African batsmen, who had prepared meticulously for the English seamers — Woakes, Plunkett, the reliable mechanisms of English pace bowling — found themselves facing something they had, rather evidently, not prepared for in quite the same depth. The pace, the trajectory, the subtle angle off the seam: all of it was slightly outside the parameters of what the South Africans' batting plans had accounted for. Archer was, as he would prove for the remainder of the tournament and beyond, a disruption of category, the kind of fast bowler England produce approximately once a generation and then treat with agonising carelessness.</p>
+
+    <p>With Phehlukwayo caught by that preposterous Stokes intervention and Amla returned and then dismissed by Plunkett's variations, England needed nine wickets from 207 runs. They needed, in other words, very little. Rabada was caught at slip by Root off Stokes for one, and then — completing a day that had given Stokes a batting performance of the first order, a fielding performance that transcended category, and a run-out from the deep that had claimed Pretorius, all before his two-ball spell produced the match's final wickets — Tahir edged to Root and the all-rounder had two wickets in two balls to end the innings on 207. England had won by 104 runs. They had done exactly what the world's number one team, on home soil, in the opening match of the home World Cup, needed to do. They had, in the most old-fashioned sense, performed.</p>
+
+    <h2>What The Day Told Us, And What It Didn't</h2>
+
+    <p>The victory was comprehensive enough that its flaws are easily lost in the arithmetic. England did not bat at their best. The 311 they posted on this pitch, on this day — a pitch that had dried into something more batting-friendly as the afternoon progressed — was, by the standards of their recent history, a modest total. For three-quarters of their innings, the South African seamers — Ngidi, who finished with three wickets and who bowled the slower ball with a control that the English batsmen found sufficiently testing that they could not consistently find the boundary off him; Rabada, who generated enough pace off this surface to claim two wickets and keep the run rate in check — deserved the credit for a disciplined bowling performance against an England batting line-up that has, in more accommodating conditions, scored 400. The pitch in this World Cup, the message was, would not always yield to the batsmen's ambitions. Not every day would be batting-friendly. Not every pitch would invite the flat trajectory and the open face.</p>
+
+    <p>South Africa's departure for 207, meanwhile, told a different story about their own structural vulnerabilities. The collapse from 129 for 2 to 144 for 5 in fourteen deliveries was the kind of passage of play that their batting order, in the less charitable analyses of the previous decade, has been known to produce — a brittleness in the face of pressure that the statistical compilation of their individual abilities does not quite account for and that the label of 'chokers' — reductive as the word invariably is — has been appended to with damaging persistence. Du Plessis, asked about the label in the post-match press conference, offered the perfectly judged response that it was not a word he recognised in the context of his players, before acknowledging that losing six wickets for 78 runs from a position of relative comfort was not the performance they had planned for.</p>
+
+    <p>But the day belonged, in the end, to the man who had done three different things and done them all extraordinarily well. Stokes's 89 was the innings around which England's total was built. His run-out of Pretorius from the deep — a clean, direct throw from the boundary that found the stumps at walking pace, as though to demonstrate that his brilliance in the field is not confined to the acrobatic — was a moment of quiet, emphatic excellence. And the catch — the one that stopped Headingley and The Oval and every press room in England at once — was, as these things sometimes are, the kind of moment that doesn't merely win a match but declares something about the spirit of a team: that they will compete, in every department, for every ball, at every moment, with everything they have. England had come to the World Cup with exactly these intentions. On a grey May afternoon at The Oval, with the pennants of ten nations snapping in the London wind and the largest cricket event on the planet exactly two overs old, they had made a beginning worthy of them.</p>
+
+    <hr class="prose-rule">
+
+    <p>The tournament ahead will offer harder days and tighter margins. It will, in its ten-team round-robin format, allow very little room for the kind of accumulating error that England's batting produced for thirty of their fifty overs. Tougher pitches await. Bowling attacks of greater complexity than the one they faced here will demand more of Root and Roy and Morgan than they showed today. But there are things a team can only demonstrate by demonstrating them, and what England demonstrated at The Oval on the thirtieth of May 2019 — Stokes's 89, Archer's hostility, the catch that stopped a sport — spoke, loudly and with unusual clarity, about a side that is ready. Whether the tournament will confirm or complicate that readiness is a question for the weeks ahead. For now, on this first evening, England can reasonably say: they came, they played, and they were, for the best of a long, grey, wonderful May afternoon, exactly what the occasion asked of them.</p>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Venue</span><strong>The Oval, Kennington</strong></li>
+          <li><span class="lbl">Date</span><strong>30 May 2019</strong></li>
+          <li><span class="lbl">Toss</span><strong>SA won, elected to field</strong></li>
+          <li><span class="lbl">England</span><strong>311/8 (50 ov)</strong></li>
+          <li><span class="lbl">South Africa</span><strong>207 ao (39.5 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>England won by 104 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>Ben Stokes</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Ben Stokes — Full Day</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Batting</span><strong>89 (102 balls)</strong></li>
+          <li><span class="lbl">Fours / Sixes</span><strong>8 / 3</strong></li>
+          <li><span class="lbl">Bowling</span><strong>2 / 12 (2.5 ov)</strong></li>
+          <li><span class="lbl">Catch</span><strong>Phehlukwayo (one-handed)</strong></li>
+          <li><span class="lbl">Run Out</span><strong>Pretorius (direct hit)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Archer's Debut Spell</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Figures</span><strong>3 / 27 (7 overs)</strong></li>
+          <li><span class="lbl">Top speed</span><strong>90+ mph (sustained)</strong></li>
+          <li><span class="lbl">ODI cap no.</span><strong>4th match</strong></li>
+          <li><span class="lbl">Wickets</span><strong>Markram, Du Plessis, De Kock</strong></li>
+          <li><span class="lbl">Concussion</span><strong>Amla (ret. hurt, ov 4)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Historic Footnote</div>
+      <div class="star-stat">
+        <span class="num">1st</span>
+        <span class="desc">Imran Tahir — the first spinner to bowl the opening over in World Cup history. He dismissed Bairstow on the 2nd ball.</span>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"You have to smile. What a catch. He never looked like he was going to get anywhere near it."</p>
+      <cite>Graeme Smith, BBC TMS, on Stokes catching Phehlukwayo</cite>
+    </p>
+
+    <div class="sbox">
+      <div class="sbox-hd">South Africa Bowling</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Ngidi</span><strong>3/66 (10 ov)</strong></li>
+          <li><span class="lbl">Rabada</span><strong>2/66 (10 ov)</strong></li>
+          <li><span class="lbl">Tahir</span><strong>2/61 (10 ov)</strong></li>
+          <li><span class="lbl">Phehlukwayo</span><strong>1/44 (8 ov)</strong></li>
+          <li><span class="lbl">Note</span><strong>Dale Steyn absent (injury)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"England was better than us in all three facets of the game. We need to lick our wounds and come back stronger."</p>
+      <cite>Faf du Plessis, post-match press conference</cite>
+    </p>
+
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 1 · The Oval, London · 30 May 2019<br>
+  England 311/8 defeated South Africa 207 by 104 runs
+</footer>
+
+</body>
+</html>
