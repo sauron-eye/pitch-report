@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — New Zealand vs West Indies, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#2A6038;--fern-lt:#3A8050;--fern-pale:#E4EEE7;
+  --sb-bg:#121212;--accent:#B8C8B0;--hdr-color:#2A6038;--drop-cap:#2A6038;
+  --pq-bg:var(--fern-pale);--pq-border:var(--fern);--pq-color:var(--fern);
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#0D1A0F;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#0D1A0F;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#0D1A0F;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#0D1A0F;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4A38;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Saturday, 22 June 2019 · Old Trafford, Manchester</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 29</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 29 <span>›</span> New Zealand vs West Indies</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 29 · Emirates Old Trafford, Manchester</span></div>
+  <h1 class="hl"><em>Williamson's Masterclass</em> and<br>Brathwaite's <span class="accent">Brave Last Stand:</span><br>New Zealand Win by Five Runs</h1>
+  <p class="deck">A match that produced a hundred and twenty-one runs across its first three overs — Sheldon Cottrell removing both New Zealand openers for golden ducks, the evening already mocking any pre-match assumptions — and that ended with Carlos Brathwaite needing five runs from the final delivery, the crowd's noise barely fitting inside Old Trafford's floodlit bowl. Between these two extremes sat Kane Williamson's 148 not out, the most complete one-day century produced in this tournament, and behind them a West Indian chase that came improbably close to a target it had no right to be near.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Emirates Old Trafford, Manchester</span><span class="datestamp">22 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">New Zealand</span><span class="total">291<small>/8</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">West Indies</span><span class="total">286<small> ao</small></span><span class="overs">49.0 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>New Zealand won by 5 runs<br>Williamson 148* · Cottrell 4–56 · MOM: Williamson</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The first ball of the match was a yorker. It was bowled by Sheldon Cottrell — the West Indian left-arm fast bowler who celebrates each wicket with a military salute, the gesture of a man who takes both his trade and its acknowledgement seriously — and it was aimed at the base of Martin Guptill's stumps with the precision of someone who had studied the batsman's weakness and found, in the first legal delivery of the match, the ideal vehicle for its exploitation. The review confirmed what the on-field umpire had declined: the ball was hitting leg stump. Guptill was out for zero, second ball. Fifty seconds into New Zealand's innings on a Saturday evening at Old Trafford, the scoreboard read zero for one. The crowd, which had settled in for the slow accumulation of a one-day international in the conventional mould, was already wrong about the kind of match this was going to be.</p>
+
+    <p>It was not finished. Cottrell bowled Colin Munro five balls later with an inswinging yorker of such similarly precise construction that it felt less like two deliveries in sequence and more like a repeated demonstration of the same skill: full, angling in late, finding the stumps before the bat had time to intervene. Munro's middle stump was disturbed. New Zealand were seven for two from the first over. A capacity Old Trafford crowd watched in the specific silence of spectators who have just been shown something they weren't expecting and haven't quite processed. Cottrell saluted twice in rapid succession, the gesture now carrying the slight absurdity of abundance, and jogged back to his mark. He had done, in two balls across five deliveries, what good fast bowlers very rarely achieve: established the match's terms before the first over was complete.</p>
+
+    <h2>Williamson's Innings of Singular Authority</h2>
+
+    <p>Kane Williamson walked out to bat at the fall of Munro's wicket and did not leave the crease for a hundred and fifty-four deliveries. What he produced across those deliveries — 148 not out, New Zealand's highest World Cup score, an innings of such controlled and sustained excellence that it reset the match's terms entirely from a position of seven for two — was the kind of batting that resists straightforward description because it operated not through a single overwhelming quality but through the combination of every quality a one-day batsman needs deployed simultaneously and without apparent effort. He drove cleanly through the off side, with the high elbow and the complete follow-through of a batsman who has been taught the correct shape and has never found reason to deviate from it. He played the sweep with authority and placement, finding the gaps at fine leg and midwicket. He pulled with compact efficiency, getting into position early and striking through the ball rather than at it. And he managed the innings with the strategic intelligence of a captain who understands that his own batting and his team's score are not separate concerns but the same concern addressed simultaneously.</p>
+
+    <p>Ross Taylor accompanied him for the longest partnership of the innings — 160 for the third wicket across 208 balls, a stand of contrasting temperaments and complementary styles. Taylor's 69 from 95 balls was the innings of a batsman who had identified his role accurately — to provide the platform from which Williamson could accelerate — and had performed it with the veteran's composure of a man for whom the role itself carries no anxiety. He drove pleasingly off the front foot, worked the ball through the leg side with the wristiness that has always been the distinguishing feature of his one-day batting, and ran between the wickets with the crisp, decisive efficiency that reduces well-struck balls to four runs and turns ones into twos before the field has reacted. He was eventually caught by Jason Holder at mid-off, drawn by a Chris Gayle delivery — the veteran off-spinner bowling the thirty-fourth over with the practiced cunning of a man who has spent thirty years in the game and knows that patience is a weapon — into a drive that wasn't quite as full as Taylor had imagined.</p>
+
+    <p>Williamson's century arrived in the fortieth over from 104 balls — the first hundred of his World Cup campaign and the best innings by a New Zealand batsman in this tournament — and was celebrated with the understated fist-pump of a man who finds external expression of internal satisfaction slightly embarrassing. He was unbeaten at the innings's close for 148, having faced 154 deliveries and struck fourteen fours and five sixes, the last of the sixes a straight six off Brathwaite in the forty-ninth over that landed beyond the boundary boards with the authority of a batsman who has decided, at the age of twenty-nine, that the last ten overs are specifically designed for this purpose. New Zealand's 291 for 8 was, given the position from which it had been constructed, a remarkable total — the product, primarily, of a single innings of sustained excellence from a batsman who is, in the context of the 2019 World Cup, the player most reliably delivering on the highest expectations.</p>
+
+    <div class="pq">
+      <p>"He's the best batsman in this tournament. What he did from seven for two, in a must-win game, against a good bowling attack — that was extraordinary."</p>
+      <cite>Ian Smith, Sky Sport New Zealand commentary, on Williamson's 148*</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>New Zealand Batting — 1st Innings</h3><span class="innings-total">291/8 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">MJ Guptill<em>lbw b Cottrell (review)</em></span><span class="bat-runs">0</span><span class="bat-balls">1</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">C Munro<em>b Cottrell</em></span><span class="bat-runs">0</span><span class="bat-balls">5</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">KS Williamson (c)<em>not out</em></span><span class="bat-runs hl">148</span><span class="bat-balls">154</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">LRPL Taylor<em>c Holder b Gayle</em></span><span class="bat-runs">69</span><span class="bat-balls">95</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">TWM Latham†<em>c Cottrell b Brathwaite (top edge)</em></span><span class="bat-runs">12</span><span class="bat-balls">16</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">CJ Anderson<em>c Cottrell b Brathwaite</em></span><span class="bat-runs">28</span><span class="bat-balls">23</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">CDG de Grandhomme<em>run out (Cottrell)</em></span><span class="bat-runs">16</span><span class="bat-balls">11</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">MJ Santner<em>c Cottrell b Brathwaite</em></span><span class="bat-runs">10</span><span class="bat-balls">5</span></div>
+      <div class="innings-extras"><span>Extras: 8 (lb 4, nb 1, w 3)</span><strong>291 / 8</strong></div>
+    </div>
+
+    <h2>Brathwaite's Hundred and the Chase That Almost Was</h2>
+
+    <p>West Indies needed 292. The target was large but not, for a batting order that contained Gayle, Lewis, Hetmyer, Pooran and Brathwaite, categorically unreachable. What they had lacked throughout this World Cup was the sustained collective application to build a chase of this size — the discipline to manage the run rate, to avoid the cluster of wickets in the middle overs that had, in matches against India and Australia, transformed promising chases into comprehensive defeats. At Old Trafford, they would again find the collective discipline elusive. They would, however, produce something individual that came closer than anyone had a right to expect.</p>
+
+    <p>The early wickets arrived almost as scripted: Shai Hope dragged Boult on for 3, the inside edge onto the stumps produced by a delivery that swung across the right-hander and found the bat's face when it should have missed it entirely. Pooran top-edged a Boult bouncer to Latham behind the stumps for 11. Two for twenty. The match, which had at that point offered very little beyond Williamson's century and Cottrell's brilliance as a shared theatrical event, appeared to be settling into the comfortable, predictable shape of a New Zealand victory built on good bowling and opposition batting frailty. Then Shimron Hetmyer arrived. And then Carlos Brathwaite arrived after him. And the match stopped being predictable in any sense that the word permits.</p>
+
+    <p>Hetmyer's 54 from 45 balls — the third wicket broken only at 142, after he and Gayle had put on 120 for the third wicket that moved the match from two for twenty to something uncomfortably close to manageable — was the innings of a left-hander of natural gifts playing with the controlled aggression of a batsman who knows his method and trusts it. His pull shots off Ferguson were played with the timing and flat-bat decisiveness of a batsman who has identified the ball's trajectory early and committed to the shot before he has conscious knowledge of committing to it. His dismissal — caught by Latham off a Boult short ball, a top edge that looped high and settled gently into the gloves — was the wicket that West Indies could least afford, and it arrived at the moment the partnership had given them genuine belief.</p>
+
+    <p>What followed had the character of a rearguard that transformed, as if by the accumulation of individual acts of will, into something approaching a realistic chance. Brathwaite made 101 from 82 balls — his first international century, struck at the moment in his career when international hundreds had begun to seem permanently beyond his reach, against a New Zealand bowling attack that had defended this kind of target against better batting sides than this. He struck eight sixes. He ran between the wickets with the desperate urgency of a man who understands that every run he doesn't take is a run closer to defeat. He kept West Indies in the match through the thirty-fifth, fortieth, and forty-fifth overs when logic suggested the match was over, and brought the equation to twelve needed from the final over with the controlled recklessness of a batsman who has simply decided that the target is achievable and is proceeding on that assumption. He was out for 101 in the forty-ninth over, caught at deep midwicket by Boult — the catch taken at the rope after Brathwaite had swung a Ferguson delivery with all the force he could generate. West Indies needed five from the final ball. They could not get them. New Zealand won by five runs.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">West Indies Chase — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">3/1</span><span class="tl-text"><span class="who">Hope b Boult 3.</span> <span class="note">Inside edge onto stumps. West Indies in early trouble after NZ's own disastrous start.</span></span></div>
+      <div class="tl-item"><span class="tl-score">20/2</span><span class="tl-text"><span class="who">Pooran c †Latham b Boult 11.</span> <span class="note">Bouncer, top edge. Latham tumbles to his left. West Indies already two down inside seven overs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">142/3</span><span class="tl-text"><span class="who">Hetmyer c †Latham b Boult 54.</span> <span class="note">After a 120-run stand with Gayle. The match's turning point — this was when NZ regained control.</span></span></div>
+      <div class="tl-item"><span class="tl-score">142/4</span><span class="tl-text"><span class="who">Holder c Boult b Ferguson 0.</span> <span class="note">Next ball after Hetmyer. Two in two. West Indies 142/4 needing 150 from 27 overs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">152/5</span><span class="tl-text"><span class="who">Gayle c long-on b de Grandhomme 87.</span> <span class="note">Went for the big hit, didn't middle it. Gayle's entertaining 87 ended with WI needing 140 from 26 overs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">286/ao</span><span class="tl-text"><span class="who">Brathwaite 101 (82) — WI fall 5 runs short.</span> <span class="note">His maiden international hundred brought WI to within five. Caught at the rope in the 49th over. NZ survive.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>The five-run margin — the five runs between a New Zealand win that completed their unbeaten group stage and a West Indian victory that would have altered the tournament's shape entirely — carried within it the residue of a match that had been, across a hundred overs at Old Trafford, genuinely exceptional. Cottrell's hat-trick of dismissals in the first over. Williamson's hundred from seven for two. Gayle and Hetmyer's partnership of 120 that gave the chase a shape. Brathwaite's century that brought it to the brink. And then the final ball, and the five runs it couldn't produce, and the scoreboard's quiet confirmation that New Zealand had extended their World Cup unbeaten run by the slimmest margin the game permits. Cricket, as it will, had made a point about the nature of probability. The unbeaten sides, the tournament informed anyone who was still paying attention, earn their status one delivery at a time.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Old Trafford, Manchester</strong></li>
+      <li><span class="lbl">Date</span><strong>22 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>NZ won, elected to bat</strong></li>
+      <li><span class="lbl">New Zealand</span><strong>291/8 (50 ov)</strong></li>
+      <li><span class="lbl">West Indies</span><strong>286 ao (49 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>New Zealand won by 5 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Kane Williamson (148*)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Williamson's 148*</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>148* (154 balls)</strong></li>
+      <li><span class="lbl">Fours / Sixes</span><strong>14 / 5</strong></li>
+      <li><span class="lbl">When he came in</span><strong>7/2 (over 0.5)</strong></li>
+      <li><span class="lbl">Partnership (3rd)</span><strong>160 with Taylor</strong></li>
+      <li><span class="lbl">Note</span><strong>Highest WC19 NZ score</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Cottrell's Spell</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Figures</span><strong>4/56 (10 overs)</strong></li>
+      <li><span class="lbl">Ball 1</span><strong>Guptill lbw (review) — duck</strong></li>
+      <li><span class="lbl">Ball 6</span><strong>Munro b — duck</strong></li>
+      <li><span class="lbl">Also</span><strong>Latham &amp; Santner</strong></li>
+      <li><span class="lbl">Signature</span><strong>Military salute after each wicket</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Brathwaite's Hundred</div><div class="star-stat">
+      <span class="num">101</span>
+      <span class="desc">Carlos Brathwaite's maiden international century — 82 balls, 8 sixes — brought WI to within five runs of victory.</span>
+    </div></div>
+    <p class="snote"><p>"I keep thinking what would have happened if I middled that last shot. We deserved something from this game."</p><cite>Carlos Brathwaite, post-match at Old Trafford</cite></p>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 29 · Old Trafford · 22 June 2019<br>New Zealand 291/8 defeated West Indies 286 by 5 runs · Williamson 148* · Brathwaite 101</footer>
+</body>
+</html>
