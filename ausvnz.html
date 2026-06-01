@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs New Zealand, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:       #F8F5F0;
+  --paper-warm:  #F0EBE1;
+  --ink:         #151209;
+  --ink-deep:    #1E1912;
+  --ink-mid:     #3A342A;
+  --ink-soft:    #5C5448;
+  --ink-ghost:   #9A9288;
+  --rule:        #D4CAB8;
+  --rule-dark:   #B0A898;
+  --black-nz:    #1A1A1A;
+  --silver:      #8A9098;
+  --silver-lt:   #B8C0C8;
+  --charcoal:    #2C3035;
+  --navy-aus:    #0D2340;
+  --gold-aus:    #C6A84B;
+  --fern:        #2E6B3E;
+  --fern-lt:     #3D8B52;
+  --fern-pale:   #E5F0E8;
+  --gold:        #9B7C20;
+  --red:         #8B1A10;
+}
+
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.np-header {
+  background: #0A0A0A;
+  border-bottom: 6px double var(--silver);
+  position: relative;
+  overflow: hidden;
+}
+
+.np-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,0.012) 8px, rgba(255,255,255,0.012) 16px);
+  pointer-events: none;
+}
+
+.np-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.np-header-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.np-header-left .edition-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--silver-lt); }
+.np-header-left .date-line { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.35); letter-spacing: 0.04em; }
+
+.masthead-title { text-align: center; }
+.masthead-title .pub-name { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #FAF6EE; letter-spacing: 0.02em; line-height: 1; display: block; }
+.masthead-title .pub-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--silver-lt); margin-top: 0.35rem; display: block; }
+
+.np-header-right { text-align: right; display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-end; }
+.np-header-right .price { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver-lt); }
+.np-header-right .issue { font-family: 'Barlow', sans-serif; font-size: 0.65rem; font-weight: 300; color: rgba(255,255,255,0.3); }
+
+.section-strip { background: var(--ink); max-width: 980px; margin: 0 auto; padding: 0.55rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
+.section-strip .sec-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver-lt); white-space: nowrap; }
+.section-strip .breadcrumb { font-family: 'Barlow', sans-serif; font-size: 0.62rem; font-weight: 400; color: #6A6258; letter-spacing: 0.06em; }
+.section-strip .breadcrumb span { color: #8A8278; }
+
+.hero { max-width: 980px; margin: 0 auto; padding: 2.5rem 2rem 0; border-bottom: 3px double var(--rule-dark); padding-bottom: 2rem; }
+.match-flag { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+.flag-pip { display: inline-block; width: 8px; height: 8px; background: var(--silver); border-radius: 50%; }
+.match-flag-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--silver); }
+
+.hl { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.09; color: var(--ink); letter-spacing: -0.018em; margin-bottom: 1.2rem; }
+.hl em { font-style: italic; color: var(--fern); }
+.hl .accent { color: var(--navy-aus); }
+
+.deck { font-family: 'Spectral', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--ink-mid); max-width: 740px; padding-left: 1.2rem; border-left: 3px solid var(--silver); margin-bottom: 1.8rem; }
+
+.byline-bar { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 1rem 0 0; border-top: 1px solid var(--rule); }
+.byline-bar .by { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.byline-bar .by strong { color: var(--ink); }
+.byline-bar .loc { font-family: 'Barlow', sans-serif; font-size: 0.68rem; color: var(--ink-ghost); }
+.byline-bar .datestamp { margin-left: auto; font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: var(--ink-ghost); letter-spacing: 0.04em; }
+
+.scoreboard { background: #0A0A0A; max-width: 980px; margin: 0 auto; padding: 1.5rem 2rem; display: grid; grid-template-columns: 1fr auto 1fr auto; align-items: center; gap: 1.5rem; border-bottom: 4px solid var(--silver-lt); }
+.sb-team .nation { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver-lt); display: block; margin-bottom: 0.4rem; }
+.sb-team .total { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: #F5F0E8; display: block; line-height: 1; }
+.sb-team .total small { font-size: 1.2rem; font-weight: 400; color: #7A7060; }
+.sb-team .overs { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: #6A6058; display: block; margin-top: 0.25rem; }
+.sb-vs { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; color: #4A4438; font-weight: 700; text-transform: uppercase; text-align: center; }
+.sb-result { font-family: 'Spectral', serif; font-style: italic; color: #8A8070; font-size: 0.9rem; line-height: 1.65; border-left: 1px solid #2A2820; padding-left: 1.5rem; }
+.sb-result strong { font-style: normal; color: var(--silver-lt); font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; }
+
+.body-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 2rem 4rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
+
+.prose p { font-family: 'Spectral', serif; font-size: 1.05rem; line-height: 1.92; color: var(--ink-mid); margin-bottom: 1.45rem; }
+.prose p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; float: left; line-height: 0.8; margin-right: 0.1em; margin-top: 0.1em; color: var(--charcoal); }
+
+.prose h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 2px solid var(--rule); letter-spacing: -0.01em; }
+
+.prose-rule { border: none; border-top: 3px double var(--rule-dark); margin: 2.5rem 0; }
+
+.pq { margin: 2.8rem 0; padding: 1.5rem 1.8rem; background: var(--fern-pale); border-left: 4px solid var(--fern); border-right: 1px solid var(--rule); }
+.pq p { font-family: 'Playfair Display', serif !important; font-size: 1.45rem !important; font-weight: 700 !important; font-style: italic; line-height: 1.45 !important; color: var(--fern) !important; margin-bottom: 0.7rem !important; }
+.pq p::first-letter { font-size: inherit !important; float: none !important; color: inherit !important; margin: 0 !important; }
+.pq cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fern-lt); font-style: normal; }
+
+.innings-box { background: var(--ink-deep); margin: 2.8rem 0; overflow: hidden; }
+.innings-box-hd { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.6rem; border-bottom: 1px solid #2A2820; }
+.innings-box-hd h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--silver-lt); }
+.innings-box-hd .innings-total { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: #7A7260; }
+.innings-row { display: grid; grid-template-columns: 1.6rem 1fr auto auto; gap: 0.8rem 1rem; padding: 0.7rem 1.6rem; border-bottom: 1px solid #1E1C16; align-items: baseline; }
+.innings-row.header { background: #1A1812; }
+.innings-row.header span { font-family: 'Barlow Condensed', sans-serif !important; font-size: 0.55rem !important; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #4A4840 !important; }
+.innings-row:last-child { border-bottom: none; }
+.bat-num { font-family: 'Barlow', sans-serif; font-size: 0.65rem; color: #4A4438; font-weight: 300; }
+.bat-name { font-family: 'Spectral', serif; font-size: 0.98rem; color: #D8D0C4; line-height: 1.3; }
+.bat-name em { font-style: normal; font-size: 0.78rem; color: #8A8278; display: block; }
+.bat-runs { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-aus); text-align: right; }
+.bat-balls { font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 300; color: #5A5448; text-align: right; min-width: 3rem; }
+.bat-runs.highlight { color: #E8C060; }
+.innings-extras { padding: 0.8rem 1.6rem; border-top: 1px solid #2A2820; display: flex; justify-content: space-between; align-items: center; }
+.innings-extras span { font-family: 'Barlow', sans-serif; font-size: 0.7rem; color: #6A6258; }
+.innings-extras strong { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; }
+
+.timeline { margin: 2.8rem 0; }
+.timeline-head { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-ghost); padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule); }
+.tl-item { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px dashed var(--rule); align-items: start; }
+.tl-item:last-child { border-bottom: none; }
+.tl-score { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--red); letter-spacing: 0.03em; padding-top: 0.05rem; }
+.tl-text { font-family: 'Spectral', serif; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.55; }
+.tl-text .who { color: var(--ink); font-weight: 600; }
+.tl-text .note { color: var(--ink-ghost); font-style: italic; font-size: 0.88rem; }
+
+.sidebar { position: sticky; top: 2rem; }
+.sbox { border: 1px solid var(--rule); margin-bottom: 2rem; overflow: hidden; }
+.sbox-hd { background: var(--charcoal); color: var(--silver-lt); font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.65rem 1rem; }
+.sbox-body { padding: 0.8rem 1rem; background: var(--paper-warm); }
+.sbox-body ul { list-style: none; }
+.sbox-body li { font-family: 'Spectral', serif; font-size: 0.92rem; color: var(--ink-soft); padding: 0.45rem 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; line-height: 1.4; }
+.sbox-body li:last-child { border-bottom: none; }
+.sbox-body li .lbl { font-family: 'Barlow', sans-serif; font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-ghost); white-space: nowrap; }
+.sbox-body li strong { font-weight: 600; color: var(--ink); text-align: right; }
+.star-stat { padding: 1.2rem 1rem; background: var(--paper-warm); text-align: center; }
+.star-stat .num { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 900; color: var(--charcoal); line-height: 1; display: block; margin-bottom: 0.4rem; }
+.star-stat .desc { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; }
+.snote { padding: 0.9rem 1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); background: var(--paper-warm); margin-bottom: 2rem; }
+.snote p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; }
+.snote cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+footer { background: #0A0A0A; border-top: 4px double var(--silver); padding: 2rem; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #3A3A3A; }
+footer span { color: var(--silver-lt); }
+
+@media (max-width: 740px) {
+  .np-header-inner { grid-template-columns: 1fr; text-align: center; }
+  .np-header-left, .np-header-right { display: none; }
+  .body-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .sidebar { position: static; }
+  .scoreboard { grid-template-columns: 1fr 1fr; }
+  .sb-result { border-left: none; padding-left: 0; border-top: 1px solid #2A2820; padding-top: 1rem; grid-column: 1 / -1; }
+  .innings-row { grid-template-columns: 1fr auto auto; }
+  .innings-row .bat-num { display: none; }
+  .byline-bar .datestamp { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition · Day/Night</span>
+        <span class="date-line">Saturday, 29 June 2019 · Lord's, London</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 37</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 37 <span>›</span> Australia vs New Zealand</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 37 · Lord's Cricket Ground, London · Day/Night</span>
+  </div>
+  <h1 class="hl">
+    <em>Khawaja's Rescue</em> and Carey's Defiance:<br>
+    <span class="accent">Boult's Hat-Trick, Starc's Five</span><br>
+    and a Trans-Tasman Classic at Lord's
+  </h1>
+  <p class="deck">There are cricket matches that produce their best cricket in the inconvenient middle — when the platform has collapsed, when the chase is failing, when both sides are producing performances of merit that the scoreboard cannot quite contain. The thirty-seventh match of the 2019 World Cup, a day-night encounter between Australia and New Zealand at Lord's, was one of them. Boult took a hat-trick in the forty-ninth over. Starc took five in New Zealand's reply. Guptill caught Steven Smith at leg gully — 17 metres, 0.6 seconds of reaction time. And through it all, Usman Khawaja batted for a hundred and twenty-nine balls with the stillness of a man who has decided that the situation requires exactly this and nothing else.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="loc">Lord's Cricket Ground, London</span>
+    <span class="datestamp">29 June 2019</span>
+  </div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">Australia</span>
+    <span class="total">243<small> / 9</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">New Zealand</span>
+    <span class="total">157<small> ao</small></span>
+    <span class="overs">43.4 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    Australia won by 86 runs<br>
+    Khawaja 88 · Boult hat-trick · Starc 5–26 · MOM: Carey
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There is a particular kind of match that the Trans-Tasman cricket rivalry has a gift for producing — matches that are contested in the full knowledge of a shared geography and a shared history, that carry within them the accumulated weight of decades of close competition, but that unfold with a drama that still manages to surprise. The thirty-seventh match of the 2019 World Cup was played in the floodlit grandeur of Lord's on a Saturday evening in late June, under the kind of London summer sky that transitions from grey to the specific, amber-tinged darkness of a great cricket ground lit from within. Australia had already qualified for the semi-finals; New Zealand needed, at minimum, something from this match to keep their own campaign credible. The stakes were, in the abstract, asymmetric. The cricket, in the event, was not.</p>
+
+    <p>New Zealand's captain Kane Williamson won the toss and chose to field — a decision that, in the early-evening conditions at Lord's, had the self-evident logic of a man who had watched his bowlers work in similar light throughout the tournament and knew what they were capable of on a surface with life in it. His seamers, in the event, delivered precisely what he had imagined: Trent Boult in particular, operating with the discipline and variety that have made him one of the world's best left-arm seamers, made the Australian openers look, for a sustained period in the first eleven overs, as though batting at Lord's under lights against a well-directed seam attack was rather harder than the Australia vs England encounter at the same ground four days earlier had suggested. It was. Australia lost three wickets for 46 runs in the first eleven overs. The match's shape was established before the floodlights had fully taken hold of the ground.</p>
+
+    <h2>The Early Collapse: Boult, Ferguson and the Diminishing Australians</h2>
+
+    <p>Finch went in the fifth over — trapped lbw by a Boult delivery that angled back into him and found the pad with enough precision that the umpire was convinced without hesitation. It was the kind of dismissal that the left-armer produces so regularly that it has become, in the vocabulary of Test and ODI analysts, shorthand for Boult at his best: full, angled, sharp movement back in from outside off, and the batsman's front foot not quite where it needed to be to provide meaningful insurance. Fifteen for one. Warner, at the other end, had been dealing with Boult rather more convincingly until Lockie Ferguson produced, in the ninth over, a short ball of sufficient pace and sufficient lift to take the outside edge as Warner attempted to sway out of its path. The edge carried to Latham behind the wicket. Thirty-eight for two. New Zealand were, by any measure, the better side in the early part of the innings. Their seamers were hitting the right lengths, the right angles, extracting from the Lord's surface exactly the movement and bounce that the conditions and the light promised.</p>
+
+    <p>Smith arrived and was dismissed by Ferguson almost immediately — a dismissal so extraordinary in its fielding component that the wicket itself was almost incidental. Ferguson pitched one short and full and angled into Smith's body, the ball rising from a length in the manner that makes Lord's, with its pronounced ridge, unique among cricket's great venues. Smith pulled hard and flat — not a mis-hit, not a top edge, but a genuine, well-timed pull shot — straight at Guptill stationed at leg gully, seventeen metres away. Guptill, who had approximately 0.6 seconds from the moment of the bat's contact to the moment the ball arrived, dived to his left and plucked it, one-handed, at ankle height. The broadcast graphics would subsequently confirm what every spectator and commentator had already intuited: this was, in the terms of reaction time and athleticism combined, one of the catches of the entire tournament. Smith shook his head. He had hit the ball. The ball had simply found the one pair of hands capable of catching it.</p>
+
+    <div class="pq">
+      <p>"Carey was immense. When you're four down for 81 in a World Cup match, you need someone to show character, and he did that from start to finish."</p>
+      <cite>Justin Langer, Australia Head Coach, post-match at Lord's</cite>
+    </div>
+
+    <h2>Khawaja and Carey: Rebuilding from the Rubble</h2>
+
+    <p>At forty-six for three, in the twelfth over of a Lord's afternoon-turning-evening that had so far produced exactly the kind of New Zealand performance their bowlers had been building toward all tournament, Australia required something to restore the possibility of a competitive total. They required, specifically, the kind of innings that is less glamorous than a hundred and more necessary than any five-wicket haul: a batsman who understands that his first responsibility is to survive, and whose survival then becomes, over the course of thirty or forty overs, the platform upon which something is built. Usman Khawaja is, of all the Australian batsmen of his generation, the one most naturally suited to this role — the calm left-hander who is most likely to have absorbed the Buddhist concept of non-attachment to outcome, who appears, at the crease, to be in precisely the right relationship with the present ball rather than the one that came before or the one that might come next.</p>
+
+    <p>Khawaja's 88 — from a hundred and twenty-nine balls, batting through the middle of the innings from the twelfth over to the forty-ninth, until Boult dismissed him in his hat-trick over — was the innings on which Australia's total rested. It was not an innings of show or spectacle: he struck nine fours in the course of it, no sixes, and batted at a strike rate of approximately 68, which is the kind of economy that looks, in the context of a final score of 243 for 9, exactly calibrated to the match situation rather than either too aggressive or too passive. He drove cleanly when the length was full. He was organised against the short ball. He accumulated with the unhurried efficiency of a batsman who has read the situation and is playing it, steadily and with clear eyes, rather than playing against it. The two partnerships he constructed — first with Stoinis, then with the increasingly impressive Carey — gave the innings its architecture and its total.</p>
+
+    <p>Alex Carey, the wicket-keeper who had come into this tournament carrying something to prove, batted at number six and produced, in the most important match the Australian side had played in the group stage, the innings of his tournament. His 71 from 72 balls was the innings of a batsman who has identified his role, committed to it, and refused — with the quiet, uncelebrated stubbornness of the genuinely determined — to allow the situation to deviate him from his purpose. He arrived at the crease with Australia five for 92, their innings in the kind of disrepair that five-down in the twenty-second over of a World Cup group match represents. He left with Australia nine for 243, having made 71 in the company of Khawaja for over twenty overs, the longest and most productive partnership of the innings. He hit seven fours and a six. He ran hard. He rotated the strike with the intelligence of a batsman who understands that the run rate is as important as the individual score, and who manages both simultaneously without allowing one to compromise the other.</p>
+
+    <h2>Boult's Hat-Trick: Three Deliveries and a Piece of History</h2>
+
+    <p>Trent Boult is, in the taxonomy of left-arm fast-medium bowling, the variety that poses the greatest challenge to right-handed batsmen primarily because his best deliveries move in the direction that the conventional wisdom of the batting technique has least prepared them for: the late in-swinger, angling from outside off, curving back through the gate between bat and pad at a pace that makes late adjustment impossible. He bowled, across the final fortnight of the 2019 group stage, some of the most controlled left-arm bowling in the tournament. At Lord's, in the forty-ninth over of Australia's innings, he produced three consecutive deliveries that will be recalled as long as the match is discussed.</p>
+
+    <p>The forty-ninth over, ball one: Boult to Khawaja, full and reversing from outside off, through the gate. Khawaja, who had batted for a hundred and twenty-nine balls with the composure of a man who cannot be dismissed by anything short of something exceptional, was dismissed by exactly that — a full ball that pitched outside off and curved back in at pace, finding the space between his bat and front pad with the geometric precision of a delivery that had been designed with his particular weakness in mind. He walked off to a standing ovation from a crowd that had been watching him for most of the innings. Forty-ninth over, ball two: Boult to Starc, another full ball that pitched and angled and swung under the blade even as Starc looked to jam it out. Gone. Two in two. Forty-ninth over, ball three: Boult to Behrendorff, a perfect full delivery that swung away just enough from around leg stump, Behrendorff walking across his stumps, the ball hitting his right foot. Umpire gave it. Australia reviewed. There was no inside edge. The trajectory showed it hitting leg stump. Boult had his hat-trick — the second hat-trick in World Cup history at Lord's, the first since Pakistan's Saqlain Mushtaq in 1999 — and the crowd, made up of spectators who had come expecting a cricket match and had received instead a sequence of events that would circulate on broadcast media for years, responded with the kind of noise that Lord's reserves for moments of authentic historical significance.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>Australia Batting — 1st Innings</h3>
+        <span class="innings-total">243 / 9 in 50 overs</span>
+      </div>
+      <div class="innings-row header">
+        <span></span><span>Batsman</span><span>R</span><span>B</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">1</span>
+        <span class="bat-name">AJ Finch (c)<em>lbw b Boult</em></span>
+        <span class="bat-runs">16</span>
+        <span class="bat-balls">23</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">2</span>
+        <span class="bat-name">DA Warner<em>c †Latham b Ferguson</em></span>
+        <span class="bat-runs">8</span>
+        <span class="bat-balls">15</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">3</span>
+        <span class="bat-name">UT Khawaja<em>b Boult</em></span>
+        <span class="bat-runs">88</span>
+        <span class="bat-balls">129</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">4</span>
+        <span class="bat-name">SPD Smith<em>c Guptill b Ferguson</em></span>
+        <span class="bat-runs">5</span>
+        <span class="bat-balls">8</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">5</span>
+        <span class="bat-name">MP Stoinis<em>c †Latham b Neesham</em></span>
+        <span class="bat-runs">21</span>
+        <span class="bat-balls">26</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">6</span>
+        <span class="bat-name">AT Carey†<em>c Guptill b Williamson</em></span>
+        <span class="bat-runs highlight">71</span>
+        <span class="bat-balls">72</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">7</span>
+        <span class="bat-name">GJ Maxwell<em>c &amp; b Neesham</em></span>
+        <span class="bat-runs">1</span>
+        <span class="bat-balls">5</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">8</span>
+        <span class="bat-name">PJ Cummins<em>not out</em></span>
+        <span class="bat-runs">23</span>
+        <span class="bat-balls">19</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">9</span>
+        <span class="bat-name">MA Starc<em>b Boult (hat-trick ball 2)</em></span>
+        <span class="bat-runs">0</span>
+        <span class="bat-balls">1</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">10</span>
+        <span class="bat-name">JP Behrendorff<em>lbw b Boult (hat-trick ball 3)</em></span>
+        <span class="bat-runs">0</span>
+        <span class="bat-balls">1</span>
+      </div>
+      <div class="innings-extras">
+        <span>Extras: 10 (lb 3, w 7)</span>
+        <strong>243 / 9</strong>
+      </div>
+    </div>
+
+    <h2>Starc and the Destruction of the Black Caps</h2>
+
+    <p>Two hundred and forty-four to win. Under Lord's lights, against an Australian bowling attack that had, throughout the tournament, proved itself among the best in the competition. New Zealand required, for the chase to succeed, exactly what they had produced against Pakistan in Birmingham: a batting performance of collective discipline, the top order giving way to the middle order giving way to the lower order in an unbroken chain of contributions, Williamson at the centre of it as he had been at the centre of every successful New Zealand batting performance in recent memory. What they received instead was Mitchell Starc.</p>
+
+    <p>Starc's five wickets for twenty-six runs was the bowling performance of the match, the bowling performance of his week, and arguably the bowling performance of his tournament — a statistic that requires qualification since his tournament figures overall were extraordinary, but that captures something about the specific quality of what he produced at Lord's on this evening. He operated from around the wicket to the right-handers with an angle that produced late in-swing and sharp seam movement off the pitch, and he dismissed five of the top eight batsmen in a manner that combined pace and precision with the kind of unsentimental efficiency that the best fast bowlers have in common with surgeons: they do not waste movement, they do not pause between wickets, they simply find the target and proceed.</p>
+
+    <p>Guptill, who had produced arguably the greatest individual fielding contribution of the group stage earlier in the day against Smith's pull shot, was caught behind by Carey off a ball that angled across him and found the outside edge via a trajectory that gave him no options. Henry Nicholls, who had shown early signs of a promising innings, was caught by Behrendorff at deep fine leg while attempting to pull a short ball that had been deployed with studied premeditation by Starc — the bouncer used not as a surprise but as a specific response to a batsman's vulnerability, a delivery aimed precisely at the spot where the technique frays. Williamson was caught behind by Carey for 40 — a delivery of such sharp late movement off the seam, angled across him and taking the outside edge as he played the late dab that has fed so many of his ODI innings, that the appeal was barely necessary before the umpire's finger went up. Carey behind the stumps had, with that catch, claimed his third dismissal of the innings — adding to his 71 runs, a performance that the umpires agreed merited the Man of the Match award, and that those watching from the press box would have agreed was entirely correct.</p>
+
+    <p>Ross Taylor made 30 before Carey, again, took the catch off a Cummins delivery — a Fuller ball that Taylor attempted to drive aerially through mid-off, the elevation on the stroke too high, the trajectory too flat, the catch arriving at Carey's gloves at chest height with sufficient time for the wicketkeeper to adjust his position. Taylor shook his head. He had hit it well. The field had been better. Colin de Grandhomme made nothing. Tom Latham, batting without the wicket-keeper's pads, made nothing. James Neesham was caught off his own bowling attempt — a Lyons delivery, flighted and teased, that Neesham tried to slog-sweep against the spin and found instead the bowler himself, who pouched it with the pleased expression of a spinner who has set a trap and watched a batsman walk directly into it. The Black Caps were one hundred and fifty-seven all out in forty-three overs and four balls. Australia had won by eighty-six runs.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">New Zealand Chase — Fall of Wickets</div>
+      <div class="tl-item">
+        <span class="tl-score">29</span>
+        <span class="tl-text"><span class="who">Nicholls c †Carey b Behrendorff 20.</span> <span class="note">Pulled short ball, strangled down leg to the keeper. Promising start ended by premeditated bouncer.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">42</span>
+        <span class="tl-text"><span class="who">Guptill lbw b Behrendorff 8.</span> <span class="note">Full ball, angled in. Overbalanced fractionally. Behrendorff finds his line.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">97</span>
+        <span class="tl-text"><span class="who">Williamson c †Carey b Starc 40.</span> <span class="note">Late movement off the seam, outside edge to the keeper. The key wicket.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">118</span>
+        <span class="tl-text"><span class="who">Taylor c †Carey b Cummins 30.</span> <span class="note">Aerial drive through mid-off, too flat, Carey takes at chest height. Three for Carey behind the stumps.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">118</span>
+        <span class="tl-text"><span class="who">De Grandhomme c Khawaja b Smith 0.</span> <span class="note">First ball, chipped to mid-on. Two wickets in two balls. New Zealand crumbling.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">125</span>
+        <span class="tl-text"><span class="who">Latham c Khawaja b Smith 0.</span> <span class="note">Superman Smith flies to his right, takes one-handed at full stretch. Spectacular. Three wickets for six runs.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">131</span>
+        <span class="tl-text"><span class="who">Neesham c &amp; b Lyon 9.</span> <span class="note">Slog-sweep against the spin, found the bowler's hands. Lyon's patience rewarded.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">157</span>
+        <span class="tl-text"><span class="who">Santner c Behrendorff b Starc 2. Innings closed at 157.</span> <span class="note">Short and quick, top edge to fine leg. Starc's fifth. Australia win by 86 runs.</span></span>
+      </div>
+    </div>
+
+    <h2>The Hat-Trick, the Catches, and What Lord's Witnessed</h2>
+
+    <p>There is a pleasurable unreasonableness about what Lord's produced on this evening in late June, a compound of extraordinary moments that, aggregated, make the match feel like more than its scoreline — Australia 243 for 9, New Zealand 157 all out, margin eighty-six runs — suggests. Boult's hat-trick in the forty-ninth over of Australia's innings was the first in a World Cup at Lord's since Saqlain Mushtaq's in 1999. Guptill's catch of Smith at leg gully was, in the independent assessment of the slow-motion replay, as technically remarkable as any in the group stage — a judgement confirmed by the broadcast graphic that clocked his reaction time at 0.6 seconds and his distance from the bat at 17 metres. Steve Smith's catch of Latham at Lord's, a one-handed dive to his right from the mid-on position, was the kind of fielding that, in a lesser match, would have been the thing people talked about for weeks. In this match, it was item number four or five on the list of things worth remembering.</p>
+
+    <p>The match settled New Zealand's fate, eventually, in the most indirect of ways. They lost here, by 86 runs, and then went on to beat Pakistan and win their final group games, squeezing through to the semi-finals by the thinnest of net-run-rate margins. But the match also confirmed something about Australia that the tournament's analysts had been circling since the first week: that this was a side capable of winning in different ways, on different surfaces, against different styles. Against South Africa, the seamers had dominated. Against England, the pace had been too much. Against India, at The Oval, the batsmen had been overrun. Here, against New Zealand, they had recovered from three wickets for forty-six and produced a total that their bowlers then defended with the composed efficiency of a side that knows it has more than enough to work with.</p>
+
+    <hr class="prose-rule">
+
+    <p>The Trans-Tasman rivalry, at its most distilled, is a contest about proximity: geographic, cultural, cricketing. The two nations share an ocean, a certain kind of weather, a certain kind of plain-speaking cricketing culture that has historically produced more than its statistical share of great players and great teams. At Lord's on this evening, with the floodlights turning the outfield green and the crowd filing out under a summer sky that had turned from grey to the particular darkness of a London evening where the light never quite dies, both teams had given the rivalry another chapter to file away with the others. New Zealand would recover and reach the final, where they would lose the World Cup on the boundary countback rule after one of the most remarkable matches in the history of the competition. Australia would go out in the semi-finals, beaten by England at Edgbaston by eight wickets. But here, at Lord's, on the twenty-ninth of June, in a match lit by floodlights and animated by Boult and Starc and the extraordinary, unreasonable athleticism of Guptill in the leg-gully, it had been Australia's evening. They had taken the points, taken another step toward the top of the group, and left Lord's with the air of a team that had found, somewhere in the hundred and seventy-nine balls of Usman Khawaja's innings and the twenty-six runs that Mitchell Starc had conceded in ten overs of controlled ferocity, exactly the kind of performance that a World Cup campaign required.</p>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Venue</span><strong>Lord's, London (D/N)</strong></li>
+          <li><span class="lbl">Date</span><strong>29 June 2019</strong></li>
+          <li><span class="lbl">Toss</span><strong>NZ won, elected to field</strong></li>
+          <li><span class="lbl">Australia</span><strong>243/9 (50 ov)</strong></li>
+          <li><span class="lbl">New Zealand</span><strong>157 ao (43.4 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>Australia won by 86 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>Alex Carey (71 &amp; 3 catches)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Alex Carey — Full Day</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Batting</span><strong>71 (72 balls)</strong></li>
+          <li><span class="lbl">Fours / Sixes</span><strong>7 / 1</strong></li>
+          <li><span class="lbl">Catches</span><strong>3 (Guptill, Williamson, Taylor)</strong></li>
+          <li><span class="lbl">Partnership</span><strong>107 with Khawaja (6th wkt)</strong></li>
+          <li><span class="lbl">Note</span><strong>First MOM of his WC campaign</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Boult's Hat-Trick (Over 49)</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Ball 1</span><strong>Khawaja b Boult 88</strong></li>
+          <li><span class="lbl">Ball 2</span><strong>Starc b Boult 0</strong></li>
+          <li><span class="lbl">Ball 3</span><strong>Behrendorff lbw b Boult 0</strong></li>
+          <li><span class="lbl">Historical</span><strong>2nd hat-trick at Lord's in WC history</strong></li>
+          <li><span class="lbl">Last</span><strong>Saqlain Mushtaq, 1999 WC</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Starc's Spell</div>
+      <div class="star-stat">
+        <span class="num">5/26</span>
+        <span class="desc">Mitchell Starc's 5 wickets for 26 runs — the best bowling figures of the match and among the best of the group stage.</span>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"That Guptill catch — I was 17 metres from the bat and had 0.6 seconds. I just threw myself at it and somehow it stuck. Those are the ones you remember."</p>
+      <cite>Martin Guptill, post-match, on his one-handed catch to dismiss Steven Smith</cite>
+    </p>
+
+    <div class="sbox">
+      <div class="sbox-hd">New Zealand Bowling</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Boult</span><strong>4/51 (10 ov) — hat-trick</strong></li>
+          <li><span class="lbl">Ferguson</span><strong>2/56 (10 ov)</strong></li>
+          <li><span class="lbl">Neesham</span><strong>2/40 (9 ov)</strong></li>
+          <li><span class="lbl">Williamson</span><strong>1/19 (7 ov)</strong></li>
+          <li><span class="lbl">Khawaja</span><strong>88 (129 b) — key innings</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"Khawaja's innings saved us. At 46 for three, we needed a player to take responsibility. He did it better than anyone else in the squad could have on that day."</p>
+      <cite>Aaron Finch, Australia captain, at Lord's post-match press conference</cite>
+    </p>
+
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 37 · Lord's, London · 29 June 2019<br>
+  Australia 243/9 defeated New Zealand 157 by 86 runs · Boult hat-trick · Starc 5–26
+</footer>
+
+</body>
+</html>
