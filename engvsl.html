@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs Sri Lanka, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#2A4A6A;--fern-lt:#3A6A9A;--fern-pale:#E4EAF0;
+  --pq-bg:var(--fern-pale);--pq-border:var(--fern);--pq-color:var(--fern);
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#060E16;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#060E16;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#060E16;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#060E16;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4A50;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Friday, 21 June 2019 · Headingley, Leeds</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 27</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 27 <span>›</span> England vs Sri Lanka</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 27 · Headingley Carnegie, Leeds</span></div>
+  <h1 class="hl"><em>Malinga's Last Gift:</em> Sri Lanka<br>Stun the Hosts at <span class="accent">Headingley</span><br>by Twenty Runs</h1>
+  <p class="deck">They were an eliminated side, effectively, or close enough to one that the distinction barely registered. Sri Lanka arrived at Headingley with one victory from five matches, a bowling attack of modest pace, and a batting order that had, across five outings, failed to produce a performance its captain could describe without qualification. And then Lasith Malinga — thirty-five years old, bowling with a slingy, round-arm action that physics insists should not produce the results it produces — removed England's top three with four wickets across ten overs, and Dhananjaya de Silva swept up the middle, and Sri Lanka won by twenty runs. The tournament, which had appeared to have arranged itself into a predictable shape, disagreed.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Headingley Carnegie, Leeds</span><span class="datestamp">21 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">Sri Lanka</span><span class="total">232<small>/9</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">England</span><span class="total">212<small> ao</small></span><span class="overs">47.0 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>Sri Lanka won by 20 runs · Biggest upset of the tournament<br>Mathews 85* · Malinga 4/43 · MOM: Lasith Malinga</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The tournament favourites are, in any World Cup, carrying two burdens simultaneously: the weight of expectation, which compresses the margin for error until a single bad session can feel irreversible, and the weight of their own reputation, which requires them to win not merely adequately but convincingly, to make victory look earned rather than fortunate. England had arrived at this tournament as the number-one ranked ODI side in the world, having spent four years constructing a batting order of unprecedented depth and an approach to the game — attacking from ball one, targeting three hundred as a minimum, treating the opposition's bowling as raw material for destruction rather than as a problem to be solved — that had made them not merely competitive but intimidating. And then, on a Friday afternoon at Headingley, a Sri Lanka side containing three front-line bowlers of moderate pace and a batting order that had not previously shown evidence of producing two hundred and thirty-two on this surface, produced precisely that. It was the largest upset of this tournament. It was also, for those with memories longer than the morning session, entirely consistent with how cricket tends to behave when it senses complacency.</p>
+
+    <p>Sri Lanka won the toss and elected to bat on a surface that was slower than its Headingley reputation suggested, the kind of pitch that rewards patience and punishes the loose drive, and immediately found themselves in a condition that seemed to confirm England's pre-match optimism. Jonny Bairstow had James Vince as his opening partner in the absence of Jason Roy, and the bowling — Mark Wood, Chris Woakes and Jofra Archer — was full of pace and intelligence. Dimuth Karunaratne and Lahiru Thirimanne opened and found the first ten overs difficult, conceding their wickets before the powerplay had ended, and at twenty-six for two, with Avishka Fernando — whose forty-six from thirty-nine deliveries in a burst of counter-attacking batting briefly suggested a different kind of innings — still to be dismissed, Sri Lanka's position looked precarious.</p>
+
+    <h2>Fernando, Mendis and the Innings That Rebuilt Itself</h2>
+
+    <p>Avishka Fernando, twenty years old at the time of this innings, playing only his second World Cup match, batted with the specific freedom that youth sometimes permits when the occasion has not yet communicated its full weight to the player experiencing it. His forty-six from thirty-nine deliveries — four fours and two sixes, the sixes driven cleanly off the back foot and the front foot with the flat-bat timing of a batsman who plays cricket primarily in his own imagination and trusts what he finds there — were the runs that changed the character of the innings. He drove Woakes through the covers with the full extension of a stroke that the coaches would not have suggested and would not have criticised. He pulled Wood through midwicket with the decisiveness of a man who has identified the length early and committed to the stroke completely. And when he was finally dismissed — caught at extra cover by a Woakes delivery that was fuller than he had anticipated — he left the innings at an improbable eighty-four for three, with the tone established that Kusal Mendis and Angelo Mathews would now have to sustain.</p>
+
+    <p>Kusal Mendis made forty-six from sixty deliveries, the second time in consecutive innings he had contributed a precisely similar figure in precisely similar circumstances — the innings of a middle-order batsman who has understood his role as stabiliser rather than aggressor and who performs it without the dramatic intervention that would have made it more immediately visible to the casual observer. Mendis drove cleanly through the off side when the line allowed it, worked the ball through midwicket with the wristiness that Sri Lankan batsmen have always possessed, and ran between the wickets with a discipline that, accumulated across sixty deliveries, was worth more than the forty-six runs it produced in changed momentum and partnership continuity. He was caught by Eoin Morgan at short midwicket — a brilliant catch, low to his left, reverse-cupped hands receiving a ball that had been hit hard and close to the ground — off Adil Rashid in the twenty-ninth over, and the catch's difficulty suggested something about the relationship between skill and fortune that the match would, in its final overs, make explicit from the other direction.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Sri Lanka Batting — 1st Innings</h3><span class="innings-total">232/9 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">D Karunaratne (c)<em>c Bairstow b Woakes</em></span><span class="bat-runs">10</span><span class="bat-balls">23</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">HDRL Thirimanne<em>b Woakes</em></span><span class="bat-runs">1</span><span class="bat-balls">8</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">WIA Fernando<em>c Root b Woakes</em></span><span class="bat-runs">46</span><span class="bat-balls">39</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">BKG Mendis<em>c Morgan b Rashid</em></span><span class="bat-runs">46</span><span class="bat-balls">60</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">AD Mathews<em>not out</em></span><span class="bat-runs hl">85</span><span class="bat-balls">115</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">DM de Silva<em>c Bairstow b Archer</em></span><span class="bat-runs">29</span><span class="bat-balls">30</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">J Dickwella†<em>b Wood</em></span><span class="bat-runs">8</span><span class="bat-balls">14</span></div>
+      <div class="innings-extras"><span>Extras: 13 (lb 4, nb 1, w 8)</span><strong>232 / 9</strong></div>
+    </div>
+
+    <h2>Malinga's Genius and England's Collapse</h2>
+
+    <p>England needed two hundred and thirty-three. The target was not, by the standards of what England's batting had been doing to bowling attacks throughout this tournament, particularly challenging. Against Pakistan, they had made three hundred and thirty-four. Against Bangladesh, three hundred and eighty-six. The assumption in the Headingley press box, and indeed among most of the fourteen thousand in the ground, was that two hundred and thirty-three was the kind of total that England's batting order would absorb without excessive exertion — a problem to be managed rather than a puzzle to be solved. Lasith Malinga had different intentions.</p>
+
+    <p>The second ball of the match — a full delivery angling into James Vince's off stump — struck the pad and trapped him leg before wicket for nought. The appeal was loud. The umpire raised his finger. Vince reviewed. The review was not upheld. Vince had scored a duck off two deliveries. England were one for one. This was, in the context of the match, a significant wicket, but not yet an alarming one: Vince's World Cup had been, up to this point, a series of starts unfulfilled, and his absence promoted Jonny Bairstow into a more prominent role, which was, by most calculations, an upgrade in quality if not in the specific skill-set that openers provide. Then Malinga bowled Bairstow — the second ball of his second over, a full delivery on a leg stump line that Bairstow attempted to flick, missed, and conceded his wicket to — for the second first-ball dismissal of his tournament campaign. One for one became one for two from the second delivery. The crowd, which had been performing the mild disappointment of Vince's departure, shifted registers entirely.</p>
+
+    <p>What Malinga produced in those ten overs — four wickets for forty-three runs, the removal of Vince, Bairstow, Root (caught behind off a leg-side ball after an appeal that required the Decision Review System to confirm what the naked eye had not caught) and Buttler — was the kind of bowling performance that reminds everyone watching that the techniques of deception can outlast the techniques of pace. Malinga at thirty-five does not bowl at the speed of Malinga at twenty-five. He does not need to. He has, across a career that has produced more than three hundred and thirty ODI wickets, developed a command of variations — the slower yorker, the full delivery that angles in and then holds its line, the bouncer deployed at ninety miles per hour to a batsman who has adjusted his mental picture to eighty-four — that no amount of analysis fully prepares a batsman to face. Joe Root, who scored fifty-seven and who was the one England batsman to make contact with the day's full challenge, lasted to the thirty-first over before Malinga returned to claim him with a delivery that caught the inside edge and deflected through to the wicketkeeper. Jos Buttler, whose fifty-four from forty balls gave England the brief, deceptive optimism that Stokes could carry home from the other end, was removed in the thirty-fourth over, and with his departure went England's last realistic hope of the kind of acceleration that two hundred and thirty-three required.</p>
+
+    <div class="pq">
+      <p>"Malinga is just a genius. He doesn't need to bowl at ninety miles an hour. He has so many variations. Even when you know what's coming, he deceives you. That's the mark of a great bowler."</p>
+      <cite>Joe Root, England batsman, post-match at Headingley</cite>
+    </div>
+
+    <p>Ben Stokes anchored the middle with fifty-two from sixty-two deliveries — the innings that would, in retrospect, represent the best that England could manage on a day when the match had turned against them before they had properly begun to play it. He drove through the covers with the full extension and complete footwork of a left-hander at his most assured. He cut Dhananjaya de Silva through point with the positivity of a batsman who knows that the only appropriate response to a deteriorating match situation is to take the initiative rather than surrender it. But de Silva — bowling slow, accurate off-breaks with the patient cunning of a bowler who has identified that the surface will do the work if he gives it the opportunity — took three wickets in the middle overs to collapse England's innings from a position of genuine recovery to a position of structural difficulty: Stokes eventually caught by Root running in at mid-on, a slower ball that de Silva had disguised with the subtlety of a man who has been bowling on surfaces like this since he was a child. England were bowled out for two hundred and twelve. Sri Lanka had won by twenty runs. The tournament exhaled, then reset itself around a different shape.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>England Batting — Chase</h3><span class="innings-total">212 ao in 47 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">JM Vince<em>lbw b Malinga</em></span><span class="bat-runs">0</span><span class="bat-balls">2</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">JM Bairstow<em>b Malinga</em></span><span class="bat-runs">0</span><span class="bat-balls">1</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">JE Root<em>c Dickwella b Malinga</em></span><span class="bat-runs">57</span><span class="bat-balls">82</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">EJG Morgan (c)<em>c &amp; b Udana</em></span><span class="bat-runs">21</span><span class="bat-balls">24</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">BA Stokes<em>c Root b de Silva</em></span><span class="bat-runs">82</span><span class="bat-balls">95</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">JC Buttler†<em>b Malinga</em></span><span class="bat-runs">10</span><span class="bat-balls">14</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">CR Woakes<em>c Karunaratne b de Silva</em></span><span class="bat-runs">0</span><span class="bat-balls">3</span></div>
+      <div class="innings-extras"><span>Extras: 10 (lb 4, w 6)</span><strong>212 ao</strong></div>
+    </div>
+
+    <h2>The Upset That Warned the Tournament</h2>
+
+    <p>The significance of this result extended well beyond its immediate impact on the points table. For England, it was a reminder — the kind that only a defeat delivers — that the formula of large totals and aggressive batting that had made them the pre-tournament favourites was dependent on conditions that the surface could, and occasionally would, deny them. The pitch at Headingley on the twenty-first of June was not a pitch for three hundred and fifty. It was a pitch for three hundred, perhaps, on a good day, with care and patience and the willingness to build. England arrived expecting to impose their template. Sri Lanka — eliminated, free, playing without fear — showed them that a template is only useful when the conditions cooperate with it.</p>
+
+    <p>Mathews's eighty-five not out from one hundred and fifteen deliveries was the innings that gave Sri Lanka's total its respectability without giving it its shape — the anchor around which the others had rotated. He was unbeaten at the innings's close not because he could not find the strokes to accelerate but because the fall of wickets had given him no partner sufficient to risk the acceleration. He drove through the off side with the high elbow and classical form of a batsman who has, in his thirties, simplified rather than elaborated his technique, and he rotated the strike with the veteran's patience that is, in its way, as difficult to acquire as any flashier skill. The fact that his unbeaten eighty-five was insufficient to prevent a defeat that came close enough to changing the tournament's shape entirely is one of the match's irresolvable asymmetries. Cricket is full of them.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">England's Chase — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">0/1</span><span class="tl-text"><span class="who">Vince lbw b Malinga 0 (2).</span> <span class="note">Second ball of the match. Review failed. England in trouble before they've begun.</span></span></div>
+      <div class="tl-item"><span class="tl-score">1/2</span><span class="tl-text"><span class="who">Bairstow b Malinga 0 (1).</span> <span class="note">First ball of Malinga's second over. Two ducks in two overs. Old Trafford stunned.</span></span></div>
+      <div class="tl-item"><span class="tl-score">133/4</span><span class="tl-text"><span class="who">Mendis catches Root off Malinga 57.</span> <span class="note">Caught behind down leg. DRS upheld. The wicket that ended England's realistic chance.</span></span></div>
+      <div class="tl-item"><span class="tl-score">155/5</span><span class="tl-text"><span class="who">Buttler b Malinga 10.</span> <span class="note">Malinga's fourth wicket. England 155/5, needing 78 from 16. De Silva takes over.</span></span></div>
+      <div class="tl-item"><span class="tl-score">212 ao</span><span class="tl-text"><span class="who">England all out, over 47. Sri Lanka win by 20.</span> <span class="note">The tournament's biggest upset. A result that changed the shape of the group stage.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>Sri Lanka departed Headingley with the quiet satisfaction of a side that has reminded a larger opponent of something that the larger opponent would rather not have been reminded of. England would regroup — they always do, this England, in this era, with this depth of talent — and the semi-finals would still belong to them in all probability, the mathematics demanding no more than further qualification. But on this particular day, with Malinga bowling at the crease and Mathews batting with the immovable calm of a man who has played in World Cups since before half the players in this tournament were professionals, Sri Lanka had made a point about the persistence of quality. Talent doesn't expire on the schedule the younger sides prefer. Craft, accumulated across a career, occasionally overcomes everything arranged against it. The scoreboard at Headingley recorded the fact. The game recorded the lesson.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Headingley, Leeds</strong></li>
+      <li><span class="lbl">Date</span><strong>21 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>Sri Lanka won, elected to bat</strong></li>
+      <li><span class="lbl">Sri Lanka</span><strong>232/9 (50 ov)</strong></li>
+      <li><span class="lbl">England</span><strong>212 ao (47 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>Sri Lanka won by 20 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Lasith Malinga (4/43)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Malinga's 4/43</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Overs</span><strong>10 (2 maidens)</strong></li>
+      <li><span class="lbl">Runs</span><strong>43</strong></li>
+      <li><span class="lbl">Wickets</span><strong>4</strong></li>
+      <li><span class="lbl">Scalps</span><strong>Vince, Bairstow, Root, Buttler</strong></li>
+      <li><span class="lbl">Note</span><strong>England's top 3 all dismissed</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">England Batting</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Stokes</span><strong>82 (95)</strong></li>
+      <li><span class="lbl">Root</span><strong>57 (82)</strong></li>
+      <li><span class="lbl">Morgan</span><strong>21 (24)</strong></li>
+      <li><span class="lbl">Buttler</span><strong>10 (14)</strong></li>
+      <li><span class="lbl">Ducks</span><strong>Vince, Bairstow</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Mathews Unbeaten</div><div class="star-stat">
+      <span class="num">85*</span>
+      <span class="desc">Angelo Mathews — 115 balls, 8 fours — the unbroken anchor of Sri Lanka's innings and the centrepiece of the tournament's biggest shock.</span>
+    </div></div>
+    <div class="snote"><p>"Malinga showed today why he is one of the all-time greats. His variations are extraordinary. Removing three of England's top four — that was the difference."</p><cite>Dimuth Karunaratne, Sri Lanka captain, post-match at Headingley</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 27 · Headingley, Leeds · 21 June 2019<br>Sri Lanka 232/9 defeated England 212 by 20 runs · Malinga 4/43 · Mathews 85* · Stokes 82</footer>
+</body>
+</html>
