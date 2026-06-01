@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — India vs Sri Lanka, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A3A6A;--fern-lt:#2255AA;--fern-pale:#E4EAF5;
+  --sb-bg:#121218;--accent:#B0B8C8;--hdr-color:#1A3A6A;--drop-cap:#1A3A6A;
+  --pq-bg:var(--fern-pale);--pq-border:var(--fern);--pq-color:var(--fern);
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#0A0F1A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#0A0F1A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#0A0F1A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#0A0F1A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4A38;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Saturday, 6 July 2019 · Headingley, Leeds</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 44</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 44 <span>›</span> India vs Sri Lanka</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 44 · Headingley, Leeds</span></div>
+  <h1 class="hl"><em>Rohit's Fifth:</em> A Record Quietly<br>Broken, and a Chase <span class="accent">That Never Began</span></h1>
+  <p class="deck">Rohit Sharma arrived at Headingley needing one more century to become the only batsman in World Cup history to score five in a single tournament — and he collected it in the manner of a man settling a small debt, almost as an afterthought. Sri Lanka had given them a target worth chasing. Angelo Mathews had given them every reason for difficulty. Neither was enough. India won by seven wickets with thirty-nine balls to spare, and moved to the top of the points table with a momentum that resembled something closer to inevitability than confidence.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Headingley, Leeds</span><span class="datestamp">6 July 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">Sri Lanka</span><span class="total">264<small>/7</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">India</span><span class="total">265<small>/3</small></span><span class="overs">43.3 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>India won by 7 wickets (39 balls remaining)<br>Rohit 103* · Rahul 111 · Bumrah 3/37 · MOM: Rohit Sharma</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There is a particular quality that attaches itself to certain innings — a quality that is best described not as dominance or even excellence but as inevitability. The innings announces, from its first delivery, that it will not be interrupted, that the bowler's craft and the fielder's positioning and the surface's idiosyncrasies have, for the duration of its unfolding, been suspended in favour of a single batsman's will. Rohit Sharma batted at Headingley on the sixth of July 2019 with precisely this quality, scoring 103 from 94 deliveries against a Sri Lankan attack that had earlier — and genuinely, not merely by statistical record — dismissed the pretension that India's chase would be routine. The fact that it was routine regardless belongs to the permanent record of this tournament, which has, with gathering insistence across its group stage, been shaped by Rohit's batting in ways that no other single player has shaped it.</p>
+
+    <p>Sri Lanka had won the toss and elected to bat, which was, given the state of their campaign — four defeats from five, a team all but eliminated but playing with the particular freedom that eliminated teams occasionally discover — a statement of intent if not of expectation. And for the first ten overs, as Dimuth Karunaratne was bowled by Jasprit Bumrah for eleven and the top order disintegrated under the pressure of sharp, accurate Indian seam bowling, the decision appeared to be precisely the miscalculation that it had been feared to be. Lasith Malinga, later, would announce that this was his final appearance in World Cup cricket — a farewell framed with the particular pathos of a champion bowler conceding eighty-two runs — but in those early overs his team were simply struggling to survive.</p>
+
+    <h2>Mathews and the Craft of Reconstruction</h2>
+
+    <p>Angelo Mathews walked in at fifty-three for three, with Avishka Fernando already departed for a breezy forty-six that had briefly given the innings an optimism it did not deserve, and he proceeded, over the next hundred and twenty-eight deliveries, to produce the innings by which this Sri Lanka World Cup campaign will be remembered — not because it was flawless, but because it was exactly what the situation demanded and nothing more and nothing less. His 113 not out — the third time in his career that he had scored a hundred against India in ODIs, a statistic that belongs in the curious category of things that are simultaneously improbable and entirely explicable — was the work of a batsman who has understood, in his mid-thirties, that the greatest innings are built not from attacking strokes but from the disciplined refusal to give the opposition an error to exploit.</p>
+
+    <p>Lahiru Thirimanne accompanied him for the fifth wicket in a stand of one hundred and twenty-four that transformed the innings from collapse to recovery. Thirimanne's fifty-three from sixty-eight deliveries — his most important World Cup knock — was the innings of a player who has spent much of his career in the shadow of more celebrated Sri Lankan batsmen and who found, in the one match that his team needed him most, a composure that had seemed, in earlier outings, beyond his reach. He drove cleanly through the covers off Hardik Pandya, worked the spinners through midwicket with the wristiness that Sri Lankan batsmen have always possessed more naturally than they have been given credit for, and ran with the crisp urgency of a batsman who understands that the difference between a score of two hundred and fifty and two hundred and sixty-five may be the difference between a match that India win easily and one that offers at least the theoretical possibility of an upset.</p>
+
+    <p>Dhananjaya de Silva added twenty-nine from thirty-six balls in a sixth-wicket partnership with Mathews worth seventy-four, and between them they extended Sri Lanka's total to what felt, at the time of the innings's close, like a competitive 264 for 7. Bumrah's three wickets for thirty-seven — his figures a model of the disciplined, unrelenting accuracy that has made him the most feared ODI bowler of his generation — were the instruments by which India reasserted control in the final ten overs, and it was Pandya's late dismissal of a well-set Mathews — caught off a slower ball at long-off, a marvellous reflex take by Pandya himself turning and running — that removed the one man capable of taking Sri Lanka past three hundred.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Sri Lanka Batting — 1st Innings</h3><span class="innings-total">264/7 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">D Karunaratne (c)<em>b Bumrah</em></span><span class="bat-runs">10</span><span class="bat-balls">21</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">WIA Fernando<em>c Bumrah b Pandya</em></span><span class="bat-runs">46</span><span class="bat-balls">39</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">BKG Mendis<em>c Kohli b Chahal</em></span><span class="bat-runs">46</span><span class="bat-balls">60</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">AD Mathews<em>c &amp; b Pandya</em></span><span class="bat-runs hl">113</span><span class="bat-balls">128</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">HDRL Thirimanne<em>c Jadeja b Kuldeep</em></span><span class="bat-runs">53</span><span class="bat-balls">68</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">DM de Silva<em>c Bumrah b Chahal</em></span><span class="bat-runs">29</span><span class="bat-balls">36</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">J Dickwella†<em>c Kohli b Bumrah</em></span><span class="bat-runs">6</span><span class="bat-balls">7</span></div>
+      <div class="innings-extras"><span>Extras: 18 (b 4, lb 3, nb 1, w 10)</span><strong>264 / 7</strong></div>
+    </div>
+
+    <h2>Rohit's Century and the Quiet Breaking of Records</h2>
+
+    <p>KL Rahul opened alongside Rohit Sharma in the absence of the injured Shikhar Dhawan, and the partnership that the two of them constructed in the first thirty overs of India's chase was, in its combination of authority and ease, the clearest possible statement about the quality of India's batting in this tournament. Rohit reached his fifty in forty-eight deliveries with the unhurried confidence of a batsman who has decided, long before the innings began, that the target of two hundred and sixty-five presents no structural problem beyond the requirement to be present at the crease for long enough. He drove through the covers off Kasun Rajitha with the high elbow and complete extension of a batsman whose technique in the on-drive and off-drive has become, in this tournament, so consistently exemplary that individual strokes have begun to blur into a composite image of correctness.</p>
+
+    <p>Rahul's hundred — 111 from 118 balls, his first World Cup century, the innings that prompted Malinga to produce one final act of brilliance by removing him with a delivery that caught the inside edge on its way to the keeper — was the innings that gave the chase its shape before Rohit took it towards its conclusion. Rahul cover-drove with an elegance that has always been the most recognisable signature of his batting, worked the spinners with the composed footwork of a batsman who has spent enough time in Sri Lanka to understand the trajectories that Malinga and Udana were exploring, and ran between the wickets with a decisiveness that suggested a man whose confidence in his own judgement has been restored after a tournament in which his role and his form had been subjects of continuing debate. His dismissal — Malinga, inevitably, who conceded eighty-two runs from his ten overs but finished his World Cup career with this final wicket to show that the old craft had not entirely deserted him — arrived with India needing only nineteen more runs, a moment of satisfaction without consequence.</p>
+
+    <div class="pq">
+      <p>"I'm just trying to contribute to the team's wins. The record is special, but winning this game and getting to the top of the table — that's what matters most today."</p>
+      <cite>Rohit Sharma, post-match at Headingley, on his record fifth World Cup century</cite>
+    </div>
+
+    <p>Rohit's century arrived in the thirty-second over from ninety-four deliveries, and was celebrated with the restrained satisfaction of a man who has scored enough hundreds in enough important matches to understand that the celebration is a courtesy rather than an expression. It was — for the statisticians, though they are the last people Rohit himself would consult — the fifth century in a single World Cup edition, a record previously held by Sachin Tendulkar and Kumar Sangakkara. That Rohit broke it against Sri Lanka, one of Tendulkar's oldest opponents and the side against which Sangakkara himself had scored some of his most memorable World Cup runs, carried a symmetry that the tournament seemed to have arranged deliberately.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>India Batting — Chase</h3><span class="innings-total">265/3 in 43.3 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">RG Sharma<em>c Mendis b Udana</em></span><span class="bat-runs hl">103</span><span class="bat-balls">94</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">KL Rahul<em>c Dickwella b Malinga</em></span><span class="bat-runs hl">111</span><span class="bat-balls">118</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">V Kohli (c)<em>not out</em></span><span class="bat-runs">34</span><span class="bat-balls">38</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">R Pant<em>not out</em></span><span class="bat-runs">14</span><span class="bat-balls">16</span></div>
+      <div class="innings-extras"><span>Extras: 3 (lb 1, w 2)</span><strong>265 / 3</strong></div>
+    </div>
+
+    <h2>Malinga's Farewell and the Tournament's Arithmetic</h2>
+
+    <p>There was a moment, when Lasith Malinga removed Rahul in the fortieth over, when the crowd at Headingley gave him an ovation that lasted longer than the wicket itself warranted — an acknowledgement not of what had just happened but of what had happened across sixteen years, across four World Cups, across the entirety of the career of one of the most singular bowling actions the game has produced. Malinga finished his World Cup career with figures of one for eighty-two from ten overs, which is, in the context of his career averages, a poor return, and yet the manner of the wicket he took — fullish, swinging late through the gate, catching the inside edge — was the manual made flesh: the ball he has bowled, with variations of pace and angle, thousands of times across thousands of deliveries, still able, in the final act of his biggest-stage career, to deceive a batsman of Rahul's quality. Cricket grants its champions these small dignities if they wait long enough for them.</p>
+
+    <p>India's victory — completed by Kohli and Pant with thirty-nine balls remaining, Kohli's thirty-four not out as composed and unhurried as everything he has done in this tournament without yet producing the century that feels permanently proximate — moved them to the top of the group stage table on fifteen points, confirmed their semi-final berth, and left them as the clear favourites for the tournament itself. Sri Lanka's 264 for 7, which was in the event insufficient, had been at its construction genuinely competitive — better, in truth, than the seven-wicket margin suggests. Mathews's century deserved a better fate. But India, in this tournament, have shown an accumulation of batting depth and bowling precision that makes defeat feel less like a possibility than a category error. They have not yet been beaten in group stage cricket. The semi-finals, when they come, will test whether that record is evidence of quality or merely of schedule.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">India's Chase — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">0/0</span><span class="tl-text"><span class="who">Rohit &amp; Rahul begin chase of 265.</span> <span class="note">189-run opening stand built in serenity. India never troubled.</span></span></div>
+      <div class="tl-item"><span class="tl-score">189/1</span><span class="tl-text"><span class="who">Rohit Sharma c Mendis b Udana 103 (94).</span> <span class="note">Record fifth World Cup century. Caught at long-on attempting to accelerate.</span></span></div>
+      <div class="tl-item"><span class="tl-score">246/2</span><span class="tl-text"><span class="who">Rahul c Dickwella b Malinga 111 (118).</span> <span class="note">Malinga's farewell wicket. India need 19 from 12. Match effectively over.</span></span></div>
+      <div class="tl-item"><span class="tl-score">265/3</span><span class="tl-text"><span class="who">Kohli 34* &amp; Pant 14* see India home.</span> <span class="note">Seven wickets, 39 balls remaining. India top the group table.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>What this India side has established across the group stage of this World Cup is something beyond the sum of individual performances, though those performances have themselves been extraordinary. It is a collective certainty — a sense that the team's resources, in batting and bowling and in the quality of its thinking, exceed what any single match can fully demand of them. Bumrah takes wickets when other bowlers cannot. Rohit scores centuries when other batsmen fail. Kohli provides steadiness when form and situation require it. And behind them, a batting order deep enough that no wicket has yet felt like a match-altering crisis. The semi-finals approach. The question that remains — whether this India side can win in the conditions of Manchester in mid-July against opposition they have not yet properly met — is not a question this group stage can answer. But it has assembled, with the patient authority of a side that knows its quality, the argument that they should.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Headingley, Leeds</strong></li>
+      <li><span class="lbl">Date</span><strong>6 July 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>Sri Lanka won, elected to bat</strong></li>
+      <li><span class="lbl">Sri Lanka</span><strong>264/7 (50 ov)</strong></li>
+      <li><span class="lbl">India</span><strong>265/3 (43.3 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>India won by 7 wickets</strong></li>
+      <li><span class="lbl">MOM</span><strong>Rohit Sharma (103)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Rohit's Historic 103</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>103 (94 balls)</strong></li>
+      <li><span class="lbl">Fours / Sixes</span><strong>14 / 2</strong></li>
+      <li><span class="lbl">Opening stand</span><strong>189 with Rahul</strong></li>
+      <li><span class="lbl">Tournament total</span><strong>648 runs, 5 hundreds</strong></li>
+      <li><span class="lbl">Record</span><strong>Most centuries in single WC edition</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Rahul's 111</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>111 (118 balls)</strong></li>
+      <li><span class="lbl">Fours / Sixes</span><strong>11 / 2</strong></li>
+      <li><span class="lbl">Note</span><strong>First WC century</strong></li>
+      <li><span class="lbl">Out</span><strong>c Dickwella b Malinga</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Mathews's Masterclass</div><div class="star-stat">
+      <span class="num">113</span>
+      <span class="desc">Angelo Mathews — 128 balls, 10 fours, 2 sixes. His third ODI hundred against India. A century in defeat.</span>
+    </div></div>
+    <div class="snote"><p>"Malinga is a legend of this game. To end his World Cup career with a wicket like that — it was a beautiful thing to watch, even for the other team."</p><cite>Virat Kohli, post-match at Headingley</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 44 · Headingley, Leeds · 6 July 2019<br>India 265/3 defeated Sri Lanka 264/7 by 7 wickets · Rohit 103 · Rahul 111 · Mathews 113</footer>
+</body>
+</html>
