@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs England, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:       #F9F5EF;
+  --paper-warm:  #F2EDE3;
+  --ink:         #151209;
+  --ink-deep:    #1E1912;
+  --ink-mid:     #3A342A;
+  --ink-soft:    #5C5448;
+  --ink-ghost:   #9A9288;
+  --rule:        #D4CAB8;
+  --rule-dark:   #B0A898;
+  --green:       #1A4A2E;
+  --green-mid:   #235E3A;
+  --green-lt:    #3A7D52;
+  --green-pale:  #E8F0EB;
+  --gold:        #9B7C20;
+  --gold-lt:     #C4A040;
+  --red:         #8B1A10;
+  --red-lt:      #B83020;
+  --navy:        #0D2340;
+  --navy-mid:    #1A3A5C;
+  --gold-aus:    #C6A84B;
+}
+
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.np-header {
+  background: var(--navy);
+  border-bottom: 6px double var(--gold-aus);
+  position: relative;
+  overflow: hidden;
+}
+
+.np-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px);
+  pointer-events: none;
+}
+
+.np-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.np-header-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.np-header-left .edition-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-aus); }
+.np-header-left .date-line { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
+
+.masthead-title { text-align: center; }
+.masthead-title .pub-name { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #FAF6EE; letter-spacing: 0.02em; line-height: 1; display: block; }
+.masthead-title .pub-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-aus); margin-top: 0.35rem; display: block; }
+
+.np-header-right { text-align: right; display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-end; }
+.np-header-right .price { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-aus); }
+.np-header-right .issue { font-family: 'Barlow', sans-serif; font-size: 0.65rem; font-weight: 300; color: rgba(255,255,255,0.4); }
+
+.section-strip { background: var(--ink); max-width: 980px; margin: 0 auto; padding: 0.55rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
+.section-strip .sec-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-aus); white-space: nowrap; }
+.section-strip .breadcrumb { font-family: 'Barlow', sans-serif; font-size: 0.62rem; font-weight: 400; color: #6A6258; letter-spacing: 0.06em; }
+.section-strip .breadcrumb span { color: #8A8278; }
+
+.hero { max-width: 980px; margin: 0 auto; padding: 2.5rem 2rem 0; border-bottom: 3px double var(--rule-dark); padding-bottom: 2rem; }
+
+.match-flag { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+.flag-pip { display: inline-block; width: 8px; height: 8px; background: var(--gold-aus); border-radius: 50%; }
+.match-flag-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-aus); }
+
+.hl { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.09; color: var(--ink); letter-spacing: -0.018em; margin-bottom: 1.2rem; }
+.hl em { font-style: italic; color: var(--navy-mid); }
+.hl .accent { color: var(--red); }
+
+.deck { font-family: 'Spectral', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--ink-mid); max-width: 740px; padding-left: 1.2rem; border-left: 3px solid var(--gold-aus); margin-bottom: 1.8rem; }
+
+.byline-bar { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 1rem 0 0; border-top: 1px solid var(--rule); }
+.byline-bar .by { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.byline-bar .by strong { color: var(--ink); }
+.byline-bar .loc { font-family: 'Barlow', sans-serif; font-size: 0.68rem; color: var(--ink-ghost); }
+.byline-bar .datestamp { margin-left: auto; font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: var(--ink-ghost); letter-spacing: 0.04em; }
+
+.scoreboard { background: var(--navy); max-width: 980px; margin: 0 auto; padding: 1.5rem 2rem; display: grid; grid-template-columns: 1fr auto 1fr auto; align-items: center; gap: 1.5rem; border-bottom: 4px solid var(--gold-aus); }
+.sb-team .nation { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold-aus); display: block; margin-bottom: 0.4rem; }
+.sb-team .total { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: #F5F0E8; display: block; line-height: 1; }
+.sb-team .total small { font-size: 1.2rem; font-weight: 400; color: #7A7060; }
+.sb-team .overs { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: #6A6058; display: block; margin-top: 0.25rem; }
+.sb-vs { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; color: #4A4438; font-weight: 700; text-transform: uppercase; text-align: center; }
+.sb-result { font-family: 'Spectral', serif; font-style: italic; color: #8A8070; font-size: 0.9rem; line-height: 1.65; border-left: 1px solid #2A2820; padding-left: 1.5rem; }
+.sb-result strong { font-style: normal; color: var(--gold-aus); font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; }
+
+.body-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 2rem 4rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
+
+.prose p { font-family: 'Spectral', serif; font-size: 1.05rem; line-height: 1.92; color: var(--ink-mid); margin-bottom: 1.45rem; }
+.prose p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; float: left; line-height: 0.8; margin-right: 0.1em; margin-top: 0.1em; color: var(--navy); }
+
+.prose h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 2px solid var(--rule); letter-spacing: -0.01em; }
+
+.section-intro { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-aus); margin-bottom: -0.8rem; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 2px solid var(--rule); display: block; }
+
+.prose-rule { border: none; border-top: 3px double var(--rule-dark); margin: 2.5rem 0; }
+
+.pq { margin: 2.8rem 0; padding: 1.5rem 1.8rem; background: #EEF2FA; border-left: 4px solid var(--navy-mid); border-right: 1px solid var(--rule); }
+.pq p { font-family: 'Playfair Display', serif !important; font-size: 1.45rem !important; font-weight: 700 !important; font-style: italic; line-height: 1.45 !important; color: var(--navy) !important; margin-bottom: 0.7rem !important; }
+.pq p::first-letter { font-size: inherit !important; float: none !important; color: inherit !important; margin: 0 !important; }
+.pq cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy-mid); font-style: normal; }
+
+.innings-box { background: var(--ink-deep); margin: 2.8rem 0; overflow: hidden; }
+.innings-box-hd { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.6rem; border-bottom: 1px solid #2A2820; }
+.innings-box-hd h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-aus); }
+.innings-box-hd .innings-total { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: #7A7260; }
+.innings-row { display: grid; grid-template-columns: 1.6rem 1fr auto auto; gap: 0.8rem 1rem; padding: 0.7rem 1.6rem; border-bottom: 1px solid #1E1C16; align-items: baseline; }
+.innings-row.header { background: #1A1812; }
+.innings-row.header span { font-family: 'Barlow Condensed', sans-serif !important; font-size: 0.55rem !important; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #4A4840 !important; }
+.innings-row:last-child { border-bottom: none; }
+.bat-num { font-family: 'Barlow', sans-serif; font-size: 0.65rem; color: #4A4438; font-weight: 300; }
+.bat-name { font-family: 'Spectral', serif; font-size: 0.98rem; color: #D8D0C4; line-height: 1.3; }
+.bat-name em { font-style: normal; font-size: 0.78rem; color: #8A8278; display: block; }
+.bat-runs { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-aus); text-align: right; }
+.bat-balls { font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 300; color: #5A5448; text-align: right; min-width: 3rem; }
+.bat-runs.highlight { color: #E8C060; }
+.innings-extras { padding: 0.8rem 1.6rem; border-top: 1px solid #2A2820; display: flex; justify-content: space-between; align-items: center; }
+.innings-extras span { font-family: 'Barlow', sans-serif; font-size: 0.7rem; color: #6A6258; }
+.innings-extras strong { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; }
+
+.timeline { margin: 2.8rem 0; }
+.timeline-head { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-ghost); padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule); margin-bottom: 0; }
+.tl-item { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px dashed var(--rule); align-items: start; }
+.tl-item:last-child { border-bottom: none; }
+.tl-score { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--red); letter-spacing: 0.03em; padding-top: 0.05rem; }
+.tl-text { font-family: 'Spectral', serif; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.55; }
+.tl-text .who { color: var(--ink); font-weight: 600; }
+.tl-text .note { color: var(--ink-ghost); font-style: italic; font-size: 0.88rem; }
+
+.sidebar { position: sticky; top: 2rem; }
+.sbox { border: 1px solid var(--rule); margin-bottom: 2rem; overflow: hidden; }
+.sbox-hd { background: var(--navy); color: var(--gold-aus); font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.65rem 1rem; }
+.sbox-body { padding: 0.8rem 1rem; background: var(--paper-warm); }
+.sbox-body ul { list-style: none; }
+.sbox-body li { font-family: 'Spectral', serif; font-size: 0.92rem; color: var(--ink-soft); padding: 0.45rem 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; line-height: 1.4; }
+.sbox-body li:last-child { border-bottom: none; }
+.sbox-body li .lbl { font-family: 'Barlow', sans-serif; font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-ghost); white-space: nowrap; }
+.sbox-body li strong { font-weight: 600; color: var(--ink); text-align: right; }
+.star-stat { padding: 1.2rem 1rem; background: var(--paper-warm); text-align: center; }
+.star-stat .num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: var(--navy); line-height: 1; display: block; margin-bottom: 0.4rem; }
+.star-stat .desc { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; }
+.snote { padding: 0.9rem 1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); background: var(--paper-warm); margin-bottom: 2rem; }
+.snote p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; }
+.snote cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+footer { background: var(--navy); border-top: 4px double var(--gold-aus); padding: 2rem; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #3A4A60; }
+footer span { color: var(--gold-aus); }
+
+@media (max-width: 740px) {
+  .np-header-inner { grid-template-columns: 1fr; text-align: center; }
+  .np-header-left, .np-header-right { display: none; }
+  .body-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .sidebar { position: static; }
+  .scoreboard { grid-template-columns: 1fr 1fr; }
+  .sb-result { border-left: none; padding-left: 0; border-top: 1px solid #2A2820; padding-top: 1rem; grid-column: 1 / -1; }
+  .innings-row { grid-template-columns: 1fr auto auto; }
+  .innings-row .bat-num { display: none; }
+  .byline-bar .datestamp { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition</span>
+        <span class="date-line">Tuesday, 25 June 2019 · Lord's, London</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 32</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 32 <span>›</span> Australia vs England</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 32 · Lord's Cricket Ground, London</span>
+  </div>
+  <h1 class="hl">
+    <em>Finch's Hundred</em> at the Mecca:<br>
+    <span class="accent">Behrendorff's Five and England's</span><br>
+    Afternoon of Reckoning
+  </h1>
+  <p class="deck">At the home of cricket, on a blustery June afternoon that felt like the axis of the tournament tilting, Australia dismantled England with a precision that was equal parts tactical mastery and cold opportunism. Aaron Finch's hundred gave the innings its architecture; Jason Behrendorff's five wickets took a wrecking ball through England's chase. The hosts, for all their vaunted batting depth, were found wanting in the one place they could least afford it — at the top of the order, in the first ten overs, against a new ball that barely needed permission.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="loc">Lord's Cricket Ground, London</span>
+    <span class="datestamp">25 June 2019</span>
+  </div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">Australia</span>
+    <span class="total">285<small> / 7</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">England</span>
+    <span class="total">221<small> ao</small></span>
+    <span class="overs">44.4 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    Australia won by 64 runs<br>
+    Finch 100 · Behrendorff 5–44 · MOM: Finch
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There is a version of this story in which England bat first at Lord's, post three hundred and fifty, and the match follows a different road entirely. There is a version in which Jason Roy is not already on his way back to the pavilion before the second ball of the innings has left his bat. There is a version in which the morning belonged to the hosts, the crowd was with them from the start, and the weight of expectation sat on the Australian shoulders rather than the English ones. These versions are not, however, the one that was played out at the home of cricket on this overcast and consequential June afternoon. The version that was played out involved Aaron Finch producing the innings of a man who had decided, at some point in the dressing room before play, that the stage was precisely large enough for what he had in mind. It involved Jason Behrendorff bowling the kind of opening spell that collapses not just innings but momentum, narrative, possibility itself. And it involved England — the world's number one ranked ODI side, playing on their most hallowed ground, in front of their own people, with the tournament still very much alive — failing, at the critical hour, to clear the most fundamental of the hurdles that had been placed before them.</p>
+
+    <p>Australia won the toss, and Aaron Finch, the Australian captain, did exactly what any competent strategist would do when presented with a Lord's surface still fresh at ten-thirty in the morning, against a bowling attack that lacked something of its menace in the absence of a fully fit pace attack: he batted. The decision was neither adventurous nor conservative. It was simply correct, in the way that the correct decision often appears obvious only after the innings has validated it. The pitch had a little in it for the seamers early — a hint of lateral movement, a touch of early-morning moisture in the Lord's surface that English summers reliably provide — and Finch's instinct was sound. As it turned out, the Australians would have batted first on a beach.</p>
+
+    <h2>The Opening Stand: Finch and Warner Build the Platform</h2>
+
+    <p>David Warner had come into this match riding the form of a man who appeared to have resolved, in the long months of his ban from international cricket, some private argument with himself about the nature of commitment. He had scored consistently throughout the tournament — the kind of scoring that does not always produce headlines but that keeps scoreboards moving at rates that opposition bowling attacks find difficult to contain. At Lord's, he provided the scaffolding while Finch provided the ambition. Together, they put on 123 for the first wicket — a stand of controlled purpose that had the character of two batsmen who knew that the par score on this pitch was somewhere above 270, and were determined to give themselves the platform to reach it comfortably.</p>
+
+    <p>Warner, batting left-handed against the movement and the angle, looked composed and unhurried. His fifty came from 52 balls — a rate that was measured rather than explosive, a considered accumulation that kept the runs ticking without exposing himself to the kind of aggressive dismissal that might have brought England back into the morning. He drove cleanly through the covers when the length invited it, played the sweep and pull with compact economy, and was finally dismissed for 53 when a delivery from Joe Root found the outside edge and Root himself, stationed at backward point, took the catch with the alert reflexes of a fielder who has spent a career in the cordon of very good teams. It was, in the context of the partnership, a small loss. The stand had done its work. The platform had been built. What followed was the kind of innings that defines the nature of a tournament.</p>
+
+    <p>Finch, meanwhile, was assembling something that began quietly and became, over the course of a hundred and sixteen balls, one of the more complete innings the tournament would produce at this level. He is not a batsman of the ornamental school — not a player whose technique invites lingering aesthetic appreciation, not a craftsman of the artful variety. He is, instead, a batsman of organised efficiency: the drive through extra cover struck with the flat, deliberate swing of a man who has practised the shot ten thousand times and does not intend to be surprised by it; the pull deployed with timing rather than force; the cut played square and firm. His fifty came from 61 balls, unremarkable in its tempo but entirely reliable in its accumulation. The hundred — his first at a World Cup, struck in the 35th over off the 115th ball with an audacious hook off Woakes that cleared the square-leg boundary with the authority of a man who had been waiting for precisely this moment — landed with the kind of crowd silence that prefaces roar. He raised his bat to the Long Room. He had, with that shot, become the first batsman of the tournament to reach three figures. He was gone four balls later, caught at fine leg by Woakes off a high short ball, holing out with a top-edge that flew too straight, too far, too trustingly into the fielder's hands. A hundred and out for exactly a hundred: the defining innings of Australia's afternoon, the innings around which everything else was ordered, the innings that, when people summarise this match a decade hence, will be the first thing mentioned.</p>
+
+    <div class="pq">
+      <p>"When you get a hundred at Lord's, against England, at a World Cup — that's what you play the game for. It's the greatest feeling."</p>
+      <cite>Aaron Finch, post-match, on his maiden World Cup century at the home of cricket</cite>
+    </div>
+
+    <h2>The Middle Order and the Calculation of 285</h2>
+
+    <p>After Finch's departure — at 185 for 3, with fifteen overs remaining — Australia's innings entered the phase that separates good totals from very good ones. Khawaja had come and gone, bowled by a Ben Stokes delivery of 90 miles per hour that jagged back into the blockhole with the kind of geometric perfection that fast bowlers dream about rather than execute, stumps splayed by a ball that gave the batsman no options. Glenn Maxwell arrived with his customary air of a man who has decided the field is merely a suggestion, lasted eight balls, and was caught behind — a thin edge off a short ball from Mark Wood that the wicketkeeper collected low and to his right. Steven Smith, at number four, anchored the innings with 38 from 34 balls, a compact, watchful innings from a batsman who had enough experience at this level to understand that his role, after the departure of the top order, was consolidation rather than onslaught. Alex Carey, batting at seven, finished unbeaten on 38 from 27 balls, and Mitchell Starc added a late cameo of 4 that kept the scoreboard honest in the final overs. Two hundred and eighty-five was, in the final accounting, a score that required England to bat at their best. It was not an insurmountable target. But it was, as the afternoon was about to demonstrate, a target considerably more demanding than it appeared in the abstract.</p>
+
+    <h2>Behrendorff's Masterpiece: Five Wickets and the England Collapse</h2>
+
+    <p>It is worth pausing, before we trace the wreckage of England's innings, to spend a moment with Jason Behrendorff — a left-arm seamer from Western Australia who had, by this point in the tournament, accumulated precisely the kind of career profile that makes him easy to overlook in the company of Mitchell Starc and Pat Cummins: capable, disciplined, dangerous in English conditions, but not a name that carries the gravitational weight of his colleagues. At Lord's, on this afternoon, he was something altogether different. He was, for the duration of his ten overs, the best bowler on the ground. He was, in the most fundamental sense, the reason Australia won this match.</p>
+
+    <p>His first delivery to James Vince was a massive inswinger that came back so acutely, on such a full length, that Vince's attempt to drive was rendered not merely inadequate but almost beside the point — the ball was going to hit the stumps with or without the assistance of the bat, and it arrived at middle stump with the inevitability of a well-composed sentence that has only one possible conclusion. Vince, who had been given his chance in the absence of the injured Jason Roy and had held it with uncertain fingers throughout the tournament, was gone for a golden duck, second ball of the innings, and the crowd — the Lord's crowd, partial, expectant, dressed in the whites and the flags of an England side they had come to believe in — emitted the groan of people watching something they had not quite been prepared for. England were nought for one. Shades of Starc to Brendon McCullum, four years ago, at this same ground. The World Cup final of 2015, the opening ball. History, once more, rhyming with itself in the key of Australian pace bowling and the pristine, treacherous air of Lord's.</p>
+
+    <p>Joe Root survived one ball before Mitchell Starc — bowling from the other end with the control and menace of a man at the peak of his powers — found him lbw with an inswinger. Root considered the review. He knew. He walked. England were 15 for 2, Root gone for 8, the top order comprehensively dismantled inside three overs by a pair of left-arm seamers who had found the Lord's surface's early assistance and prosecuted it without mercy. Eoin Morgan, the captain, arrived with the tournament's crisis written in neon across the scoreboard. He lasted nine balls. Cummins banged one in short, Morgan climbed into the pull with the confident aggression that has made him England's most dangerous batsman, and found instead of power a top edge that looped to fine leg in the manner of a shot that had been asked one thing and answered with something else entirely. England were 26 for 3. A hundred and forty-three in the powerplay was, by any measure, a catastrophe. The match was still, in theory, alive — theories can accommodate considerable improbability — but the probability was, by now, substantially weighted in Australia's favour.</p>
+
+    <p>Jonny Bairstow made a fighting 27 that had the quality of a man swimming hard in a current already moving against him. He was caught at deep midwicket in the fourteenth over, Behrendorff's second wicket, a pull shot that did not quite clear the boundary, and England were 53 for 4. Ben Stokes, arriving at the crease to face a match already half-lost, played the innings that the occasion required from him — not the full Stokes, not the Stokes of transformation and transcendence, but the Stokes of defiance and craft, a batsman who understood that his job was to give the chase a shape, to keep the arithmetic plausible, to occupy the crease long enough for something to change. His 89, from 115 balls, was the innings of a man hitting the ball as hard as he could in the service of a cause that was retreating from him over the horizon. He struck five fours and one six, the six a lofted drive over extra cover off Starc that the bowler — watching it clear the rope with the measured displeasure of a craftsman watching his best work mishandled — acknowledged with a slow shake of the head. Stokes was dismissed by a Starc yorker of such quality, such precision, such impeccable off-stump line tailing back in at the base of leg, that any critique of the batsman's dismissal would be churlish. He kicked his bat. He was right to. It was too good.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>Australia Batting — 1st Innings</h3>
+        <span class="innings-total">285 / 7 in 50 overs</span>
+      </div>
+      <div class="innings-row header">
+        <span></span><span>Batsman</span><span>R</span><span>B</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">1</span>
+        <span class="bat-name">AJ Finch (c)<em>c Woakes b Wood</em></span>
+        <span class="bat-runs highlight">100</span>
+        <span class="bat-balls">116</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">2</span>
+        <span class="bat-name">DA Warner<em>c Root b Ali</em></span>
+        <span class="bat-runs">53</span>
+        <span class="bat-balls">61</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">3</span>
+        <span class="bat-name">UT Khawaja<em>b Stokes</em></span>
+        <span class="bat-runs">23</span>
+        <span class="bat-balls">29</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">4</span>
+        <span class="bat-name">SPD Smith<em>c Archer b Woakes</em></span>
+        <span class="bat-runs">38</span>
+        <span class="bat-balls">34</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">5</span>
+        <span class="bat-name">GJ Maxwell<em>c †Buttler b Wood</em></span>
+        <span class="bat-runs">12</span>
+        <span class="bat-balls">8</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">6</span>
+        <span class="bat-name">MP Stoinis<em>run out (Bairstow/Rashid/Buttler)</em></span>
+        <span class="bat-runs">8</span>
+        <span class="bat-balls">15</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">7</span>
+        <span class="bat-name">AT Carey†<em>not out</em></span>
+        <span class="bat-runs">38</span>
+        <span class="bat-balls">27</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">8</span>
+        <span class="bat-name">PJ Cummins<em>c †Buttler b Woakes</em></span>
+        <span class="bat-runs">1</span>
+        <span class="bat-balls">4</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">9</span>
+        <span class="bat-name">MA Starc<em>not out</em></span>
+        <span class="bat-runs">4</span>
+        <span class="bat-balls">6</span>
+      </div>
+      <div class="innings-extras">
+        <span>Extras: 8 (lb 4, w 4)</span>
+        <strong>285 / 7</strong>
+      </div>
+    </div>
+
+    <h2>The Lower Order's Valiant Arithmetic</h2>
+
+    <p>Jos Buttler and Moeen Ali, both fine batsmen at this level and both capable of reconstructing an innings from considerable disrepair, did what they could. Buttler's 25 was a measured, purposeful innings — he ran hard between the wickets, found boundaries through the leg side with the wristiness that distinguishes his better days — before Khawaja, stationed on the long-on boundary, took a catch of such cool, rope-conscious precision that it deserved a fuller audience than the moment's drama allowed. He had tracked the ball running to his right at full pace, taken it with two hands, and kept both feet on the right side of the rope with the studied balance of a tightrope-walker who has done this once before and learned exactly where the ledge ends. Buttler shook his head. He had middle-hit it. The field had outsmarted the shot. Ali, coming in at seven, showed glimpses of the form that had made him England's most dangerous lower-order batsman before Behrendorff found his outside edge for a catch behind the wicket. It was, at that point, a procession.</p>
+
+    <p>Woakes was caught for 8 — Maxwell on the boundary, the catch taken with the casual assurance of a man who has made such catches look routine across an entire career of spectacular fielding. Archer was caught at long-off. Rashid, finally, spooned a drive to short cover to end the innings at 221, and the crowd, which had arrived expecting one of the tournament's great afternoons and had received instead one of its great disappointments, filed out with the quietly stunned expression of those who have watched a favourite be comprehensively outplayed. Behrendorff finished with 5 for 44 — the best figures of his ODI career, the performance of his life, in the most significant match he had yet played, at the most famous cricket ground in the world.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">England Chase — Fall of Wickets</div>
+      <div class="tl-item">
+        <span class="tl-score">0</span>
+        <span class="tl-text"><span class="who">Vince b Behrendorff 0.</span> <span class="note">Second ball. Massive inswinger, middle stump. The Lord's pavilion fell silent.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">15</span>
+        <span class="tl-text"><span class="who">Root lbw b Starc 8.</span> <span class="note">Inswinger, plumb in front. Root considered the review. He knew. He walked.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">26</span>
+        <span class="tl-text"><span class="who">Morgan c fine leg b Cummins 4.</span> <span class="note">Short ball, top edge on the pull. England's captain gone for four. The chase was already a question of damage limitation.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">53</span>
+        <span class="tl-text"><span class="who">Bairstow c deep mid-wkt b Behrendorff 27.</span> <span class="note">Pull shot, didn't clear the boundary. Behrendorff's second.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">124</span>
+        <span class="tl-text"><span class="who">Buttler c Khawaja b Stoinis 25.</span> <span class="note">Spectacular boundary catch by Khawaja, rope-dancing at deep square. Shot met perfectly; field superior.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">177</span>
+        <span class="tl-text"><span class="who">Stokes b Starc 89.</span> <span class="note">Off-stump yorker of perfection. England's last hope departed. Stokes kicked his bat in disgust.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">189</span>
+        <span class="tl-text"><span class="who">Moeen Ali c †Carey b Behrendorff 26.</span> <span class="note">Outside edge, hard-handed push. Behrendorff's fourth wicket.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">202</span>
+        <span class="tl-text"><span class="who">Woakes c Finch b Behrendorff (relay) 8.</span> <span class="note">Maxwell tracked back on the rope and lobbed to Finch — audacious relay catch, England sunk without trace.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">221</span>
+        <span class="tl-text"><span class="who">Rashid c Warner b Behrendorff 0. Innings closed at 221.</span> <span class="note">Behrendorff finishes with five. Australia clinch a semi-final berth. England in disarray.</span></span>
+      </div>
+    </div>
+
+    <h2>What Lord's Revealed</h2>
+
+    <p>Australia became, with this victory, the first team to qualify for the semi-finals, needing only a mathematical formality to confirm what the group stage had made plain: they were, in conditions that suited their pace bowling and rewarded their disciplined batting, the tournament's most complete side. The Ashes rivalry — a contest so old and so laden with accumulated grievance and memory that the cricketers who play it sometimes seem to be competing not merely against each other but against the weight of what has come before — had produced, on this afternoon at Lord's, one of its more definitive statements of the recent decade. Australia had outsmarted, outpaced, and outfiled a side that was, on paper, their equal and arguably their superior. They had done so with the particular economy of effort that characterises their best performances: a hundred from the captain, five wickets from the left-armer, and the quiet, reliable contribution of three or four other players who had each done exactly what was required without excessive drama.</p>
+
+    <p>England, meanwhile, were left to contemplate the manner of their defeat — not merely the scoreline, which was damaging enough, but the method. Three wickets in the powerplay, the top order undone by swing bowling that the batsmen had presumably seen before in training and had apparently not found adequate preparation for. The powerplay had been England's fortress throughout the tournament; the opener's position, in the new batting architecture that Eoin Morgan had built over four years of one-day revolution, was supposed to be the engine room of the innings. At Lord's, the engine stalled. The innings survived, after a fashion, but only through the individual heroism of Stokes — and individual heroism, as England had discovered before and would discover again, is not the same thing as collective batting performance. Australia, meanwhile, had demonstrated something that their five World Cup wins had taught them: that the match you win at Lord's in late June is not merely two points in a league table. It is a statement about who you are and what you are capable of. They had made it clearly. England had received it, if not yet quite absorbed it.</p>
+
+    <hr class="prose-rule">
+
+    <p>The tournament ahead offered England the consolation of four remaining matches — four opportunities to rediscover the form that had brought them to the World Cup as favourites, four chances to reassemble the components of the machine that had been, for the majority of four years, the most formidable batting unit in one-day cricket. They would, ultimately, find their way through. But on this particular afternoon, at the ground that had witnessed more of cricket's defining moments than perhaps any other in the world, it was Australia who had spoken, and spoken clearly. Finch's hundred. Behrendorff's five wickets. The scoreboard reading 221 all out where 286 had been required. Lord's, as ever, had borne witness without commentary. It simply records what happens. And what had happened, here, was a defeat for England that carried, in its sixty-four runs of margin, the clean, uncomplicated authority of a team that knows exactly what it is doing — and does it, without apology, in the grandest of settings.</p>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Venue</span><strong>Lord's, London</strong></li>
+          <li><span class="lbl">Date</span><strong>25 June 2019</strong></li>
+          <li><span class="lbl">Toss</span><strong>Aus won, elected to bat</strong></li>
+          <li><span class="lbl">Australia</span><strong>285/7 (50 ov)</strong></li>
+          <li><span class="lbl">England</span><strong>221 ao (44.4 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>Australia won by 64 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>Aaron Finch</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Aaron Finch — The Hundred</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Runs</span><strong>100 (116 balls)</strong></li>
+          <li><span class="lbl">Fours / Sixes</span><strong>11 / 2</strong></li>
+          <li><span class="lbl">Partnership (1st)</span><strong>123 with Warner</strong></li>
+          <li><span class="lbl">Dismissal</span><strong>Caught at fine leg b Wood</strong></li>
+          <li><span class="lbl">Note</span><strong>First century of CWC 2019</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Behrendorff's Five</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Figures</span><strong>5 / 44 (10 overs)</strong></li>
+          <li><span class="lbl">Career best</span><strong>Best ODI figures</strong></li>
+          <li><span class="lbl">Wickets</span><strong>Vince, Bairstow, Ali, Woakes, Rashid</strong></li>
+          <li><span class="lbl">Starc</span><strong>3/43 (9 overs)</strong></li>
+          <li><span class="lbl">Powerplay</span><strong>ENG 26/3 in 10 overs</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Tournament Milestone</div>
+      <div class="star-stat">
+        <span class="num">1st</span>
+        <span class="desc">Australia became the first team to qualify for the semi-finals of the 2019 World Cup with this victory at Lord's.</span>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"That's what happens when you bowl full at Lord's. The ball swings, and if you're disciplined, it swings late. Behrendorff was outstanding."</p>
+      <cite>Justin Langer, Australia Head Coach, post-match</cite>
+    </p>
+
+    <div class="sbox">
+      <div class="sbox-hd">Australia Bowling</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Behrendorff</span><strong>5/44 (10 ov)</strong></li>
+          <li><span class="lbl">Starc</span><strong>3/43 (9 ov)</strong></li>
+          <li><span class="lbl">Cummins</span><strong>1/32 (9 ov)</strong></li>
+          <li><span class="lbl">Stoinis</span><strong>1/26 (5 ov)</strong></li>
+          <li><span class="lbl">Stokes (ENG)</span><strong>89 (115 b) — top score</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"We were outplayed in every department. The top order has to do better — you can't give away three wickets in the powerplay at Lord's and expect to win."</p>
+      <cite>Eoin Morgan, England captain, post-match press conference</cite>
+    </p>
+
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 32 · Lord's, London · 25 June 2019<br>
+  Australia 285/7 defeated England 221 by 64 runs
+</footer>
+
+</body>
+</html>
