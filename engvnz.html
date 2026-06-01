@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs New Zealand, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#F7F3EC;--warm:#EDE6D5;--ink:#12100A;--ink-mid:#282016;--ink-soft:#504638;
+  --ink-ghost:#9A9080;--rule:#CBC0AB;--rule-dk:#A89E88;
+  --green:#1B4A2C;--green-mid:#235E38;--green-lt:#368A50;--green-pale:#E5F0E8;
+  --gold:#9B7D18;--gold-lt:#C8A43A;--navy:#1A2C50;
+}
+html{font-size:17px;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.86;-webkit-font-smoothing:antialiased}
+
+/* MASTHEAD */
+.masthead{background:var(--green);border-bottom:6px double var(--gold-lt)}
+.mh-inner{max-width:980px;margin:0 auto;padding:1.6rem 2rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.mh-side{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32)}
+.mh-side b{color:var(--gold-lt);display:block;margin-bottom:.18rem}
+.mh-side.right{text-align:right}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.8vw,2.9rem);font-weight:900;color:#FBF6EE;letter-spacing:.03em;line-height:1;text-align:center;display:block}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-lt);text-align:center;display:block;margin-top:.35rem}
+
+/* MATCH STRIP */
+.match-strip{background:var(--green-mid);max-width:980px;margin:0 auto;padding:.5rem 2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.ms-tag{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#C0E8C8}
+.ms-ven{font-family:'Barlow',sans-serif;font-size:.6rem;color:rgba(255,255,255,.4);font-weight:300}
+.ms-res{margin-left:auto;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .8rem;background:rgba(0,0,0,.3);color:#C0EAC8}
+
+/* HERO */
+.hero{max-width:980px;margin:0 auto;padding:2.6rem 2rem 2rem;border-bottom:1px solid var(--rule)}
+.kicker{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-lt);margin-bottom:1.1rem;display:flex;align-items:center;gap:.8rem}
+.kicker::after{content:'';width:34px;height:1px;background:var(--green-lt)}
+h1.hl{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4.5vw,3.6rem);font-weight:900;line-height:1.09;letter-spacing:-.018em;color:var(--ink);margin-bottom:1.2rem}
+h1.hl em{font-style:italic;color:var(--green-mid)}
+.deck{font-family:'Spectral',serif;font-size:1.16rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-soft);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--green-lt);margin-bottom:1.8rem}
+.byline-bar{display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid var(--rule);font-family:'Barlow Condensed',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-ghost)}
+.byline-bar strong{color:var(--ink)}
+.by-date{margin-left:auto;font-family:'Barlow',sans-serif;font-weight:300;font-size:.64rem;letter-spacing:.05em}
+
+/* SCOREBOARD */
+.sboard{background:#0E2818;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;border-bottom:4px solid var(--gold)}
+.sb-t{text-align:center;min-width:7rem}
+.sb-t .nat{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:.3rem}
+.sb-t .sc{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F4EDE0;line-height:1;display:block}
+.sb-t .sc small{font-size:1.1rem;font-weight:400;color:#5A5838}
+.sb-t .ov{font-family:'Barlow',sans-serif;font-size:.58rem;font-weight:300;color:#3A4228;display:block;margin-top:.22rem}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;letter-spacing:.18em;color:#2A3820;font-weight:700;text-transform:uppercase}
+.sb-vrd{flex:1;font-family:'Spectral',serif;font-style:italic;color:#6A7A60;font-size:.9rem;line-height:1.65;border-left:1px solid #1A2C18;padding-left:1.5rem}
+.sb-vrd b{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:.25rem}
+
+/* BODY */
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4.5rem;display:grid;grid-template-columns:1fr 278px;gap:4rem;align-items:start}
+
+/* PROSE */
+.prose p{font-family:'Spectral',serif;font-size:1.04rem;line-height:1.93;color:var(--ink-soft);margin-bottom:1.45rem}
+.prose>p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:5.2rem;font-weight:900;float:left;line-height:.77;margin-right:.1em;margin-top:.08em;color:var(--green)}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.48rem;font-weight:700;color:var(--ink);line-height:1.28;margin:2.8rem 0 .9rem;padding-top:2.2rem;border-top:2px solid var(--rule)}
+.prose h2 em{color:var(--green-mid);font-style:italic}
+.prose-rule{border:none;border-top:3px double var(--rule-dk);margin:2.5rem 0}
+
+/* PULL QUOTE */
+.pq{margin:2.6rem 0;padding:1.5rem 1.8rem;background:var(--green-pale);border-left:4px solid var(--green-lt)}
+.pq blockquote{font-family:'Playfair Display',serif;font-size:1.38rem;font-weight:700;font-style:italic;line-height:1.46;color:var(--green);margin-bottom:.55rem}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green-lt);font-style:normal}
+
+/* SCORECARD */
+.scbox{background:#081C10;margin:2.5rem 0;overflow:hidden}
+.scbox-hd{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.5rem;border-bottom:1px solid #102418}
+.scbox-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt)}
+.scbox-hd span{font-family:'Spectral',serif;font-style:italic;font-size:.84rem;color:#485A40}
+.sc-row{display:grid;grid-template-columns:1.5rem 1fr auto auto;gap:.6rem 1rem;padding:.65rem 1.5rem;border-bottom:1px solid #0C1C0C;align-items:baseline}
+.sc-row.hdr{background:#060E08}
+.sc-row.hdr *{font-family:'Barlow Condensed',sans-serif!important;font-size:.5rem!important;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#283A20!important}
+.sc-num{font-family:'Barlow',sans-serif;font-size:.58rem;color:#283A20;font-weight:300}
+.sc-bat{font-family:'Spectral',serif;font-size:.91rem;color:#C0D0B8;line-height:1.3}
+.sc-bat em{font-style:normal;font-size:.75rem;color:#486040;display:block}
+.sc-r{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);text-align:right}
+.sc-r.hi{color:#ECC858}
+.sc-b{font-family:'Barlow',sans-serif;font-size:.64rem;font-weight:300;color:#304028;text-align:right}
+.sc-foot{padding:.72rem 1.5rem;border-top:1px solid #102418;display:flex;justify-content:space-between}
+.sc-foot span{font-family:'Barlow',sans-serif;font-size:.62rem;color:#3A4C30}
+.sc-foot b{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#EAE4D4}
+
+/* FALL OF WICKETS */
+.fow{margin:2.5rem 0}
+.fow-hd{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:.7rem;border-bottom:1px solid var(--rule)}
+.fow-row{display:grid;grid-template-columns:5rem 1fr;gap:.85rem;padding:.65rem 0;border-bottom:1px dashed var(--rule);align-items:start}
+.fow-row:last-child{border-bottom:none}
+.fow-sc{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:800;letter-spacing:.03em;color:var(--green-lt)}
+.fow-txt{font-family:'Spectral',serif;font-size:.91rem;color:var(--ink-soft);line-height:1.52}
+.fow-txt b{color:var(--ink);font-weight:600}
+.fow-txt em{font-style:italic;color:var(--ink-ghost);font-size:.85rem}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:1.8rem}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden}
+.sbox-hd{padding:.55rem 1rem;font-family:'Barlow Condensed',sans-serif;font-size:.57rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.sbox-hd.gr{background:var(--green);color:var(--gold-lt)}
+.sbox-hd.dk{background:var(--ink);color:var(--gold-lt)}
+.sbox-hd.nv{background:var(--navy);color:#C0D0F0}
+.sbox-body{padding:.8rem 1rem;background:var(--warm)}
+.sbox-body ul{list-style:none}
+.sbox-body li{font-family:'Spectral',serif;font-size:.89rem;color:var(--ink-soft);padding:.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:.5rem;align-items:baseline;line-height:1.35}
+.sbox-body li:last-child{border-bottom:none}
+.sbox-body li .lb{font-family:'Barlow',sans-serif;font-size:.57rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right}
+.big-fig{text-align:center;padding:1.1rem 1rem;background:var(--warm)}
+.big-fig .num{font-family:'Playfair Display',serif;font-size:3.4rem;font-weight:900;line-height:1;display:block;margin-bottom:.35rem}
+.big-fig .num.gr{color:var(--green)}
+.big-fig .desc{font-family:'Spectral',serif;font-style:italic;font-size:.84rem;color:var(--ink-soft);line-height:1.5}
+.snote{padding:.85rem 1rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--warm);margin-bottom:1.8rem}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:.35rem}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* FOOTER */
+footer{background:var(--green);border-top:4px double var(--gold-lt);padding:2.2rem 2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#284030;margin-top:2rem}
+footer span{color:var(--gold-lt)}
+
+@media(max-width:700px){
+  .mh-inner{grid-template-columns:1fr;text-align:center}.mh-side{display:none}
+  .body-wrap{grid-template-columns:1fr;gap:2rem}.sidebar{position:static}
+  .sboard{flex-direction:column;text-align:center}.sb-vrd{border-left:none;padding-left:0;border-top:1px solid #1A2C18;padding-top:.8rem}
+  .by-date{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <div class="mh-inner">
+      <div class="mh-side"><b>World Cup 2019</b>ICC Cricket World Cup · Match 41 · Final Group Game</div>
+      <div><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="mh-side right"><b>3 July 2019</b>Riverside Ground, Chester-le-Street</div>
+    </div>
+  </div>
+  <div class="match-strip">
+    <span class="ms-tag">England vs New Zealand</span>
+    <span class="ms-ven">Riverside Ground, Chester-le-Street · ICC Cricket World Cup 2019 · Match 41</span>
+    <span class="ms-res">England won by 119 runs</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="kicker">Match Report · Final Group Stage Game · Semi-finals Secured</div>
+  <h1 class="hl"><em>Twenty-Seven Years</em> of Waiting End at Chester-le-Street: England Are in the Semi-Finals</h1>
+  <p class="deck">It was not the most stylish qualification. England's batting collapsed from 194 for one in the thirty-first over to 305 for eight in the fiftieth, the middle order ceding the promise of 360 in a collective passage of missed opportunities that the coaching staff would examine with some care in the days that followed. But in cricket, as in most competitive endeavours, the winning matters more than the manner, and by the time Mark Wood's final over had removed New Zealand's last two batsmen at Riverside Ground on a sunny Durham afternoon, England had won by 119 runs and qualified for their first World Cup semi-final since 1992. Twenty-seven years. One afternoon in Chester-le-Street. Jonny Bairstow, for the second consecutive match in four days, had scored a century. It was, if not entirely graceful in its totality, entirely sufficient.</p>
+  <div class="byline-bar">
+    <span>By <strong>Muhammad Hamza</strong></span>
+    <span>Cricket Correspondent · The Pitch Report</span>
+    <span>Riverside Ground, Chester-le-Street</span>
+    <span class="by-date">3 July 2019</span>
+  </div>
+</div>
+
+<div class="sboard">
+  <div class="sb-t"><span class="nat">England</span><span class="sc">305<small>/8</small></span><span class="ov">50 overs · batting first</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-t"><span class="nat">New Zealand</span><span class="sc">186<small> ao</small></span><span class="ov">44.5 overs · chasing 306</span></div>
+  <div class="sb-vrd"><b>Result · England won by 119 runs · Semi-finals confirmed</b>MOM: Bairstow 106 (99) · Roy 60 (61)<br>Wood 3/34 · Latham 57 · Williamson run out 27</div>
+</div>
+
+<div class="body-wrap">
+<article class="prose">
+
+<p>There is a particular quality to the anxiety that precedes a must-win cricket match — not the free-floating dread of a side that might lose, but the very specific, focused, clenching apprehension of a side that knows it must win and has been told, by statisticians and commentators and its own internal accounting, exactly what happens if it does not. England had arrived at Riverside Ground on the third of July 2019 having won three of their last four matches — West Indies, Bangladesh, India — and had done so with the escalating authority of a side that had rediscovered, somewhere between Southampton and Edgbaston, the batting ferocity that had made them the world's number one ranked one-day team for the previous two years. But a defeat here, to a New Zealand team that had beaten Sri Lanka and Bangladesh and had a run-rate buffer that made Pakistan's qualification hopes dependent on what happened in Durham, would leave England's destiny in other hands. Morgan needed to win. England needed to win. Twenty-seven years of semi-final absence needed the afternoon to produce a specific result.</p>
+
+<p>It produced one. Morgan won the toss on a pitch that offered the batsman a true and even bounce in the morning and would, as the day progressed, become progressively slower — a pitch, in other words, on which the side batting first would have the better of conditions and the side batting second would face the double challenge of a decelerating surface and a reasonable target. New Zealand were without Lockie Ferguson, their most consistently rapid bowler, who had suffered a hamstring strain that ruled him out of the match and would, in retrospect, prove significant in the context of the chase's later collapse. Tim Southee, returning to the tournament after injury, was playing his first match of the competition. The black-and-white balance of preparation and circumstance, on this particular morning, tilted England's way. What remained was the question of whether their batting, which had been magnificent in patches and disappointingly inconsistent in others through the group stage, would produce the innings the occasion required.</p>
+
+<h2>Bairstow and Roy: <em>The Third Consecutive Opening Partnership of Quality</em></h2>
+
+<p>Jonny Bairstow's World Cup campaign had, by the third of July, acquired its own internal logic of excellence. His 111 against India four days earlier had been the innings of a batsman in the fullest available form — the power, the timing, the reading of the bowler's wrist position with the pre-cognitive accuracy of a man who has been doing this particular thing for long enough that it requires no conscious calculation. His century here, at Chester-le-Street, was not quite the same innings. It was, in several technical respects, the quieter of the two — built on a slightly longer runway, less spectacularly violent in its individual strokes, missing the six-hitting frequency that had made the Edgbaston innings so comprehensively destructive of India's spinners. But it was, in the context of the day's requirement, every bit as important: an innings that anchored England's total, established the platform from which the middle order could build, and confirmed that Bairstow was, in the summer of 2019, the best-performing batsman in international one-day cricket regardless of team.</p>
+
+<p>He and Roy opened, once again, as they had done against India, with the resumption of a partnership whose chemistry is built on the productive tension between Roy's organised aggression and Bairstow's controlled authority. Roy is the batsman who arrives at the crease already committed to scoring quickly, who treats the first ball of a World Cup match with the same front-foot intent that he would bring to a bilateral series in January. Bairstow is the batsman who arrives with the full architecture of an innings already constructed in his mind — the first ten overs to be navigated, the middle phase to be managed, the acceleration to be triggered at the precisely calculated moment when the field is spread and the bowling is tiring. Together, in this World Cup, they had produced stands of 160 against India and now 123 against New Zealand, partnerships that gave England their best days at this tournament and that confirmed, as conclusively as empirical evidence can confirm anything, that the opening combination was the correct one.</p>
+
+<p>Roy made 60 from 61 balls, which was, by his most explosive standards, a measured innings — the pitch's slower quality evident in the slightly reduced rate at which he was able to time the ball, the pull shot finding the boundary with rather less frequency than it had at Edgbaston. He was eventually dismissed by James Neesham, who had been bowling with more movement than the pitch's docile appearance implied, and England were 123 for one in the nineteenth over with the platform established and Bairstow, already on 55, batting with the settled authority of a man who had been at the crease long enough for the pitch to feel entirely familiar.</p>
+
+<p>Bairstow reached his century from 95 balls — his ninth ODI hundred, his second in four days, the first time an Englishman had scored back-to-back centuries in a World Cup. He marked the milestone in the manner of a man who has been here before: the helmet came off, the arms were raised, the acknowledgement of the Chester-le-Street crowd was gracious and unhurried. The ground, which had been steadily warming to England's innings throughout the morning, produced a sound that had in it something beyond appreciation for a century: it had the quality of relief, the noise of people who have waited a long time for something and are suddenly being given a version of it.</p>
+
+<div class="pq">
+  <blockquote>"Jonny has been the form batter of the tournament. His back-to-back hundreds have been the foundation of our qualification campaign. Without those two innings, we don't go through."</blockquote>
+  <cite>Eoin Morgan, England captain, post-match press conference, Chester-le-Street</cite>
+</div>
+
+<h2>The Middle-Order <em>Fragility</em>: England's One Persistent Flaw</h2>
+
+<p>What happened to England between the twenty-second and the forty-ninth over was the tournament's most persistent subplot rendered in its fullest version. England had, through the group stage, demonstrated an extraordinary ability to lose four wickets in rapid succession at precisely the moment their innings ought to have been consolidating toward 350 and beyond. Against South Africa they had wobbled. Against Pakistan the top order had collapsed and only Root and Buttler had sustained the chase. Here, against a New Zealand bowling attack that was disciplined and well-captained by Williamson but not, in objective terms, the most threatening seam attack in the tournament, England lost four wickets for 62 runs in a passage of play that reduced the innings from 194 for one to 248 for five and denied them the 350-plus that the opening partnership's quality had made entirely possible.</p>
+
+<p>Root was the first to go, caught off Neesham for a compact 24 that had been primarily an innings of accumulation rather than extension. He had arrived at a position where both he and England needed a forty-over innings, a three-figure score that would take the total from good to imposing, and instead had perished to a ball that deserved a miss and received an edge. Bairstow, tied down by the growing accuracy of Trent Boult — who was, on this particular surface, finding the kind of swing and nip that made him, in his own words, one of the best death-overs bowlers in the tournament — was caught by Boult at the boundary off the same bowler's second spell for 106, a dismissal that was slightly unlucky in the sense that Bairstow appeared to have hit the ball well enough for it to clear the rope, but that Boult, with the reflexive athleticism of a cricketer who has been fielding his own bowling for fifteen years, leapt and took with his fingertips.</p>
+
+<p>Buttler came and made eleven. Stokes, who was, across this tournament, the second-highest run-scorer in the England XI and whose ability to accelerate an innings in the final overs was England's most dangerous weapon, arrived and made eleven also — dismissed by Mitchell Santner, the left-arm spinner who had replaced the absent Ferguson in the New Zealand attack and who had managed, against most expectations, to bowl ten economical overs on a pitch that offered more help to pace than spin. Morgan made 42 from 40 balls, which was a contribution of pragmatic usefulness — cuts and drives, a measured approach that kept the required rate honest — before Neesham found his outside edge and Root took the catch at mid-on with the ease of a fielder who has been waiting in that precise spot for that precise shot for the better part of an over.</p>
+
+<p>England ended at 305 for eight — a total that, on the pitch they were playing on and against an attack that had been more troublesome in the second half of the innings than the first, was adequate and probably sufficient, but that left a lingering sense of opportunity foregone. The pitch was slowing. New Zealand would face it in its most difficult configuration — evening conditions, variable bounce, a surface that rewarded accuracy and punished the aerial shot. Three hundred and five was a real target on this ground on this day. It was not, however, the statement England's batting depth ought to have been capable of producing.</p>
+
+<div class="scbox">
+  <div class="scbox-hd"><h3>England Batting — 305 / 8 in 50 overs</h3><span>Won toss, elected to bat</span></div>
+  <div class="sc-row hdr"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+  <div class="sc-row"><span class="sc-num">1</span><span class="sc-bat">JJ Roy<em>c Henry b Neesham</em></span><span class="sc-r">60</span><span class="sc-b">61</span></div>
+  <div class="sc-row"><span class="sc-num">2</span><span class="sc-bat">JM Bairstow<em>c &amp; b Boult</em></span><span class="sc-r hi">106</span><span class="sc-b">99</span></div>
+  <div class="sc-row"><span class="sc-num">3</span><span class="sc-bat">JE Root<em>c Nicholls b Neesham</em></span><span class="sc-r">24</span><span class="sc-b">30</span></div>
+  <div class="sc-row"><span class="sc-num">4</span><span class="sc-bat">EJG Morgan (c)<em>c Latham b Neesham</em></span><span class="sc-r">42</span><span class="sc-b">40</span></div>
+  <div class="sc-row"><span class="sc-num">5</span><span class="sc-bat">BA Stokes<em>b Santner</em></span><span class="sc-r">11</span><span class="sc-b">16</span></div>
+  <div class="sc-row"><span class="sc-num">6</span><span class="sc-bat">JC Buttler (wk)<em>c Taylor b Boult</em></span><span class="sc-r">11</span><span class="sc-b">16</span></div>
+  <div class="sc-row"><span class="sc-num">7</span><span class="sc-bat">CR Woakes<em>c Guptill b Henry</em></span><span class="sc-r">18</span><span class="sc-b">24</span></div>
+  <div class="sc-row"><span class="sc-num">8</span><span class="sc-bat">LE Plunkett<em>c Taylor b Henry</em></span><span class="sc-r">14</span><span class="sc-b">12</span></div>
+  <div class="sc-row"><span class="sc-num">9</span><span class="sc-bat">JC Archer<em>not out</em></span><span class="sc-r">17</span><span class="sc-b">11</span></div>
+  <div class="sc-row"><span class="sc-num">10</span><span class="sc-bat">AU Rashid<em>not out</em></span><span class="sc-r">8</span><span class="sc-b">6</span></div>
+  <div class="sc-foot"><span>Boult 2/42 · Henry 2/54 · Neesham 2/41 · Santner 1/40</span><b>305 / 8</b></div>
+</div>
+
+<h2>New Zealand's Chase: <em>Run-Outs, Collapses and Latham's Dignity</em></h2>
+
+<p>New Zealand's reply began with the particular combination of individual misfortune and collective frailty that had come to characterise their batting in the second half of the group stage. They had, through the tournament's early rounds, been a side of disciplined proficiency — conservative in their accumulation, dependent perhaps too heavily on Williamson's genius in the middle order, but functionally cohesive in a way that made them harder to beat than their batting statistics alone might suggest. By the third of July, however, three consecutive defeats — to Pakistan, Australia, and now England — had given the Black Caps' batting a slightly hollow quality, a sense that the individual components were present but that the collective mechanism had, somewhere in the tournament's journey, developed a fault.</p>
+
+<p>England's bowling, from the first ball of the New Zealand innings, was of a different quality to their batting in the latter part of the match. Archer was fast and accurate, his first over producing the kind of tight, controlled delivery that sets a tone — two tight deliveries outside off stump followed by a full ball that Guptill drove hard to point, the fielder moving with the sharp, low trajectory of a cricketer who has been placed there by a captain who knows what he is doing. Woakes found movement off the surface in conditions that had changed significantly from the morning's batting-friendly ease, the ball keeping lower in the fifteenth over than New Zealand's openers had been prepared for.</p>
+
+<p>It was the run-outs, though, that disrupted New Zealand's chase most decisively. Williamson's dismissal — run out for 27 in circumstances that had the quality of an unlucky accident rather than a misread — was the match's pivot. He had driven Taylor hard back down the track and the ball had deflected off the tip of Mark Wood's right hand, travelling a foot or two to the left before striking the stumps at the bowler's end with Williamson, backing up, fully a yard outside his crease. It was, as these dismissals tend to be when they happen to batsmen of Williamson's quality, the kind of event that changes the entire emotional register of a match: not merely a wicket but the removal of the one man capable of constructing a chase, the one batsman in New Zealand's lineup who had the technical authority and the temperament to take the Black Caps from 68 for 3 to the middle of a contest.</p>
+
+<p>Williamson was gone. New Zealand were 68 for three. And the match, in the way that matches sometimes settle their own results before the final wickets have fallen, was effectively over. Taylor was run out in the following over — a risky second run converted into an even riskier attempt to beat the fielder's throw, and lost. He was the second New Zealand batsman dismissed by the running between wickets in the space of two overs, and the juxtaposition of the two departures — Williamson's unlucky, Taylor's avoidable — created the impression of a batting side whose composure had, in the crisis, fractured along its most predictable lines.</p>
+
+<div class="fow">
+  <div class="fow-hd">New Zealand Fall of Wickets — Chasing 306</div>
+  <div class="fow-row"><span class="fow-sc">24–1</span><span class="fow-txt"><b>Guptill c Buttler b Archer 19.</b> <em>Archer finds a hint of away movement off the pitch. Edge to the keeper. England's best bowler immediately strikes.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">55–2</span><span class="fow-txt"><b>Nicholls c Plunkett b Woakes 8.</b> <em>Lower delivery than expected. Woakes finds the edge with a good-length ball that stayed low. NZ two down inside 15 overs.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">68–3</span><span class="fow-txt"><b>Williamson run out (Wood deflection) 27.</b> <em>The decisive wicket. A hard drive back at Wood clips the bowler's fingertip and ricochets into the stumps. Williamson, backing up, is yards short. The game's result settled in a moment of pure chance.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">70–4</span><span class="fow-txt"><b>Taylor run out (direct hit) 1.</b> <em>Attempted second run. Direct hit from midwicket. Two run-outs in two overs. New Zealand 70 for 4, needing 236 from 35 overs.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">118–5</span><span class="fow-txt"><b>Neesham c Root b Plunkett 19.</b> <em>Plunkett's slower ball. Mistimed loft to mid-on. Root takes the catch. The Latham–Neesham stand of 48 ends.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">126–6</span><span class="fow-txt"><b>Santner c b Rashid 12.</b> <em>Rashid's leg-spin producing the first real turn of the day. Stumped. NZ accelerators all gone.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">152–7</span><span class="fow-txt"><b>Latham c Buttler b Plunkett 57.</b> <em>The top scorer departs. Tickle behind off Plunkett's slower ball. New Zealand's resistance ended by the man who had provided all of it.</em></span></div>
+  <div class="fow-row"><span class="fow-sc">175–8/9/10</span><span class="fow-txt"><b>de Grandhomme b Stokes · Henry &amp; Boult b Wood.</b> <em>Wood cleans up. NZ all out 186 in 44.5 overs. England win by 119 runs. Semi-finals confirmed.</em></span></div>
+</div>
+
+<p>The partnership between Latham and Neesham — 48 for the fifth wicket from 49 balls, a stand that represented New Zealand's most sustained batting of the chase — was notable primarily for the quality of the cricket it produced within the context of an already settled result. Latham is a batsman whose compact, left-handed technique extracts more pace from the ball than his physical frame suggests he should be able to, and here — arriving at the crease with the game's result a foregone conclusion and the only available motivation being personal pride and team morale — he batted with the concentration of a man who takes seriously the responsibility of being a senior batsman regardless of the scoreboard's verdict. His 57 from 65 balls included seven boundaries, most of them through the off side, and was watched by the Chester-le-Street crowd with the particular generous appreciation that crowds extend to good batting by the losing side when their own team has already won the match.</p>
+
+<p>Neesham, more aggressive in his approach, made nineteen before Plunkett's slower ball found the outside edge of his attempted loft and was caught by Root at mid-on. Santner edged Rashid behind for twelve. de Grandhomme, who had provided New Zealand with their most valuable lower-order contributions throughout the tournament, was bowled first ball by Stokes for a duck — a yorker-length delivery that bent back into him from outside off stump. Latham was caught behind off Plunkett for 57 — a tickle down to Buttler that ended the innings's one extended period of dignity. Wood removed Henry and Boult in the final over, the first through the gate, the second via a leading edge that Plunkett collected gratefully at mid-off, and the match was done. New Zealand were all out for 186 in the forty-fifth over. England had won by 119 runs.</p>
+
+<h2>Wood's Three Wickets and the <em>Collective Discipline</em> of England's Bowling</h2>
+
+<p>England's bowling in this match deserves its own careful examination — not because it produced the spectacular individual moments that Archer's Edgbaston spell or Plunkett's late bursts sometimes generate, but because it was, as a collective performance across forty-five overs, among the most disciplined England had bowled in the tournament. The key to understanding it is the pitch: a surface that had flattened and slowed significantly from the morning's batting conditions, offering the accurate seam bowler a variable bounce that made the pull shot unreliable and the cut shot a risk rather than a certainty.</p>
+
+<p>Mark Wood was the beneficiary and the chief instrument of this collective discipline. His three wickets for 34 runs from nine overs included the run-out of Williamson — in which his fielding at the bowler's end was the crucial element — and the dismissals of Neesham and Boult at the end, and were produced at a pace that had not, on this ground, been encountered since Archer's spell against South Africa in the opening match. Wood's fastest delivery was measured at 93 miles per hour, and the contrast between his pace and the pitch's slowness was exploited with the tactical intelligence of a bowler who understood that generating surprise pace off a slow surface is worth more, in terms of unsettling batsmen, than generating ordinary pace off a quick one. Neesham's mistimed loft — the shot of a man who had read the pace of the ball incorrectly — was the product of Wood's ability to disguise his delivery length until the moment of release.</p>
+
+<p>Plunkett's three wickets — Nicholls, Latham, Santner — were produced from the seam bowler's entirely different mode: variations of pace, cutters that moved across the surface rather than through the air, the mid-innings accuracy that had made him England's most reliable middle-overs operator throughout the tournament. His spell between overs twenty-five and thirty-five was the period in which New Zealand's chase was definitively strangled: six overs for twenty-two runs and two wickets, in a phase of the game where the required rate was climbing beyond nine an over and the Black Caps could not find the boundary with the frequency the mathematics demanded. Archer, tight and hostile in the powerplay, had set the tone. Plunkett and Wood had maintained it. Stokes and Rashid had completed it. It was, collectively, England's best bowling performance in the tournament.</p>
+
+<h2>Twenty-Seven Years: <em>The Weight of the Qualification</em></h2>
+
+<p>England had not reached a World Cup semi-final since 1992. The specific weight of that number — twenty-seven years — had been present in the tournament's conversation since the draw was made, referenced in every pre-match analysis, every preview article, every broadcast introduction. For the players who had spent three and four and five years building toward this moment under Morgan's project, the qualification carried a significance that was simultaneously personal and historical: personal because each of them had invested years of the difficult, unrewarded labour of rebuilding a batting philosophy and an attacking identity that English one-day cricket had previously lacked; historical because the twenty-seven years represented a specific, generational absence from the sport's most important stage that their predecessors had, in various ways, failed to end.</p>
+
+<p>The victory celebration at Chester-le-Street was, characteristically of a Morgan-era England team, measured rather than ecstatic. The players did not throw their helmets into the air or sprint to embrace each other in the manner of teams that have been surprised by their own success. They acknowledged the crowd, shook hands with the New Zealanders — who had themselves, in their three-match end-of-tournament collapse, experienced the specific misery of a side that knows it is capable of more than the scoreboard is permitting — and began the process of preparing, almost immediately, for what came next. Morgan, at the post-match press conference, was his usual combination of articulate and unsentimental: the twenty-seven years had ended, the qualification had been secured, and the semi-final against Australia at Edgbaston was ten days away. There was, he implied, no time for extended celebration.</p>
+
+<p>But the crowd at Chester-le-Street, which had been engaged and vocal throughout and which had received the run-out of Williamson with the sound of people who recognise a decisive moment, stayed after the presentations to acknowledge it. England in a semi-final. Bairstow with consecutive centuries. Wood with three wickets on his home ground in Durham. The sun was shining over the Riverside for the first time since the tournament's opening week. It was not the most dramatic day of England's group campaign — that had been Edgbaston, four days earlier — but it was the most consequential. They were through. After twenty-seven years, they were through.</p>
+
+<hr class="prose-rule">
+
+<p>Chester-le-Street will not be remembered with the same emotional charge as Edgbaston in this campaign or as Headingley in the Ashes that would follow six weeks later. It will not be the match that people describe in detail decades from now when they are explaining what the summer of 2019 meant to English cricket. It will be remembered, instead, as the match where the qualification was confirmed — the match that made possible everything that came after, the match that gave England the right to play at Edgbaston again ten days later, the match where Jonny Bairstow completed his back-to-back centuries and Mark Wood took three wickets in front of his home crowd and England, for the first time since the party of 1992, booked their place in a World Cup semi-final. Sometimes the unremarkable match is the necessary one. Sometimes what matters is not how you get there, but that you get there at all.</p>
+
+</article>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sbox">
+    <div class="sbox-hd dk">Match Summary</div>
+    <div class="sbox-body"><ul>
+      <li><span class="lb">Venue</span><strong>Riverside, Chester-le-St.</strong></li>
+      <li><span class="lb">Date</span><strong>3 July 2019</strong></li>
+      <li><span class="lb">Toss</span><strong>England — elected to bat</strong></li>
+      <li><span class="lb">England</span><strong>305/8 (50 overs)</strong></li>
+      <li><span class="lb">New Zealand</span><strong>186 ao (44.5 overs)</strong></li>
+      <li><span class="lb">Result</span><strong>England won — 119 runs</strong></li>
+      <li><span class="lb">MOM</span><strong>JM Bairstow 106 (99)</strong></li>
+    </ul></div>
+  </div>
+  <div class="sbox">
+    <div class="sbox-hd gr">Bairstow — Back-to-Back Centuries</div>
+    <div class="big-fig">
+      <span class="num gr">2</span>
+      <span class="desc">consecutive World Cup hundreds — 111 vs India (Edgbaston, 30 June) then 106 vs NZ (Chester-le-Street, 3 July). First Englishman to achieve this in a World Cup.</span>
+    </div>
+  </div>
+  <div class="sbox">
+    <div class="sbox-hd gr">Opening Stand</div>
+    <div class="big-fig">
+      <span class="num gr">123</span>
+      <span class="desc">Roy (60) and Bairstow (106) — century opening stand for the second consecutive match. The bedrock of England's group-stage campaign.</span>
+    </div>
+  </div>
+  <div class="sbox">
+    <div class="sbox-hd gr">England Bowling</div>
+    <div class="sbox-body"><ul>
+      <li><span class="lb">Wood</span><strong>3/34 (9 overs) + run out</strong></li>
+      <li><span class="lb">Plunkett</span><strong>3/42 (10 overs)</strong></li>
+      <li><span class="lb">Archer</span><strong>1/40 (8.5 overs)</strong></li>
+      <li><span class="lb">Stokes</span><strong>1/10 (5 overs)</strong></li>
+      <li><span class="lb">Rashid</span><strong>1/28 (8 overs)</strong></li>
+    </ul></div>
+  </div>
+  <div class="sbox">
+    <div class="sbox-hd gr">NZ's Fatal Run-Outs</div>
+    <div class="sbox-body"><ul>
+      <li><span class="lb">Williamson</span><strong>run out 27 (Wood deflection)</strong></li>
+      <li><span class="lb">Taylor</span><strong>run out 1 (avoidable)</strong></li>
+      <li><span class="lb">Score when dismissed</span><strong>68 for 3 &amp; 70 for 4</strong></li>
+      <li><span class="lb">Impact</span><strong>236 needed off 35 overs — 4 down</strong></li>
+    </ul></div>
+  </div>
+  <div class="sbox">
+    <div class="sbox-hd nv">Historic Context</div>
+    <div class="sbox-body"><ul>
+      <li><span class="lb">Last WC semi</span><strong>1992 — 27 years prior</strong></li>
+      <li><span class="lb">Next match</span><strong>Semi-final vs Australia</strong></li>
+      <li><span class="lb">Venue</span><strong>Edgbaston, 11 July</strong></li>
+      <li><span class="lb">NZ's run</span><strong>3rd consecutive defeat</strong></li>
+      <li><span class="lb">England's points</span><strong>12 pts — 3rd in table</strong></li>
+    </ul></div>
+  </div>
+  <p class="snote"><p>"England stormed into the semi-finals for the first time since 1992 after Jonny Bairstow's second successive century helped them secure a comprehensive 119-run win."</p><cite>Outlook India, Chester-le-Street, 3 July 2019</cite></p>
+  <p class="snote"><p>"This was not quite how England had dreamed of making the World Cup semi-finals — falling away after a fast start — but Morgan's men could not have cared less."</p><cite>ESPNcricinfo match report, Daniel Brettig, 3 July 2019</cite></p>
+</aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  Match Report by <span>Muhammad Hamza</span> · Cricket Correspondent<br>
+  ICC Cricket World Cup 2019 · Match 41 · Riverside Ground, Chester-le-Street · 3 July 2019<br>
+  England 305/8 defeated New Zealand 186 by 119 runs · Semi-finals confirmed
+</footer>
+</body>
+</html>
