@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs West Indies, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#FAF5EE;--paper-warm:#F2EAE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--maroon:#6B0F1A;--maroon-mid:#8B1220;--maroon-lt:#B01828;--maroon-pale:#F5E8EA;
+  --gold:#9B7C20;--gold-lt:#C4A040;--teal:#0D5C63;--teal-lt:#117A84;--teal-pale:#E0F2F4;
+}
+html{font-size:18px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:var(--maroon);border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.012) 2px,rgba(255,255,255,0.012) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left{display:flex;flex-direction:column;gap:0.3rem;}
+.np-header-left .edition-tag{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.np-header-left .date-line{font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:rgba(255,255,255,0.45);letter-spacing:0.04em;}
+.masthead-title{text-align:center;}
+.masthead-title .pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.masthead-title .pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.np-header-right{text-align:right;display:flex;flex-direction:column;gap:0.3rem;align-items:flex-end;}
+.np-header-right .price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lt);}
+.np-header-right .issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.section-strip .sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.section-strip .breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;font-weight:400;color:#6A6258;letter-spacing:0.06em;}
+.section-strip .breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 0;border-bottom:3px double var(--rule-dark);padding-bottom:2rem;}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--gold-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.4rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--teal);}
+.hl .accent{color:var(--maroon-lt);}
+.deck{font-family:'Spectral',serif;font-size:1.18rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--gold-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:var(--ink-ghost);letter-spacing:0.04em;}
+.scoreboard{background:var(--maroon);max-width:980px;margin:0 auto;padding:1.5rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.5rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.2rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:#6A6058;display:block;margin-top:0.25rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.9rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.5rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.05rem;line-height:1.92;color:var(--ink-mid);margin-bottom:1.45rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--maroon);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.3;margin:3rem 0 1rem;padding-top:2.5rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.5rem 0;}
+.pq{margin:2.8rem 0;padding:1.5rem 1.8rem;background:var(--teal-pale);border-left:4px solid var(--teal);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.45rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--teal)!important;margin-bottom:0.7rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.8rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.6rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.6rem 1fr auto auto;gap:0.8rem 1rem;padding:0.7rem 1.6rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.55rem!important;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.65rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.98rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.78rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.72rem;font-weight:300;color:#5A5448;text-align:right;min-width:3rem;}
+.bat-runs.highlight{color:#E8C060;}
+.innings-extras{padding:0.8rem 1.6rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.7rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.8rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.8rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.5rem 1fr;gap:1rem;padding:0.75rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:800;color:var(--maroon-lt);letter-spacing:0.03em;padding-top:0.05rem;}
+.tl-text{font-family:'Spectral',serif;font-size:0.95rem;color:var(--ink-soft);line-height:1.55;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.88rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:2rem;overflow:hidden;}
+.sbox-hd{background:var(--maroon);color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.65rem 1rem;}
+.sbox-body{padding:0.8rem 1rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);padding:0.45rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.6rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1.2rem 1rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:var(--maroon);line-height:1;display:block;margin-bottom:0.4rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.9rem 1rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:2rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.4rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:var(--maroon);border-top:4px double var(--gold-lt);padding:2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#5A2028;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition</span>
+        <span class="date-line">Friday, 14 June 2019 · The Rose Bowl, Southampton</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 19</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 19 <span>›</span> England vs West Indies</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 19 · The Rose Bowl, Southampton</span>
+  </div>
+  <h1 class="hl">
+    <em>Root's Hundred</em> and the<br>
+    <span class="accent">Pacers' Precision:</span> England<br>
+    Reclaim Their Authority
+  </h1>
+  <p class="deck">There is a particular satisfaction, for a team that has been beaten and questioned and required to defend itself in public, in producing — at the next available opportunity — a performance of such complete authority that the questions dissolve. England arrived at Southampton having lost to Pakistan at Trent Bridge, having survived the consequent crisis of confidence through the sheer force of collective conviction, and having been reminded, with the particular clarity that defeat provides, that the world's number one ranking is a position requiring constant defence rather than quiet maintenance. Against West Indies on a warm June afternoon at the Rose Bowl, they did what top teams do: they dismantled a good side in every department, with the casualness of men who had never doubted themselves, and won by eight wickets with 101 balls remaining.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="loc">The Rose Bowl, Southampton</span>
+    <span class="datestamp">14 June 2019</span>
+  </div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">West Indies</span>
+    <span class="total">212<small> ao</small></span>
+    <span class="overs">44.4 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">England</span>
+    <span class="total">213<small> / 2</small></span>
+    <span class="overs">33.1 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    England won by 8 wickets<br>
+    Root 100* · Wood 3–18 · Archer 3–30 · MOM: Root
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>West Indies had arrived at this tournament carrying within them something that their cricket has always carried — a capacity for extraordinary individual performances and an equal capacity for collective fragility, the twin legacies of a cricketing culture that produces batsmen of supernatural gift and bowling attacks of genuine pace but that has, for two decades, struggled to convert these individual excellences into sustained team achievement. At Southampton, they faced an England side that needed this match rather more than West Indies did — England's position in the tournament had become precarious after the Pakistan defeat, and the mathematical logic of the group stage was beginning to present them with fewer paths to the semi-finals than the pre-tournament narrative had assumed. Morgan won the toss and invited West Indies to bat. What followed, in the Southampton sunshine, was a controlled, technically precise demonstration of what England's bowling attack — and in particular the specific partnership between Jofra Archer and Mark Wood — was capable of when conditions and form aligned.</p>
+
+    <p>Evin Lewis lasted three deliveries. Chris Woakes, bowling from the pavilion end with the metronomic accuracy that has made him England's most reliable seam option in English conditions, pitched the third ball on a full length, straight and swinging in, and found Lewis's stumps with the clean, efficient finality of a bowler who does not need extravagance to dismiss good players. Four for one in the third over. The dismissal, in the context of a match that needed to proceed at England's pace rather than West Indies', was important not because Lewis was West Indies' best batsman but because it confirmed, from the very beginning, that the Southampton conditions were favouring the bowling side and that England's decision to field first had been calibrated correctly.</p>
+
+    <h2>Gayle and the Illusion of Control</h2>
+
+    <p>Chris Gayle is, in the lexicon of modern one-day cricket, a category unto himself — a left-handed batsman of such devastating boundary-hitting capacity that his presence at the crease, even at reduced powers, requires opponents to set fields and bowl lengths that accommodate the possibility of something extraordinary. He had, by the time he faced England at Southampton, passed his forty-third birthday and was clearly no longer the Chris Gayle of 2012 or 2015 — the Gayle who had rewritten the grammar of T20 batting and whose flat-bat destruction of the short ball remained, in the memory of those who had watched it, one of the purer expressions of batting violence the game had produced. But he was still Chris Gayle, and against a England attack that had demonstrated its vulnerability to wrist-spin and the short ball in previous fixtures, there remained the possibility — theoretical at least — that a settled Gayle innings might take the game in an unexpected direction.</p>
+
+    <p>He made 36 from 41 balls. The innings had its moments — a pulled four off Liam Plunkett that cleared midwicket with the familiar, elegant brutality of a man who has played this shot approximately ten thousand times and still finds it comfortable; a driven boundary off Archer that squared up on the off side with the timing of a batsman who still has the reflexes, if not always the acceleration, of his peak years. He was dismissed by Plunkett, caught by Bairstow at long leg, attempting to repeat the pull shot that had served him well earlier in the over. Bairstow, stationed deep and to the right, had a long time to compose himself under the ball and took the catch with the clean simplicity of a wicket-keeper accustomed to taking things above his head. Gayle walked off with the expression of a man who has come to terms, across many seasons and many continents, with the eventual completion of his innings. Fifty-four for two in the thirteenth over. West Indies were already in a position from which the only escape route was a sustained partnership of substance, and their batting order — formidably talented in its individual components — had a history of producing exactly such partnerships at exactly the wrong moments for their opponents, or failing to produce them precisely when they were needed most.</p>
+
+    <div class="pq">
+      <p>"Jofra and Mark bowled with real pace and intelligence. We knew the short ball might be an option against some of their middle order, and it worked beautifully."</p>
+      <cite>Joe Root, Man of the Match, post-match at Southampton</cite>
+    </div>
+
+    <h2>Archer and Wood: The Short Ball as an Art Form</h2>
+
+    <p>Jofra Archer had, in the days before this match, attracted a particular kind of attention that is specific to cricketers of Barbadian heritage playing against West Indian opposition — the question of allegiance, of identity, of what it means to face, in a World Cup group stage match, the country of your father and the cricketing culture of your formation. He had grown up in Barbados, had represented West Indies at Under-19 level, and had switched international allegiances upon acquiring British nationality. He bowled, in the ninth over of West Indies' innings, with the detachment of a man who has resolved this question to his own satisfaction and has decided that the appropriate response to philosophical inquiry is precise, controlled fast bowling at 90 miles per hour. His spell across the innings — three wickets for 30 runs from nine overs — was disciplined in a way that produced wickets not through luck or assistance from the conditions but through the specific, repeatable intelligence of a bowler who understood that this batting order, in these conditions, against this length, had particular vulnerabilities that could be targeted with patience and accuracy.</p>
+
+    <p>Mark Wood, operating at the other end, was the instrument of the most aggressive short-ball deployment of England's campaign. He dismissed Shai Hope — lbw off a full delivery that Hope was initially given not out on, England reviewing and discovering that the ball had been heading unambiguously to leg stump — and bowled Shannon Gabriel in the final over with a yorker that had the clean, precise geometry of a man who knows exactly where he wants the ball to land and consistently puts it there. His three wickets cost 18 runs from 6.4 overs, the best bowling figures of the match, and he celebrated the final wicket with the open-armed enthusiasm of a bowler for whom physical expression is as natural as the bowling action itself. It was Wood's fiftieth ODI wicket. The occasion was not wasted.</p>
+
+    <p>The most significant partnership West Indies produced was the fourth-wicket stand between Nicholas Pooran and Shimron Hetmyer — two young left-handers whose aggressive instincts and technical fluency had, across the early stages of this tournament, suggested that the next generation of Caribbean batting talent was arriving with more sophistication than some of their immediate predecessors. Hetmyer's 39 was an innings of considerable promise — there were two boundaries through the covers that had the clean, confident geometry of a batsman who has learned the correct path of the bat and follows it instinctively — before he miscued a straight drive back to Root, who pouched the return catch at shoulder height with the light-footed reflexes of a fielder who is always ready. Pooran lasted longer, making 63 from 78 balls — the most patient innings of the West Indies effort, an innings that placed reliability above his more natural instinct toward aggression, and which kept the total moving at something approaching par. He was dismissed by Archer for 63, caught behind by Buttler after a review — a thin edge on a ball that had climbed off the deck and angled across the left-hander, the spike on Snicko confirming what England had suspected. Two-twelve all out in 44.4 overs. It was, in the context of what England were expected to do with a bowling attack of this quality and a pitch offering this much, a below-par total.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>West Indies Batting — 1st Innings</h3>
+        <span class="innings-total">212 ao in 44.4 overs</span>
+      </div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">CH Gayle<em>c Bairstow b Plunkett</em></span><span class="bat-runs">36</span><span class="bat-balls">41</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">E Lewis<em>b Woakes</em></span><span class="bat-runs">2</span><span class="bat-balls">8</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">SD Hope<em>lbw b Wood</em></span><span class="bat-runs">11</span><span class="bat-balls">30</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">N Pooran<em>c †Buttler b Archer</em></span><span class="bat-runs">63</span><span class="bat-balls">78</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">SO Hetmyer<em>c &amp; b Root</em></span><span class="bat-runs">39</span><span class="bat-balls">48</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">JO Holder (c)<em>c &amp; b Root</em></span><span class="bat-runs">9</span><span class="bat-balls">10</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">AD Russell<em>c Woakes b Wood</em></span><span class="bat-runs">21</span><span class="bat-balls">16</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">CR Brathwaite<em>c †Buttler b Archer</em></span><span class="bat-runs">14</span><span class="bat-balls">22</span></div>
+      <div class="innings-row"><span class="bat-num">9</span><span class="bat-name">SS Cottrell<em>lbw b Archer</em></span><span class="bat-runs">0</span><span class="bat-balls">1</span></div>
+      <div class="innings-row"><span class="bat-num">10</span><span class="bat-name">ST Gabriel<em>b Wood</em></span><span class="bat-runs">0</span><span class="bat-balls">3</span></div>
+      <div class="innings-extras"><span>Extras: 17 (lb 5, w 12)</span><strong>212 ao</strong></div>
+    </div>
+
+    <h2>Root's Hundred Without Roy: The Understated Masterclass</h2>
+
+    <p>The chase of 213 would, under ordinary circumstances, have been the kind of task that England's top order could complete in their sleep — the sort of target that, against a bowling attack missing its most threatening component (Andre Russell, absent through injury), offered very little by way of genuine threat. The circumstances, however, were not entirely ordinary. Jason Roy, England's most destructive opener, had pulled a hamstring muscle while fielding in the West Indies innings and was deemed unable to bat in his customary position at the top of the order. Eoin Morgan, who had developed a back spasm of his own during the fielding session, would be unable to bat if required. England were, in the most literal sense, conducting their reply with a depleted order against a bowling attack that, while not the most dangerous in the tournament, possessed in Oshane Thomas and Shannon Gabriel the pace and aggression to make their absence felt.</p>
+
+    <p>Joe Root, one of the most naturally gifted batsmen of his generation and a player who had spent the majority of his one-day career batting at three rather than the top of the order, opened the innings with Bairstow with the undemonstrative authority of a batsman who has decided that the solution to whatever the problem might be is simply to bat well. He made 100 not out from 94 balls — an innings that contained all the qualities that make Root a peculiarly English kind of batting greatness: the classical technique, the placement rather than power, the wristy flick through midwicket that arrives from a position of stillness and sends the ball to the boundary with an economy of effort that invites admiration rather than excitement. He reached his century in the thirty-third over, batting with Stokes at the end, and raised his bat to the Southampton crowd with the quiet dignity of a batsman for whom the occasion was important but not overwhelming. It was his first one-day international century outside India — a fact that illuminated, without diminishing, the specific quality of what he had produced on this afternoon in Hampshire.</p>
+
+    <p>Bairstow contributed 45 before being caught at third man attempting an upper cut off Gabriel — a well-struck shot that found the fielder rather than the gap, as well-struck shots will sometimes do. Woakes, who had been promoted to three in Roy's absence, made 40 — a compact, reliable innings from a man accustomed to the lower middle order, batting with the measured intelligence of someone who understands that his role, in these circumstances, is to stay in rather than to score at the rate he might otherwise attempt. The partnership between Root and Woakes was worth 104 for the second wicket and, in its unhurried sufficiency, brought the match to the point at which the only question remaining was which ball would bring the winning run. It arrived from Stokes's bat — a pulled boundary off Gabriel in the thirty-third over — and England had won by eight wickets with seventeen overs remaining. The margin was emphatic. The performance was exactly what was required.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">West Indies — Fall of Wickets</div>
+      <div class="tl-item"><span class="tl-score">4</span><span class="tl-text"><span class="who">Lewis b Woakes 2.</span> <span class="note">Full, straight, rattled the stumps. Woakes immediately threatening. England up and running from ball three.</span></span></div>
+      <div class="tl-item"><span class="tl-score">54</span><span class="tl-text"><span class="who">Gayle c Bairstow b Plunkett 36.</span> <span class="note">Pull shot didn't clear long leg. Bairstow took it comfortably. The big wicket West Indies could least afford.</span></span></div>
+      <div class="tl-item"><span class="tl-score">55</span><span class="tl-text"><span class="who">Hope lbw b Wood 11.</span> <span class="note">Full ball, angling in. Not given on field; England reviewed; hitting leg stump. Sharp England review.</span></span></div>
+      <div class="tl-item"><span class="tl-score">144</span><span class="tl-text"><span class="who">Hetmyer c &amp; b Root 39.</span> <span class="note">Miscued straight drive, Root pouches the return catch. End of the most productive partnership.</span></span></div>
+      <div class="tl-item"><span class="tl-score">156</span><span class="tl-text"><span class="who">Holder c &amp; b Root 9.</span> <span class="note">Two for Root in two overs. Ball gripped, popped back up. Root's little celebration jig echoed Botham in 1992.</span></span></div>
+      <div class="tl-item"><span class="tl-score">202</span><span class="tl-text"><span class="who">Pooran c †Buttler b Archer 63.</span> <span class="note">Thin edge, caught behind after review confirmed spike on Snicko. Archer's key wicket.</span></span></div>
+      <div class="tl-item"><span class="tl-score">212</span><span class="tl-text"><span class="who">Gabriel b Wood 0. Innings closed at 212.</span> <span class="note">Inswinging yorker. Wood's 50th ODI wicket. England delighted. West Indies bowled out for 212.</span></span></div>
+    </div>
+
+    <h2>What England's Comprehensive Win Established</h2>
+
+    <p>The victory by eight wickets, with seventeen overs to spare, was England's most authoritative performance of the tournament to that point. It was also, and perhaps more importantly, a performance that restored the psychological equilibrium that the Pakistan defeat had threatened to disturb — the equilibrium of a team that knows it is good enough to win this tournament and needs, periodically, to be reminded of the evidence for that belief. Against West Indies, the evidence had been plentiful: Archer's controlled aggression with the new ball, Wood's short-ball exploitation of the middle order's vulnerability to the bouncer, Root's century in compromised circumstances, the general efficiency of a team that had done nothing extravagant but had executed everything required with the kind of competence that, in aggregated form, produces eight-wicket victories inside 34 overs.</p>
+
+    <p>West Indies, for their part, had shown enough to suggest that they were not without quality — Pooran's 63 was a technically accomplished innings from a batsman whose World Cup experience will serve him well across the next decade, and the pace of Gabriel and Thomas, though ineffective on this afternoon, retained the capacity to create problems for batsmen in more helpful conditions. But they had also shown the familiar fragility in their middle order — the tendency, after the loss of three early wickets, to lose two more in quick succession and allow the total to settle at a level insufficient for their bowling attack to defend. Two hundred and twelve was, against England's batting order in this form, never a competitive total. England had made it look, in the event, even less competitive than the mathematics suggested.</p>
+
+    <hr class="prose-rule">
+
+    <p>The subtext of the afternoon — Archer playing against the country of his upbringing, the crowd at Southampton divided between the Carnival atmosphere of West Indian support and the Union Jack flags of a home crowd recovering its confidence — gave the match a particular human texture that the purely cricketing narrative cannot quite contain. Archer bowled three wickets and spoke afterward with the careful poise of a man who has thought about the question of identity and arrived, through the thinking, at something approaching peace. England won, as they were always going to win once Woakes had removed Lewis in the third over, and moved on down the tournament's road with the renewed assurance of a team that has been reminded, on a warm June afternoon in Hampshire, of exactly what they are capable of when everything — conditions, form, preparation, the composition of the moment — falls into its proper place.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Venue</span><strong>The Rose Bowl, Southampton</strong></li>
+        <li><span class="lbl">Date</span><strong>14 June 2019</strong></li>
+        <li><span class="lbl">Toss</span><strong>ENG won, elected to field</strong></li>
+        <li><span class="lbl">West Indies</span><strong>212 ao (44.4 ov)</strong></li>
+        <li><span class="lbl">England</span><strong>213/2 (33.1 ov)</strong></li>
+        <li><span class="lbl">Result</span><strong>England won by 8 wkts</strong></li>
+        <li><span class="lbl">MOM</span><strong>Joe Root (100* &amp; 2/27)</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">Joe Root — All-Round Day</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Batting</span><strong>100* (94 balls)</strong></li>
+        <li><span class="lbl">Bowling</span><strong>2/27 (5 overs)</strong></li>
+        <li><span class="lbl">Catches</span><strong>2 (Hetmyer, Holder)</strong></li>
+        <li><span class="lbl">Opening</span><strong>95 partnership with Bairstow</strong></li>
+        <li><span class="lbl">Note</span><strong>Opened in Roy's absence (hamstring)</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">England Bowling</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Wood</span><strong>3/18 (6.4 ov) — 50th ODI wkt</strong></li>
+        <li><span class="lbl">Archer</span><strong>3/30 (9 ov)</strong></li>
+        <li><span class="lbl">Root</span><strong>2/27 (5 ov)</strong></li>
+        <li><span class="lbl">Plunkett</span><strong>1/30 (5 ov)</strong></li>
+        <li><span class="lbl">Woakes</span><strong>1/16 (5 ov)</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">Margin of Victory</div>
+      <div class="star-stat">
+        <span class="num">101</span>
+        <span class="desc">England won with 101 balls remaining — their most dominant run-chase of the tournament, a statement of recovered authority.</span>
+      </div>
+    </div>
+    <p class="snote">
+      <p>"Root was magnificent. He opened the batting without his regular partner, his captain couldn't bat — and he went out and made a hundred. That's leadership."</p>
+      <cite>Michael Atherton, Sky Sports commentary</cite>
+    </p>
+    <div class="sbox">
+      <div class="sbox-hd">West Indies Top Scorer</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Pooran</span><strong>63 (78 balls)</strong></li>
+        <li><span class="lbl">Hetmyer</span><strong>39 (48 balls)</strong></li>
+        <li><span class="lbl">Gayle</span><strong>36 (41 balls)</strong></li>
+        <li><span class="lbl">Russell</span><strong>21 (16 balls)</strong></li>
+        <li><span class="lbl">Note</span><strong>WI dismissed for 212 — below par</strong></li>
+      </ul></div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 19 · The Rose Bowl, Southampton · 14 June 2019<br>
+  England 213/2 defeated West Indies 212 by 8 wickets (101 balls remaining)
+</footer>
+</body>
+</html>
