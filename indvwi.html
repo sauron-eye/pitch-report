@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — India vs West Indies, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#6A1A1A;--fern-lt:#AA2222;--fern-pale:#F5E4E4;
+  --pq-bg:var(--fern-pale);--pq-border:var(--fern);--pq-color:var(--fern);
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#1A0A0A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#1A0A0A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#1A0A0A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#1A0A0A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#4A3A38;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Thursday, 27 June 2019 · Old Trafford, Manchester</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 34</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 34 <span>›</span> India vs West Indies</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 34 · Emirates Old Trafford, Manchester</span></div>
+  <h1 class="hl"><em>Shami's Fury</em> and the Quiet<br>Authority of <span class="accent">Kohli and Dhoni:</span><br>West Indies Eliminated by 125 Runs</h1>
+  <p class="deck">A team that needed to win and found themselves instead forty overs too early staring at a scoreboard that read one hundred and forty-three all out. West Indies required a victory at Old Trafford to sustain even the most improbable semi-final arithmetic; what they received instead was Mohammed Shami at his most destructive — four wickets for sixteen in six overs, the economy of a man who considers scoring runs against him a personal affront — and a batting collapse so comprehensive that Gayle, Hope, Pooran and Holder contributed between them fewer runs than Dhoni manufactured alone.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Emirates Old Trafford, Manchester</span><span class="datestamp">27 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">India</span><span class="total">268<small>/7</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">West Indies</span><span class="total">143<small> ao</small></span><span class="overs">34.2 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>India won by 125 runs · West Indies eliminated<br>Kohli 72 · Dhoni 56* · Shami 4/16 · MOM: Virat Kohli</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The slow tracks of Old Trafford have, across this World Cup, developed a particular reputation as surfaces that expose the gap between teams that can manage middle-order complexity and teams that cannot. England struggled here against Pakistan. India had been tested here against Afghanistan. And on a Thursday afternoon in late June, with West Indies already requiring a sequence of results that even their most committed supporters would have struggled to map with confidence, Old Trafford offered up another innings of the type it has been producing throughout this tournament: modest in early acceleration, reliant on lower-middle-order contribution, susceptible to the disciplined spinner. India's 268 for 7 was not, by the standards of what India are capable of on flat surfaces, a commanding total. It was, however, precisely enough — which is sometimes the only kind of enough that matters.</p>
+
+    <p>Virat Kohli won the toss and, reading the surface as one that would quicken as the day wore on, elected to bat. The decision was vindicated and then undermined and then vindicated again across fifty overs of the kind of batting that the critics of India's middle order had been waiting to assess. Rohit Sharma went early — lbw to Kemar Roach in an over of genuine hostility that established, in West Indies' minds if not yet in the match, that this would not be the procession that the points table's arithmetic had made it resemble. KL Rahul made forty-eight, taking India past their cautious powerplay to sixty for one, before Jason Holder — bowling with the disciplined control that makes him, on slow pitches with movement, more dangerous than his pace suggests — found his outside edge and ended the partnership at sixty-nine for the second wicket.</p>
+
+    <h2>Kohli and Dhoni: Accumulation Against the Odds</h2>
+
+    <p>What followed — Kohli's seventy-two from eighty-two deliveries, and then Dhoni's fifty-six from sixty-one — was the kind of batting performance that India needed and that they produced without the flourish of a century or the drama of a partnership that dominates the post-match conversation, but with the steady accumulation of a team that knows it is short of its best and is bridging the gap through concentration and experience rather than through the gifts the surface has declined to offer. Kohli drove cleanly through the covers when the line allowed it, worked the ball through midwicket with the assured wristiness that is the signature of his back-foot play on slow pitches, and rotated the strike with the kind of cricket-intelligence that has, across his ODI career, been as valuable as the boundary-hitting that tends to attract more attention.</p>
+
+    <p>Vijay Shankar made twenty-four and Kedar Jadhav contributed fifteen before being dismissed, both wickets falling to the accurate medium-pace of Roach, who finished with three for thirty-six — the best bowling figures on a day when the bowling honours belonged comprehensively to India. It was MS Dhoni, arriving in the thirty-fourth over with India at one hundred and twenty-six for three, who gave the innings its spine in the final stages. Shai Hope's missed stumping off Fabian Allen — Dhoni on eight, the chance straightforward in the way that all missed chances appear straightforward in retrospect — proved decisive in a manner that no one could have predicted at the moment of its occurrence. Dhoni, reprieved, proceeded to make forty-eight more runs, finishing with fifty-six not out, taking sixteen from the final over to push India past two hundred and sixty with the crisp timing and placement of a batsman who has spent enough of the series being criticised for slow batting that he has, perhaps, resolved to demonstrate the point about his finishing instincts one more time. His two sixes off the final over — the last of them over long-on off Brathwaite — were not the shots of a batsman who has lost his power or his nerve. They were the shots of a batsman who had been waiting for the moment and had chosen this particular evening to select it.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>India Batting — 1st Innings</h3><span class="innings-total">268/7 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">RG Sharma<em>lbw b Roach</em></span><span class="bat-runs">18</span><span class="bat-balls">22</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">KL Rahul<em>c Hope b Holder</em></span><span class="bat-runs">48</span><span class="bat-balls">64</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">V Kohli (c)<em>c Lewis b Roach</em></span><span class="bat-runs hl">72</span><span class="bat-balls">82</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">V Shankar<em>c Hope b Roach</em></span><span class="bat-runs">24</span><span class="bat-balls">36</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">MS Dhoni†<em>not out</em></span><span class="bat-runs hl">56</span><span class="bat-balls">61</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">KD Jadhav<em>c Hope b Roach</em></span><span class="bat-runs">15</span><span class="bat-balls">22</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">HH Pandya<em>c Cottrell b Thomas</em></span><span class="bat-runs">46</span><span class="bat-balls">38</span></div>
+      <div class="innings-extras"><span>Extras: 16 (lb 4, nb 2, w 10)</span><strong>268 / 7</strong></div>
+    </div>
+
+    <h2>Shami, Bumrah and the Anatomy of a Collapse</h2>
+
+    <p>West Indies needed two hundred and sixty-nine from fifty overs. The mathematics were straightforward. What was less straightforward, and what became apparent within the first fifteen deliveries of their reply, was that the West Indies batting order had arrived at Old Trafford without the collective temperament to construct the kind of controlled, patient chase that a target of this size requires when the surface offers modest assistance to the bowlers. The opening partnership — Gayle and Hope, the most experienced pairing available to Holder — lasted precisely four overs and twenty deliveries. Gayle bounced out by Shami, the ball rising sharply and finding the outside edge on its way to cover, for ten. Hope bowled by Shami for two, an off-cutter of such perfect construction that it found the gap between bat and pad before the batsman had completed the footwork he was attempting. Two for sixteen. The match, if it had ever genuinely been open, was already closing.</p>
+
+    <p>Mohammed Shami's spell — four wickets for sixteen runs from six and two-thirds overs, the economy of a man who is, in conditions that offer him movement and the cooperation of a damp Manchester surface, among the most difficult ODI bowlers in the world to score against — was the performance that settled the day's argument beyond revision. He bowled Gayle and Hope in the space of three overs. He took the wicket of Shimron Hetmyer — caught behind attempting a pull shot against a ball that wasn't short enough to pull, which is the category of dismissal that reveals the batsman's state of mind more clearly than almost any other — and, later, Oshane Thomas by review. What distinguished his bowling from the merely accurate was the variation: the off-cutter that moved away, the fuller delivery that angled in, the occasional bouncer deployed not as a shock tactic but as a reminder of the speed in his locker and the range of weapons at his disposal.</p>
+
+    <p>Jasprit Bumrah conceded only nine runs from six overs — the accumulated pressure of economy that has become his signature contribution in these group stage matches, wickets perhaps secondary to the creation of the other end's opportunities. Nicholas Pooran made twenty-eight from fifty deliveries, which was the most anyone managed in a West Indies innings that never found the partnership it needed and never found the platform from which Brathwaite, their most dangerous finisher, could operate. The West Indies' top order — Gayle, Hope, Pooran, Holder — contributed a collective forty-one runs from a hundred and forty-six deliveries. Their middle order, Hetmyer aside, contributed the arithmetic reminder that a batting line-up without applied discipline is simply a list of names. Sunil Ambris top-scored with thirty-one from forty deliveries in the kind of innings that, in a different match, might have been noted as a minor contribution and forgotten. Here it was the highest individual score on a day that went to the bowlers.</p>
+
+    <div class="pq">
+      <p>"The bowling today was as good as we've bowled at any stage of this tournament. Shami and Bumrah in those first fifteen overs — that was the match decided right there."</p>
+      <cite>Virat Kohli, post-match press conference at Old Trafford</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>West Indies Batting — 2nd Innings</h3><span class="innings-total">143 ao in 34.2 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">CH Gayle<em>c cover b Shami</em></span><span class="bat-runs">6</span><span class="bat-balls">11</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">SD Hope<em>b Shami</em></span><span class="bat-runs">5</span><span class="bat-balls">9</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">SA Ambris<em>c Kohli b Chahal</em></span><span class="bat-runs">31</span><span class="bat-balls">40</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">NE Pooran<em>lbw b Bumrah</em></span><span class="bat-runs">28</span><span class="bat-balls">50</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">SO Hetmyer<em>c Dhoni b Shami</em></span><span class="bat-runs">6</span><span class="bat-balls">8</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">JO Holder (c)<em>c Bumrah b Chahal</em></span><span class="bat-runs">11</span><span class="bat-balls">22</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">CR Brathwaite<em>b Pandya</em></span><span class="bat-runs">14</span><span class="bat-balls">15</span></div>
+      <div class="innings-extras"><span>Extras: 16 (lb 3, nb 2, w 11)</span><strong>143 ao</strong></div>
+    </div>
+
+    <h2>West Indies Eliminated: A Campaign Reviewed</h2>
+
+    <p>West Indies were eliminated from the 2019 Cricket World Cup on the twenty-seventh of June, forty-five days after the tournament began, with two group stage matches remaining, with a record of two wins and five defeats, with a team that contained batting of genuine world-class quality in the persons of Gayle, Pooran, Hetmyer and Brathwaite and that had nonetheless failed, in match after match, to translate that quality into scores sufficient to compete with the better-organised sides in this group. The reasons for the failure were the same across almost every defeat: a powerplay that ended with two or three wickets lost at unfavourable rates; a middle order that could not reconstruct effectively enough; a lower order that, though capable of eruption, found itself at the end of each successive collapse needing more than even Brathwaite's extraordinary hitting could supply.</p>
+
+    <p>The nearest they came — and it was very near — was against New Zealand five days earlier, when Brathwaite's maiden international century brought them to within five runs of a target that had seemed, for thirty overs, entirely beyond them. That they came five runs short was an indication of the distance between their capacity and their collective application across the full fifty overs — the gap that the better-organised sides close through management and discipline and that West Indies, across a summer that had briefly promised otherwise, could not bridge. The talent was never in question. The structure in which to deploy it, consistently, across two hundred and fifty deliveries of batting, remained elusive. India's victory extended their unbeaten group stage record to five wins from six matches. The semi-finals awaited. Old Trafford, on a damp Thursday in late June, had served its purpose.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">West Indies Collapse — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">10/1</span><span class="tl-text"><span class="who">Gayle c cover b Shami 6.</span> <span class="note">Short of length, outside off, edged to cover. Shami draws first blood in the 5th over.</span></span></div>
+      <div class="tl-item"><span class="tl-score">16/2</span><span class="tl-text"><span class="who">Hope b Shami 5.</span> <span class="note">Off-cutter through the gate. West Indies reeling after 6 overs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">80/4</span><span class="tl-text"><span class="who">Pooran lbw b Bumrah 28.</span> <span class="note">Bumrah straightens one. WI 80 for 4 needing 189 more. Chase effectively over.</span></span></div>
+      <div class="tl-item"><span class="tl-score">98/5</span><span class="tl-text"><span class="who">Holder c Bumrah b Chahal 11.</span> <span class="note">Attempted slog off Chahal at the halfway mark. The captain departs. WI finished.</span></span></div>
+      <div class="tl-item"><span class="tl-score">143 ao</span><span class="tl-text"><span class="who">Thomas lbw b Shami (review) — WI all out.</span> <span class="note">India win by 125 runs. West Indies crash out of the tournament.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>There was, in the final twenty overs of West Indies' innings — after the match had been settled and before it had been formally closed — a peculiar kind of silence over Old Trafford. Not the silence of a crowd that has lost interest, but the silence of a crowd witnessing the ending of a campaign that had begun with enormous expectation, had briefly flared into something approaching it, and had now arrived at its terminus without the resolution its champions deserved. Gayle had not scored the century that this tournament called for. Brathwaite's heroism against New Zealand had come five runs too late. The talent that West Indian cricket has always produced, in quantities that make the game's history richer and its present more compelling, had found, in this particular summer, the structural container too narrow to hold it. Cricket is not always fair. But it is, usually, accurate.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Old Trafford, Manchester</strong></li>
+      <li><span class="lbl">Date</span><strong>27 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>India won, elected to bat</strong></li>
+      <li><span class="lbl">India</span><strong>268/7 (50 ov)</strong></li>
+      <li><span class="lbl">West Indies</span><strong>143 ao (34.2 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>India won by 125 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Virat Kohli (72)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Shami's Demolition</div><div class="star-stat">
+      <span class="num">4/16</span>
+      <span class="desc">Mohammed Shami's figures in 6.2 overs — the most economical four-wicket haul of this World Cup. Gayle, Hope, Hetmyer, Thomas.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Bowling Figures</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Shami</span><strong>4/16 (6.2 ov)</strong></li>
+      <li><span class="lbl">Bumrah</span><strong>2/9 (6 ov)</strong></li>
+      <li><span class="lbl">Chahal</span><strong>2/32 (7 ov)</strong></li>
+      <li><span class="lbl">Pandya</span><strong>1/31 (6 ov)</strong></li>
+      <li><span class="lbl">Kuldeep</span><strong>1/54 (8 ov)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">WI Collapse — FOW</div><div class="sbox-body"><ul>
+      <li><span class="lbl">1st wkt</span><strong>10 — Gayle</strong></li>
+      <li><span class="lbl">2nd wkt</span><strong>16 — Hope</strong></li>
+      <li><span class="lbl">5th wkt</span><strong>98 — Holder</strong></li>
+      <li><span class="lbl">7th wkt</span><strong>107 — Allen</strong></li>
+      <li><span class="lbl">All out</span><strong>143 in 34.2 ov</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"India were too good today. Our batting let us down again. The bowlers gave everything, but when you can't get to 150 — that's not enough at any level."</p><cite>Jason Holder, West Indies captain, post-match at Old Trafford</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 34 · Old Trafford · 27 June 2019<br>India 268/7 defeated West Indies 143 by 125 runs · Kohli 72 · Dhoni 56* · Shami 4/16</footer>
+</body>
+</html>
