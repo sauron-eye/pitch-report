@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs Afghanistan, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#3A2A0A;--fern-lt:#7A5520;--fern-pale:#F2EAD8;
+  --pq-bg:var(--fern-pale);--pq-border:var(--fern);--pq-color:var(--fern);
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#120C04;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--gold-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern-lt);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--gold-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#120C04;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern-lt);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern-lt);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern-lt)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#120C04;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern-lt);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#120C04;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#4A4038;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Tuesday, 18 June 2019 · Old Trafford, Manchester</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 24</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 24 <span>›</span> England vs Afghanistan</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 24 · Emirates Old Trafford, Manchester</span></div>
+  <h1 class="hl"><em>Seventeen Sixes:</em> Morgan's<br>Record-Breaking <span class="accent">148</span> Destroys Afghanistan<br>as England Reach 397</h1>
+  <p class="deck">There exists a particular category of batting performance that exceeds the ordinary vocabulary of cricket writing — that requires the statistician rather than the journalist to fully record, because the numbers have, by their accumulation, said something that the prose cannot. Eoin Morgan scored a hundred and forty-eight from seventy-one deliveries on a Tuesday afternoon at Old Trafford, hitting Rashid Khan for six sixes in a single over and striking seventeen sixes in total — the most ever hit by any batsman in an ODI innings, breaking a record previously held by Rohit Sharma, a batsman the cricketing world had believed might hold it for some time. England reached three hundred and ninety-seven for six. Afghanistan, who had Rashid Khan, conceded a hundred and ten runs to a single bowler in a single innings. Some records are made for breaking. Others are made for permanent retention. This one had the quality of the latter.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Emirates Old Trafford, Manchester</span><span class="datestamp">18 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">England</span><span class="total">397<small>/6</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">Afghanistan</span><span class="total">247<small>/8</small></span><span class="overs">50.0 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>England won by 150 runs<br>Morgan 148 (17×6 — World Record) · Bairstow 90 · Root 88 · MOM: Eoin Morgan</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>Rashid Khan arrived at Old Trafford on the eighteenth of June as the best ODI leg-spinner in the world, or the best ODI leg-spinner in the world under thirty, or the best ODI leg-spinner in the world who wasn't Shane Warne, and departed it with figures of zero for one hundred and ten from nine overs — figures that the record books will carry, without qualification, as the most expensive spell ever bowled by an Afghan in an ODI and the most expensive spell at this particular World Cup, and figures that require, if they are to be understood rather than merely registered, the context of what Eoin Morgan did to produce them. This is not the story of Rashid Khan's bad day. It is the story of what one of cricket's most dangerous batsmen is capable of when conditions remove the usual restraints on ambition and replace them with a different instruction entirely: that the ground is large enough, the opposition respectful enough, and the pitch amenable enough that the only sensible approach is the one that takes as its model not caution but pure, unqualified attack.</p>
+
+    <p>England had entered this match with three wins from four, requiring a victory to consolidate their position in the table and to address the slight concern that the cricket they had been playing — excellent in bursts, inconsistent across the full fifty overs — had not yet constituted the irresistible statement of intent that a side ranked number one in the world had been expected to make. The absence of Jason Roy, hampered by a hamstring injury that would keep him out of the next match as well, meant that James Vince opened alongside Jonny Bairstow, a change that altered the balance of England's top order without, on this particular day, significantly affecting the outcome. What happened in the twenty-second through forty-second overs of England's innings was not, in the final analysis, connected to who opened the batting. What happened in those twenty overs was connected exclusively to a single batsman's willingness to subordinate caution to violence and to trust, with the absolute conviction of a player at the peak of his powers, that the violence was, on this surface against this attack, the appropriate and productive response.</p>
+
+    <h2>Bairstow and Root: The Foundation Before the Storm</h2>
+
+    <p>What made Morgan's innings comprehensible, rather than merely spectacular, was the platform that Bairstow and Root constructed in the twenty overs before he arrived at the crease. Bairstow made ninety from a hundred and twenty-eight deliveries, and the innings — a composed, intelligent construction that never reached the hundred it probably deserved — was the innings of a batsman who has understood his function in this England side as the anchor that frees others to accelerate. He drove Dawlat Zadran through the covers with the high left-elbow that is the distinguishing feature of his front-foot play. He pulled Mujeeb Ur Rahman through midwicket with the compact, weight-transferred decisiveness of a batsman who has identified the short ball's trajectory early enough to play it on the front foot rather than the back. And he ran between the wickets with the crisp efficiency that transforms good drives into four runs and turns ones into twos before the outfield has reacted. His dismissal — caught by Gulbadin Naib off a delivery from the Afghan captain — ended a second-wicket partnership with Root worth one hundred and twenty at a precisely inconvenient moment: as England were, at ninety-two for one after eighteen overs, beginning to accelerate.</p>
+
+    <p>Joe Root made eighty-eight from eighty-two deliveries in the kind of innings that, in a match containing what followed, will tend to be overlooked in the post-match summary and will reward, in its careful examination, the student of the game who is interested not in records but in the mechanics of how a team builds a very large total. Root's contribution was structural: he occupied the crease through the powerplay's exit, provided the necessary partnership for Bairstow's half-century stand, gave England a platform of one hundred and sixty for two at the twenty-sixth over, and then, with the arrival of Morgan at the crease, transformed his role from anchor to accomplice, rotating the strike with the alert footwork of a non-striker who understands that his partner is doing something that requires assistance rather than obstruction. He was eventually caught at long-on off Mujeeb in the thirty-seventh over, caught by a fielder who had no doubt been placed there specifically to prevent the kind of straight driving that Root had been threading through the fielder's position with increasing confidence. The hundred he had threatened never came. The seventy-seven overs of momentum he had provided didn't require it.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>England Batting — 1st Innings</h3><span class="innings-total">397/6 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">JM Vince<em>b Zadran</em></span><span class="bat-runs">26</span><span class="bat-balls">34</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">JM Bairstow<em>c Naib b Naib</em></span><span class="bat-runs">90</span><span class="bat-balls">99</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">JE Root<em>c long-on b Mujeeb</em></span><span class="bat-runs">88</span><span class="bat-balls">82</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">EJG Morgan (c)<em>c Nabi b Zadran</em></span><span class="bat-runs hl">148</span><span class="bat-balls">71</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">BA Stokes<em>not out</em></span><span class="bat-runs">16</span><span class="bat-balls">11</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">JC Buttler†<em>c &amp; b Nabi</em></span><span class="bat-runs">10</span><span class="bat-balls">11</span></div>
+      <div class="innings-extras"><span>Extras: 19 (lb 5, nb 2, w 12)</span><strong>397 / 6</strong></div>
+    </div>
+
+    <h2>The Over That Changed the Record Books</h2>
+
+    <p>Eoin Morgan had been batting for nineteen deliveries and had scored twenty-one runs when Rashid Khan came on to bowl the twenty-ninth over of the innings. The context in which this occurred is worth establishing: England were, at that point, at one hundred and sixty-six for two, with a platform in place and an acceleration building that had given the match the shape of a large total achieved through conventional means. Rashid's first ball of the over was a leg-break that turned sharply from outside off stump and would, under almost any other circumstances, have been a wicket-taking delivery. Morgan hit it over deep midwicket for six. The second was a googly — Rashid's primary weapon of deception, the ball that most right-handed batsmen back themselves against and find, in the encounter, reason to reconsider that confidence. Morgan hit it over long-on for six. The third was a leg-break again, fuller, angling in. Six, over wide long-on. The fourth, fifth and sixth deliveries of the over were each hit for six, each to a different part of the ground, each struck with the flat-bat violence of a batsman who has entered a state of concentration so complete that the bowler's variations have, for the duration of the over, ceased to function as information and become instead irrelevant detail. Six sixes in an over from Rashid Khan — the best ODI leg-spinner in the world at this time in cricket's history, a bowler who had, coming into the match, conceded less than five runs per over across his World Cup campaign — was not merely a statistical achievement. It was an act of systematic humiliation that the record books will record without affect and that observers at Old Trafford will remember with the specific vividness that attaches to witnessed acts of exceptional skill.</p>
+
+    <div class="pq">
+      <p>"I don't think anyone expected us to play that kind of cricket today. The intent was always to attack. When you get into that kind of zone, you just keep going. The sixes happened because the game-plan called for it."</p>
+      <cite>Eoin Morgan, England captain, post-match press conference at Old Trafford</cite>
+    </div>
+
+    <p>By the time Morgan was dismissed — caught at long-off by Mohammad Nabi off Dawlat Zadran in the forty-eighth over, a ball dispatched with all the force he could generate that landed precisely in Nabi's hands — he had faced seventy-one deliveries and struck seventeen sixes and four fours. The seventeen sixes was a new ODI record, surpassing Rohit Sharma's sixteen against Sri Lanka in 2014 — a record that had itself seemed untouchable for five years. The figures against Rashid Khan — Rashid, who had come into the match with economy rate of four point six in this World Cup, who had the reputation that follows the best spinners through international cricket like weather follows a moving front — were one hundred and ten runs from nine overs, at a strike rate so extraordinary that even Morgan's own ODI career, which has contained many exceptional innings, does not quite provide an adequate precedent. England finished on three hundred and ninety-seven for six, which is the highest score in the history of Old Trafford — a ground that has been hosting international cricket since before the First World War, which perhaps suggests something about the nature of what happened here.</p>
+
+    <h2>Afghanistan's Response and the Dignity of the Chase</h2>
+
+    <p>Afghanistan needed three hundred and ninety-eight to win, which is the kind of target that the word "target" barely encompasses. What they produced instead — two hundred and forty-seven for eight from fifty overs, which is by some distance the largest score Afghanistan had made in any World Cup match to this point — was the response not of a side that had capitulated to the scale of the task but of a side that had found, in the ruins of an impossible arithmetic, the specific liberation that comes from playing without consequence. They could not win. They could, however, produce something worth watching. Hashmatullah Shahidi made seventy-six from a hundred deliveries, arriving at the crease in the sixth over and departing in the forty-fourth, providing the innings with a structural integrity that it would not otherwise have possessed. Rahmat Shah made forty-six, and Asghar Afghan — the team's elder statesman, their best batsman across the longest part of their cricketing life — made forty-four with the accumulated poise of a man who has played most of his career in conditions that test poise more severely than Old Trafford could manage on a mild Tuesday in June.</p>
+
+    <p>Jofra Archer took three wickets for fifty-two — the fastest of England's bowlers, the one whose bounce and pace caused the Afghan batsmen the most evident discomfort, the one who had arrived in this World Cup as an unknown quantity and was, by the twentieth of June, looking like a certainty for England's eleven through whichever knockout stage they reached. Adil Rashid took three for sixty-six, which was, in the context of the day's larger bowling story, the most comforting set of figures on either side. What had happened to Rashid Khan — the bowler — in the twenty-ninth over would not, the cricket-writing community was at some pains to note, define him as a bowler. He had bowled, before and after that over, with the skill and intelligence that has made him the best young spinner in the game. He had been attacked, by a batsman who had reached a level of controlled aggression that his best deliveries could not survive. There is a category of loss in cricket that is not a failure, and Rashid Khan's one hundred and ten had something of that quality about it.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Afghanistan Batting — 2nd Innings</h3><span class="innings-total">247/8 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">IZ Dawlat<em>c Bairstow b Archer</em></span><span class="bat-runs">14</span><span class="bat-balls">18</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">Rahmat Shah<em>b Rashid</em></span><span class="bat-runs">46</span><span class="bat-balls">62</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">HT Shahidi<em>b Archer</em></span><span class="bat-runs">76</span><span class="bat-balls">100</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">Gulbadin Naib (c)<em>b Wood</em></span><span class="bat-runs">37</span><span class="bat-balls">28</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">Asghar Afghan<em>c Woakes b Rashid</em></span><span class="bat-runs">44</span><span class="bat-balls">59</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">Mohammad Nabi<em>b Rashid</em></span><span class="bat-runs">9</span><span class="bat-balls">14</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">Rashid Khan<em>c Stokes b Woakes</em></span><span class="bat-runs">11</span><span class="bat-balls">9</span></div>
+      <div class="innings-extras"><span>Extras: 10 (lb 3, w 7)</span><strong>247 / 8</strong></div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-head">Morgan's Innings — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">22nd ov</span><span class="tl-text"><span class="who">Morgan arrives at 92/1.</span> <span class="note">Bairstow and Root already set. The platform complete. The assault about to begin.</span></span></div>
+      <div class="tl-item"><span class="tl-score">29th ov</span><span class="tl-text"><span class="who">Six sixes off Rashid Khan in one over.</span> <span class="note">The over that broke a record. Six consecutive maximums off the world's best ODI spinner.</span></span></div>
+      <div class="tl-item"><span class="tl-score">220/3</span><span class="tl-text"><span class="who">Morgan reaches century off 57 balls.</span> <span class="note">The fastest hundred by an England captain in World Cup history.</span></span></div>
+      <div class="tl-item"><span class="tl-score">360/4</span><span class="tl-text"><span class="who">Morgan c Nabi b Zadran 148 (71).</span> <span class="note">17 sixes — a new ODI world record. England finish 397/6. Afghanistan need 398.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>There is a conversation that happens, after every innings of this kind, about what it means — about whether records of batting aggression represent cricket at its highest, or whether they represent instead cricket at its most imbalanced, one side possessing depth of batting and certainty of conditions and the other's best bowler reduced to a historical footnote. This conversation is worth having. But it is, perhaps, more accurately had in the abstract than in the presence of what happened at Old Trafford on the eighteenth of June, which was specifically, precisely and unmistakably exceptional. Eoin Morgan, who has spent a considerable part of his career being underestimated in the manner reserved for captains who accumulate their runs rather than announce them — whose style has always been more functional than decorative, more accumulated than explosive — chose this particular Tuesday, in this particular match, against this particular attack, to produce the most violent batting performance in the history of ODI cricket. The record books do not do context. But the record books have noted the day.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Old Trafford, Manchester</strong></li>
+      <li><span class="lbl">Date</span><strong>18 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>England won, elected to bat</strong></li>
+      <li><span class="lbl">England</span><strong>397/6 (50 ov)</strong></li>
+      <li><span class="lbl">Afghanistan</span><strong>247/8 (50 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>England won by 150 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Eoin Morgan (148)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Morgan's World Record</div><div class="star-stat">
+      <span class="num">17</span>
+      <span class="desc">Sixes hit by Eoin Morgan — 148 off 71 balls. A new ODI world record, surpassing Rohit Sharma's 16 against Sri Lanka in 2014.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">England Top Scores</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Morgan</span><strong>148 (71) — 17×6, 4×4</strong></li>
+      <li><span class="lbl">Root</span><strong>88 (82)</strong></li>
+      <li><span class="lbl">Bairstow</span><strong>90 (99)</strong></li>
+      <li><span class="lbl">Total</span><strong>397/6 — highest at OT</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Rashid Khan</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Figures</span><strong>0/110 (9 overs)</strong></li>
+      <li><span class="lbl">29th over</span><strong>6 sixes — 36 runs</strong></li>
+      <li><span class="lbl">Note</span><strong>Most exp. spell, WC 2019</strong></li>
+      <li><span class="lbl">Context</span><strong>Best U-30 spinner in world</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"He played some unbelievable shots. I've never seen anything like that. Our bowlers tried their best, but when a batsman is in that zone, there's nothing you can do."</p><cite>Gulbadin Naib, Afghanistan captain, post-match at Old Trafford</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 24 · Old Trafford · 18 June 2019<br>England 397/6 defeated Afghanistan 247/8 by 150 runs · Morgan 148 (17×6 — World Record) · Bairstow 90 · Root 88</footer>
+</body>
+</html>
