@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England vs India, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#FAF6F0;--paper-warm:#F3EDE3;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--navy:#0D1F40;--navy-mid:#162E5A;--navy-lt:#1E3F7A;--navy-pale:#E8EDF8;
+  --saffron:#FF9933;--saffron-dk:#CC7A00;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+}
+html{font-size:18px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:linear-gradient(135deg,#0D1F40 0%,#1A3060 50%,#0D1F40 100%);border-bottom:6px double var(--saffron);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.015) 2px,rgba(255,255,255,0.015) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left{display:flex;flex-direction:column;gap:0.3rem;}
+.np-header-left .edition-tag{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--saffron);}
+.np-header-left .date-line{font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:rgba(255,255,255,0.45);letter-spacing:0.04em;}
+.masthead-title{text-align:center;}
+.masthead-title .pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.masthead-title .pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--saffron);margin-top:0.35rem;display:block;}
+.np-header-right{text-align:right;display:flex;flex-direction:column;gap:0.3rem;align-items:flex-end;}
+.np-header-right .price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--saffron);}
+.np-header-right .issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.section-strip .sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron);white-space:nowrap;}
+.section-strip .breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;font-weight:400;color:#6A6258;letter-spacing:0.06em;}
+.section-strip .breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 0;border-bottom:3px double var(--rule-dark);padding-bottom:2rem;}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--saffron);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--saffron-dk);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3.4rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--navy-mid);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.18rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--saffron);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:var(--ink-ghost);letter-spacing:0.04em;}
+.scoreboard{background:linear-gradient(135deg,#0D1F40,#1A3060);max-width:980px;margin:0 auto;padding:1.5rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.5rem;border-bottom:4px solid var(--saffron);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--saffron);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.2rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:300;color:#6A6058;display:block;margin-top:0.25rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.9rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.5rem;}
+.sb-result strong{font-style:normal;color:var(--saffron);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 280px;gap:4rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.05rem;line-height:1.92;color:var(--ink-mid);margin-bottom:1.45rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--navy);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1.3;margin:3rem 0 1rem;padding-top:2.5rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.5rem 0;}
+.pq{margin:2.8rem 0;padding:1.5rem 1.8rem;background:var(--navy-pale);border-left:4px solid var(--navy-mid);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.45rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--navy)!important;margin-bottom:0.7rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--navy-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.8rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.85rem 1.6rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--saffron);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.6rem 1fr auto auto;gap:0.8rem 1rem;padding:0.7rem 1.6rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.55rem!important;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.65rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.98rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.78rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--saffron);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.72rem;font-weight:300;color:#5A5448;text-align:right;min-width:3rem;}
+.bat-runs.highlight{color:#FFD080;}
+.innings-extras{padding:0.8rem 1.6rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.7rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.8rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.8rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.5rem 1fr;gap:1rem;padding:0.75rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:800;color:var(--red);letter-spacing:0.03em;padding-top:0.05rem;}
+.tl-text{font-family:'Spectral',serif;font-size:0.95rem;color:var(--ink-soft);line-height:1.55;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.88rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:2rem;overflow:hidden;}
+.sbox-hd{background:var(--navy);color:var(--saffron);font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.65rem 1rem;}
+.sbox-body{padding:0.8rem 1rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);padding:0.45rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.6rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1.2rem 1rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;color:var(--navy);line-height:1;display:block;margin-bottom:0.4rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.9rem 1rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:2rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.88rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.4rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:var(--navy);border-top:4px double var(--saffron);padding:2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#2A3A60;}
+footer span{color:var(--saffron);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition</span>
+        <span class="date-line">Sunday, 30 June 2019 · Edgbaston, Birmingham</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 38</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 38 <span>›</span> England vs India</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 38 · Edgbaston, Birmingham</span>
+  </div>
+  <h1 class="hl">
+    <em>Bairstow's Brilliant Century</em><br>
+    <span class="accent">Breaks India's Unbeaten Run</span><br>
+    in a Birmingham Classic
+  </h1>
+  <p class="deck">India had arrived at Edgbaston having not lost a single match in the group stage — six wins from six, a record so comprehensive it had begun to feel, in the specific cricket media ecosystem that surrounds the national team of a billion and more, like the outline of a coronation rather than a competitive tournament. England, needing this match absolutely, produced the kind of performance that such necessity sometimes demands: Bairstow's century from the very first ball of the first over, a Roy-Bairstow opening stand of 160 that made India's bowling attack appear briefly ordinary, and then, in the bowling, the systematic dismantling of a batting order that had, for six matches, suggested it might be the most difficult in the tournament to dislodge.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="loc">Edgbaston, Birmingham</span>
+    <span class="datestamp">30 June 2019</span>
+  </div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">England</span>
+    <span class="total">337<small> / 7</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">India</span>
+    <span class="total">306<small> / 5</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    England won by 31 runs<br>
+    Bairstow 111 · Shami 5–69 · MOM: Bairstow
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There is, in cricket as in all competitive endeavours, a particular quality to the performance produced under existential pressure — the innings played when the alternative is tournament elimination, the bowling spell delivered when the margin for error has been reduced by accumulated circumstance to something approaching zero. England needed to beat India at Edgbaston to remain in this World Cup with their own destiny in their own hands. They had beaten West Indies and Bangladesh and Sri Lanka and opened the tournament with a comprehensive victory over South Africa. They had lost to Pakistan and Australia in the intervening weeks. And now they faced India — the one unbeaten side, the team at the top of the table, a batting lineup of such collective depth that it had, in six previous matches, not once been bowled out — at Edgbaston, a ground they had won three successive ODIs and which they knew, in their muscle memory and their tactical intelligence, about as well as any ground in England. England won. They won comprehensively. They won with the kind of batting that had first persuaded the world, four years before, that something genuinely new was happening in English one-day cricket. And they won, in the end, because of Jonny Bairstow.</p>
+
+    <p>Morgan won the toss on a Edgbaston surface that had, in the preceding days, been the subject of considerable speculation — a pitch that was expected to deteriorate as the match progressed, that might offer the spinners something as it wore through the afternoon, and that placed a premium on batting first and setting a total large enough to exploit that deterioration in the final twenty overs of India's chase. The decision to bat was, in other words, both tactically sound and psychologically significant — the hosts claiming the initiative immediately, signalling that they intended to dictate the terms of the match rather than respond to India's. What followed, from the first ball of the first over to the 160th, was one of the most dominant opening passages that Edgbaston had witnessed in a one-day international: Jason Roy and Jonny Bairstow, the partnership that England's batting revolution had been built around, at their most devastating.</p>
+
+    <h2>Roy and Bairstow: The Opening Stand That Defined the Day</h2>
+
+    <p>Jonny Bairstow had, in the week before this match, been involved in a public dispute with former England captain Michael Vaughan — a dispute that had centred on Vaughan's questioning of Bairstow's place in the team and Bairstow's robust, characteristically blunt response. The pre-match media coverage had, as it will in these circumstances, devoted considerable space to the question of whether Bairstow's form had justified his selection. He answered the question at Edgbaston in the most definitive manner available: he made 111 from 109 balls, and he did so with an authority and a clarity of purpose that made the preceding discussion seem not merely premature but faintly absurd. His fifty came from 56 balls, the innings proceeding at the rate of a batsman who is trusting his hands and finding, consistently, the middle of the bat. His century arrived in the thirty-first over off ninety balls, with fifteen fours and a six that had, in its timing and execution, the quality of a man playing at the peak of his form.</p>
+
+    <p>Roy contributed 66 from 57 balls — an innings of organised aggression that set the tempo for everything that followed. His fifty came from 41 balls: the cover drive off Hardik Pandya's second over that bisected point and extra cover with the confident, slightly casual authority of a batsman who has been over this particular ground many times before; the pulled four off Bumrah, taken from outside off stump and deposited with flat-bat efficiency between midwicket and long leg; the upper-cut off Shami that cleared third man with the upward angle of a shot that has been timed precisely enough to carry the boundary regardless of where the fielder is standing. He was finally dismissed in the twenty-second over, caught by the substitute Jadeja at long-on off Kuldeep Yadav — a low, full-length catch that Jadeja completed by diving forward with the particular athleticism that had, across this entire tournament, made him the most valuable fielding substitute in the competition. Roy shook his head. He had been batting with the controlled aggression of a man who had decided the morning was his. It had been. The partnership of 160 had given England's innings a platform of such width and solidity that even the subsequent middle-order wobble — Morgan caught at mid-off for 1, Root falling for 44 in the manner of a batsman who drives away from his body when his concentration relaxes — failed to undermine the total's eventual shape.</p>
+
+    <div class="pq">
+      <p>"I've worked very hard to get here. To get a hundred in a must-win game against India at Edgbaston — that's what you play the game for."</p>
+      <cite>Jonny Bairstow, Man of the Match, Edgbaston, 30 June 2019</cite>
+    </div>
+
+    <h2>Stokes's Fifty and the Architecture of 337</h2>
+
+    <p>Ben Stokes, who had come in at five with England having lost their second wicket in the thirty-first over and the innings in need of an anchor rather than a spectacle, produced 79 from 54 balls — an innings so effectively violent, so precisely targeted at the available spaces, that it moved England from a total of 220, where the middle-order wobble had temporarily stalled proceedings, to 337 by the conclusion of the innings. He struck three sixes — one a pulled hit over midwicket off Pandya of such muscular simplicity that the bowler, arriving at the crease with the ball, appeared briefly to understand that he had misjudged the length — and eight fours, including a driven boundary off Bumrah in the forty-seventh over that found the gap at cover with the clean, satisfying authority of a bat connecting with a ball exactly where the batsman intended. Stokes was dismissed by Bumrah from the penultimate ball of the innings — a scooped shot to fine leg that suggested, in its improvised ambition, that he had been looking for six rather than four and had found instead the fielder — and he walked off having done precisely what the situation required. England had 337. India needed 338. The pitch, as predicted, was wearing. The spinners, on this kind of Edgbaston surface as the afternoon progressed, would find something to work with. England had, with 337, given themselves a margin that the pitch's deterioration might amplify into something decisive.</p>
+
+    <p>Mohammed Shami's five for 69 was the bowling performance of India's innings — five wickets from ten overs including Bairstow, caught at deep point in the thirty-first over for 111 after a full-length delivery was slashed in the air, and Buttler, who had made a rapid 20 before a shorter ball found the inside edge of his pull shot and the return catch stuck in Shami's palms after a brief juggle. Shami's bouncer-heavy strategy had produced three dismissals from short deliveries and two from full ones, a combination of lengths that kept England's lower order consistently unsettled. But 337 was already set. India, in the evening air at Edgbaston, would need their batting to produce something exceptional.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>England Batting — 1st Innings</h3>
+        <span class="innings-total">337 / 7 in 50 overs</span>
+      </div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">JJ Roy<em>c sub (RA Jadeja) b Kuldeep</em></span><span class="bat-runs">66</span><span class="bat-balls">57</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">JM Bairstow<em>c Pant b Shami</em></span><span class="bat-runs highlight">111</span><span class="bat-balls">109</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">JE Root<em>c Pandya b Shami</em></span><span class="bat-runs">44</span><span class="bat-balls">54</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">EJG Morgan (c)<em>c Jadhav b Shami</em></span><span class="bat-runs">1</span><span class="bat-balls">9</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">BA Stokes<em>c sub (RA Jadeja) b Bumrah</em></span><span class="bat-runs">79</span><span class="bat-balls">54</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">JC Buttler†<em>c &amp; b Shami</em></span><span class="bat-runs">20</span><span class="bat-balls">8</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">CR Woakes<em>c Sharma b Shami</em></span><span class="bat-runs">7</span><span class="bat-balls">5</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">LE Plunkett<em>not out</em></span><span class="bat-runs">1</span><span class="bat-balls">4</span></div>
+      <div class="innings-extras"><span>Extras: 8 (b 2, lb 2, w 4)</span><strong>337 / 7</strong></div>
+    </div>
+
+    <h2>Rohit's Century and India's Near-Miss</h2>
+
+    <p>The chase of 338 arrived as the most demanding India had faced in this tournament. KL Rahul was dismissed for a golden duck — caught and bowled by Woakes off a leading edge that produced the kind of muted, slightly embarrassed dismissal that batsmen accept rather than contest, the ball lobbing up and Woakes, who had bowled the delivery at middle stump on a good length, reacting quickly enough to pouch the simple chance. Eight for one in the third over. Rohit Sharma, at number one, had survived this opening turbulence and began the reconstruction with the unhurried patience that distinguishes his better ODI innings — a batsman who understands that the tempo of a run chase is something to be managed rather than imposed, who accumulates in the early overs not from timidity but from the considered judgement that the big shots will be more productive, and more safely productive, after twenty overs of batting rather than before. His hundred — the fifth of his World Cup 2019 campaign, an almost hallucinatory return across the tournament — arrived in the thirty-sixth over from 109 balls. He drove cleanly through the off side, swept with authority, and was dismissed, on the same Woakes delivery, shortly after reaching his century — a slower ball offcutter that found the outside edge and produced a catch to Buttler who completed it behind the stumps with the relief of a wicketkeeper who has waited patiently for a very long time.</p>
+
+    <p>Virat Kohli, meanwhile, was engaged in what appeared to be, for the first thirty of his 76 balls, the construction of a match-winning innings of exactly the type the situation required. His fifty — consecutive half-centuries across five World Cup matches, a run of form so sustained it had begun to feel like a law of nature rather than a statistical probability — arrived from 55 balls and was accompanied by the specific quality of concentration and intent that distinguishes Kohli's best one-day batting from his merely good: the refusal to play the unnecessary shot, the placement of each boundary into the gap rather than through it, the careful management of strike rotation that ensures his partners are never under excessive pressure. He was dismissed for 66 — not by a ball of exceptional quality but by his own lapse in concentration, steering a length ball to backward point where Vince, the substitute fielder, held the simplest of catches. It was, for Kohli, the fourth consecutive fifty in this tournament without converting it to a century — a pattern that the cricket writers had begun to notice and which Kohli, for one of the few times in his career, seemed unable to interrupt.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">India Chase — Fall of Wickets</div>
+      <div class="tl-item"><span class="tl-score">8</span><span class="tl-text"><span class="who">KL Rahul c &amp; b Woakes 0.</span> <span class="note">Leading edge, lobbed back to the bowler. Golden duck. England begin perfectly.</span></span></div>
+      <div class="tl-item"><span class="tl-score">146</span><span class="tl-text"><span class="who">Kohli c sub (Vince) b Plunkett 66.</span> <span class="note">Steered to backward point. Another fifty without a century for Kohli — the fifth in succession.</span></span></div>
+      <div class="tl-item"><span class="tl-score">198</span><span class="tl-text"><span class="who">Rohit Sharma c †Buttler b Woakes 102.</span> <span class="note">Slower-ball offcutter, outside edge behind. Rohit's 5th WC century — but dismissed immediately after reaching three figures.</span></span></div>
+      <div class="tl-item"><span class="tl-score">226</span><span class="tl-text"><span class="who">Pant c Woakes b Plunkett 32.</span> <span class="note">Stunning boundary catch by Woakes running and diving to his left. Pant's favourite hoick had been read perfectly.</span></span></div>
+      <div class="tl-item"><span class="tl-score">267</span><span class="tl-text"><span class="who">Pandya c sub (Vince) b Plunkett 45.</span> <span class="note">Top edge on slog, swirled to long-on. Plunkett's third wicket. England's plans against Pandya executed perfectly.</span></span></div>
+      <div class="tl-item"><span class="tl-score">306</span><span class="tl-text"><span class="who">India close 306/5. England win by 31 runs.</span> <span class="note">Dhoni 42* and Jadhav 12* couldn't bridge the gap. India's unbeaten run ended.</span></span></div>
+    </div>
+
+    <h2>Plunkett's Three and the Victory That Opened Everything</h2>
+
+    <p>Liam Plunkett, operating with the particular variation — the slower ball, the cutter, the delivery that changes pace without changing line — that has made him one of England's most reliable middle-over bowlers across the tournament, took three wickets for 55 runs in ten overs and was, alongside Woakes's two for 58, the principal architect of India's bowling-innings collapse from 198 for 2 to 267 for 5 in under nine overs. His dismissal of Rishabh Pant — a diving catch by Woakes at deep square leg, full stretch to his left, the ball taken at ankle height in the manner of a catch that defies the normal geometry of the position — was the moment the crowd identified as the turning point, the moment when the required run rate had climbed beyond what the Indian middle order could credibly sustain. Pandya's dismissal followed — a top-edge on a slog-sweep, the ball spiralling to Vince at long-on, the substitute fielder holding the straightforward chance with the calm assurance of a man who has been waiting for exactly this opportunity. India were 267 for 5 in the forty-fifth over, needing 71 from 30 balls, with only Dhoni and Jadhav and the tail remaining.</p>
+
+    <p>Dhoni made 42 not out — an innings of beautiful composure from a batsman who had spent the last decade of his career reading lost causes with the precision of an actuary and deciding, from within them, exactly what was worth attempting. He hit the ball cleanly into the gaps, ran hard between the wickets, and produced the kind of innings that, in a slightly easier context, would have won the match. Jadhav contributed 12 not out. India closed on 306 for 5. England had won by 31 runs. They had, at Edgbaston, on the thirtieth of June, on a Sunday afternoon of gradually intensifying drama, beaten the best side in the tournament, broken their unbeaten run, and placed themselves in the semi-finals with a week to go in the group stage. The margin of 31 runs was, in the context of the innings, a fair reflection of the gap between the sides — though India, who had batted to 306 from a first over in which they had been effectively reduced to 8 for 1, had shown enough to suggest that the gap was narrower than the scoreline proposed.</p>
+
+    <hr class="prose-rule">
+
+    <p>The particular significance of this result was not merely the two points it added to England's group stage tally. It was the psychological statement it made — that England, under pressure, with their tournament in the balance, could produce performances of the highest order against the best opposition. Bairstow's 111 was the innings around which everything was built: the platform, the confidence, the run rate that gave Stokes his platform for destruction in the final ten overs. England had, at their best, exactly the batting arsenal required to compete at the very highest level. The question that remained — and it would remain through the semi-final and the final alike — was whether they could produce it consistently enough, on enough consecutive days, against enough different types of bowling attacks, to win a World Cup. At Edgbaston, on this Sunday, they had given themselves the opportunity to answer it. The answer, when it finally arrived, would be written at Lord's, in a match of such extraordinary tension that it would require a Super Over and a boundary countback to resolve. But the thread that connected that final to this group stage match — the thread of a team finding itself under pressure and responding with its best cricket — ran straight and unbroken from Edgbaston to Lord's, from Bairstow's first-ball boundary to the last throw of the tournament.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Venue</span><strong>Edgbaston, Birmingham</strong></li>
+        <li><span class="lbl">Date</span><strong>30 June 2019</strong></li>
+        <li><span class="lbl">Toss</span><strong>ENG won, elected to bat</strong></li>
+        <li><span class="lbl">England</span><strong>337/7 (50 ov)</strong></li>
+        <li><span class="lbl">India</span><strong>306/5 (50 ov)</strong></li>
+        <li><span class="lbl">Result</span><strong>England won by 31 runs</strong></li>
+        <li><span class="lbl">MOM</span><strong>Jonny Bairstow</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">Bairstow's Hundred</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Runs</span><strong>111 (109 balls)</strong></li>
+        <li><span class="lbl">Fours / Sixes</span><strong>10 / 6</strong></li>
+        <li><span class="lbl">Century from</span><strong>90 balls</strong></li>
+        <li><span class="lbl">Opening stand</span><strong>160 with Roy (22 overs)</strong></li>
+        <li><span class="lbl">Note</span><strong>Second century in three matches</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">India — Notable Batting</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Rohit Sharma</span><strong>102 (109) — 5th WC century</strong></li>
+        <li><span class="lbl">Kohli</span><strong>66 (76) — 5th half-century</strong></li>
+        <li><span class="lbl">Pandya</span><strong>45 (33 balls)</strong></li>
+        <li><span class="lbl">Shami</span><strong>5/69 — best bowling</strong></li>
+        <li><span class="lbl">India's unbeaten</span><strong>run ended (W6 L1)</strong></li>
+      </ul></div>
+    </div>
+    <div class="sbox">
+      <div class="sbox-hd">Partnership Record</div>
+      <div class="star-stat">
+        <span class="num">160</span>
+        <span class="desc">Roy and Bairstow's opening stand — made in 22.1 overs, the foundation of England's 337 and the match's most decisive contribution.</span>
+      </div>
+    </div>
+    <p class="snote">
+      <p>"That was England's best batting performance of the tournament. To go out in a must-win game and put on 160 for the first wicket against India's bowling — that was special."</p>
+      <cite>Eoin Morgan, England captain, post-match at Edgbaston</cite>
+    </p>
+    <div class="sbox">
+      <div class="sbox-hd">England Bowling</div>
+      <div class="sbox-body"><ul>
+        <li><span class="lbl">Plunkett</span><strong>3/55 (10 ov)</strong></li>
+        <li><span class="lbl">Woakes</span><strong>2/58 (10 ov)</strong></li>
+        <li><span class="lbl">Archer</span><strong>1/45 (10 ov)</strong></li>
+        <li><span class="lbl">Wood</span><strong>0/73 (10 ov)</strong></li>
+        <li><span class="lbl">Stokes</span><strong>79 (54 b) — 3 sixes</strong></li>
+      </ul></div>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 38 · Edgbaston, Birmingham · 30 June 2019<br>
+  England 337/7 defeated India 306/5 by 31 runs
+</footer>
+</body>
+</html>
