@@ -10,7 +10,6 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── TOKENS ── */
 :root {
   --bg:        #F5F0E8;
   --bg2:       #EDE7DC;
@@ -59,7 +58,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── TOPBAR ── */
 .topbar {
   background: var(--ink2);
   color: var(--ink4);
@@ -75,1148 +73,239 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: background var(--trans);
 }
-
 [data-theme="dark"] .topbar { background: #080604; }
-
 .topbar-left { display: flex; gap: 2rem; align-items: center; }
 .topbar-left span { color: var(--gold2); }
+.live-badge { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--accent); font-weight: 600; }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
 
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--accent);
-  font-weight: 600;
-}
+.masthead { background: var(--bg); border-bottom: 3px solid var(--ink); padding: 2rem 2rem 1.4rem; position: relative; transition: background var(--trans), border-color var(--trans); }
+.masthead-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; }
+.masthead-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.masthead-tagline { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink4); }
+.masthead-edition { font-family: 'Spectral', serif; font-style: italic; font-size: 0.82rem; color: var(--ink3); margin-top: 0.2rem; }
+.wordmark { text-align: center; }
+.wordmark h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1; color: var(--ink); transition: color var(--trans); }
+.wordmark h1 .the { font-weight: 400; font-style: italic; font-size: 0.65em; vertical-align: middle; margin-right: 0.1em; color: var(--accent); }
+.wordmark-rule { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.5rem; justify-content: center; }
+.wordmark-rule::before, .wordmark-rule::after { content: ''; flex: 1; height: 1px; background: var(--rule); max-width: 60px; }
+.wordmark-sub { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+.masthead-right { display: flex; justify-content: flex-end; align-items: flex-start; gap: 1rem; }
 
-.live-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 1.4s ease-in-out infinite;
-}
+.theme-toggle { cursor: pointer; background: var(--bg3); border: 1px solid var(--rule); border-radius: 24px; width: 52px; height: 28px; position: relative; transition: background var(--trans), border-color var(--trans); flex-shrink: 0; }
+.theme-toggle::after { content: '☀️'; position: absolute; top: 3px; left: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--surface); font-size: 11px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.2); line-height: 20px; text-align: center; }
+[data-theme="dark"] .theme-toggle::after { content: '🌙'; transform: translateX(24px); }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.7); }
-}
-
-/* ── MASTHEAD ── */
-.masthead {
-  background: var(--bg);
-  border-bottom: 3px solid var(--ink);
-  padding: 2rem 2rem 1.4rem;
-  position: relative;
-  transition: background var(--trans), border-color var(--trans);
-}
-
-.masthead-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 2rem;
-}
-
-.masthead-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.masthead-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink4);
-}
-
-.masthead-edition {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.82rem;
-  color: var(--ink3);
-  margin-top: 0.2rem;
-}
-
-.wordmark {
-  text-align: center;
-}
-
-.wordmark h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3.6rem);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  color: var(--ink);
-  transition: color var(--trans);
-}
-
-.wordmark h1 .the {
-  font-weight: 400;
-  font-style: italic;
-  font-size: 0.65em;
-  vertical-align: middle;
-  margin-right: 0.1em;
-  color: var(--accent);
-}
-
-.wordmark-rule {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-top: 0.5rem;
-  justify-content: center;
-}
-
-.wordmark-rule::before,
-.wordmark-rule::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-  max-width: 60px;
-}
-
-.wordmark-sub {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  white-space: nowrap;
-}
-
-.masthead-right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-/* ── THEME TOGGLE ── */
-.theme-toggle {
-  cursor: pointer;
-  background: var(--bg3);
-  border: 1px solid var(--rule);
-  border-radius: 24px;
-  width: 52px;
-  height: 28px;
-  position: relative;
-  transition: background var(--trans), border-color var(--trans);
-  flex-shrink: 0;
-}
-
-.theme-toggle::after {
-  content: '☀️';
-  position: absolute;
-  top: 3px; left: 4px;
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: var(--surface);
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, content 0.3s;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  line-height: 20px;
-  text-align: center;
-}
-
-[data-theme="dark"] .theme-toggle::after {
-  content: '🌙';
-  transform: translateX(24px);
-}
-
-/* ── NAV ── */
-.nav-wrap {
-  background: var(--ink);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: background var(--trans);
-}
-
+.nav-wrap { background: var(--ink); position: sticky; top: 0; z-index: 100; transition: background var(--trans); }
 [data-theme="dark"] .nav-wrap { background: #060402; border-bottom: 1px solid #1A1610; }
-
-.nav {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  height: var(--nav-h);
-  gap: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
+.nav { max-width: var(--max); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; height: var(--nav-h); gap: 0; overflow-x: auto; scrollbar-width: none; }
 .nav::-webkit-scrollbar { display: none; }
-
-.nav a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  padding: 0 1.2rem;
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
-}
-
+.nav a { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; padding: 0 1.2rem; height: var(--nav-h); display: flex; align-items: center; white-space: nowrap; border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s; }
 .nav a:hover { color: rgba(255,255,255,0.9); }
 .nav a.active { color: #fff; border-bottom-color: var(--accent); }
+.nav-divider { width: 1px; height: 20px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
 
-.nav-divider {
-  width: 1px;
-  height: 20px;
-  background: rgba(255,255,255,0.1);
-  flex-shrink: 0;
-}
-
-/* ── HERO ── */
-.hero-section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 3rem 2rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  border-bottom: 1px solid var(--rule);
-}
-
-/* Lead story */
-.hero-lead {
-  padding-right: 2.5rem;
-  border-right: 1px solid var(--rule);
-  padding-bottom: 2.5rem;
-}
-
-.section-flag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.2rem;
-}
-
-.section-flag::after {
-  content: '';
-  width: 32px;
-  height: 1px;
-  background: var(--accent);
-}
-
-.hero-lead h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.9rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-  margin-bottom: 1rem;
-  transition: color var(--trans);
-}
-
+.hero-section { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-bottom: 1px solid var(--rule); }
+.hero-lead { padding-right: 2.5rem; border-right: 1px solid var(--rule); padding-bottom: 2.5rem; }
+.section-flag { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+.section-flag::after { content: ''; width: 32px; height: 1px; background: var(--accent); }
+.hero-lead h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.9rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 1rem; transition: color var(--trans); }
 .hero-lead h2 em { font-style: italic; color: var(--accent); }
-
-.hero-lead .deck {
-  font-family: 'Spectral', serif;
-  font-size: 1.02rem;
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--ink3);
-  margin-bottom: 1.4rem;
-  border-left: 3px solid var(--gold);
-  padding-left: 1rem;
-}
-
-.hero-meta {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
-
-.byline-chip {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink4);
-}
-
+.hero-lead .deck { font-family: 'Spectral', serif; font-size: 1.02rem; font-style: italic; font-weight: 300; line-height: 1.75; color: var(--ink3); margin-bottom: 1.4rem; border-left: 3px solid var(--gold); padding-left: 1rem; }
+.hero-meta { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+.byline-chip { font-family: 'DM Sans', sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); }
 .byline-chip strong { color: var(--ink2); }
-
-.tag-chip {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.6rem;
-  border-radius: 2px;
-  background: var(--bg3);
-  color: var(--ink3);
-  transition: background var(--trans);
-}
-
+.tag-chip { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 2px; background: var(--bg3); color: var(--ink3); transition: background var(--trans); }
 .tag-chip.red { background: var(--accent); color: #fff; }
 .tag-chip.green { background: var(--green); color: #fff; }
-
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.4rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 1px;
-  transition: gap 0.2s;
-}
-
+.tag-chip.gold { background: var(--gold); color: #fff; }
+.read-more { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.4rem; font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; transition: gap 0.2s; }
 .read-more:hover { gap: 0.8rem; }
 
-/* Hero right column — 3 stories stacked */
-.hero-stack {
-  padding-left: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.stack-item {
-  padding: 1.4rem 0;
-  border-bottom: 1px solid var(--rule);
-  cursor: pointer;
-}
-
+.hero-stack { padding-left: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+.stack-item { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); cursor: pointer; }
 .stack-item:last-child { border-bottom: none; }
-
-.stack-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--ink);
-  margin-bottom: 0.4rem;
-  transition: color 0.2s;
-}
-
+.stack-item h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 0.4rem; transition: color 0.2s; }
 .stack-item:hover h3 { color: var(--accent); }
+.stack-item p { font-family: 'Spectral', serif; font-size: 0.88rem; font-style: italic; font-weight: 300; color: var(--ink3); line-height: 1.6; margin-bottom: 0.6rem; }
+.stack-meta { display: flex; align-items: center; gap: 0.8rem; }
 
-.stack-item p {
-  font-family: 'Spectral', serif;
-  font-size: 0.88rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--ink3);
-  line-height: 1.6;
-  margin-bottom: 0.6rem;
-}
-
-.stack-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-/* ── TICKER ── */
-.ticker-wrap {
-  background: var(--accent);
-  overflow: hidden;
-  height: 36px;
-  display: flex;
-  align-items: center;
-}
-
-.ticker-label {
-  background: var(--ink);
-  color: #fff;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0 1rem;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.ticker-track {
-  display: flex;
-  animation: ticker 40s linear infinite;
-  white-space: nowrap;
-}
-
+.ticker-wrap { background: var(--accent); overflow: hidden; height: 36px; display: flex; align-items: center; }
+.ticker-label { background: var(--ink); color: #fff; font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 1rem; height: 36px; display: flex; align-items: center; white-space: nowrap; flex-shrink: 0; }
+.ticker-track { display: flex; animation: ticker 40s linear infinite; white-space: nowrap; }
 .ticker-track:hover { animation-play-state: paused; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.ticker-item { font-family: 'DM Sans', sans-serif; font-size: 0.7rem; font-weight: 500; color: #fff; padding: 0 2rem; display: flex; align-items: center; gap: 0.5rem; }
+.ticker-item::after { content: '·'; margin-left: 1.5rem; opacity: 0.5; }
 
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+.section-wrap { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+.section-header { display: flex; align-items: center; gap: 1rem; padding: 2.5rem 0 1.5rem; border-bottom: 2px solid var(--ink); margin-bottom: 2rem; }
+.section-header h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+.section-header .sh-line { flex: 1; height: 1px; background: var(--rule); }
+.section-header a { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
 
-.ticker-item {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: #fff;
-  padding: 0 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+/* ── TOURNAMENT TABS ── */
+.tourney-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--ink); margin-bottom: 0; }
+.tourney-tab { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.8rem 1.4rem; cursor: pointer; color: var(--ink4); border-bottom: 3px solid transparent; margin-bottom: -2px; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+.tourney-tab:hover { color: var(--ink2); }
+.tourney-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-.ticker-item::after {
-  content: '·';
-  margin-left: 1.5rem;
-  opacity: 0.5;
-}
+.tourney-panel { display: none; }
+.tourney-panel.active { display: block; }
 
-/* ── GRID SECTION ── */
-.section-wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 2rem;
-}
+/* ── MATCH CARD GRID ── */
+.match-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); margin-bottom: 2px; }
+.match-grid.two { grid-template-columns: repeat(2, 1fr); }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 2.5rem 0 1.5rem;
-  border-bottom: 2px solid var(--ink);
-  margin-bottom: 2rem;
-}
+.match-card { background: var(--bg); padding: 1.5rem; cursor: pointer; transition: background 0.2s; position: relative; overflow: hidden; }
+.match-card::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 3px; background: var(--accent); transition: width 0.3s ease; }
+.match-card:hover::before { width: 100%; }
+.match-card:hover { background: var(--bg2); }
 
-.section-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
+.match-scoreline { font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.match-scoreline .winner { color: var(--green); }
+.match-scoreline .vs { color: var(--ink4); font-weight: 400; font-size: 0.65rem; }
 
-.section-header .sh-line {
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-}
+.match-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 0.5rem; transition: color 0.2s; }
+.match-card:hover h3 { color: var(--accent); }
 
-.section-header a {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-}
+.match-card p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.84rem; font-weight: 300; line-height: 1.6; color: var(--ink3); margin-bottom: 0.8rem; }
 
-/* ── CARD GRID ── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--rule);
-  margin-bottom: 2px;
-}
+.match-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.match-date { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; color: var(--ink4); letter-spacing: 0.05em; }
+.match-venue { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; color: var(--ink4); font-style: italic; }
 
-.card-grid.four { grid-template-columns: repeat(4, 1fr); }
-
-.card {
-  background: var(--bg);
-  padding: 1.6rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 0; height: 3px;
-  background: var(--accent);
-  transition: width 0.3s ease;
-}
-
-.card:hover::before { width: 100%; }
-.card:hover { background: var(--bg2); }
-
-.card .section-flag { margin-bottom: 0.8rem; }
-
-.card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--ink);
-  margin-bottom: 0.6rem;
-  transition: color 0.2s;
-}
-
-.card:hover h3 { color: var(--accent); }
-
-.card p {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--ink3);
-  margin-bottom: 0.8rem;
-}
-
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.card-date {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  color: var(--ink4);
-  letter-spacing: 0.05em;
-}
-
-/* ── FEATURED BAND ── */
-.featured-band {
-  background: var(--ink);
-  margin: 0;
-  padding: 3rem 2rem;
-  transition: background var(--trans);
-}
-
+/* FEATURED BAND */
+.featured-band { background: var(--ink); margin: 0; padding: 3rem 2rem; transition: background var(--trans); }
 [data-theme="dark"] .featured-band { background: #060402; }
-
-.featured-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2px 1fr 2px 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
+.featured-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr; gap: 3rem; align-items: start; }
 .fb-divider { background: rgba(255,255,255,0.08); }
-
-.featured-item .section-flag {
-  color: var(--gold2);
-  margin-bottom: 0.8rem;
-}
-
+.featured-item .section-flag { color: var(--gold2); margin-bottom: 0.8rem; }
 .featured-item .section-flag::after { background: var(--gold2); }
-
-.featured-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #F0EAE0;
-  margin-bottom: 0.6rem;
-  transition: color 0.2s;
-  cursor: pointer;
-}
-
+.featured-item h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; line-height: 1.3; color: #F0EAE0; margin-bottom: 0.6rem; transition: color 0.2s; cursor: pointer; }
 .featured-item:hover h3 { color: var(--gold2); }
+.featured-item p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.85rem; font-weight: 300; line-height: 1.65; color: #7A7060; margin-bottom: 0.8rem; }
+.featured-item .tag-chip { background: rgba(255,255,255,0.08); color: #7A7060; }
 
-.featured-item p {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  font-weight: 300;
-  line-height: 1.65;
-  color: #7A7060;
-  margin-bottom: 0.8rem;
-}
-
-.featured-item .tag-chip {
-  background: rgba(255,255,255,0.08);
-  color: #7A7060;
-}
-
-/* ── SCORECARD ROW ── */
-.scores-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  transition: background var(--trans);
-}
-
-.scores-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1.5rem 2rem;
-  display: flex;
-  gap: 2px;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
+/* SCORES ROW */
+.scores-section { background: var(--bg2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background var(--trans); }
+.scores-inner { max-width: var(--max); margin: 0 auto; padding: 1.5rem 2rem; display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
 .scores-inner::-webkit-scrollbar { display: none; }
-
-.score-card {
-  background: var(--bg);
-  padding: 1rem 1.4rem;
-  min-width: 200px;
-  border-left: 3px solid var(--rule);
-  transition: background var(--trans), border-color 0.2s;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
+.score-card { background: var(--bg); padding: 1rem 1.4rem; min-width: 200px; border-left: 3px solid var(--rule); transition: background var(--trans), border-color 0.2s; cursor: pointer; flex-shrink: 0; }
 .score-card:hover { border-left-color: var(--accent); }
+.score-card .sc-label { font-family: 'DM Sans', sans-serif; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink4); margin-bottom: 0.4rem; }
+.score-card .sc-match { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+.score-card .sc-score { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.2rem; }
+.score-card .sc-status { font-family: 'Spectral', serif; font-style: italic; font-size: 0.75rem; color: var(--ink4); }
 
-.score-card .sc-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink4);
-  margin-bottom: 0.4rem;
-}
-
-.score-card .sc-match {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 0.3rem;
-}
-
-.score-card .sc-score {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.2rem;
-}
-
-.score-card .sc-status {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.75rem;
-  color: var(--ink4);
-}
-
-/* ── OPINION STRIP ── */
-.opinion-strip {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.opinion-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
-  background: var(--rule);
-  margin-bottom: 2px;
-}
-
-.opinion-card {
-  background: var(--bg);
-  padding: 1.6rem;
-  transition: background 0.2s;
-  cursor: pointer;
-  position: relative;
-}
-
+/* OPINION */
+.opinion-strip { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+.opinion-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--rule); margin-bottom: 2px; }
+.opinion-card { background: var(--bg); padding: 1.6rem; transition: background 0.2s; cursor: pointer; position: relative; }
 .opinion-card:hover { background: var(--bg2); }
-
-.op-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--bg3);
-  line-height: 1;
-  margin-bottom: 0.6rem;
-  transition: color var(--trans);
-}
-
+.op-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--bg3); line-height: 1; margin-bottom: 0.6rem; transition: color var(--trans); }
 .opinion-card:hover .op-number { color: var(--accent); opacity: 0.3; }
-
-.opinion-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.98rem;
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1.35;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-  transition: color 0.2s;
-}
-
+.opinion-card h3 { font-family: 'Playfair Display', serif; font-size: 0.98rem; font-weight: 700; font-style: italic; line-height: 1.35; color: var(--ink); margin-bottom: 0.5rem; transition: color 0.2s; }
 .opinion-card:hover h3 { color: var(--accent); }
+.op-author { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
 
-.op-author {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-/* ── SERIES SPOTLIGHT ── */
-.spotlight {
-  background: var(--green);
-  padding: 3rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
+/* SPOTLIGHT */
+.spotlight { background: var(--green); padding: 3rem 2rem; position: relative; overflow: hidden; }
 [data-theme="dark"] .spotlight { background: #0E3018; }
-
-.spotlight::before {
-  content: '🏏';
-  position: absolute;
-  right: 3rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 8rem;
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-.spotlight-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 3rem;
-  align-items: center;
-}
-
-.spotlight-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-}
-
-.spotlight-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 0.6rem;
-}
-
+.spotlight::before { content: '🏏'; position: absolute; right: 3rem; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.08; pointer-events: none; }
+.spotlight-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 3rem; align-items: center; }
+.spotlight-label { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.5); writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg); }
+.spotlight-content h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.6rem; }
 .spotlight-content h2 em { font-style: italic; color: rgba(255,255,255,0.65); }
-
-.spotlight-content p {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  max-width: 520px;
-}
-
-.spotlight-series {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: right;
-}
-
-.series-stat .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
-  display: block;
-}
-
-.series-stat .lbl {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.58rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-}
-
-.btn-white {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #fff;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 0.55rem 1.1rem;
-  transition: background 0.2s, color 0.2s;
-}
-
+.spotlight-content p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.7; max-width: 520px; }
+.spotlight-series { display: flex; flex-direction: column; gap: 1rem; text-align: right; }
+.series-stat .num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; display: block; }
+.series-stat .lbl { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.btn-white { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; font-family: 'DM Sans', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.4); padding: 0.55rem 1.1rem; transition: background 0.2s, color 0.2s; }
 .btn-white:hover { background: #fff; color: var(--green); }
 
-/* ── TWO-COL SECTION ── */
-.two-col {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 2rem 3rem;
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 3rem;
-  border-top: 0;
-}
+/* TWO-COL */
+.two-col { max-width: var(--max); margin: 0 auto; padding: 0 2rem 3rem; display: grid; grid-template-columns: 1fr 320px; gap: 3rem; }
 
-.two-col .main-col {}
-
-.two-col .side-col {}
-
-/* ── ARTICLE LIST ── */
+/* ARTICLE LIST */
 .article-list { display: flex; flex-direction: column; }
-
-.al-item {
-  display: grid;
-  grid-template-columns: 4rem 1fr;
-  gap: 1rem;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid var(--rule);
-  align-items: start;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-
+.al-item { display: grid; grid-template-columns: 4rem 1fr; gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--rule); align-items: start; cursor: pointer; }
 .al-item:hover .al-title { color: var(--accent); }
-
-.al-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--rule);
-  line-height: 1;
-  text-align: right;
-  padding-top: 0.1rem;
-  transition: color var(--trans);
-}
-
+.al-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--rule); line-height: 1; text-align: right; padding-top: 0.1rem; transition: color var(--trans); }
 .al-item:hover .al-num { color: var(--accent); opacity: 0.4; }
+.al-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 0.3rem; transition: color 0.2s; }
+.al-meta { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; color: var(--ink4); display: flex; gap: 0.8rem; }
 
-.al-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--ink);
-  margin-bottom: 0.3rem;
-  transition: color 0.2s;
-}
-
-.al-meta {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.62rem;
-  color: var(--ink4);
-  display: flex;
-  gap: 0.8rem;
-}
-
-/* ── SIDEBAR BOX ── */
-.s-box {
-  border: 1px solid var(--rule);
-  margin-bottom: 2rem;
-  background: var(--bg2);
-  transition: background var(--trans), border-color var(--trans);
-}
-
-.s-box-head {
-  background: var(--ink);
-  color: var(--gold2);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  padding: 0.55rem 1rem;
-  transition: background var(--trans);
-}
-
+/* SIDEBAR */
+.s-box { border: 1px solid var(--rule); margin-bottom: 2rem; background: var(--bg2); transition: background var(--trans), border-color var(--trans); }
+.s-box-head { background: var(--ink); color: var(--gold2); font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.55rem 1rem; transition: background var(--trans); }
 [data-theme="dark"] .s-box-head { background: #060402; }
-
 .s-box-body { padding: 0.8rem 1rem; }
-
-.s-box-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--rule);
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
+.s-box-item { display: flex; justify-content: space-between; align-items: baseline; padding: 0.5rem 0; border-bottom: 1px solid var(--rule); gap: 0.5rem; cursor: pointer; }
 .s-box-item:last-child { border-bottom: none; }
-
 .s-box-item:hover .s-item-title { color: var(--accent); }
+.s-item-title { font-family: 'Spectral', serif; font-size: 0.85rem; color: var(--ink2); line-height: 1.4; transition: color 0.2s; flex: 1; }
+.s-item-badge { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; font-weight: 600; color: var(--ink4); white-space: nowrap; }
+.poll-option { margin-bottom: 0.7rem; }
+.poll-option label { font-family: 'Spectral', serif; font-size: 0.88rem; color: var(--ink2); display: flex; align-items: center; gap: 0.5rem; cursor: pointer; margin-bottom: 0.3rem; }
+.poll-bar { height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; margin-left: 1.3rem; }
+.poll-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 1s ease; }
 
-.s-item-title {
-  font-family: 'Spectral', serif;
-  font-size: 0.85rem;
-  color: var(--ink2);
-  line-height: 1.4;
-  transition: color 0.2s;
-  flex: 1;
-}
-
-.s-item-badge {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  color: var(--ink4);
-  white-space: nowrap;
-}
-
-.poll-option {
-  margin-bottom: 0.7rem;
-}
-
-.poll-option label {
-  font-family: 'Spectral', serif;
-  font-size: 0.88rem;
-  color: var(--ink2);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  margin-bottom: 0.3rem;
-}
-
-.poll-bar {
-  height: 4px;
-  background: var(--rule);
-  border-radius: 2px;
-  overflow: hidden;
-  margin-left: 1.3rem;
-}
-
-.poll-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  transition: width 1s ease;
-}
-
-/* ── PHOTO ESSAY BANNER ── */
-.photo-essay {
-  max-width: var(--max);
-  margin: 0 auto 0;
-  padding: 0 2rem;
-}
-
-.pe-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2px;
-  background: var(--rule);
-  margin-bottom: 2px;
-}
-
-.pe-item {
-  background: var(--bg2);
-  padding: 1.2rem;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  transition: background 0.2s;
-}
-
-.pe-item:first-child {
-  grid-column: span 2;
-  background: var(--ink2);
-}
-
+/* PHOTO ESSAY */
+.photo-essay { max-width: var(--max); margin: 0 auto 0; padding: 0 2rem; }
+.pe-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--rule); margin-bottom: 2px; }
+.pe-item { background: var(--bg2); padding: 1.2rem; cursor: pointer; position: relative; overflow: hidden; min-height: 140px; display: flex; flex-direction: column; justify-content: flex-end; transition: background 0.2s; }
+.pe-item:first-child { grid-column: span 2; background: var(--ink2); }
 [data-theme="dark"] .pe-item:first-child { background: #1E1A10; }
-
 .pe-item:first-child:hover { background: var(--ink); }
-
 .pe-item:not(:first-child):hover { background: var(--bg3); }
-
-.pe-emoji {
-  font-size: 2.5rem;
-  position: absolute;
-  top: 1rem; right: 1rem;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
+.pe-emoji { font-size: 2.5rem; position: absolute; top: 1rem; right: 1rem; opacity: 0.2; pointer-events: none; }
 .pe-item:first-child .pe-emoji { opacity: 0.15; font-size: 4rem; }
-
-.pe-item h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--ink);
-  position: relative;
-  transition: color 0.2s;
-}
-
+.pe-item h3 { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; color: var(--ink); position: relative; transition: color 0.2s; }
 .pe-item:first-child h3 { font-size: 1.25rem; color: #F0EAE0; }
 .pe-item:not(:first-child):hover h3 { color: var(--accent); }
-
 .pe-item:first-child:hover h3 { color: var(--gold2); }
-
 .pe-item .section-flag { margin-bottom: 0.5rem; }
 .pe-item:first-child .section-flag { color: var(--gold2); }
 .pe-item:first-child .section-flag::after { background: var(--gold2); }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--ink);
-  transition: background var(--trans);
-}
+/* ANALYSIS CARDS */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--rule); margin-bottom: 2px; }
+.card-grid.four { grid-template-columns: repeat(4, 1fr); }
+.card { background: var(--bg); padding: 1.6rem; cursor: pointer; transition: background 0.2s; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 3px; background: var(--accent); transition: width 0.3s ease; }
+.card:hover::before { width: 100%; }
+.card:hover { background: var(--bg2); }
+.card .section-flag { margin-bottom: 0.8rem; }
+.card h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; line-height: 1.3; color: var(--ink); margin-bottom: 0.6rem; transition: color 0.2s; }
+.card:hover h3 { color: var(--accent); }
+.card p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.85rem; font-weight: 300; line-height: 1.65; color: var(--ink3); margin-bottom: 0.8rem; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.card-date { font-family: 'DM Sans', sans-serif; font-size: 0.62rem; color: var(--ink4); letter-spacing: 0.05em; }
 
+footer { background: var(--ink); transition: background var(--trans); }
 [data-theme="dark"] footer { background: #040302; }
-
-.footer-top {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 3rem 2rem 2rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.footer-brand .wm {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #F0EAE0;
-  margin-bottom: 0.8rem;
-}
-
+.footer-top { max-width: var(--max); margin: 0 auto; padding: 3rem 2rem 2rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.footer-brand .wm { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: #F0EAE0; margin-bottom: 0.8rem; }
 .footer-brand .wm span { color: var(--accent); font-style: italic; }
-
-.footer-brand p {
-  font-family: 'Spectral', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  color: #5A5248;
-  line-height: 1.7;
-  max-width: 280px;
-}
-
-.footer-col h4 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold2);
-  margin-bottom: 1rem;
-}
-
+.footer-brand p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.85rem; color: #5A5248; line-height: 1.7; max-width: 280px; }
+.footer-col h4 { font-family: 'DM Sans', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold2); margin-bottom: 1rem; }
 .footer-col ul { list-style: none; }
-
-.footer-col li {
-  font-family: 'Spectral', serif;
-  font-size: 0.88rem;
-  color: #5A5248;
-  padding: 0.3rem 0;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
+.footer-col li { font-family: 'Spectral', serif; font-size: 0.88rem; color: #5A5248; padding: 0.3rem 0; cursor: pointer; transition: color 0.2s; }
 .footer-col li:hover { color: #A09888; }
-
-.footer-bottom {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1.2rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.footer-bottom p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #3A3028;
-}
-
+.footer-bottom { max-width: var(--max); margin: 0 auto; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.footer-bottom p { font-family: 'DM Sans', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: #3A3028; }
 .footer-bottom p span { color: var(--gold2); }
 
-/* ── UTILITIES ── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--rule);
-  margin: 0;
-  transition: background var(--trans);
-}
-
 a { text-decoration: none; color: inherit; }
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.divider { width: 100%; height: 1px; background: var(--rule); margin: 0; transition: background var(--trans); }
 
-/* ── FADE IN ── */
-.fade-in {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-section { grid-template-columns: 1fr; }
-  .hero-lead { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; margin-bottom: 0; }
+  .hero-lead { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 2rem; }
   .hero-stack { padding-left: 0; padding-top: 1.5rem; }
   .featured-inner { grid-template-columns: 1fr; }
   .fb-divider { display: none; }
@@ -1225,6 +314,7 @@ a { text-decoration: none; color: inherit; }
   .two-col { grid-template-columns: 1fr; }
   .pe-grid { grid-template-columns: repeat(3, 1fr); }
   .pe-item:first-child { grid-column: span 3; }
+  .match-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -1244,6 +334,9 @@ a { text-decoration: none; color: inherit; }
   .two-col { padding: 0 1rem 2rem; }
   .section-wrap { padding: 0 1rem; }
   .hero-section { padding: 1.5rem 1rem 0; }
+  .match-grid { grid-template-columns: 1fr; }
+  .match-grid.two { grid-template-columns: 1fr; }
+  .tourney-tabs { overflow-x: auto; scrollbar-width: none; }
 }
 </style>
 </head>
@@ -1256,9 +349,7 @@ a { text-decoration: none; color: inherit; }
     <span>IND vs ENG · 2nd Test · Day 3</span>
     <span>IND <strong style="color:#C4A040">287/6</strong> · ENG need 412</span>
   </div>
-  <div>
-    <span>Sunday, 25 Aug 2019</span>
-  </div>
+  <div><span>Sunday, 25 Aug 2019</span></div>
 </div>
 
 <!-- MASTHEAD -->
@@ -1413,91 +504,340 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
-<!-- CARDS SECTION -->
-<div class="section-wrap fade-in">
-
-  <div class="section-header">
-    <h2>Latest Match Reports</h2>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- MATCH REPORTS — WORLD CUP SPECIAL (TABBED)                    -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section-wrap fade-in" style="padding-top: 3rem;">
+  <div class="section-header" style="margin-bottom: 0;">
+    <h2>World Cup Match Reports</h2>
     <div class="sh-line"></div>
     <a href="#">All Reports →</a>
   </div>
 
-  <div class="card-grid">
-
-    <!-- Card 1 -->
-    <div class="card">
-      <div class="section-flag">Match Report · ODI World Cup 2019</div>
-      <h3>Stokes, Archer and England's World Cup Declaration</h3>
-      <p>
-        Ben Stokes played an innings of consummate authority, Jofra Archer bowled with the fury of a man who had spent his life waiting for precisely this stage, and somewhere in the thirty-fifth over, Stokes took a catch that seemed, for a suspended moment, to defy the known laws of athletic possibility.
-      </p>
-      <div class="card-footer">
-        <span class="tag-chip green">ODI World Cup</span>
-        <span class="card-date">29 May 2019</span>
-        <a href="wc1.html" class="read-more">Read full article →</a>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <div class="section-flag">Match Report · Test</div>
-      <h3>
-        The Roar at Edgbaston: How Flintoff Summoned the Gods and Kallis Refused
-        to Yield
-      </h3>
-      <p>
-        Over the course of two incandescent overs on a rain-shortened evening in
-        Birmingham, Andrew Flintoff and Jacques Kallis produced one of the
-        defining duels in modern Test cricket — a contest of titans that reduced
-        a ground to its feet and reminded the watching world why the five-day
-        game, at its convulsive best, has no equal in sport.
-      </p>
-      <div class="card-footer">
-        <span class="tag-chip green">England v South Africa</span>
-        <span class="card-date">1 Aug 2008</span>
-        <a href="kallis.html" class="read-more">Read full article →</a>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <div class="section-flag">Match Report · ODI</div>
-      <h3>
-        Rohit Sharma's 264: The Day the Record Books Were Rewritten in Kolkata
-      </h3>
-      <p>
-        The highest individual ODI score. The biggest partnership. The largest
-        total. One afternoon in November that redefined the limits of the
-        format.
-      </p>
-      <div class="card-footer">
-        <span class="tag-chip red">Record</span>
-        <span class="card-date">13 Nov 2024</span>
-        <a href="rohit264.html" class="read-more">Read full article →</a>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="card">
-      <div class="section-flag">Match Report · T20I</div>
-      <h3>
-        The Super Over That Cricket Will Never Stop Arguing About
-      </h3>
-      <p>
-        England and New Zealand. 241 runs apiece. A boundary count. The 2019
-        World Cup final remains the most disputed result in modern cricket
-        history.
-      </p>
-      <div class="card-footer">
-        <span class="tag-chip">World Cup</span>
-        <span class="card-date">14 Jul 2019</span>
-        <a href="super-over.html" class="read-more">Read full article →</a>
-      </div>
-    </div>
-
+  <!-- TOURNAMENT TABS -->
+  <div class="tourney-tabs">
+    <div class="tourney-tab active" data-panel="wc2019">ICC World Cup 2019</div>
+    <div class="tourney-tab" data-panel="wc2015">ICC World Cup 2015</div>
   </div>
 
-</div>
+  <!-- ── 2019 PANEL ── -->
+  <div class="tourney-panel active" id="wc2019">
+
+    <!-- England matches sub-header -->
+    <div style="padding: 2rem 0 1rem; border-bottom: 1px solid var(--rule); margin-bottom: 0;">
+      <span class="section-flag" style="margin-bottom:0;">England Matches</span>
+    </div>
+
+    <div class="match-grid">
+
+      <!-- ENG vs NZ -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 119 runs</span>
+          <span class="vs">·</span>
+          <span>Match 41</span>
+        </div>
+        <h3>England's Supercomputer Fires on All Cylinders Against New Zealand</h3>
+        <p>Eoin Morgan's side delivered their most complete ODI performance of the tournament — 305/8 on a tricky Chester-le-Street surface before bowling out the Black Caps for 186. Morgan's 148 was the day's headline, but it was the collective precision of England's fielding and seam bowling that truly defined the afternoon.</p>
+        <div class="match-footer">
+          <span class="tag-chip green">England</span>
+          <span class="match-date">3 Jul 2019</span>
+          <span class="match-venue">Chester-le-Street</span>
+        </div>
+      </div>
+
+      <!-- ENG vs PAK -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 14 runs</span>
+          <span class="vs">·</span>
+          <span>Match 6</span>
+        </div>
+        <h3>Morgan's Men Survive Pakistan's Brave Chase at Trent Bridge</h3>
+        <p>England posted 334/9 and appeared to have the game sewn up before Mohammad Hafeez and Babar Azam fashioned a partnership that made Nottingham briefly, uneasily nervous. The final margin of 14 runs flattered England slightly but the victory, in the end, was never truly in doubt — a sentence Pakistan supporters will find bitterly unjust.</p>
+        <div class="match-footer">
+          <span class="tag-chip green">England</span>
+          <span class="match-date">3 Jun 2019</span>
+          <span class="match-venue">Trent Bridge</span>
+        </div>
+      </div>
+
+      <!-- ENG vs IND -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span style="color:var(--accent);">IND won by 31 runs</span>
+          <span class="vs">·</span>
+          <span>Match 38</span>
+        </div>
+        <h3>Rohit's Third Hundred Breaks England's Unbeaten Home Record</h3>
+        <p>The only team capable of ending England's extraordinary home ODI run at Edgbaston turned out to be India, and specifically Rohit Sharma — whose 102 off 109 balls anchored a 337/7 that England's much-vaunted batting line-up could only chase to 306/9. Jasprit Bumrah's opening spell, three for eight in his first four overs, was decisive.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">30 Jun 2019</span>
+          <span class="match-venue">Edgbaston, Birmingham</span>
+        </div>
+      </div>
+
+      <!-- ENG vs WI -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 8 wkts</span>
+          <span class="vs">·</span>
+          <span>Match 18</span>
+        </div>
+        <h3>Stokes and Archer Dismantle West Indies in Southampton</h3>
+        <p>Ben Stokes played an innings of consummate authority — 89 off 79 balls — while Jofra Archer's return of 3/30 against his former countrymen had a narrative charge that the scoreboard could not quite capture. The Rose Bowl crowd rose to Archer all day. He gave them reason to.</p>
+        <div class="match-footer">
+          <span class="tag-chip green">England</span>
+          <span class="match-date">14 Jun 2019</span>
+          <span class="match-venue">The Rose Bowl, Southampton</span>
+        </div>
+      </div>
+
+      <!-- ENG vs SA — Lords -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 104 runs</span>
+          <span class="vs">·</span>
+          <span>Match 1 · Tournament Opener</span>
+        </div>
+        <h3>England Open the World Cup at Lord's: A Statement at the Home of Cricket</h3>
+        <p>The tournament began where cricket began — at Lord's — and England made certain it began on their terms. Jonny Bairstow's 113-ball 105 set the tempo; Jason Roy's ferocity at the top provided the volume. South Africa were reduced to 207 all out in 39.5 overs and the message was emphatic: this England side are not here to participate.</p>
+        <div class="match-footer">
+          <span class="tag-chip green">England</span>
+          <span class="match-date">30 May 2019</span>
+          <span class="match-venue">Lord's, London</span>
+        </div>
+      </div>
+
+      <!-- ENG vs SL -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 8 wkts</span>
+          <span class="vs">·</span>
+          <span>Match 27</span>
+        </div>
+        <h3>Bairstow's Brutal Century Sets England Back on Course at Headingley</h3>
+        <p>After back-to-back defeats had threatened to derail England's tournament — a rain-affected draw with Pakistan and a loss to Sri Lanka that still stings — Bairstow's response was to assemble 110 off 100 balls. Sri Lanka's 232/9 was never enough once Jonny arrived at the crease in the second over.</p>
+        <div class="match-footer">
+          <span class="tag-chip green">England</span>
+          <span class="match-date">21 Jun 2019</span>
+          <span class="match-venue">Headingley, Leeds</span>
+        </div>
+      </div>
+
+      <!-- ENG vs AFG -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">ENG won by 150 runs</span>
+          <span class="vs">·</span>
+          <span>Match 24</span>
+        </div>
+        <h3>Morgan's Historic Six-Hitting Spectacle Against Afghanistan</h3>
+        <p>Eoin Morgan struck 17 sixes — a world record in ODI cricket at the time — in a 148 off 71 balls that was as bewildering as it was magnificent. Afghanistan's total of 247/8 was never going to be enough against 397/6; the story of the afternoon belonged entirely to the England captain and his extraordinary, almost incomprehensible assault.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">Record</span>
+          <span class="match-date">18 Jun 2019</span>
+          <span class="match-venue">Old Trafford, Manchester</span>
+        </div>
+      </div>
+
+    </div><!-- /England matches -->
+
+    <!-- India matches sub-header -->
+    <div style="padding: 2rem 0 1rem; border-bottom: 1px solid var(--rule); margin-bottom: 0; margin-top: 1.5rem;">
+      <span class="section-flag" style="margin-bottom:0;">India Matches</span>
+    </div>
+
+    <div class="match-grid">
+
+      <!-- IND vs AUS -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">IND won by 36 runs</span>
+          <span class="vs">·</span>
+          <span>Match 14</span>
+        </div>
+        <h3>Rohit's Second Hundred of the Tournament Edges Out Australia</h3>
+        <p>India won the contest of the two tournament favourites thanks largely to Rohit Sharma's metronomic 57-ball 57 at the top and then a second-phase acceleration in which he reached his century off 115. Australia's 299 chase was derailed by Shami's 4/35 in the last ten overs — decisive, sudden, and coolly delivered.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">9 Jun 2019</span>
+          <span class="match-venue">The Oval, London</span>
+        </div>
+      </div>
+
+      <!-- IND vs SA -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">IND won by 6 wkts</span>
+          <span class="vs">·</span>
+          <span>Match 8</span>
+        </div>
+        <h3>Sharma and Dhawan Open India's Campaign with Controlled Authority</h3>
+        <p>South Africa's 227/9 was a below-par total on a flat Southampton surface, and India's openers reduced the chase to a formality within fifteen overs. Shikhar Dhawan's 67-ball 54 set the tone; Rohit Sharma's unbeaten 122-ball 122 finished it with ten overs to spare. India were never challenged.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">5 Jun 2019</span>
+          <span class="match-venue">The Rose Bowl, Southampton</span>
+        </div>
+      </div>
+
+      <!-- IND vs PAK -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">IND won by 89 runs (D/L)</span>
+          <span class="vs">·</span>
+          <span>Match 22</span>
+        </div>
+        <h3>India Defeat Pakistan — As They Always Do at World Cups</h3>
+        <p>The rain came. The DLS revised the target. And India won — as India have always won against Pakistan in World Cup cricket, a record stretching back to 1992 and now standing at seven from seven. Rohit Sharma's 140 provided the platform; the rain ensured Pakistan were always chasing what the clouds had made impossible.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">16 Jun 2019</span>
+          <span class="match-venue">Old Trafford, Manchester</span>
+        </div>
+      </div>
+
+      <!-- IND vs SL -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">IND won by 7 wkts</span>
+          <span class="vs">·</span>
+          <span>Match 44</span>
+        </div>
+        <h3>Kohli and Rohit's Partnership Clinches India's Semi-Final Spot</h3>
+        <p>Sri Lanka's 264/7 was their best effort of the tournament and it still wasn't enough. Rohit Sharma's tournament tally extended to five hundreds as he reached three figures off 94 balls; Virat Kohli, returning from injury, contributed 82 not out in a partnership of 113 that ended the contest as a competition. India strolled home with 8.1 overs remaining.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">6 Jul 2019</span>
+          <span class="match-venue">Headingley, Leeds</span>
+        </div>
+      </div>
+
+      <!-- IND vs WI -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">IND won by 125 runs</span>
+          <span class="vs">·</span>
+          <span>Match 34</span>
+        </div>
+        <h3>Bumrah and Shami Dismantle West Indies in a Rain-Affected Thriller</h3>
+        <p>West Indies had won the toss, watched the rain come twice, and then found themselves facing an Indian bowling attack that showed no mercy under the revised conditions. Jasprit Bumrah's controlled fury — 2/31 off six overs — and Mohammed Shami's lethal final spell of 4/16 ended the Caribbean challenge emphatically on a slow Old Trafford surface.</p>
+        <div class="match-footer">
+          <span class="tag-chip red">India</span>
+          <span class="match-date">27 Jun 2019</span>
+          <span class="match-venue">Old Trafford, Manchester</span>
+        </div>
+      </div>
+
+    </div><!-- /India matches -->
+
+    <!-- Australia + NZ sub-header -->
+    <div style="padding: 2rem 0 1rem; border-bottom: 1px solid var(--rule); margin-bottom: 0; margin-top: 1.5rem;">
+      <span class="section-flag" style="margin-bottom:0;">Australia &amp; New Zealand</span>
+    </div>
+
+    <div class="match-grid">
+
+      <!-- AUS vs NZ -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">AUS won by 86 runs</span>
+          <span class="vs">·</span>
+          <span>Match 20</span>
+        </div>
+        <h3>Smith's Masterclass Exposes New Zealand's Mid-Tournament Fragility</h3>
+        <p>Steve Smith, playing his first World Cup final, batted as if he owned Lord's. His 89 off 107 balls against a Black Caps attack that had been so formidable all tournament gave Australia a platform of 243/9 that proved, against all expectations, entirely sufficient. Starc's 5/26 did the rest in a Lord's that hummed with discomfort.</p>
+        <div class="match-footer">
+          <span class="tag-chip">Australia</span>
+          <span class="match-date">29 Jun 2019</span>
+          <span class="match-venue">Lord's, London</span>
+        </div>
+      </div>
+
+      <!-- AUS vs ENG - Semi-final -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">AUS won by 64 runs</span>
+          <span class="vs">·</span>
+          <span>Semi-Final</span>
+        </div>
+        <h3>Smith and Starc Eliminate England — The Host Nation Departs at Edgbaston</h3>
+        <p>England's World Cup campaign ended here — not without fight, not without the crowd's insistence that it could still be different, but conclusively. Smith's 85 and Stoinis's 38-ball 73 powered Australia to 223/9 in 49 overs; Starc then removed Roy, Bairstow and Root in six overs and England's chase of 224, seemingly manageable, became 59 for three. The dream ended at 221 all out.</p>
+        <div class="match-footer">
+          <span class="tag-chip">Australia</span>
+          <span class="match-date">11 Jul 2019</span>
+          <span class="match-venue">Edgbaston, Birmingham</span>
+        </div>
+      </div>
+
+      <!-- NZ vs WI -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">NZ won by 5 wkts</span>
+          <span class="vs">·</span>
+          <span>Match 13</span>
+        </div>
+        <h3>Williamson's Quiet Authority Sees Off West Indian Pyrotechnics</h3>
+        <p>West Indies struck 421/7 — the highest total of the tournament at that stage — and still lost. Kane Williamson's 148 off 154 balls was an innings of serene, considered purpose: never frantic, never ornate, always exactly adequate to what the match required. New Zealand reached 424/5 with two balls remaining in what might be the most improbable run-chase of the group stage.</p>
+        <div class="match-footer">
+          <span class="tag-chip">New Zealand</span>
+          <span class="match-date">22 Jun 2019</span>
+          <span class="match-venue">Old Trafford, Manchester</span>
+        </div>
+      </div>
+
+    </div><!-- /Aus-NZ -->
+
+  </div><!-- /wc2019 panel -->
+
+  <!-- ── 2015 PANEL ── -->
+  <div class="tourney-panel" id="wc2015">
+
+    <div style="padding: 2rem 0 1rem; border-bottom: 1px solid var(--rule); margin-bottom: 0;">
+      <span class="section-flag" style="margin-bottom:0;">Semi-Finals · ICC World Cup 2015</span>
+    </div>
+
+    <div class="match-grid two">
+
+      <!-- SF1: SA vs NZ -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">NZ won by 4 wkts</span>
+          <span class="vs">·</span>
+          <span>Semi-Final 1 · Auckland</span>
+        </div>
+        <h3>Grant Elliott's Six: The Moment New Zealand Stopped Losing Semi-Finals</h3>
+        <p>South Africa had never won a World Cup knockout match. In the end it was Grant Elliott — a man born in Zimbabwe, playing for New Zealand, on a last-ball six off Dale Steyn — who made sure they still hadn't. The equation at the start of the final over: 12 needed off 6 balls. What followed over that six-ball sequence — a wide, a dot, a four, a dot, a dot, and then the six — will be replayed by New Zealand supporters for generations. South Africa had scored 281/5; New Zealand 299/6 off 43.1 overs. Steyn, across his nine overs before that last one, had been magnificent. It made the ending more, not less, painful.</p>
+        <div class="match-footer">
+          <span class="tag-chip">New Zealand</span>
+          <span class="match-date">24 Mar 2015</span>
+          <span class="match-venue">Eden Park, Auckland</span>
+        </div>
+      </div>
+
+      <!-- SF2: AUS vs IND -->
+      <div class="match-card">
+        <div class="match-scoreline">
+          <span class="winner">AUS won by 95 runs</span>
+          <span class="vs">·</span>
+          <span>Semi-Final 2 · Sydney</span>
+        </div>
+        <h3>Australia End India's Tournament — and Perhaps an Era — at the SCG</h3>
+        <p>India had won every game at this World Cup. Australia ended that record comprehensively — and perhaps ended something else too: the sense, held since 2011, that this India team were the natural owners of limited-overs cricket. Steve Smith made 65; Glenn Maxwell's 23-ball 23 was the accelerant. Australia's 328/7 proved seventeen runs too many for India's batting depth to overhaul, even with Virat Kohli making 53. Mitchell Johnson's 1/30 off 10 overs told only part of the story; his presence — his sheer physical presence — did the rest. India were 233 all out. The tournament, and the final, belonged to Australia.</p>
+        <div class="match-footer">
+          <span class="tag-chip">Australia</span>
+          <span class="match-date">26 Mar 2015</span>
+          <span class="match-venue">Sydney Cricket Ground</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /wc2015 panel -->
+
+</div><!-- /section-wrap -->
 
 <!-- FEATURED DARK BAND -->
 <div class="featured-band fade-in">
@@ -1525,7 +865,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
-<!-- MORE CARDS -->
+<!-- ANALYSIS CARDS -->
 <div class="section-wrap fade-in">
   <div class="section-header">
     <h2>Analysis & Features</h2>
@@ -1589,7 +929,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
-<!-- PHOTO ESSAY / CATEGORY GRID -->
+<!-- EXPLORE BY FORMAT -->
 <div class="section-wrap fade-in" style="padding-bottom: 0;">
   <div class="section-header" style="margin-bottom: 0; padding-bottom: 1.5rem;">
     <h2>Explore by Format</h2>
@@ -1626,7 +966,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
-<!-- TWO-COL: Article List + Sidebar -->
+<!-- TWO-COL: Most Read + Sidebar -->
 <div class="two-col section-wrap fade-in" style="padding-top: 3rem;">
   <div class="main-col">
     <div class="section-header" style="padding-top: 0;">
@@ -1758,7 +1098,7 @@ a { text-decoration: none; color: inherit; }
   </div>
 </div>
 
-<!-- OPINION SECTION -->
+<!-- OPINION -->
 <div class="section-wrap fade-in">
   <div class="section-header">
     <h2>Opinion & Commentary</h2>
@@ -1837,36 +1177,24 @@ a { text-decoration: none; color: inherit; }
 </footer>
 
 <script>
-  // Theme toggle
   const toggle = document.getElementById('themeToggle');
   const html = document.documentElement;
-
   const saved = localStorage.getItem('theme') || 'light';
   html.setAttribute('data-theme', saved);
-
   toggle.addEventListener('click', () => {
     const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
+  toggle.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') toggle.click(); });
 
-  toggle.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') toggle.click();
-  });
-
-  // Fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
     });
   }, { threshold: 0.08 });
-
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Nav active on click
   document.querySelectorAll('.nav a').forEach(a => {
     a.addEventListener('click', function() {
       document.querySelectorAll('.nav a').forEach(x => x.classList.remove('active'));
@@ -1874,15 +1202,23 @@ a { text-decoration: none; color: inherit; }
     });
   });
 
-  // Poll interaction
   document.querySelectorAll('.poll-option input').forEach(input => {
     input.addEventListener('change', function() {
       const fills = document.querySelectorAll('.poll-fill');
       const vals = [62, 22, 10, 6];
       const idx = [...document.querySelectorAll('.poll-option input')].indexOf(this);
-      // slight bump to selected
       const newVals = vals.map((v, i) => i === idx ? Math.min(v + 5, 99) : Math.max(v - 1, 2));
       fills.forEach((f, i) => f.style.width = newVals[i] + '%');
+    });
+  });
+
+  // Tournament tab switching
+  document.querySelectorAll('.tourney-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tourney-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tourney-panel').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById(this.dataset.panel).classList.add('active');
     });
   });
 </script>
