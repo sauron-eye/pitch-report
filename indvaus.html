@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs India, ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper:       #FAF6F0;
+  --paper-warm:  #F3EDE3;
+  --ink:         #151209;
+  --ink-deep:    #1E1912;
+  --ink-mid:     #3A342A;
+  --ink-soft:    #5C5448;
+  --ink-ghost:   #9A9288;
+  --rule:        #D4CAB8;
+  --rule-dark:   #B0A898;
+  --saffron:     #FF9933;
+  --saffron-dk:  #CC7A00;
+  --indigo:      #1C3E72;
+  --indigo-mid:  #2B5BA8;
+  --green-ind:   #138808;
+  --green-pale:  #E8F5E8;
+  --gold:        #9B7C20;
+  --gold-lt:     #C4A040;
+  --red:         #8B1A10;
+  --navy-aus:    #0D2340;
+  --gold-aus:    #C6A84B;
+}
+
+html { font-size: 18px; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.np-header {
+  background: linear-gradient(135deg, #0D2340 0%, #1C3E72 50%, #0D2340 100%);
+  border-bottom: 6px double var(--saffron);
+  position: relative;
+  overflow: hidden;
+}
+
+.np-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
+  pointer-events: none;
+}
+
+.np-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.np-header-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.np-header-left .edition-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--saffron); }
+.np-header-left .date-line { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; }
+
+.masthead-title { text-align: center; }
+.masthead-title .pub-name { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #FAF6EE; letter-spacing: 0.02em; line-height: 1; display: block; }
+.masthead-title .pub-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--saffron); margin-top: 0.35rem; display: block; }
+
+.np-header-right { text-align: right; display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-end; }
+.np-header-right .price { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--saffron); }
+.np-header-right .issue { font-family: 'Barlow', sans-serif; font-size: 0.65rem; font-weight: 300; color: rgba(255,255,255,0.4); }
+
+.section-strip { background: var(--ink); max-width: 980px; margin: 0 auto; padding: 0.55rem 2rem; display: flex; align-items: center; gap: 1.5rem; }
+.section-strip .sec-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron); white-space: nowrap; }
+.section-strip .breadcrumb { font-family: 'Barlow', sans-serif; font-size: 0.62rem; font-weight: 400; color: #6A6258; letter-spacing: 0.06em; }
+.section-strip .breadcrumb span { color: #8A8278; }
+
+.hero { max-width: 980px; margin: 0 auto; padding: 2.5rem 2rem 0; border-bottom: 3px double var(--rule-dark); padding-bottom: 2rem; }
+.match-flag { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+.flag-pip { display: inline-block; width: 8px; height: 8px; background: var(--saffron); border-radius: 50%; }
+.match-flag-text { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--saffron-dk); }
+
+.hl { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 5vw, 3.4rem); font-weight: 900; line-height: 1.09; color: var(--ink); letter-spacing: -0.018em; margin-bottom: 1.2rem; }
+.hl em { font-style: italic; color: var(--indigo); }
+.hl .accent { color: var(--saffron-dk); }
+
+.deck { font-family: 'Spectral', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.65; color: var(--ink-mid); max-width: 740px; padding-left: 1.2rem; border-left: 3px solid var(--saffron); margin-bottom: 1.8rem; }
+
+.byline-bar { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; padding: 1rem 0 0; border-top: 1px solid var(--rule); }
+.byline-bar .by { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.byline-bar .by strong { color: var(--ink); }
+.byline-bar .loc { font-family: 'Barlow', sans-serif; font-size: 0.68rem; color: var(--ink-ghost); }
+.byline-bar .datestamp { margin-left: auto; font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: var(--ink-ghost); letter-spacing: 0.04em; }
+
+.scoreboard { background: linear-gradient(135deg, #0D2340, #1C3E72); max-width: 980px; margin: 0 auto; padding: 1.5rem 2rem; display: grid; grid-template-columns: 1fr auto 1fr auto; align-items: center; gap: 1.5rem; border-bottom: 4px solid var(--saffron); }
+.sb-team .nation { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--saffron); display: block; margin-bottom: 0.4rem; }
+.sb-team .total { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: #F5F0E8; display: block; line-height: 1; }
+.sb-team .total small { font-size: 1.2rem; font-weight: 400; color: #7A7060; }
+.sb-team .overs { font-family: 'Barlow', sans-serif; font-size: 0.68rem; font-weight: 300; color: #6A6058; display: block; margin-top: 0.25rem; }
+.sb-vs { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; color: #4A4438; font-weight: 700; text-transform: uppercase; text-align: center; }
+.sb-result { font-family: 'Spectral', serif; font-style: italic; color: #8A8070; font-size: 0.9rem; line-height: 1.65; border-left: 1px solid #2A2820; padding-left: 1.5rem; }
+.sb-result strong { font-style: normal; color: var(--saffron); font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; }
+
+.body-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 2rem 4rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
+
+.prose p { font-family: 'Spectral', serif; font-size: 1.05rem; line-height: 1.92; color: var(--ink-mid); margin-bottom: 1.45rem; }
+.prose p:first-child::first-letter { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 900; float: left; line-height: 0.8; margin-right: 0.1em; margin-top: 0.1em; color: var(--indigo); }
+
+.prose h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1.3; margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 2px solid var(--rule); letter-spacing: -0.01em; }
+
+.prose-rule { border: none; border-top: 3px double var(--rule-dark); margin: 2.5rem 0; }
+
+.pq { margin: 2.8rem 0; padding: 1.5rem 1.8rem; background: #FFF8EE; border-left: 4px solid var(--saffron-dk); border-right: 1px solid var(--rule); }
+.pq p { font-family: 'Playfair Display', serif !important; font-size: 1.45rem !important; font-weight: 700 !important; font-style: italic; line-height: 1.45 !important; color: var(--indigo) !important; margin-bottom: 0.7rem !important; }
+.pq p::first-letter { font-size: inherit !important; float: none !important; color: inherit !important; margin: 0 !important; }
+.pq cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--saffron-dk); font-style: normal; }
+
+.innings-box { background: var(--ink-deep); margin: 2.8rem 0; overflow: hidden; }
+.innings-box-hd { display: flex; align-items: center; justify-content: space-between; padding: 0.85rem 1.6rem; border-bottom: 1px solid #2A2820; }
+.innings-box-hd h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--saffron); }
+.innings-box-hd .innings-total { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: #7A7260; }
+.innings-row { display: grid; grid-template-columns: 1.6rem 1fr auto auto; gap: 0.8rem 1rem; padding: 0.7rem 1.6rem; border-bottom: 1px solid #1E1C16; align-items: baseline; }
+.innings-row.header { background: #1A1812; }
+.innings-row.header span { font-family: 'Barlow Condensed', sans-serif !important; font-size: 0.55rem !important; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #4A4840 !important; }
+.innings-row:last-child { border-bottom: none; }
+.bat-num { font-family: 'Barlow', sans-serif; font-size: 0.65rem; color: #4A4438; font-weight: 300; }
+.bat-name { font-family: 'Spectral', serif; font-size: 0.98rem; color: #D8D0C4; line-height: 1.3; }
+.bat-name em { font-style: normal; font-size: 0.78rem; color: #8A8278; display: block; }
+.bat-runs { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--saffron); text-align: right; }
+.bat-balls { font-family: 'Barlow', sans-serif; font-size: 0.72rem; font-weight: 300; color: #5A5448; text-align: right; min-width: 3rem; }
+.bat-runs.highlight { color: #FFD080; }
+.innings-extras { padding: 0.8rem 1.6rem; border-top: 1px solid #2A2820; display: flex; justify-content: space-between; align-items: center; }
+.innings-extras span { font-family: 'Barlow', sans-serif; font-size: 0.7rem; color: #6A6258; }
+.innings-extras strong { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #F5F0E8; }
+
+.timeline { margin: 2.8rem 0; }
+.timeline-head { font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-ghost); padding-bottom: 0.8rem; border-bottom: 1px solid var(--rule); }
+.tl-item { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px dashed var(--rule); align-items: start; }
+.tl-item:last-child { border-bottom: none; }
+.tl-score { font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem; font-weight: 800; color: var(--red); letter-spacing: 0.03em; padding-top: 0.05rem; }
+.tl-text { font-family: 'Spectral', serif; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.55; }
+.tl-text .who { color: var(--ink); font-weight: 600; }
+.tl-text .note { color: var(--ink-ghost); font-style: italic; font-size: 0.88rem; }
+
+.sidebar { position: sticky; top: 2rem; }
+.sbox { border: 1px solid var(--rule); margin-bottom: 2rem; overflow: hidden; }
+.sbox-hd { background: var(--indigo); color: var(--saffron); font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 0.65rem 1rem; }
+.sbox-body { padding: 0.8rem 1rem; background: var(--paper-warm); }
+.sbox-body ul { list-style: none; }
+.sbox-body li { font-family: 'Spectral', serif; font-size: 0.92rem; color: var(--ink-soft); padding: 0.45rem 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; line-height: 1.4; }
+.sbox-body li:last-child { border-bottom: none; }
+.sbox-body li .lbl { font-family: 'Barlow', sans-serif; font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-ghost); white-space: nowrap; }
+.sbox-body li strong { font-weight: 600; color: var(--ink); text-align: right; }
+.star-stat { padding: 1.2rem 1rem; background: var(--paper-warm); text-align: center; }
+.star-stat .num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 900; color: var(--indigo); line-height: 1; display: block; margin-bottom: 0.4rem; }
+.star-stat .desc { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; }
+.snote { padding: 0.9rem 1rem; border: 1px solid var(--rule); border-left: 3px solid var(--gold); background: var(--paper-warm); margin-bottom: 2rem; }
+.snote p { font-family: 'Spectral', serif; font-style: italic; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 0.4rem; }
+.snote cite { font-family: 'Barlow Condensed', sans-serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+footer { background: var(--indigo); border-top: 4px double var(--saffron); padding: 2rem; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #3A4A60; }
+footer span { color: var(--saffron); }
+
+@media (max-width: 740px) {
+  .np-header-inner { grid-template-columns: 1fr; text-align: center; }
+  .np-header-left, .np-header-right { display: none; }
+  .body-wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .sidebar { position: static; }
+  .scoreboard { grid-template-columns: 1fr 1fr; }
+  .sb-result { border-left: none; padding-left: 0; border-top: 1px solid #2A2820; padding-top: 1rem; grid-column: 1 / -1; }
+  .innings-row { grid-template-columns: 1fr auto auto; }
+  .innings-row .bat-num { display: none; }
+  .byline-bar .datestamp { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left">
+        <span class="edition-tag">World Cup Edition</span>
+        <span class="date-line">Sunday, 9 June 2019 · The Oval, London</span>
+      </div>
+      <div class="masthead-title">
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="np-header-right">
+        <span class="price">£1.80 · International ₹60</span>
+        <span class="issue">ICC World Cup 2019 · Match No. 14</span>
+      </div>
+    </div>
+  </div>
+  <div class="section-strip">
+    <span class="sec-label">Match Report</span>
+    <span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 14 <span>›</span> India vs Australia</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="match-flag">
+    <span class="flag-pip"></span>
+    <span class="match-flag-text">ICC Cricket World Cup 2019 · Match 14 · The Oval, Kennington, London</span>
+  </div>
+  <h1 class="hl">
+    <em>Dhawan's Century</em> and the<br>
+    <span class="accent">Men in Blue's Emphatic</span><br>
+    Statement at The Oval
+  </h1>
+  <p class="deck">When India and Australia meet at a World Cup, history accompanies them like a second squad — twelve previous encounters between these two cricketing civilisations, the accumulated weight of semifinals and finals and contested close calls. On this particular Sunday at The Oval, with both sides arriving with perfect records and the tournament barely a fortnight old, it was India who imposed the cleaner will. Shikhar Dhawan's century was the centrepiece, Virat Kohli's 82 the reinforcing argument, and when the bowlers arrived — Bumrah in particular, with his crooked run and his fast-twitch precision — they were simply, as India's best bowling unit had been throughout their most commanding performances, too good.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="loc">The Oval, Kennington, London</span>
+    <span class="datestamp">9 June 2019</span>
+  </div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team">
+    <span class="nation">India</span>
+    <span class="total">352<small> / 5</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team">
+    <span class="nation">Australia</span>
+    <span class="total">316<small> ao</small></span>
+    <span class="overs">50.0 overs</span>
+  </div>
+  <div class="sb-result">
+    <strong>Result</strong>
+    India won by 36 runs<br>
+    Dhawan 117 · Bumrah 3–61 · MOM: Dhawan
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The greatest cricket matches — not the closest ones, not necessarily the most dramatic ones, but the greatest in the sense of revealing something true and lasting about the teams that play them — have a quality of inevitability about their conclusion that is only legible in retrospect. As India passed 280 in the forty-third over, as Pandya was dispatching Mitchell Starc to the midwicket boundary for the third time in the over with the casual contempt of a batsman who has decided that the match is already won and is merely completing the paperwork, there was about the afternoon at The Oval the feeling that something had been settled — not just the match, not just the two league points, but a question about the relative strength of the two sides that the pre-tournament discussion had raised and which the afternoon had resolved, comprehensively, in India's favour. They were better. They were better in all three departments. They were, in the manner of their victory — the openers' century stand, the middle-order consolidation, the ruthless lower-order explosion, and then, in the chase, the controlled tightening of the vice by Bhuvneshwar and Bumrah — a more complete team on this particular Sunday at this particular ground. Australia would recover. But they would not forget this afternoon quickly.</p>
+
+    <p>The morning had brought with it the unalloyed pleasure of a pitch that invited strokeplay from the first delivery. Virat Kohli won the toss and, surveying a surface that had the easy pace and carry of an early-season English wicket that hasn't yet had time to acquire the lateral movement that costs runs and extracts edges, elected to bat. It was, viewed through the glass of the innings that followed, an entirely correct reading of the conditions. Nathan Coulter-Nile opened the bowling for Australia, as he had done throughout the tournament, and he was disciplined enough in his first four overs to keep the scoring rate below what the pitch was offering. Starc came on from the other end with his familiar combination of late swing and pace that, in more sympathetic conditions, makes right-handed batsmen look considerably less capable than they are. At The Oval on this morning, the conditions were not sympathetic to the bowlers. The pitch was a batting wicket. Everyone understood this. The question was simply one of who would take fuller advantage of it.</p>
+
+    <h2>Dhawan and Rohit: The Partnership That Set the Match's Tone</h2>
+
+    <p>Shikhar Dhawan and Rohit Sharma have, between them, constructed a partnership across enough one-day internationals that they have arrived at the quality of a well-established translation — each instinctively knows what the other means, what the other requires, when to push and when to consolidate. At The Oval, they opened with the 127-run partnership that gave India's innings its early spine, a stand of such unhurried assurance that it seemed, for the spectators watching it, less like a pair of batsmen building an innings than like two skilled architects who have read the blueprint and are simply following what the blueprint says. Rohit was the more watchful of the two in the first quarter of his innings — his fifty came from 61 balls, a rate that acknowledged the early-morning conditions without surrendering to them. His cover drive, when the length was full, was as clean and precise as any shot played on any ground in this tournament. He looked, as he so often does in conditions that allow him to settle and play his natural game, like a batsman who is simply incapable of getting out.</p>
+
+    <p>Dhawan, batting left-handed and using the greater width of the Oval's outfield to his advantage with the sweep and the driven boundary through mid-wicket, reached his fifty from 53 balls with an effortless efficiency that had the crowd rising. His fifty was full of the shots that define him: the upper-cut over the gully, the flicked four off his hip, the strong-wristed drive through the covers that bisects the field with the precision of a batsman who has spent years identifying the widest gap and targeting it consistently. He reached his century from 95 balls — India's fastest of the tournament at that stage — and celebrated with the famous salute that has become the visual signature of his largest innings: the hand to the forehead, the face upturned, the gesture that belongs to a man who learned his cricket in the Punjab and carries, even now, even on a grey English June morning at the Oval, something of the summer heat of home in the way he bats.</p>
+
+    <p>Rohit was finally dismissed for 57 — caught by Carey behind the stumps off Coulter-Nile, a delivery that rose off a good length outside off and found the outside edge of his bat before the wicket-keeper took the catch with neat footwork to his right. The partnership had made 127 in twenty-two overs. It had set the match's terms. Kohli came in. The match, which had been proceeding at a politely assertive tempo, was about to accelerate into something more expansive.</p>
+
+    <div class="pq">
+      <p>"To get a hundred in a World Cup match against Australia — I'm just very happy. The team needed a big total and we gave ourselves that."</p>
+      <cite>Shikhar Dhawan, post-match, on his 16th ODI century at Lord's</cite>
+    </div>
+
+    <h2>Kohli and Dhawan: The Second Century Stand</h2>
+
+    <p>Virat Kohli is, in the popular imagination of cricket's global audience, the most complete batsman of his generation — a description that carries the simultaneous advantage of being broadly accurate and the disadvantage of understating how hard-won and technically specific that completeness actually is. He does not impose himself on the game the way a Stokes imposes, or the way a Pandya in full flight imposes. He shapes it, bends it to the requirements of the moment, understands instinctively what each phase of the innings requires and delivers it with the economy of a batsman who never plays a single unnecessary shot. His 82, from 77 balls, was an innings of exactly this quality: not the most visually spectacular innings of the day, not the innings that produced the gasps or the roars that greeted Pandya's upper-cuts and pulled sixes, but the innings around which the total was assembled. He and Dhawan added 93 together for the second wicket — a partnership of different textures and temperaments, the left-handed aggression of Dhawan complemented by the right-handed exactitude of Kohli, and the two of them together making the Australian bowling look not merely expensive but positively ordinary.</p>
+
+    <p>Dhawan was dismissed by Starc for 117, holing out to deep midwicket — a delivery that was too full, angling into his pads, inviting the heave that found the fielder rather than clearing him. It was the shot of a batsman who had been batting for a hundred and nine balls and had earned the right to attempt it; it was the wicket of a bowler who had been expensive for most of the afternoon and finally found the variation that cost the batsman his wicket. Dhawan walked off to the warm applause of a crowd that had been watching him for an hour and three-quarters and had been entertained throughout. His was the innings that defined India's day. But what came next defined the total.</p>
+
+    <h2>Pandya's Explosion and the Final Carnage</h2>
+
+    <p>There is a version of Hardik Pandya that is merely very good — a lower-middle-order batsman of considerable power, capable of providing twenty or thirty runs at a brisk clip, capable of hitting the boundary at a useful moment. And there is another version of Pandya — the version that arrived at the crease at The Oval at number four, with Kohli settled at the other end and the total at 220 and the last fifteen overs stretching out before him like an invitation — that is something altogether more alarming. He struck 48 from 27 balls. He hit four fours and three sixes. The sixes landed in the kind of places that make fielders feel philosophically resigned to their fate: one over extra cover off Starc, a perfect inside-out assault on the spinner's length and line; one over midwicket off Cummins, a muscular pull that never threatened to fall short; one over long-on off Adam Zampa that was, in the clarity of its geometry, the signature shot of his innings. He was dismissed for 48, caught at cover off Stoinis — a low, flat catch that Stoinis accepted at ankle height with the reflexes of a man who had somehow anticipated exactly where the ball was going. Pandya had, in fewer than five overs, taken India from 220 to 301.</p>
+
+    <p>MS Dhoni followed, contributing 27 from 14 balls with the serene efficiency of a man who understands run chases and large totals at an architectural level rather than a merely technical one — he knows not just how to bat in these circumstances but why certain shots in certain phases of the innings produce certain results. KL Rahul made 11 from 3 balls, a cameo of pure aggression. The final total of 352 for 5 from fifty overs was, in the context of a tournament that had produced its share of large scores, a statement. It was not a total to be chased casually. It was not, however, entirely out of reach — for the Australians, who had scored at over 350 twice in their recent history, the mathematics were demanding but not inconceivable.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd">
+        <h3>India Batting — 1st Innings</h3>
+        <span class="innings-total">352 / 5 in 50 overs</span>
+      </div>
+      <div class="innings-row header">
+        <span></span><span>Batsman</span><span>R</span><span>B</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">1</span>
+        <span class="bat-name">RG Sharma<em>c †Carey b Coulter-Nile</em></span>
+        <span class="bat-runs">57</span>
+        <span class="bat-balls">70</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">2</span>
+        <span class="bat-name">S Dhawan<em>c sub (NM Lyon) b Starc</em></span>
+        <span class="bat-runs highlight">117</span>
+        <span class="bat-balls">109</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">3</span>
+        <span class="bat-name">V Kohli (c)<em>c Cummins b Stoinis</em></span>
+        <span class="bat-runs">82</span>
+        <span class="bat-balls">77</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">4</span>
+        <span class="bat-name">HH Pandya<em>c Finch b Cummins</em></span>
+        <span class="bat-runs">48</span>
+        <span class="bat-balls">27</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">5</span>
+        <span class="bat-name">MS Dhoni†<em>c &amp; b Stoinis</em></span>
+        <span class="bat-runs">27</span>
+        <span class="bat-balls">14</span>
+      </div>
+      <div class="innings-row">
+        <span class="bat-num">6</span>
+        <span class="bat-name">KL Rahul<em>not out</em></span>
+        <span class="bat-runs">11</span>
+        <span class="bat-balls">3</span>
+      </div>
+      <div class="innings-extras">
+        <span>Extras: 10 (lb 3, w 7)</span>
+        <strong>352 / 5</strong>
+      </div>
+    </div>
+
+    <h2>Australia's Chase: Warner and Khawaja Keep Hope Alive</h2>
+
+    <p>Three hundred and fifty-three to win, off fifty overs, on a batting-friendly Oval surface that had already produced the match's dominant innings. The arithmetic, for Australia — a side that had arrived at this tournament as the defending champions and had beaten every opponent they had so far faced with the assurance of men who were still learning the boundaries of their own authority — was demanding but not absurd. David Warner and Aaron Finch opened with the measured intention of batsmen who understood that the required run rate of 7.06 was achievable if the first ten overs could produce the platform that the openers had been asked to provide throughout the tournament.</p>
+
+    <p>Finch was run out for 36 — a Kedar Jadhav intervention that was sharp, direct, and entirely characteristic of the kind of fielding that Indian sides of this era have made their calling card. Jadhav, stationed at mid-on, fielded a firm drive cleanly and threw down the bowler's end with an accuracy that found the stumps and found Finch marginally short of his ground. Pandya helped complete the run-out. It was a moment that, in the context of the chase, felt heavier than it was: two runs short of a forty, the partnership broken at 61, the big innings that Australia needed from their captain already prevented. Warner, at the other end, survived and prospered — his 56, from 84 balls, was a patient, accumulative innings from a left-hander who understood that the required rate meant he could not afford to play his most attacking game, but who was accumulating at a rate that kept Australia theoretically within range.</p>
+
+    <p>Steve Smith came in at three and played with the watchful, slightly stilted concentration of a man who was battling not just the bowling but the conditions of a target that demanded the kind of acceleration he is not naturally inclined to provide. His 69, from 70 balls, was a technically correct innings that deserved a larger stage — an innings that, in different circumstances, might have been the bedrock of a successful chase rather than its most dignified chapter. He was dismissed lbw by Bumrah, a delivery of such economical perfection that it prompted the Australians not even to review: a length ball on middle, staying low, catching Smith on the front pad as he attempted to work it to leg. Gone for 69. India 3 for 202. The run rate had accelerated beyond what the remaining batsmen could credibly sustain.</p>
+
+    <div class="pq">
+      <p>"The pitch was good to bat on, but 352 was always going to be very tough. We needed partnerships and we couldn't build them when it mattered."</p>
+      <cite>Aaron Finch, Australia captain, post-match press conference at The Oval</cite>
+    </div>
+
+    <h2>Bumrah's Clinical Finish and the Final Reckoning</h2>
+
+    <p>Jasprit Bumrah's bowling is, in the specialist vocabulary of those who have studied fast bowling technically and historically, something that operates outside the established grammar of the form. He runs in from a wide angle, his approach to the crease ungainly in the way that matters least — aesthetics — and impeccable in the way that matters most: the wrist position at release, the seam angle, the ability to extract pace from a length that would produce medium pace from a lesser bowler. At The Oval, he took three wickets for 61 runs — figures that are respectable without being spectacular in the context of the target India had set. But the wickets themselves, and the manner in which they came, told a more interesting story than the numbers suggested. Maxwell — who had already dispatched Yuzvendra Chahal for six with the kind of inside-out drive that makes leg-spinners briefly question their career choices — played against the break and top-edged a slog-sweep to Jadeja, the substitute fielder, who completed a tumbling, low catch in the manner of a man who had been placed in exactly the right position for exactly this eventuality. Three wickets had fallen for seven runs in the fortieth over. The game was decided. Australia were collapsing not to indiscipline exactly but to the accumulated pressure of a target that had always required their batting order to perform collectively rather than individually, and their batting order had instead performed in instalments.</p>
+
+    <p>Alex Carey made 55 not out — a late-innings cameo of genuine quality, the batting of a wicketkeeper-batsman who understands that his role in the lower order is to keep the scoreboard moving with intelligence rather than heroics. He struck five fours and a six, and his innings — productive, well-timed, technically correct — was the most symptomatic of Australia's afternoon: individually impressive, collectively insufficient. Mitchell Starc hit 14 and Adam Zampa contributed a final catch to Jadeja to close the innings at 316, 36 runs short of the 353 that India had set. Bhuvneshwar Kumar's final wicket — a knuckle-ball variation that deceived Zampa's splice and produced a catch to mid-off — was as artful as any delivery bowled in the match. It was the ideal full stop: the craftsman's last touch, the economy of means that distinguishes the genuinely accomplished from the merely gifted.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">Australia Chase — Fall of Wickets</div>
+      <div class="tl-item">
+        <span class="tl-score">61</span>
+        <span class="tl-text"><span class="who">Finch run out (Jadhav/Pandya) 36.</span> <span class="note">Direct hit from mid-on. Finch marginally short of his ground. Partnership broken, momentum checked.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">133</span>
+        <span class="tl-text"><span class="who">Warner c deep mid-wkt b Chahal 56.</span> <span class="note">Tossed up on middle, Warner tried to slug over boundary. Found Bhuvneshwar in the outfield.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">202</span>
+        <span class="tl-text"><span class="who">Khawaja b Bumrah 42.</span> <span class="note">Shuffled across to ramp, edged into his own stumps. Elegant innings undone by an audacious shot.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">238</span>
+        <span class="tl-text"><span class="who">Smith lbw b Kumar 69.</span> <span class="note">Reviewed and overturned: ball-tracking confirmed hitting leg stump. Gun review from Kohli.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">238</span>
+        <span class="tl-text"><span class="who">Stoinis b Kumar 0.</span> <span class="note">Two in one over for Bhuvneshwar. Ball stayed low, clipped off stump. Three wickets in seven balls.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">244</span>
+        <span class="tl-text"><span class="who">Maxwell c sub (Jadeja) b Chahal 28.</span> <span class="note">Slog-sweep against the break, top edge to the tumbling substitute fielder. Three wickets for 15 runs.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">283</span>
+        <span class="tl-text"><span class="who">Coulter-Nile c Kohli b Bumrah 4.</span> <span class="note">Slower short ball, dragged to deep midwicket. Kohli at the rope takes comfortably.</span></span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-score">316</span>
+        <span class="tl-text"><span class="who">Zampa c sub (Jadeja) b Kumar 1. Innings closed at 316.</span> <span class="note">Knuckle-ball variation, spliced to mid-off. India win by 36 runs. Two wins from two in the tournament.</span></span>
+      </div>
+    </div>
+
+    <h2>What the Afternoon Confirmed</h2>
+
+    <p>India had, in the space of fifty overs on each side, demonstrated something beyond the merely statistical fact of their second consecutive World Cup victory. They had demonstrated the particular quality that distinguishes the good from the very good at a tournament of this magnitude: depth. The depth of their batting, which had produced 352 through five different batsmen contributing meaningful scores at different stages rather than relying on one great innings to carry the total. The depth of their bowling, which had asked Bhuvneshwar, Bumrah, and Chahal each to play their designated role and had seen all three of them execute it with the kind of precision that suggests a team that has discussed each batsman in the opposing order in some detail and arrived at specific plans that each bowler has then carried out. The depth, even, of their fielding, which had produced the run-out, the Jadeja catches, and Kohli's low, clean grab at deep midwicket that terminated Coulter-Nile's late resistance.</p>
+
+    <p>Australia, for their part, had shown two things simultaneously: that they were capable of scoring 316 against the world's best bowling attack, which is a performance not to be casually dismissed; and that 316 is, against a side batting as India batted on this afternoon, not enough. The 36-run margin in this match was, in the context of the match's narrative, a fair representation of the gap between the two sides. India were better. They knew it. The Australians, to their credit, did not pretend otherwise.</p>
+
+    <hr class="prose-rule">
+
+    <p>The subcontinent had, since the beginning of the tournament, adopted an almost proprietorial interest in India's campaign — the first-round fixture against South Africa at Southampton had been followed by approximately a hundred million viewers at home; this match, against the tournament's most celebrated recent champions, doubled that figure. What they had witnessed was, beyond the result, a performance of quality and composure that the Indian team of 2019 had been building toward across four years of one-day development under Kohli's captaincy: the aggressive batting philosophy, the world-class fast bowling, the athletic, invested fielding. At The Oval, with the May sunshine finding the gaps between the London clouds and the ball coming on nicely from the pitch's well-rolled surface, India had given the tournament's opening fortnight its most complete performance. Whether they would sustain it through the capricious English summer and the gathering tactical adjustments of the world's best bowling attacks was a question the tournament was only beginning to ask. For now, on this Sunday evening, their answer was: yes, we are capable of this, on the best of days, against the very best of opponents.</p>
+
+  </article>
+
+  <aside class="sidebar">
+
+    <div class="sbox">
+      <div class="sbox-hd">Match Summary</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Venue</span><strong>The Oval, London</strong></li>
+          <li><span class="lbl">Date</span><strong>9 June 2019</strong></li>
+          <li><span class="lbl">Toss</span><strong>India won, elected to bat</strong></li>
+          <li><span class="lbl">India</span><strong>352/5 (50 ov)</strong></li>
+          <li><span class="lbl">Australia</span><strong>316 ao (50 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>India won by 36 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>Shikhar Dhawan</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Shikhar Dhawan — The Hundred</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Runs</span><strong>117 (109 balls)</strong></li>
+          <li><span class="lbl">Fours / Sixes</span><strong>16 / 0</strong></li>
+          <li><span class="lbl">Century off</span><strong>96 balls</strong></li>
+          <li><span class="lbl">Partnership (1st)</span><strong>127 with Rohit</strong></li>
+          <li><span class="lbl">Note</span><strong>16th ODI century; fastest of CWC 2019</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">India Bowling</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Bumrah</span><strong>3/61 (10 ov)</strong></li>
+          <li><span class="lbl">Bhuvneshwar</span><strong>4/50 (10 ov)</strong></li>
+          <li><span class="lbl">Chahal</span><strong>2/62 (10 ov)</strong></li>
+          <li><span class="lbl">Pandya</span><strong>0/45 (7 ov)</strong></li>
+          <li><span class="lbl">Jadeja (sub)</span><strong>2 catches (as sub)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbox">
+      <div class="sbox-hd">Pandya's Cameo</div>
+      <div class="star-stat">
+        <span class="num">48</span>
+        <span class="desc">Hardik Pandya's 48 off just 27 balls, including 3 sixes, transformed India's total from 220 to 301 in under five overs.</span>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"Dhawan and Rohit are the best ODI opening pair in the world right now. They read the situation and they read each other — 127 together set the platform for everything that followed."</p>
+      <cite>Ravi Shastri, India Head Coach, post-match</cite>
+    </p>
+
+    <div class="sbox">
+      <div class="sbox-hd">Australia — Notable Batting</div>
+      <div class="sbox-body">
+        <ul>
+          <li><span class="lbl">Smith</span><strong>69 (70 balls)</strong></li>
+          <li><span class="lbl">Warner</span><strong>56 (84 balls)</strong></li>
+          <li><span class="lbl">Carey†</span><strong>55* (35 balls)</strong></li>
+          <li><span class="lbl">Khawaja</span><strong>42 (39 balls)</strong></li>
+          <li><span class="lbl">Target</span><strong>353 — fell 36 short</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="snote">
+      <p>"Stoinis's reaction catch to dismiss Dhoni — that was the catch of the tournament at that point. Dhoni had hit it absolutely flush, and somehow it stuck."</p>
+      <cite>Mark Nicholas, Channel 4 commentary, on Marcus Stoinis's stunning dismissal of MS Dhoni</cite>
+    </p>
+
+  </aside>
+</div>
+
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · Match 14 · The Oval, London · 9 June 2019<br>
+  India 352/5 defeated Australia 316 by 36 runs
+</footer>
+
+</body>
+</html>
