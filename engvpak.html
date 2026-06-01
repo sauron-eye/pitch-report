@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — England's Group Stage Campaign | ICC World Cup 2019</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --paper:#F7F3EC;
+  --warm:#EDE7DA;
+  --ink:#14110A;
+  --ink-mid:#302A1E;
+  --ink-soft:#584E40;
+  --ink-ghost:#9A9080;
+  --rule:#CCC4B0;
+  --rule-dk:#A89E88;
+  --green:#1B4A2E;
+  --green-mid:#245E3A;
+  --green-lt:#3A7D52;
+  --green-pale:#E6F0E8;
+  --gold:#9B7C18;
+  --gold-lt:#C8A440;
+  --red:#8B1A0E;
+  --red-lt:#C0301A;
+  --blue:#1A3060;
+  --blue-lt:#2A4A90;
+  --blue-pale:#E8EDF8;
+  --amber:#7A4A08;
+  --amber-lt:#C07810;
+  --amber-pale:#FDF0E0;
+  --teal:#0E4848;
+  --teal-lt:#1A7070;
+  --teal-pale:#E0F0F0;
+}
+
+html{font-size:17px;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased}
+
+/* ─── MASTHEAD ─── */
+.masthead{background:var(--green);border-bottom:5px double var(--gold-lt)}
+.masthead-inner{max-width:1000px;margin:0 auto;padding:1.6rem 2rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
+.mh-left,.mh-right{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.mh-left{color:rgba(255,255,255,.4)}
+.mh-right{color:rgba(255,255,255,.4);text-align:right}
+.mh-left span,.mh-right span{color:var(--gold-lt);display:block;margin-bottom:.15rem}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:900;color:#FAF6EE;letter-spacing:.03em;line-height:1;text-align:center;display:block}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-lt);text-align:center;display:block;margin-top:.3rem}
+
+/* ─── FRONT BANNER ─── */
+.front-banner{background:var(--ink);max-width:1000px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:3px solid var(--gold)}
+.fb-label{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+.fb-desc{font-family:'Spectral',serif;font-style:italic;font-size:.9rem;color:#7A7060}
+.fb-matches{display:flex;gap:1.5rem;flex-wrap:wrap}
+.fb-match-pill{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .7rem;border:1px solid #3A3028}
+.fb-match-pill.won{color:#6ACA8A;border-color:#2A5030}
+.fb-match-pill.lost{color:#E07060;border-color:#502818}
+
+/* ─── SECTION DIVIDER ─── */
+.section-divider{max-width:1000px;margin:0 auto;padding:.5rem 2rem;display:flex;align-items:center;gap:1rem}
+.sd-line{flex:1;height:1px;background:var(--rule)}
+.sd-label{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+
+/* ─── MATCH WRAPPER ─── */
+.match-article{max-width:1000px;margin:0 auto;padding:0 0 3rem;border-bottom:4px double var(--rule-dk)}
+.match-article:last-of-type{border-bottom:none}
+
+/* ─── MATCH HEADER ─── */
+.match-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid var(--rule)}
+.match-meta-row{display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;flex-wrap:wrap}
+.match-num{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:.2rem .7rem;background:var(--green);color:var(--gold-lt)}
+.match-venue{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-ghost)}
+.match-date{font-family:'Barlow',sans-serif;font-size:.62rem;font-weight:300;color:var(--ink-ghost);margin-left:auto}
+
+.match-hl{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.015em;color:var(--ink);margin-bottom:.9rem}
+.match-hl em{font-style:italic}
+
+.match-deck{font-family:'Spectral',serif;font-size:1.1rem;font-style:italic;font-weight:300;line-height:1.6;color:var(--ink-soft);max-width:700px;padding-left:1.1rem;margin-bottom:1.4rem}
+.match-deck.won{border-left:3px solid var(--green-lt)}
+.match-deck.lost{border-left:3px solid var(--red-lt)}
+
+.match-byline{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-top:.9rem;border-top:1px solid var(--rule);font-family:'Barlow Condensed',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-ghost)}
+.match-byline strong{color:var(--ink)}
+.match-result-badge{margin-left:auto;padding:.25rem .8rem;font-size:.6rem;font-weight:800;letter-spacing:.15em}
+.match-result-badge.won{background:var(--green);color:var(--gold-lt)}
+.match-result-badge.lost{background:var(--red);color:#FAE8E0}
+
+/* ─── SCORELINE ─── */
+.scoreline{padding:1.2rem 2rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.scoreline.won{background:var(--green)}
+.scoreline.lost{background:#2A1008}
+.scoreline.won-big{background:var(--blue)}
+
+.sl-team{text-align:center;min-width:6rem}
+.sl-team .nat{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:.25rem}
+.sl-team .tot{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#F5EEE0;line-height:1;display:block}
+.sl-team .tot small{font-size:1rem;font-weight:400;color:#6A6050}
+.sl-team .ovr{font-family:'Barlow',sans-serif;font-size:.6rem;font-weight:300;color:#5A5040;display:block;margin-top:.2rem}
+.sl-vs{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;letter-spacing:.18em;color:#4A4030;font-weight:700;text-transform:uppercase}
+.sl-verdict{flex:1;font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:.88rem;line-height:1.6;border-left:1px solid #2A2418;padding-left:1.5rem}
+.sl-verdict strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:.2rem}
+.sl-verdict.lost-v{border-left:1px solid #3A1808}
+
+/* ─── TWO-COLUMN BODY ─── */
+.match-body{padding:2rem 2rem;display:grid;grid-template-columns:1fr 260px;gap:3.5rem;align-items:start}
+
+/* ─── PROSE ─── */
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-soft);margin-bottom:1.4rem}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:.8;margin-right:.1em;margin-top:.1em}
+.prose p:first-child.green-cap::first-letter{color:var(--green)}
+.prose p:first-child.red-cap::first-letter{color:var(--red)}
+.prose p:first-child.blue-cap::first-letter{color:var(--blue-lt)}
+.prose p:first-child.teal-cap::first-letter{color:var(--teal-lt)}
+
+.prose h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin:2.2rem 0 .8rem;padding-top:1.8rem;border-top:1px solid var(--rule);line-height:1.3;letter-spacing:-.01em}
+
+.pq{margin:2.2rem 0;padding:1.2rem 1.5rem;border-top:2px solid;border-bottom:1px solid var(--rule)}
+.pq.green{background:var(--green-pale);border-color:var(--green-lt)}
+.pq.red{background:#FFF0EE;border-color:var(--red-lt)}
+.pq.blue{background:var(--blue-pale);border-color:var(--blue-lt)}
+.pq.amber{background:var(--amber-pale);border-color:var(--amber-lt)}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.3rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;margin-bottom:.5rem!important}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important}
+.pq.green p{color:var(--green)!important}
+.pq.red p{color:var(--red)!important}
+.pq.blue p{color:var(--blue)!important}
+.pq.amber p{color:var(--amber)!important}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-style:normal}
+.pq.green cite{color:var(--green-lt)}
+.pq.red cite{color:var(--red-lt)}
+.pq.blue cite{color:var(--blue-lt)}
+.pq.amber cite{color:var(--amber-lt)}
+
+/* ─── SCORECARD BOX ─── */
+.sc-box{background:var(--ink-mid);margin:2rem 0;overflow:hidden}
+.sc-box-hd{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1.4rem;border-bottom:1px solid #2A2418}
+.sc-box-hd h4{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt)}
+.sc-box-hd span{font-family:'Spectral',serif;font-style:italic;font-size:.82rem;color:#6A6250}
+.sc-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:.6rem 1rem;padding:.6rem 1.4rem;border-bottom:1px solid #1E1C14;align-items:baseline}
+.sc-row.hdr{background:#181610}
+.sc-row.hdr>*{font-family:'Barlow Condensed',sans-serif!important;font-size:.5rem!important;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#3A3830!important}
+.sc-n{font-family:'Barlow',sans-serif;font-size:.6rem;color:#3A3830;font-weight:300}
+.sc-name{font-family:'Spectral',serif;font-size:.92rem;color:#D0C8BC;line-height:1.3}
+.sc-name em{font-style:normal;font-size:.75rem;color:#6A6258;display:block}
+.sc-r{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold-lt);text-align:right}
+.sc-r.star{color:#E8C060}
+.sc-b{font-family:'Barlow',sans-serif;font-size:.65rem;font-weight:300;color:#4A4840;text-align:right}
+.sc-foot{padding:.7rem 1.4rem;border-top:1px solid #2A2418;display:flex;justify-content:space-between}
+.sc-foot span{font-family:'Barlow',sans-serif;font-size:.65rem;color:#5A5448}
+.sc-foot strong{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#F0E8DC}
+
+/* ─── WICKETS TIMELINE ─── */
+.wkt-tl{margin:2rem 0}
+.wkt-tl-hd{font-family:'Barlow Condensed',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:.7rem;border-bottom:1px solid var(--rule)}
+.wkt-row{display:grid;grid-template-columns:4rem 1fr;gap:.8rem;padding:.6rem 0;border-bottom:1px dashed var(--rule);align-items:start}
+.wkt-row:last-child{border-bottom:none}
+.wkt-sc{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:800;letter-spacing:.03em}
+.wkt-sc.ww{color:var(--red)}
+.wkt-sc.wg{color:var(--green-lt)}
+.wkt-txt{font-family:'Spectral',serif;font-size:.9rem;color:var(--ink-soft);line-height:1.5}
+.wkt-txt b{color:var(--ink);font-weight:600}
+.wkt-txt em{font-style:italic;color:var(--ink-ghost);font-size:.83rem}
+
+/* ─── SIDEBAR ─── */
+.sidebar{position:sticky;top:1.5rem}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden}
+.sbox-hd{padding:.55rem .9rem;font-family:'Barlow Condensed',sans-serif;font-size:.56rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.sbox-hd.green{background:var(--green);color:var(--gold-lt)}
+.sbox-hd.red{background:var(--red);color:#FAE0D8}
+.sbox-hd.blue{background:var(--blue);color:#C0D0F0}
+.sbox-hd.amber{background:var(--amber);color:#F8E0A0}
+.sbox-body{padding:.8rem .9rem;background:var(--warm)}
+.sbox-body ul{list-style:none}
+.sbox-body li{font-family:'Spectral',serif;font-size:.88rem;color:var(--ink-soft);padding:.38rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:.4rem;align-items:baseline;line-height:1.3}
+.sbox-body li:last-child{border-bottom:none}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:.56rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;font-size:.88rem}
+.big-fig{text-align:center;padding:1rem .9rem;background:var(--warm)}
+.big-fig .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;line-height:1;display:block;margin-bottom:.3rem}
+.big-fig .num.green{color:var(--green)}
+.big-fig .num.red{color:var(--red)}
+.big-fig .num.blue{color:var(--blue-lt)}
+.big-fig .num.amber{color:var(--amber-lt)}
+.big-fig .desc{font-family:'Spectral',serif;font-style:italic;font-size:.82rem;color:var(--ink-soft);line-height:1.45}
+.snote{padding:.8rem .9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--warm);margin-bottom:1.8rem}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:.84rem;color:var(--ink-soft);line-height:1.55;margin-bottom:.35rem}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-style:normal}
+
+/* ─── FOOTER ─── */
+footer{background:var(--green);border-top:4px double var(--gold-lt);padding:2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#3A5040;margin-top:2rem}
+footer span{color:var(--gold-lt)}
+
+@media(max-width:720px){
+  .masthead-inner{grid-template-columns:1fr;text-align:center}
+  .mh-left,.mh-right{display:none}
+  .match-body{grid-template-columns:1fr;gap:2rem}
+  .sidebar{position:static}
+  .scoreline{flex-direction:column;text-align:center}
+  .sl-verdict{border-left:none;padding-left:0;border-top:1px solid #2A2418;padding-top:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ MASTHEAD ═══════════════ -->
+<header>
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div class="mh-left">
+        <span>World Cup 2019</span>
+        ICC Cricket World Cup · England Group Stage
+      </div>
+      <div>
+        <span class="pub-name">The Pitch Report</span>
+        <span class="pub-sub">Cricket's Newspaper of Record</span>
+      </div>
+      <div class="mh-right">
+        <span>Special Edition</span>
+        Group Stage Round-Up · Four Match Reports
+      </div>
+    </div>
+  </div>
+  <div class="front-banner">
+    <div>
+      <div class="fb-label">England's Group Campaign</div>
+      <div class="fb-desc">Four matches, three victories, one defeat — the story of a nation finding its feet</div>
+    </div>
+    <div class="fb-matches">
+      <span class="fb-match-pill lost">vs Pakistan · Lost 14</span>
+      <span class="fb-match-pill won">vs W.Indies · Won 8wkt</span>
+      <span class="fb-match-pill won">vs India · Won 31</span>
+      <span class="fb-match-pill won">vs N.Zealand · Won 119</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     MATCH 1 — ENGLAND vs PAKISTAN
+     ══════════════════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-top:2rem">
+  <div class="sd-line"></div>
+  <span class="sd-label" style="color:var(--red)">Match Report · Pakistan</span>
+  <div class="sd-line"></div>
+</div>
+
+<div class="match-article">
+  <div class="match-header">
+    <div class="match-meta-row">
+      <span class="match-num">Match 6 · Group Stage</span>
+      <span class="match-venue">Trent Bridge, Nottingham</span>
+      <span class="match-date">3 June 2019</span>
+    </div>
+    <h2 class="match-hl">The Night <em>Pakistan</em> Refused England's Script — And Rewrote One of Their Own</h2>
+    <p class="match-deck lost">In the six days since their opening victory, England had settled comfortably into the role of favourites, nodding at the applause and accepting the bookmakers' endorsement as something close to settled fact. Pakistan, who had lost to West Indies in their opening match and carried the uncertain air of a side that had yet to discover itself in this tournament, arrived at Trent Bridge and proceeded to dismantle every assumption with the brisk, remorseless efficiency of a side that had been waiting, quietly and with considerable intent, for precisely this opportunity to make a point.</p>
+    <div class="match-byline">
+      <span>By <strong>Our Cricket Correspondent</strong></span>
+      <span>Trent Bridge, Nottingham</span>
+      <span class="match-result-badge lost">Pakistan won by 14 runs</span>
+    </div>
+  </div>
+
+  <div class="scoreline lost">
+    <div class="sl-team"><span class="nat">Pakistan</span><span class="tot">348<small>/8</small></span><span class="ovr">50 overs</span></div>
+    <span class="sl-vs">vs</span>
+    <div class="sl-team"><span class="nat">England</span><span class="tot">334<small>/9</small></span><span class="ovr">50 overs</span></div>
+    <div class="sl-verdict lost-v"><strong>Result</strong>Pakistan won by 14 runs<br>Hafeez 84 · Root 107 · Buttler 103</div>
+  </div>
+
+  <div class="match-body">
+    <div class="prose">
+      <p class="red-cap">Cricket, at its most generous and its most cruel, deals in the unexpected with an even hand. Pakistan had been written off before this tournament began — their batting inconsistent, their bowling reliant on the aging shoulders of Mohammad Amir and the still-unpredictable Wahab Riaz, their fielding subject to the kind of lapses that have dogged their one-day cricket for the better part of a decade. England, by contrast, had spent four years constructing a batting machine of such thoroughput that 300 was considered a modest platform and 350 a reasonable target on any ground in the country. Trent Bridge, with its short square boundaries and its tendency toward flat, batting-friendly surfaces, was supposed to play into England's hands as surely as a home ground can. It did not, quite, work out that way.</p>
+
+      <p>Sarfaraz Ahmed won the toss and batted, and from the first over, the Pakistan innings had a different quality to the stumbling, uncertain batting that had cost them so dearly against West Indies. Fakhar Zaman and Imam-ul-Haq opened with the fluency of a partnership that had been rehearsing these conditions for months. Fakhar, in particular, was in that mode of front-foot aggression that makes Trent Bridge's short midwicket boundary look like a deliberate gift from the architects — clearing the rope twice before the tenth over, pulling with the full extension of the arms that creates pace off pace. They built an opening stand of 82 before Fakhar was dismissed for a vigorous contribution, and then the innings found its more deliberate rhythm in the hands of Babar Azam.</p>
+
+      <p>Babar's 63 was a measured, technical innings — cover drives of such clean geometry that several of them reached the boundary before a fielder had completed the decision to move — and it laid the foundation for what became the match's decisive stand. Mohammad Hafeez, the Player of the Match, played with the controlled authority that his best one-day innings always carry: a deep, mature reading of the pace of the game, an ability to accelerate without sacrificing timing, and a particular relish, at the death, for the high full toss that Moeen Ali served up in the forty-third over. His 84 from 62 balls was the innings that detonated England's bowling at precisely the moment when controlled aggression mattered most. Sarfaraz Ahmed's 55 — energetic, useful, the captain's contribution at a key hour — had helped Pakistan to a position from which 348 for 8 was not merely possible but expected.</p>
+
+      <div class="pq red">
+        <p>"Everyone believed we can win the game. Today everyone really chipped in and gave everything required in the situation."</p>
+        <cite>Sarfaraz Ahmed, Pakistan captain, post-match</cite>
+      </div>
+
+      <p>England's chase began with a capitulation of the top order that, in the context of the batting depth below, was survivable but costly. Roy went cheaply, dismissed for 8 by Shadab Khan's wrong-un in only the second over — Sarfaraz had again deployed the spinner from the first over, echoing Du Plessis's audacity from the opening match, and this time it paid with a first-over wicket as Roy reviewed an lbw decision that was upheld by the technology. Bairstow followed for 32, leaving England in the kind of middle-order discomfort that their extraordinary batting depth is specifically designed to absorb. Morgan went for 9. Stokes for 18. At 86 for 4, the target of 349 was a mountain that required climbers of exceptional ability.</p>
+
+      <p>Joe Root and Jos Buttler proceeded to attempt, with great distinction, to climb it. Root's 107 from 104 balls was the innings of a man in the fullest command of his technique — his driving through mid-off was particularly remarkable, as was his ability to pick the googly from Shadab before most of the crowd had fully processed the delivery. Buttler's hundred, similarly, combined the calculated audacity of the world's most dangerous finisher with a structural soundness that made every shot feel, in context, not reckless but inevitable. They added 130 for the fifth wicket and took England from the barely possible into the zone of probability, and then into the zone of something approaching expectation. At 248 for 4 after 38 overs, needing exactly a run a ball, England — against all prior likelihood — were in the game.</p>
+
+      <p>Wahab Riaz ended them. The left-arm fast bowler, who had spent most of the previous four years being the subject of selection debates in the Pakistani press, ran in with the barely contained fury of a man who had something personal to prove, and at 90 miles per hour, he found the edge of Buttler's bat with a delivery that climbed and shaped away. The wicket broke the partnership and initiated the collapse: Woakes for one, Archer for one, three wickets in two overs, the final mathematics made suddenly impossible rather than merely difficult. England finished on 334 for 9, fourteen runs short. The crowd at Trent Bridge, which had been electric for the Pakistan innings under the noise of their magnificent support, was left in an odd, post-match quiet that mixed English disappointment with something close to a respectful acknowledgement that they had watched an extraordinary game of cricket.</p>
+
+      <div class="wkt-tl">
+        <div class="wkt-tl-hd">England Fall of Wickets — Chasing 349</div>
+        <div class="wkt-row"><span class="wkt-sc ww">12</span><span class="wkt-txt"><b>Roy lbw b Shadab 8.</b> <em>Review upheld. Sarfaraz's gambit of opening with spin works again.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">60</span><span class="wkt-txt"><b>Bairstow c &amp; b Amir 32.</b> <em>Mid-on catch. Pakistan's pace attack draws first blood.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">86</span><span class="wkt-txt"><b>Morgan lbw b Shadab 9.</b> <em>England four down and still 263 needed from 36 overs.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">118</span><span class="wkt-txt"><b>Stokes c Sarfaraz b Malik 18.</b> <em>Cut shot, outside edge. Fifth wicket 230 away from 29 overs remaining.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">248</span><span class="wkt-txt"><b>Root c Fakhar b Malik 107.</b> <em>Root's century ended precisely as England needed him most.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">288</span><span class="wkt-txt"><b>Buttler c Sarfaraz b Wahab 103.</b> <em>The decisive wicket. Riaz's short delivery climbs. Edge, gone. England's chase effectively ended here.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc ww">320–322</span><span class="wkt-txt"><b>Woakes b Wahab 0 · Archer c Wahab b Wahab 0.</b> <em>Two in two. England's last hope extinguished in four balls.</em></span></div>
+      </div>
+
+      <p>The defeat was not a crisis. England had depth enough in the group stage to absorb a single reverse, and the performances of Root and Buttler under pressure had demonstrated the batting order's capacity for recovery under conditions that might have broken lesser sides. But the fragility of the top order — that recurring vulnerability in the face of quality spin bowling — had been exposed by Shadab, and Wahab's death overs bowling had reminded the watching world that Pakistan, on their day, can compress a run chase with the surgical precision of a side that has been doing this for forty years. England's tournament was not derailed. It was merely reminded that nothing was guaranteed.</p>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sbox">
+        <div class="sbox-hd red">Match Summary</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Venue</span><strong>Trent Bridge</strong></li>
+          <li><span class="lbl">Date</span><strong>3 June 2019</strong></li>
+          <li><span class="lbl">Pakistan</span><strong>348/8 (50 ov)</strong></li>
+          <li><span class="lbl">England</span><strong>334/9 (50 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>Pakistan won — 14 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>M. Hafeez 84 (62)</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd red">Top Scores</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Root (ENG)</span><strong>107 (104)</strong></li>
+          <li><span class="lbl">Buttler (ENG)</span><strong>103</strong></li>
+          <li><span class="lbl">Hafeez (PAK)</span><strong>84 (62)</strong></li>
+          <li><span class="lbl">Sarfaraz (PAK)</span><strong>55</strong></li>
+          <li><span class="lbl">Babar (PAK)</span><strong>63</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd red">Key Bowling</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Wahab Riaz</span><strong>3 wkts (death)</strong></li>
+          <li><span class="lbl">Shadab Khan</span><strong>2 wkts</strong></li>
+          <li><span class="lbl">Moeen Ali</span><strong>3/50 (10)</strong></li>
+          <li><span class="lbl">England deficit</span><strong>14 runs</strong></li>
+        </ul></div>
+      </div>
+      <p class="snote"><p>"They started with Shadab to target Roy and Bairstow — against spin they're not at their best. Fielding was better. Everything clicked."</p><cite>Sarfaraz Ahmed, post-match</cite></p>
+    </aside>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     MATCH 2 — ENGLAND vs WEST INDIES
+     ══════════════════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-top:1rem">
+  <div class="sd-line"></div>
+  <span class="sd-label" style="color:var(--teal-lt)">Match Report · West Indies</span>
+  <div class="sd-line"></div>
+</div>
+
+<div class="match-article">
+  <div class="match-header">
+    <div class="match-meta-row">
+      <span class="match-num">Match 19 · Group Stage</span>
+      <span class="match-venue">The Rose Bowl, Southampton</span>
+      <span class="match-date">14 June 2019</span>
+    </div>
+    <h2 class="match-hl"><em>Root's</em> Quiet Mastery and Archer's Return: England Dismantle the Caribbean Threat</h2>
+    <p class="match-deck won">After the bruising arithmetic of Trent Bridge, England returned to the familiar comfort of dominance at Southampton — winning by eight wickets with 101 balls remaining in a performance of such unhurried authority that it resembled, at times, a training exercise conducted with tournament-level precision. Joe Root, opening the innings in place of the injured Jason Roy, scored a hundred of such relaxed, considered beauty that it set a curious test for cricket's vocabulary: how does one describe something so well executed that its excellence seems inevitable?</p>
+    <div class="match-byline">
+      <span>By <strong>Our Cricket Correspondent</strong></span>
+      <span>The Rose Bowl, Southampton</span>
+      <span class="match-result-badge won">England won by 8 wickets</span>
+    </div>
+  </div>
+
+  <div class="scoreline won">
+    <div class="sl-team"><span class="nat">West Indies</span><span class="tot">212<small> ao</small></span><span class="ovr">44.4 overs</span></div>
+    <span class="sl-vs">vs</span>
+    <div class="sl-team"><span class="nat">England</span><span class="tot">213<small>/2</small></span><span class="ovr">33.1 overs</span></div>
+    <div class="sl-verdict"><strong>Result</strong>England won by 8 wickets<br>Root 100* · Archer 3–27 · Wood 3–18</div>
+  </div>
+
+  <div class="match-body">
+    <div class="prose">
+      <p class="teal-cap">The complications arrived before a ball was bowled. Jason Roy, England's most explosive opening batsman and the man whose presence at the top of the order had been the single most significant factor in their ODI renaissance, limped from the field during West Indies' innings with a hamstring complaint that the team management would, in the coming days, confirm as serious enough to threaten his participation in the tournament's critical middle phase. Eoin Morgan, the captain, had taken a blow to the back that would limit his ability to field. These were not trivial absences and concerns; they were, in a different team, potential precursors to a stuttering, uncertain performance. England, instead, produced precisely the opposite.</p>
+
+      <p>It began with Archer and Wood, the pace attack's second tier — second tier in seniority, not in quality. Mark Wood, bowling with the full-throated velocity that his compact action generates from a physique that perpetually surprises those watching for the first time, took three wickets for 18 runs in a spell that was, for much of its duration, simply too fast for the West Indian batsmen. Chris Gayle, the great man who has spent twenty years making fast bowling look like a problem requiring only the solution of a very large bat, was dropped early and failed to profit from the reprieve — eventually bounced out at deep square leg for 36, caught by a fielder who this time did not repeat the error of the first dropped chance. Shai Hope was taken for 11. The middle order assembled itself and then disassembled with equal lack of ceremony.</p>
+
+      <p>Shimron Hetmyer and Nicholas Pooran provided the innings's only period of sustained resistance, their partnership of 89 for the fourth wicket representing the one occasion during the day when West Indies batted with the assertive purpose that their extraordinary batting talent ought consistently to produce. Pooran's fifty — pulled from 56 balls, including a six off Archer that bisected deep midwicket and deep square leg with a precision that suggested he had been studying the fielding map — had the character of an innings that might, in a different West Indian team or a different competitive context, have contributed to something larger. Against this England attack, on this day, it contributed to a total of 212 that was, by the standards of what had been scored elsewhere in this tournament, inadequate.</p>
+
+      <p>Archer, returning to his role as the contest's decisive variable, dismissed Pooran and Sheldon Cottrell in the same over — a bouncer to Pooran that found the top edge and a yorker to Cottrell that the tailender had no answer for — and England had their target. 213. At this point in a home World Cup, for the world's best one-day batting side, the number felt more like a formality than a target.</p>
+
+      <div class="pq green" style="border-color:var(--teal-lt);background:var(--teal-pale)">
+        <p>"It was a really good toss to win today. The pitch was doing a bit early but flattened out beautifully for the chase. Taking the opportunity to open was special."</p>
+        <cite style="color:var(--teal-lt)">Joe Root, Player of the Match, post-match</cite>
+      </div>
+
+      <p>Root and Bairstow opened, and the immediate effect of the reorganisation was a partnership of 95 for the first wicket that confirmed what the batting order had probably known for some time: Root, in white-ball cricket, is a more than capable opener when the conditions require it, and his Test match instincts — the early-innings discipline, the willingness to value his wicket above the strike rate — are not, in an ODI chase of modest proportions, a liability. They are, in fact, precisely suited to the task of knocking off the first hundred runs without incident while the pitch firms up and the target shrinks to something more overtly manageable.</p>
+
+      <p>Bairstow made 45 before Gabriel found his edge, and Woakes — batting at three in Roy's enforced absence — played a supporting role of 40 not out that was efficient, undemonstrative, and exactly what the situation asked of him. But the day belonged to Root's hundred. He reached it from 94 balls, a rate that reflected the ease with which he had moved through the innings, and he did so without having to take a single shot he was not entirely comfortable playing. It was not a display that will be remembered in the way that Stokes's 89 against South Africa or Bairstow's coming centuries will be remembered — the sport demands its extraordinary occasions be conducted at a certain emotional pitch, and Root's batting has always occupied a different register, the register of the artisan rather than the showman. But it was, in its own quietly magnificent way, as complete as any innings played in this tournament to that point.</p>
+
+      <p>England reached 213 for 2 in the thirty-fourth over, with a hundred and one balls to spare. They were, once more, the favourites. Roy's hamstring complicated the picture. Archer's pace reassured it. The tournament moved on.</p>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sbox">
+        <div class="sbox-hd" style="background:var(--teal);color:#A0E0E0">Match Summary</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Venue</span><strong>The Rose Bowl</strong></li>
+          <li><span class="lbl">Date</span><strong>14 June 2019</strong></li>
+          <li><span class="lbl">West Indies</span><strong>212 ao (44.4 ov)</strong></li>
+          <li><span class="lbl">England</span><strong>213/2 (33.1 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>England won — 8 wkts</strong></li>
+          <li><span class="lbl">MOM</span><strong>Root 100* (94) + 2/27</strong></li>
+          <li><span class="lbl">Balls to spare</span><strong>101</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd" style="background:var(--teal);color:#A0E0E0">England Bowling</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Archer</span><strong>3/30 (7 ov)</strong></li>
+          <li><span class="lbl">Wood</span><strong>3/18 (8 ov)</strong></li>
+          <li><span class="lbl">Root</span><strong>2/27</strong></li>
+          <li><span class="lbl">Woakes</span><strong>1 wkt</strong></li>
+          <li><span class="lbl">Plunkett</span><strong>1 wkt</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd" style="background:var(--teal);color:#A0E0E0">Injury Context</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Roy</span><strong>Hamstring — retired hurt</strong></li>
+          <li><span class="lbl">Morgan</span><strong>Back spasm, limited</strong></li>
+          <li><span class="lbl">Root opened</span><strong>in Roy's absence</strong></li>
+        </ul></div>
+      </div>
+      <p class="snote"><p>"Root, who made 107 in England's defeat against Pakistan, made batting look easy again. A run-a-ball 50 without unnecessary risks."</p><cite>Pressreader, June 2019</cite></p>
+    </aside>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     MATCH 3 — ENGLAND vs INDIA
+     ══════════════════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-top:1rem">
+  <div class="sd-line"></div>
+  <span class="sd-label" style="color:var(--blue-lt)">Match Report · India</span>
+  <div class="sd-line"></div>
+</div>
+
+<div class="match-article">
+  <div class="match-header">
+    <div class="match-meta-row">
+      <span class="match-num">Match 38 · Group Stage</span>
+      <span class="match-venue">Edgbaston, Birmingham</span>
+      <span class="match-date">30 June 2019</span>
+    </div>
+    <h2 class="match-hl">Bairstow and Roy <em>Raze the Blueprint</em>: England Hand India Their First Defeat</h2>
+    <p class="match-deck won">The match was billed as a semi-final in all but name — the two most celebrated batting sides in the tournament, one still unbeaten, one fighting for their qualifying lives — and it delivered something close to what the billing promised: a batting exhibition by England's opening partnership that was so complete, so dominant in its execution, that it turned the match's fundamental question from "can England win?" to "can India stop the bleeding?" They could not, quite, though Rohit Sharma and Virat Kohli attempted to make the final thirty overs as uncomfortable for the watching England fans as the first twenty had been for the Indian fielders.</p>
+    <div class="match-byline">
+      <span>By <strong>Our Cricket Correspondent</strong></span>
+      <span>Edgbaston, Birmingham</span>
+      <span class="match-result-badge won">England won by 31 runs</span>
+    </div>
+  </div>
+
+  <div class="scoreline" style="background:var(--blue)">
+    <div class="sl-team"><span class="nat">England</span><span class="tot">337<small>/7</small></span><span class="ovr">50 overs</span></div>
+    <span class="sl-vs">vs</span>
+    <div class="sl-team"><span class="nat">India</span><span class="tot">306<small>/5</small></span><span class="ovr">50 overs</span></div>
+    <div class="sl-verdict"><strong>Result</strong>England won by 31 runs<br>Bairstow 111 · Roy 66 · Shami 5/69</div>
+  </div>
+
+  <div class="match-body">
+    <div class="prose">
+      <p class="blue-cap">The context, as contexts in World Cup cricket tend to, had acquired by June the thirtieth the quality of something not merely important but urgent. England, who had suffered their only defeat of the campaign at Pakistan's hands at Trent Bridge, had won their next three matches — against Bangladesh, West Indies, and Afghanistan — with increasing conviction, but the points table had contracted their semi-final hopes into a single, crystalline requirement: win this match, and the qualification reckoning would resolve in their favour. India, unbeaten through six matches, stood in the way with the serene confidence of a side that had not yet been tested at their full depth.</p>
+
+      <p>England won the toss and batted first. What followed in the first twenty-two overs was one of the tournament's finest passages of batting — a 160-run opening partnership between Jonny Bairstow and Jason Roy that was the largest first-wicket stand England had ever compiled against India in an ODI, breaking the 158 that Alastair Cook and Ian Bell had assembled at Rajkot six years before. The significance of its size was surpassed only by its manner: this was not accumulation, not the gentle dismantling of an attack by batsmen who wait for the bad ball and nudge the good ones. This was calculated, premeditated assault.</p>
+
+      <p>Roy, the man who had missed the previous two matches with the hamstring complaint sustained against West Indies, was back and immediately uninhibited. He reached fifty from 41 balls, the pull shot and the drive through cover his primary instruments, and he played throughout his 66 with the liberated energy of a batsman who has spent eleven days on the physiotherapy table thinking about exactly how he intends to bat when he returns. Bairstow, operating at the other end with a similar lack of restraint, was if anything the more technically commanding of the two: his fifty came from 56 balls, and his century — the second of his World Cup campaign — arrived from 90 balls in a manner so efficient and unhurried that it seemed to require almost no extra effort at all. England were 160 for 0 after 22 overs. India's bowlers, including the usually reliable Jasprit Bumrah and the dangerous Kuldeep Yadav, looked exactly like what they were at that moment: a very good attack being made to look ordinary by batsmen in exceptional form.</p>
+
+      <div class="sc-box">
+        <div class="sc-box-hd"><h4>England Batting — 337/7 in 50 overs</h4><span>Toss won, elected to bat</span></div>
+        <div class="sc-row hdr"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+        <div class="sc-row"><span class="sc-n">1</span><span class="sc-name">JJ Roy<em>c Jadeja b Kuldeep</em></span><span class="sc-r">66</span><span class="sc-b">57</span></div>
+        <div class="sc-row"><span class="sc-n">2</span><span class="sc-name">JM Bairstow<em>b Shami</em></span><span class="sc-r star">111</span><span class="sc-b">109</span></div>
+        <div class="sc-row"><span class="sc-n">3</span><span class="sc-name">JE Root<em>c Dhoni b Bumrah</em></span><span class="sc-r">44</span><span class="sc-b">54</span></div>
+        <div class="sc-row"><span class="sc-n">4</span><span class="sc-name">EJG Morgan<em>c Chahal b Hardik</em></span><span class="sc-r">1</span><span class="sc-b">3</span></div>
+        <div class="sc-row"><span class="sc-n">5</span><span class="sc-name">BA Stokes<em>b Bumrah</em></span><span class="sc-r">79</span><span class="sc-b">54</span></div>
+        <div class="sc-row"><span class="sc-n">6</span><span class="sc-name">JC Buttler<em>not out</em></span><span class="sc-r">20</span><span class="sc-b">17</span></div>
+        <div class="sc-row"><span class="sc-n">7</span><span class="sc-name">CR Woakes<em>not out</em></span><span class="sc-r">7</span><span class="sc-b">4</span></div>
+        <div class="sc-foot"><span>Extras 9 · Shami 5/69 best bowling</span><strong>337 / 7</strong></div>
+      </div>
+
+      <p>Kuldeep Yadav eventually dismissed Roy with a delivery that turned sharply enough to find the outside edge, Ravindra Jadeja taking a composed catch at long-off. Bairstow carried on alone, and when Root arrived, the tempo barely changed: Root's 44 from 54 balls was an innings of calm accumulation that, in a slightly different context, might have read as cautious. Here it read as the steady accumulation of a finisher waiting for the final ten overs. Morgan fell cheaply, his tournament's recurring tendency to sacrifice wickets in pursuit of acceleration claiming him again, and at 247 for 5, England's innings required a new energy from its remaining batsmen.</p>
+
+      <p>Ben Stokes provided it with emphatic brevity. His 79 from 54 balls in the final overs of the innings — 79 from 54 balls, a rate of aggression that transformed the innings from a strong performance into a dominant one — was the innings of a batsman who understands the geometry of a fifty-over game, who knows that the last ten overs of a batting first team's innings are the ones that move the match from competitive into a different register entirely. He struck five sixes, pulled Bumrah over midwicket with a contemptuous authority that drew a reaction from the crowd more usually associated with fast bowling dismissals, and deposited Kuldeep into the Edgbaston advertising hoardings twice in a manner that suggested the left-arm wrist-spinner had been identified as a target before the match began. England finished at 337 for 7. It was a big total, a proper World Cup total, and it was assembled on a pitch that Mohammed Shami's five wickets confirmed was offering the bowler considerably more than its flat surface implied.</p>
+
+      <p>India's chase was a fascinating study in batting that was never quite adequate for the mathematics it was attempting. Rohit Sharma's 102 — his third century of the tournament, an innings of magnificent individual quality — and Kohli's 66 built a partnership of 138 that made the contest genuinely alive in the middle overs: at 229 for 2 after 36 overs, India needed 109 from 84 balls with Kohli still in and Pant full of dangerous intent at the crease. England's bowling, which had been expensive in the first thirty overs, found its discipline in these critical closing stages. Plunkett's mid-innings burst claimed Pant. Woakes caught him at square leg in a moment of acrobatic certainty. Archer angled in at the death with a searing accuracy that suffocated. Dhoni and Jadhav endured 20 singles and 7 dot balls in a partnership that raised not runs but frustration, and the asking rate climbed beyond the reach of even the most optimistic arithmetic. India ended on 306 for 5. England had won by 31 runs. The semi-final place, subject to one further result, was secured. Bairstow, who had been the day's foremost performer, said simply that he was glad to be there.</p>
+
+      <div class="pq blue">
+        <p>"It was billed as a semi-final. England treated it like one. Their opening partnership was something we simply did not have an answer for."</p>
+        <cite>India Analysis, Gulf News, 1 July 2019</cite>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sbox">
+        <div class="sbox-hd blue">Match Summary</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Venue</span><strong>Edgbaston, Birmingham</strong></li>
+          <li><span class="lbl">Date</span><strong>30 June 2019</strong></li>
+          <li><span class="lbl">England</span><strong>337/7 (50 ov)</strong></li>
+          <li><span class="lbl">India</span><strong>306/5 (50 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>England won — 31 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>JM Bairstow 111</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd blue">The Opening Stand</div>
+        <div class="big-fig">
+          <span class="num blue">160</span>
+          <span class="desc">Roy–Bairstow opening partnership — England's record first-wicket stand against India in ODIs, beating Cook–Bell (158) at Rajkot 2013</span>
+        </div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd blue">India's Resistance</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Rohit Sharma</span><strong>102 (3rd WC 100)</strong></li>
+          <li><span class="lbl">Kohli</span><strong>66 (5th consec. WC 50)</strong></li>
+          <li><span class="lbl">Shami</span><strong>5/69 (best bowling)</strong></li>
+          <li><span class="lbl">India's run rate needed</span><strong>above 10/ov after 40</strong></li>
+        </ul></div>
+      </div>
+      <p class="snote"><p>"The home team is back in town," a few England fans shouted as Roy and Bairstow put India's bowlers to the sword."</p><cite>Gulf News, Birmingham, 30 June 2019</cite></p>
+    </aside>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     MATCH 4 — ENGLAND vs NEW ZEALAND
+     ══════════════════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-top:1rem">
+  <div class="sd-line"></div>
+  <span class="sd-label" style="color:var(--green-lt)">Match Report · New Zealand</span>
+  <div class="sd-line"></div>
+</div>
+
+<div class="match-article">
+  <div class="match-header">
+    <div class="match-meta-row">
+      <span class="match-num">Match 41 · Group Stage (Final group game)</span>
+      <span class="match-venue">Riverside Ground, Chester-le-Street</span>
+      <span class="match-date">3 July 2019</span>
+    </div>
+    <h2 class="match-hl"><em>Bairstow's Century</em> Sends England to the Semi-Finals: A Statement Made in Durham</h2>
+    <p class="match-deck won">Cricket's group stages have a tendency, in their final rounds, toward the retrospectively obvious: the side that needs to win, wins; the side that is playing without the pressure of elimination performs with just enough of the looseness that freedom affords to allow the other side's urgency to tell. At Chester-le-Street on a bright July Wednesday, England's urgency was unmistakeable and their execution was close to faultless, Jonny Bairstow's second consecutive century confirming a semi-final berth that, six weeks and one Pakistan defeat earlier, had felt far from certain.</p>
+    <div class="match-byline">
+      <span>By <strong>Our Cricket Correspondent</strong></span>
+      <span>Riverside Ground, Chester-le-Street</span>
+      <span class="match-result-badge won">England won by 119 runs</span>
+    </div>
+  </div>
+
+  <div class="scoreline won">
+    <div class="sl-team"><span class="nat">England</span><span class="tot">305<small>/8</small></span><span class="ovr">50 overs</span></div>
+    <span class="sl-vs">vs</span>
+    <div class="sl-team"><span class="nat">New Zealand</span><span class="tot">186<small> ao</small></span><span class="ovr">45 overs</span></div>
+    <div class="sl-verdict"><strong>Result</strong>England won by 119 runs · Semi-finals secured<br>Bairstow 106 · Roy 60 · Plunkett 3/42</div>
+  </div>
+
+  <div class="match-body">
+    <div class="prose">
+      <p class="green-cap">There is a useful and underrated quality in the cricket of a side playing under precisely the correct level of pressure: not so much as to produce paralysis, not so little as to produce complacency. England at Chester-le-Street on the third of July were operating at exactly this pitch, carrying into their final group game the knowledge that a win would confirm their semi-final place and that a defeat would leave their qualification to circumstances beyond their control. Eoin Morgan won the toss and batted, and from the first over, England's batting produced the fluent, accelerating momentum that they had managed, in varying degrees, throughout the tournament.</p>
+
+      <p>Roy and Bairstow, together again after the hamstring scare that had cost Roy two matches, opened with the resumption of their most dangerous mode. The partnership of 123 — ended only when Jimmy Neesham's accuracy and movement tempted Roy into a front-foot drive to short cover for a well-made 60 — was constructed at a rate that placed New Zealand's modest bowling attack, missing the injured Lockie Ferguson, under consistent and escalating pressure. The boundaries came in clusters: four overs into double figures, the third powerplay yielding more fours than the fielding side could answer with anything beyond increasingly routine retrievals.</p>
+
+      <p>Bairstow's second World Cup century — and consecutive, adding the 111 at Edgbaston four days earlier — was received at Chester-le-Street with the warmth that a Yorkshire crowd reserves for its own adopted son, a warmth that, in the context of the morning's overcast, slightly blustery conditions, had the quality of something that deserved a warmer setting but accepted the one it had been given with complete equanimity. He made it from 95 balls — slightly more measured than the Edgbaston hundred, slightly less emphatic in its individual strokes, but no less complete as an innings that built England's total from its foundations to its first floor. When he fell for 106, England were 218 for 2 in the thirty-sixth over with a platform that the middle order could convert into a first-class 300.</p>
+
+      <div class="pq green">
+        <p>"Jonny has been in the form of his life. When he's in that mode, from ball one he looks like he's batting in the middle of his innings. That opening stand was the match."</p>
+        <cite>Eoin Morgan, England captain, post-match, Chester-le-Street</cite>
+      </div>
+
+      <p>The middle order did not quite convert it. Morgan, Stokes and Buttler all contributed — 24, 11, 25 respectively — in the manner of batsmen who are doing enough rather than batsmen who are on song. New Zealand's bowling, even depleted of Ferguson's pace, was sufficiently disciplined to prevent the kind of final-overs eruption that England had produced against India: they gave away only 87 runs in the last twelve overs, a creditable piece of containing bowling that confirmed the Black Caps, even in a losing position, as a team of unusual defensive discipline. England ended on 305 for 8 — a total that was, by the standards of their best batting days, underwhelming, but which, on this pitch, against this attack, on this day, was sufficient and then some.</p>
+
+      <p>New Zealand's reply was derailed before it found a rhythm. Guptill, who had been the Black Caps' most reliable opening batsman through the group stage, was run out by a direct hit from the bowler's end — a piece of fielding so quick and precisely executed that the third umpire's deliberation lasted approximately as long as it takes to watch the replay once. Henry Nicholls was caught and bowled. Kane Williamson, who might in another mood have constructed a five-hour innings that changed the complexion of everything, was run out for 27 in circumstances that had the faintly surreal quality of a match that had already decided its result and was merely working through the procedural requirements of confirming it.</p>
+
+      <p>Two run-outs in an ODI innings are unusual. Two run-outs involving the openers — both dismissed with economy and without the benefit of a misfield or a fielder's error — told its own story about the fielding intensity England had brought to the task. With de Grandhomme contributing a bright 64 and Latham a fighting 57, New Zealand at least ensured the collapse did not happen in one devastating burst. But Liam Plunkett's accurate medium-pace — three wickets from 8 overs, his variations finding the outside edge and the false shot with the reliable frequency of a bowler who has played too many county games on surfaces just like this one to be surprised by anything it offers — kept the pressure unrelenting and the run rate beyond the reach of batsmen who were, by the end, batting for pride rather than victory.</p>
+
+      <p>New Zealand were all out for 186 in the forty-fifth over. England had won by 119 runs. With that result, the semi-final berth was confirmed — the first time since 1992, twenty-seven years earlier, that England had reached the last four of the Cricket World Cup. The scoreboard at Chester-le-Street noted the facts. The crowd's reaction filled in the emotion. Morgan accepted the post-match presentations with the settled calm of a man who had always believed this was available to his team, had spent four years building toward exactly this outcome, and was now, finally, beginning to allow himself the small satisfaction of having been proved right. The semi-final would come. The final would come. But first, this: England in a World Cup semi-final, again, after all the years of absence. It was enough. It was, for one Wednesday evening in Durham, more than enough.</p>
+
+      <div class="wkt-tl">
+        <div class="wkt-tl-hd">New Zealand Wickets — Chasing 306</div>
+        <div class="wkt-row"><span class="wkt-sc wg">36</span><span class="wkt-txt"><b>Guptill run out 8.</b> <em>Direct hit from the bowler's end — fielding intensity from ball one.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc wg">44</span><span class="wkt-txt"><b>Nicholls c &amp; b Woakes 0.</b> <em>Caught and bowled. New Zealand's top three contribute 35 between them.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc wg">70</span><span class="wkt-txt"><b>Williamson run out 27.</b> <em>A second run-out. Chaos in the middle. New Zealand 3 for 70 — game effectively over.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc wg">129</span><span class="wkt-txt"><b>de Kock b Plunkett 42.</b> <em>Plunkett's variations finding the outside edge. NZ in disarray.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc wg">152</span><span class="wkt-txt"><b>de Grandhomme c Buttler b Rashid 64.</b> <em>Top scorer for NZ. Dignified resistance, but without support.</em></span></div>
+        <div class="wkt-row"><span class="wkt-sc wg">186</span><span class="wkt-txt"><b>All out, over 45.</b> <em>Latham 57, Plunkett 3/42. England win by 119. Semi-finals confirmed.</em></span></div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sbox">
+        <div class="sbox-hd green">Match Summary</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Venue</span><strong>Riverside, Chester-le-St</strong></li>
+          <li><span class="lbl">Date</span><strong>3 July 2019</strong></li>
+          <li><span class="lbl">England</span><strong>305/8 (50 ov)</strong></li>
+          <li><span class="lbl">New Zealand</span><strong>186 ao (45 ov)</strong></li>
+          <li><span class="lbl">Result</span><strong>England won — 119 runs</strong></li>
+          <li><span class="lbl">MOM</span><strong>JM Bairstow 106 (99)</strong></li>
+        </ul></div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd green">Bairstow's WC Batting</div>
+        <div class="big-fig">
+          <span class="num green">2</span>
+          <span class="desc">consecutive World Cup centuries — 111 vs India (Edgbaston) then 106 vs NZ (Chester-le-Street) in the space of four days</span>
+        </div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd green">Opening Stand</div>
+        <div class="big-fig">
+          <span class="num green">123</span>
+          <span class="desc">Roy (60) and Bairstow (106) — the partnership that won the match in the first 19 overs</span>
+        </div>
+      </div>
+      <div class="sbox">
+        <div class="sbox-hd green">Semi-Final Context</div>
+        <div class="sbox-body"><ul>
+          <li><span class="lbl">Last semi</span><strong>1992 World Cup</strong></li>
+          <li><span class="lbl">Gap</span><strong>27 years</strong></li>
+          <li><span class="lbl">England points</span><strong>12 pts (qualified)</strong></li>
+          <li><span class="lbl">NZ eliminated</span><strong>Pakistan too</strong></li>
+        </ul></div>
+      </div>
+      <p class="snote"><p>"England stormed into the semi-finals for the first time since 1992 after Jonny Bairstow's second consecutive century."</p><cite>Gulf News, Chester-le-Street, 3 July 2019</cite></p>
+    </aside>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <span>The Pitch Report</span> · Cricket's Newspaper of Record<br>
+  ICC Cricket World Cup 2019 · England Group Stage Round-Up<br>
+  Pakistan (L 14) · West Indies (W 8wkt) · India (W 31) · New Zealand (W 119) · Qualified: Semi-finals
+</footer>
+
+</body>
+</html>
