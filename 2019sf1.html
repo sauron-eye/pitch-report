@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — India vs New Zealand, ICC World Cup 2019 Semi-Final</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A2A3A;--fern-lt:#1A5A8A;--fern-pale:#E4EDF5;
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#0A0F1A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#0A0F1A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern-lt);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#0A0F1A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern-lt);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#0A0F1A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#4A3A38;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Wednesday, 9–10 July 2019 · Old Trafford, Manchester</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · 1st Semi-Final</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Semi-Final Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Semi-Finals <span>›</span> 1st Semi-Final <span>›</span> India vs New Zealand</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · 1st Semi-Final · Old Trafford, Manchester · 9–10 July 2019</span></div>
+  <h1 class="hl"><em>Henry's Opening Thunder,</em><br><span class="accent">Jadeja's Late Redemption:</span><br>New Zealand End India's Dream by 18 Runs</h1>
+  <p class="deck">Three wickets fell in the first three overs. Rohit, Kohli, Rahul — three fifths of India's batting, gone before the scoreboard had reached five. New Zealand had read the damp Manchester surface with the calm intelligence that has defined their campaign, and they exploited it with a ruthlessness that their quiet reputation rarely prepares opponents for. India lost eighteen runs short of a final. A nation held its breath, and the breath was not rewarded.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Old Trafford, Manchester</span><span class="datestamp">9–10 July 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">New Zealand</span><span class="total">239<small>/8</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">India</span><span class="total">221<small> ao</small></span><span class="overs">49.3 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>New Zealand won by 18 runs · Taylor 74 · Jadeja 77 · Henry 3/37 · MOM: Matt Henry</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The match was suspended by rain at the close of the first day with New Zealand on two hundred and eleven for five from forty-six overs, the Manchester cloud having delivered its verdict on what kind of Tuesday afternoon this was going to be, and reconvening on Wednesday morning with the quality of a match that had resumed rather than begun: the tension already present, the context already established, the audience already invested in the outcome in the way that semi-finals produce in their spectators a quality of attention that group matches, however important, cannot quite replicate. It was a match that stretched across two days, two weather fronts and approximately eighteen years of Indian subcontinental expectation, and it ended, on the Wednesday afternoon, eighteen runs short of what India needed and approximately as far from the ideal outcome as a cricket match can arrive at without being quite a tragedy. Tragedy requires resolution, and this — India five for three in the third over, Rohit and Kohli and Rahul departing in the kind of sequence that, in the retelling, sounds like fiction — had an inevitability that made the word feel both appropriate and insufficient.</p>
+
+    <p>New Zealand had won the toss and batted on a surface that was, as Old Trafford surfaces so often are in this World Cup, presenting sufficient movement in the first fifteen overs to make life genuinely uncomfortable for top-order batsmen who had not prepared for the ball to deviate. Martin Guptill went in the fourth over — Bumrah from round the wicket, the cobra-strike that produced a feathered edge, Kohli at second slip diving to his left to take a flying chance. One for one. Guptill gone for one. Thereafter Kane Williamson and Henry Nicholls assembled the sixty-eight-run partnership that gave the New Zealand innings its structure, its steadiness, the platform on which everything that followed was built. Williamson, as he has throughout this tournament — sixty-seven from ninety-five deliveries, his bat meeting each ball with the considered deliberation of a man who has calculated, in advance, what each situation requires — gave New Zealand the backbone of a total that was, on a pitch of this character, more than competitive. Jadeja bowled Nicholls with a sharp turner at the end of the eighteenth over and India, for a moment, believed themselves back into the contest.</p>
+
+    <h2>Taylor and de Grandhomme: Building the Platform</h2>
+
+    <p>What turned the New Zealand innings from competitive to threatening was the fourth-wicket stand between Ross Taylor and James Neesham, and then Taylor's own continuation with Colin de Grandhomme after Neesham had miscued to Dinesh Karthik's extraordinary one-handed catch at backward point — a catch that, in a different match, would have been the talking point for days. Taylor made seventy-four from ninety balls, an innings of the typically Tayloresque quality: not the innings that announces itself through boundaries alone, but the innings that accumulates, that turns ones into twos, that finds the gaps with the wristiness of a man who has batted in enough World Cup semi-finals to know exactly what is required. De Grandhomme made sixteen before being fooled by Bhuvneshwar Kumar's slower ball to top-edge behind. Ross Taylor and Tom Latham then added the flourishes — Taylor caught by Jadeja at long-off off Boult in the forty-eighth over for a number that mattered — before New Zealand's lower order, Santner and Boult surviving the final few overs with the unconcerned air of men who know their work is done, brought the total to two hundred and thirty-nine for eight. On this surface, on this day, it was a total that New Zealand's bowlers were going to have to defend. And Matt Henry, at least, was going to make absolutely certain of it.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>New Zealand Batting — 1st Innings</h3><span class="innings-total">239/8 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">MJ Guptill<em>c Kohli b Bumrah</em></span><span class="bat-runs">1</span><span class="bat-balls">4</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">HM Nicholls<em>b Jadeja</em></span><span class="bat-runs">28</span><span class="bat-balls">51</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">KS Williamson (c)<em>c Jadeja b Chahal</em></span><span class="bat-runs hl">67</span><span class="bat-balls">95</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">LRPL Taylor<em>run out (Jadeja)</em></span><span class="bat-runs hl">74</span><span class="bat-balls">90</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">JDS Neesham<em>c Karthik b Pandya</em></span><span class="bat-runs">12</span><span class="bat-balls">18</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">C de Grandhomme<em>c †Dhoni b Kumar</em></span><span class="bat-runs">16</span><span class="bat-balls">10</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">TWM Latham†<em>c Jadeja b Kumar</em></span><span class="bat-runs">10</span><span class="bat-balls">11</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">MJ Henry<em>c Kohli b Kumar</em></span><span class="bat-runs">1</span><span class="bat-balls">2</span></div>
+      <div class="innings-extras"><span>Extras: 18 (lb 5, w 13)</span><strong>239 / 8</strong></div>
+    </div>
+
+    <h2>Henry's Three Overs and the Architecture of Disaster</h2>
+
+    <p>India's reply began in the second over. Matt Henry — swinging the ball at comfortable pace from over the wicket, finding movement that the Old Trafford surface had, evidently, preserved for exactly this purpose — removed Rohit Sharma with his third delivery: full, angling in, straightening at the last moment, an outside edge that Latham gobbled up behind the stumps. Four for one. India had scored four runs and lost their most prolific batsman of the tournament. Rohit's five centuries across the group stage — an achievement without precedent in World Cup history — could not follow him into the semi-final. Henry's fourth over contained the dismissal of Kohli: lbw to Trent Boult, Kohli stretching across and beaten by the swing, the umpire's finger raised, the review taken and lost on umpire's call. Five for two. Henry returned to dismiss KL Rahul in the next over, the nick to Latham completing a sequence — Rohit, Kohli, Rahul — that reduced India to five for three and extinguished, in eight deliveries across three overs, everything that the group stage had promised. Henry's final figures: three for thirty-seven from ten overs. It was, as individual bowling performances go in World Cup semi-finals, among the most consequential in recent memory.</p>
+
+    <p>Rishabh Pant and Dinesh Karthik — the emergency partnership, the pair that the dressing room sent in to prevent complete catastrophe — put on forty-seven between them at a tempo that was, given the circumstances, both rational and insufficient. Pant's thirty-two from fifty-six deliveries was the innings of a batsman who understood his situation and still could not quite find the boundaries that his talent implied were available to him. Karthik was dismissed at twenty-four for four, caught by de Grandhomme at backward point off Santner, whose left-arm spin on a surface with modest turn was nonetheless precise enough to create angles that India's batsmen, scrambling for footing, could not comfortably manage. Hardik Pandya's dismissal at ninety-two for six — caught at long-on off Santner, advancing and lofting to the fielder — was the moment at which the mathematical argument shifted decisively to New Zealand's advantage. India needed a hundred and forty-eight from twenty overs with four wickets remaining and Dhoni, their last great finisher, and Jadeja at the crease.</p>
+
+    <div class="pq">
+      <p>"Everyone had written off New Zealand against India. We kind of liked that. We knew what we were capable of, and we proved it today on a surface that rewarded skill and patience."</p>
+      <cite>Kane Williamson, New Zealand captain, post-match at Old Trafford</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>India Batting — 2nd Innings</h3><span class="innings-total">221 ao in 49.3 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">RG Sharma<em>c †Latham b Henry</em></span><span class="bat-runs">1</span><span class="bat-balls">7</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">KL Rahul<em>c †Latham b Henry</em></span><span class="bat-runs">1</span><span class="bat-balls">6</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">V Kohli (c)<em>lbw b Boult</em></span><span class="bat-runs">1</span><span class="bat-balls">6</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">DL Karthik<em>c de Grandhomme b Santner</em></span><span class="bat-runs">6</span><span class="bat-balls">25</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">RR Pant†<em>c Williamson b Santner</em></span><span class="bat-runs">32</span><span class="bat-balls">56</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">HH Pandya<em>c Neesham b Henry</em></span><span class="bat-runs">32</span><span class="bat-balls">56</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">MS Dhoni†<em>run out (Guptill)</em></span><span class="bat-runs hl">50</span><span class="bat-balls">72</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">RA Jadeja<em>c Williamson b Boult</em></span><span class="bat-runs hl">77</span><span class="bat-balls">59</span></div>
+      <div class="innings-extras"><span>Extras: 16 (lb 3, w 13)</span><strong>221 ao</strong></div>
+    </div>
+
+    <h2>Jadeja, Dhoni and the Cruelty of What Almost Was</h2>
+
+    <p>What Ravindra Jadeja produced in the forty-third through forty-eighth overs of India's reply was the kind of innings that, had it come in a different match, would have been celebrated as among the finest lower-order counter-attacks in World Cup history. Seventy-seven from fifty-nine deliveries — four sixes, four fours, the full repertoire of a batsman who bats at seven and carries the techniques of a top-order player into the lower-middle order when the situation demands — took India from an apparently terminal position to one that required, with four overs remaining, something that was merely very unlikely rather than mathematically impossible. The partnership with Dhoni — Dhoni who, upon the dismissal of Jadeja caught at long-off by Williamson off Boult in the forty-eighth over for seventy-seven, remained stranded with fifty from seventy-two deliveries, unable to find the boundary that the equation required — was worth a hundred and sixteen from eighty-one balls, and it was precisely the kind of partnership that had, on so many previous occasions, carried India to improbable victories. This time, the equation that remained was too severe. Dhoni, run out by Guptill's direct hit from the midwicket boundary attempting a second run that was never truly available, fell for fifty with two overs remaining and India needing forty-eight — an impossible arithmetic, confirmed forty-five minutes later when Chahal was caught behind off Neesham and the semi-final was over. New Zealand had won by eighteen runs. The margin concealed how close Jadeja had brought it.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">India's Collapse — Key Moments</div>
+      <div class="tl-item"><span class="tl-score">4/1</span><span class="tl-text"><span class="who">Rohit c †Latham b Henry 1.</span> <span class="note">Third ball of the Henry spell. Angled in, straightened. India's leading run-scorer gone for one.</span></span></div>
+      <div class="tl-item"><span class="tl-score">5/2</span><span class="tl-text"><span class="who">Kohli lbw b Boult 1.</span> <span class="note">Review taken on umpire's call. India's captain gone for one. Old Trafford stunned.</span></span></div>
+      <div class="tl-item"><span class="tl-score">5/3</span><span class="tl-text"><span class="who">Rahul c †Latham b Henry 1.</span> <span class="note">The top three gone for five runs. Henry's spell becomes the moment that defines a semi-final.</span></span></div>
+      <div class="tl-item"><span class="tl-score">92/6</span><span class="tl-text"><span class="who">Pandya c Neesham b Henry 32.</span> <span class="note">Last recognised batting pair. India need 148 from 20 overs. Effectively finished.</span></span></div>
+      <div class="tl-item"><span class="tl-score">216/8</span><span class="tl-text"><span class="who">Dhoni run out (Guptill) 50.</span> <span class="note">Guptill's direct hit. The great finisher gone. India need 32 from 2. Over.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>There is a melancholy specific to the World Cup semi-final loss — different in kind from a group stage defeat, different too from a final loss, because the final at least grants the dignity of having arrived. The semi-final loss deposits you in the anteroom of greatness and sends you home without having opened the door. India, across fifty overs that stretched across two days and one storm, had produced a batting performance that will haunt the subcontinent's cricket imagination for the next four years — the three first-over wickets, the Jadeja innings that almost changed the argument — and they had, nonetheless, lost by eighteen runs. New Zealand had played better. Matt Henry had bowled better, on this particular surface, in this particular morning, than any bowler in the tournament. And Kane Williamson — calm, authoritative, the coolest head in world cricket on a day when cool heads were exactly what the surface was demanding — had led his team to a World Cup final with the composed efficiency that has made New Zealand, under his captaincy, the team that most of the world outside of the subcontinent has been quietly hoping might win. The rest was silence, and rain, and the long flight home.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Old Trafford, Manchester</strong></li>
+      <li><span class="lbl">Dates</span><strong>9–10 July 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>New Zealand, elected to bat</strong></li>
+      <li><span class="lbl">New Zealand</span><strong>239/8 (50 ov)</strong></li>
+      <li><span class="lbl">India</span><strong>221 ao (49.3 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>New Zealand won by 18 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Matt Henry (3/37)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Henry's Opening Spell</div><div class="star-stat">
+      <span class="num">3/37</span>
+      <span class="desc">Matt Henry dismissed Rohit, Rahul and Pandya. India's top three went for 1, 1, and 1. A spell that decided a semi-final.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Bowling Figures</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Henry</span><strong>3/37 (10 ov)</strong></li>
+      <li><span class="lbl">Boult</span><strong>2/27 (10 ov)</strong></li>
+      <li><span class="lbl">Santner</span><strong>2/34 (9 ov)</strong></li>
+      <li><span class="lbl">Ferguson</span><strong>1/30 (9 ov)</strong></li>
+      <li><span class="lbl">Neesham</span><strong>2/28 (8 ov)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">India Fall of Wickets</div><div class="sbox-body"><ul>
+      <li><span class="lbl">1st wkt</span><strong>4 — Rohit</strong></li>
+      <li><span class="lbl">2nd wkt</span><strong>5 — Kohli</strong></li>
+      <li><span class="lbl">3rd wkt</span><strong>5 — Rahul</strong></li>
+      <li><span class="lbl">7th wkt</span><strong>208 — Jadeja 77</strong></li>
+      <li><span class="lbl">All out</span><strong>221 in 49.3 ov</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"Jadeja and Dhoni — that partnership gave us a scare. Jadeja especially played one of the great semi-final innings. We were lucky to get over the line."</p><cite>Kane Williamson, New Zealand captain, post-match</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · 1st Semi-Final · Old Trafford · 9–10 July 2019<br>New Zealand 239/8 defeated India 221 by 18 runs · Taylor 74 · Jadeja 77 · Henry 3/37</footer>
+</body>
+</html>
