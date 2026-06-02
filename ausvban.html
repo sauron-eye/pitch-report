@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs Bangladesh, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A3A6A;--fern-lt:#2255A0;--fern-pale:#E4EAF5;
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#07101A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--fern-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern-lt);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--fern-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#07101A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--fern-lt);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern-lt);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern-lt)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#07101A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--fern-lt);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#07101A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4858;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Thursday, 20 June 2019 · Trent Bridge, Nottingham</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 26</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 26 <span>›</span> Australia vs Bangladesh</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 26 · Trent Bridge, Nottingham · 20 June 2019</span></div>
+  <h1 class="hl"><em>Warner's 166:</em> The Innings That<br>Settled the Semi-Finals and<br><span class="accent">Mushfiqur's Vigil</span> That Changed Nothing</h1>
+  <p class="deck">Seven hundred and fourteen runs were scored at Trent Bridge on a Thursday in June, which is the kind of arithmetic that belongs to the sport's more exhibitionist register — the sort of day that statisticians archive with relish and bowlers prefer not to revisit. David Warner, whose summer of redemption had already produced a hundred against Pakistan eight days earlier, now produced something considerably more emphatic: a hundred and sixty-six from a hundred and forty-seven deliveries that was, by any reasonable measure, the innings of the tournament to that point, a display of accumulation and acceleration that moved from the methodical to the merciless with the particular unhurriedness of a batsman who has decided, somewhere in the middle overs, that patience has served its purpose and devastation will now serve the rest. Australia posted three hundred and eighty-one. Bangladesh, given a target that required something beyond their means, produced their highest ever ODI total of three hundred and thirty-three — Mushfiqur Rahim's unbeaten century a monument to resistance that deserved a more consequential stage — and lost by forty-eight runs. The top four of this World Cup had effectively been decided with nineteen matches still to play.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Trent Bridge, Nottingham</span><span class="datestamp">20 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">Australia</span><span class="total">381<small>/5</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">Bangladesh</span><span class="total">333<small>/8</small></span><span class="overs">50.0 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>Australia won by 48 runs<br>Warner 166 · Khawaja 89 · Finch 53 · Mushfiqur 102* · Mahmudullah 69 · MOM: David Warner</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>Trent Bridge in June is a ground that has, across the years, periodically arranged itself as a venue for excess — for the kind of totals and run-rates and individual performances that exist at the outermost edge of what the game's conventional arithmetic considers reasonable. The record books remember England's four hundred and eighty-one against Australia here in 2018, a number that had entered the game's consciousness as the limit beyond which scoring could not practically travel. What Warner and Finch and Khawaja produced on this Thursday was not a record, but it carried within it a quality that statistics cannot entirely capture: the sense of a batting unit operating with the specific freedom of teams who have already qualified for the next stage and are therefore batting not with the anxiety of men who need to make runs but with the uncomplicated pleasure of men who simply want to make them. Warner was dropped by Sabbir Rahman at gully when he had scored ten — the same fielding position at which West Indies had also reprieved him at this ground earlier in the tournament, a coincidence that will not have gone unnoticed by the fielding coaches present — and thereafter proceeded to make Bangladesh's bowlers, already undermined by the absence of Mohammad Saifuddin with a back spasm, feel the full weight of that reprieve.</p>
+
+    <p>Aaron Finch won the toss and elected to bat without hesitation, the Nottingham sky clear and the pitch offering exactly the batting-friendly surface that Trent Bridge's reputation promised. He and Warner added a hundred and twenty-one for the first wicket — the kind of partnership that, in isolation, tells a partial story, since Finch's dismissal in the seventeenth over for fifty-three, steering a rising Soumya Sarkar delivery to Rubel Hossain at short third man, arrived just as both batsmen appeared ready to launch into the kind of acceleration that the first fifteen overs had been building towards. What Finch's departure actually produced was something more significant: the arrival of Usman Khawaja at first drop, and the partnership of a hundred and ninety-two that Warner and Khawaja then constructed across thirty-odd overs of sustained, varied, frequently beautiful batting — a stand that moved through its phases from the patient to the aggressive as the surface's afternoon character changed and the bowlers, operating without the variation that Saifuddin might have supplied, ran short of ideas and then ran short of good deliveries and then simply ran.</p>
+
+    <h2>The Century, the 150, and the Acceleration That Defined the Innings</h2>
+
+    <p>Warner had reached his hundred off a hundred and ten deliveries — his sixteenth ODI century, his second of this World Cup in eight days, the second instance of his post-ban life of standing at the non-striker's end and raising his bat to the crowd's mixed acknowledgment. The particular quality of the century was not the number itself but what came after it: the ten overs between his hundred and his dismissal for a hundred and sixty-six that constituted a passage of batting as cleanly aggressive as anything this tournament had produced. He hit fourteen fours and five sixes from a hundred and forty-seven deliveries in total — a distribution that tells you something about the innings's evolution, since the sixes were largely concentrated in the final third, when the bowlers had been worn to the point of predictability and Warner had the freedom to play shots that the earlier conditions had not quite invited. He became the first player in World Cup history to pass a hundred and fifty twice in the same tournament, a record that the statisticians duly noted and that Warner himself, characteristically, positioned within the team's context rather than his own: noting in his post-match remarks that the departure of Khawaja — bottom-edging a pull off Soumya Sarkar that Mushfiqur dived forward to take — had denied his partner the hundred his innings deserved. Khawaja's eighty-nine from seventy-two deliveries was the innings of a batsman playing at a level substantially above what the match required of him.</p>
+
+    <p>Glenn Maxwell's cameo — thirty-two from ten deliveries, three sixes and two fours, including an extraordinary shot off a Rubel Hossain no-ball that he dispatched back over the bowler's head with a hybrid of front-foot drive and back-foot pull that defied the textbook's categories entirely — briefly raised the possibility of a total exceeding four hundred before Maxwell was run out at the non-striker's end following a mix-up with Khawaja, who called and then declined a sharp single and was caught behind shortly after. The last four overs yielded thirty-five runs, and Australia's three hundred and eighty-one represented their second-highest total in World Cup history — a number that felt, on a ground where large totals were not unprecedented, simultaneously inevitable and formidable.</p>
+
+    <div class="pq">
+      <p>"It was a tad slow, the wicket, but it was a grind for the bowlers. It's very difficult to bowl there. You've got to adapt and so far things are working well."</p>
+      <cite>David Warner, Player of the Match, post-match at Trent Bridge</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Australia Batting — 1st Innings</h3><span class="innings-total">381/5 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">AJ Finch (c)<em>c Rubel b Soumya</em></span><span class="bat-runs hl">53</span><span class="bat-balls">66</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">DA Warner<em>c &amp; b Soumya</em></span><span class="bat-runs hl">166</span><span class="bat-balls">147</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">UT Khawaja<em>c Mushfiqur b Soumya</em></span><span class="bat-runs hl">89</span><span class="bat-balls">72</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">SPD Smith<em>lbw b Mustafizur</em></span><span class="bat-runs">1</span><span class="bat-balls">7</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">GJ Maxwell<em>run out (Mehidy)</em></span><span class="bat-runs">32</span><span class="bat-balls">10</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">MP Stoinis<em>not out</em></span><span class="bat-runs">19</span><span class="bat-balls">18</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">AT Carey†<em>not out</em></span><span class="bat-runs">4</span><span class="bat-balls">4</span></div>
+      <div class="innings-extras"><span>Extras: 17 (b 2, lb 3, w 12)</span><strong>381/5</strong></div>
+    </div>
+
+    <h2>Mushfiqur's Century in Defeat: The Most Honest Kind of Innings</h2>
+
+    <p>Bangladesh's reply began with the particular fragility of a chase that requires something close to perfection at the top of the order and receives instead the kind of start that forecloses all but the most extravagant optimism. Tamim Iqbal — Bangladesh's most experienced opener, their first batsman of real international quality, a cricketer who has been the standard-bearer for his country's batting ambitions across fifteen years of international cricket — batted with the authority of a man who has understood that the deficit is large enough that only attack will suffice, and his sixty-two from a hundred and one deliveries was an innings of method rather than recklessness, the kind of sixty that a team chasing three hundred and eighty-two desperately needs and that was, in its own terms, exactly sufficient preparation for the batsmen who followed him. Shakib Al Hasan — the tournament's leading run-scorer coming into this match, a batsman who had been producing innings of extraordinary quality throughout the group stage — made forty-one, a number that, in the context of his other contributions, will have felt like a failure of nerve at a moment when Bangladesh needed him to be transcendent. He was caught at deep midwicket attempting a pull off Pat Cummins; the shot was not without justification given the required rate, but the outcome was the outcome.</p>
+
+    <p>What Mushfiqur Rahim then produced across the final eighteen overs of the Bangladesh innings — a hundred and two not out from ninety-seven deliveries, unbeaten because there was no one left to bat with him rather than because the target had been reached — was the innings of a wicketkeeper-batsman playing beyond the rational constraints of a chase his team could no longer win, batting with a freedom that the scoreboard's arithmetic had, paradoxically, granted him. He reached his century in the forty-ninth over, the second-to-last, with a boundary that brought the crowd to its feet not because it mattered to the result but because it was good, and cricket, even in losing, retains its capacity for things that are simply good. Mahmudullah's sixty-nine from fifty deliveries — a partnership of a hundred and twenty-seven with Mushfiqur for the fifth wicket that, coming in the middle to late overs, briefly made the required rate look arithmetically approachable before logic reasserted itself — was the innings that gave the Bangladesh chase its final quarter-hour of false but genuine hope. Nathan Coulter-Nile's two wickets in consecutive deliveries in the middle order had done the decisive damage. Bangladesh finished on three hundred and thirty-three for eight, their highest ever ODI total, a record set in the context of a defeat that was, by the end, only about honour.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Bangladesh Batting — Chase</h3><span class="innings-total">333/8 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">Tamim Iqbal<em>c Warner b Behrendorff</em></span><span class="bat-runs hl">62</span><span class="bat-balls">101</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">Soumya Sarkar<em>b Cummins</em></span><span class="bat-runs">33</span><span class="bat-balls">29</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">Shakib Al Hasan<em>c Maxwell b Cummins</em></span><span class="bat-runs">41</span><span class="bat-balls">51</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">Mushfiqur Rahim†<em>not out</em></span><span class="bat-runs hl">102</span><span class="bat-balls">97</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">Liton Das<em>lbw b Zampa (review)</em></span><span class="bat-runs">20</span><span class="bat-balls">29</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">Mahmudullah<em>c Carey b Coulter-Nile</em></span><span class="bat-runs hl">69</span><span class="bat-balls">50</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">Sabbir Rahman<em>b Coulter-Nile</em></span><span class="bat-runs">0</span><span class="bat-balls">1</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">Mashrafe Mortaza (c)<em>c Maxwell b Starc</em></span><span class="bat-runs">0</span><span class="bat-balls">2</span></div>
+      <div class="innings-extras"><span>Extras: 16 (b 1, lb 5, w 10)</span><strong>333/8</strong></div>
+    </div>
+
+    <h2>The Semi-Final Table: A Conclusion Before Its Time</h2>
+
+    <p>The match's deeper significance lay not in its individual performances — Warner's hundred and sixty-six or Mushfiqur's century are both worthy of their own sustained attention — but in what the result represented for the tournament's narrative. Australia, with five wins from six matches, were effectively assured of a semi-final place, the fifth win in this sequence placing them in a position where only a catastrophic collapse of form across their final two fixtures could dislodge them. Alongside England, India and New Zealand, they had assembled the points and the quality that the group stage's logic was already writing as the four survivors. Bangladesh's defeat left them fifth, their net run rate and remaining fixture list combining to create a path that theoretically existed but practically did not. A Bangladesh side that had beaten South Africa and West Indies, that had produced in Shakib Al Hasan the tournament's most consistently excellent batting performance, and that had shown, in Mushfiqur's hundred against the odds, the particular resilience that makes their cricket worth watching — this Bangladesh side had contributed to the best World Cup group stage in memory without ultimately being able to claim the place its cricket had intermittently deserved.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">Key Moments</div>
+      <div class="tl-item"><span class="tl-score">0/0</span><span class="tl-text"><span class="who">Australia elect to bat at Trent Bridge.</span> <span class="note">Bangladesh missing Saifuddin with a back spasm — the absence that cost them a variation Australia's openers might not have navigated so freely.</span></span></div>
+      <div class="tl-item"><span class="tl-score">10</span><span class="tl-text"><span class="who">Warner dropped by Sabbir Rahman at gully.</span> <span class="note">The same position West Indies had also shelled him at this ground. The reprieve cost Bangladesh 156 runs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">121/1</span><span class="tl-text"><span class="who">Finch c Rubel b Soumya 53 (66).</span> <span class="note">The partnership had provided the foundation. Khawaja arrived and the platform became a launch pad.</span></span></div>
+      <div class="tl-item"><span class="tl-score">313/2</span><span class="tl-text"><span class="who">Warner c &amp; b Soumya 166 (147).</span> <span class="note">First player in World Cup history to pass 150 twice. A defining innings of the 2019 tournament.</span></span></div>
+      <div class="tl-item"><span class="tl-score">204/4</span><span class="tl-text"><span class="who">Mushfiqur–Mahmudullah: 127-run partnership.</span> <span class="note">The stand that produced Bangladesh's highest ODI total (333) and Mushfiqur's century — in a defeat that was, by then, beyond remedy.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>There is something quietly instructive in the way cricket handles the question of quality and consequence. Warner's hundred and sixty-six was the best innings of this World Cup at the point it was played, and it came against a Bangladesh side that was already outgunned by the match's arithmetic before the first ball was bowled. Mushfiqur's hundred was the finest innings Bangladesh produced in this tournament, and it came when the match was already lost. Both performances existed, in their own registers, as things of value that transcended the result — and both were, in the final accounting, absorbed without disturbance into the scorecard's numerals. What Trent Bridge had produced on this Thursday was not merely a cricket match but an illustration of the game's persistent refusal to make quality and outcome the same thing. Warner went home with the Player of the Match award and the leading scorer's crown. Mushfiqur went home with one hundred and two not out and the knowledge that, on a day when his side needed four hundred, he had batted as though it was possible, and had never once stopped trying to make it so.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Trent Bridge, Nottingham</strong></li>
+      <li><span class="lbl">Date</span><strong>20 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>Australia won, elected to bat</strong></li>
+      <li><span class="lbl">Australia</span><strong>381/5 (50 ov)</strong></li>
+      <li><span class="lbl">Bangladesh</span><strong>333/8 (50 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>Australia won by 48 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>David Warner (166)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Warner's 166</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>166 (147 balls)</strong></li>
+      <li><span class="lbl">Fours / Sixes</span><strong>14 fours · 5 sixes</strong></li>
+      <li><span class="lbl">Opening stand</span><strong>121 with Finch</strong></li>
+      <li><span class="lbl">2nd wicket</span><strong>192 with Khawaja</strong></li>
+      <li><span class="lbl">Record</span><strong>First to pass 150 twice in one WC</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Mushfiqur's 102*</div><div class="star-stat">
+      <span class="num">102*</span>
+      <span class="desc">Mushfiqur Rahim — unbeaten, undefeated in spirit. Bangladesh's highest ever ODI total still not enough. The century that meant everything, in a cause that was already lost.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Bangladesh Bowling</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Soumya Sarkar</span><strong>3/58 (8 ov)</strong></li>
+      <li><span class="lbl">Mustafizur</span><strong>1/69 (9 ov)</strong></li>
+      <li><span class="lbl">Rubel Hossain</span><strong>0/71 (10 ov)</strong></li>
+      <li><span class="lbl">Best aggregate</span><strong>714 runs — WC record</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"We batted well, we fought hard. Mushfiqur's innings was something special. The target was always going to be very tough. Australia were outstanding today."</p><cite>Mashrafe Mortaza, Bangladesh captain, post-match at Trent Bridge</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 26 · Trent Bridge, Nottingham · 20 June 2019<br>Australia 381/5 defeated Bangladesh 333/8 by 48 runs · Warner 166 · Khawaja 89 · Mushfiqur 102* · Soumya 3/58</footer>
+</body>
+</html>
