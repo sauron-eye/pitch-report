@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Test cricket is not dying. It is finally becoming what it always wanted to be.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap');
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+
+:root {
+  --paper: #F8F5EF;
+  --paper-warm: #F0EBE0;
+  --ink: #151209;
+  --ink-deep: #1E1912;
+  --ink-mid: #3A342A;
+  --ink-soft: #5C5448;
+  --ink-ghost: #9A9288;
+  --rule: #D4CAB8;
+  --rule-dark: #B0A898;
+  --gold: #9B7C20;
+  --gold-lt: #C4A040;
+  --red: #8B1A10;
+  --accent: #8B1A10;
+  --pq-bg: #F5EDE8;
+  --pq-border: #8B1A10;
+}
+
+html { font-size:17px; }
+body { background:var(--paper); color:var(--ink); font-family:'Spectral',Georgia,serif; line-height:1.8; -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+.np-header { background:#1A0A0A; border-bottom:6px double var(--gold-lt); position:relative; overflow:hidden; }
+.np-header-inner { max-width:980px; margin:0 auto; padding:2rem 2rem 1.5rem; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:1rem; }
+.np-header-left, .np-header-right { display:flex; flex-direction:column; gap:0.3rem; }
+.np-header-right { text-align:right; align-items:flex-end; }
+.edition-tag, .price { font-family:'Barlow Condensed',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold-lt); }
+.date-line, .issue { font-family:'Barlow',sans-serif; font-size:0.65rem; font-weight:300; color:rgba(255,255,255,0.4); }
+.pub-name { font-family:'Playfair Display',serif; font-size:clamp(2rem,5vw,3.2rem); font-weight:900; color:#FAF6EE; letter-spacing:0.02em; line-height:1; display:block; }
+.pub-sub { font-family:'Barlow Condensed',sans-serif; font-size:0.62rem; font-weight:500; letter-spacing:0.35em; text-transform:uppercase; color:var(--gold-lt); margin-top:0.35rem; display:block; }
+.section-strip { background:var(--ink); max-width:980px; margin:0 auto; padding:0.55rem 2rem; display:flex; align-items:center; gap:1.5rem; }
+.sec-label { font-family:'Barlow Condensed',sans-serif; font-size:0.62rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-lt); }
+.breadcrumb { font-family:'Barlow',sans-serif; font-size:0.62rem; color:#6A6258; }
+.breadcrumb span { color:#8A8278; }
+
+/* HERO */
+.hero { max-width:780px; margin:0 auto; padding:3rem 2rem 2rem; border-bottom:3px double var(--rule-dark); }
+.op-kicker { font-family:'Barlow Condensed',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:0.7rem; margin-bottom:1rem; }
+.op-kicker::after { content:''; flex:1; height:1px; background:var(--gold); }
+.hl { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:900; line-height:1.1; color:var(--ink); letter-spacing:-0.018em; margin-bottom:1.2rem; }
+.hl em { font-style:italic; color:var(--red); }
+.deck { font-family:'Spectral',serif; font-size:1.1rem; font-style:italic; font-weight:300; line-height:1.65; color:var(--ink-mid); padding-left:1.2rem; border-left:3px solid var(--gold-lt); margin-bottom:1.8rem; }
+.byline-bar { display:flex; align-items:center; gap:2rem; flex-wrap:wrap; padding:1rem 0 0; border-top:1px solid var(--rule); }
+.byline-bar .by { font-family:'Barlow Condensed',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); }
+.byline-bar .by strong { color:var(--ink); }
+.byline-bar .role { font-family:'Barlow',sans-serif; font-size:0.65rem; color:var(--ink-ghost); }
+.byline-bar .datestamp { font-family:'Barlow',sans-serif; font-size:0.68rem; color:var(--ink-ghost); margin-left:auto; }
+
+/* BODY */
+.body-wrap { max-width:780px; margin:0 auto; padding:3rem 2rem 5rem; }
+.prose p { font-family:'Spectral',serif; font-size:1.02rem; line-height:1.92; color:var(--ink-mid); margin-bottom:1.45rem; }
+.prose p:first-child::first-letter { font-family:'Playfair Display',serif; font-size:4.8rem; font-weight:900; float:left; line-height:0.8; margin-right:0.1em; margin-top:0.1em; color:var(--accent,var(--gold)); }
+.prose h2 { font-family:'Playfair Display',serif; font-size:1.35rem; font-weight:700; color:var(--ink); line-height:1.3; margin:2.8rem 0 1rem; padding-top:2rem; border-top:2px solid var(--rule); letter-spacing:-0.01em; }
+.prose hr { border:none; border-top:3px double var(--rule-dark); margin:2.5rem 0; }
+.pq { margin:2.5rem 0; padding:1.4rem 1.6rem; background:var(--pq-bg,#F5F0E4); border-left:4px solid var(--pq-border,var(--gold)); border-right:1px solid var(--rule); }
+.pq p { font-family:'Playfair Display',serif!important; font-size:1.3rem!important; font-weight:700!important; font-style:italic; line-height:1.45!important; margin-bottom:0!important; }
+.pq p::first-letter { font-size:inherit!important; float:none!important; color:inherit!important; margin:0!important; }
+.counter { display:flex; gap:2rem; margin:2.5rem 0; padding:1.2rem 0; border-top:2px solid var(--rule); border-bottom:2px solid var(--rule); }
+.counter-item { text-align:center; flex:1; }
+.counter-item .n { font-family:'Playfair Display',serif; font-size:2.6rem; font-weight:900; color:var(--accent,var(--gold)); line-height:1; display:block; }
+.counter-item .l { font-family:'Barlow Condensed',sans-serif; font-size:0.58rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-ghost); display:block; margin-top:0.3rem; }
+.nav-strip { background:var(--paper-warm); border-bottom:1px solid var(--rule); max-width:980px; margin:0 auto; padding:0.5rem 2rem; display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center; }
+.nav-strip a { font-family:'Barlow Condensed',sans-serif; font-size:0.63rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; padding:0.25rem 0.7rem; border:1px solid var(--rule); background:#fff; color:var(--ink-soft); }
+.nav-strip a.active, .nav-strip a:hover { background:var(--ink); color:var(--gold-lt); }
+.nav-strip .nav-lbl { font-family:'Barlow Condensed',sans-serif; font-size:0.55rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-ghost); margin-right:0.5rem; }
+footer { background:var(--ink-deep); border-top:4px double var(--gold-lt); padding:1.8rem; text-align:center; font-family:'Barlow Condensed',sans-serif; font-size:0.6rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#4A3A38; }
+footer span { color:var(--gold-lt); }
+
+@media(max-width:680px) {
+  .np-header-inner { grid-template-columns:1fr; text-align:center; }
+  .np-header-left, .np-header-right { display:none; }
+  .hero, .body-wrap { padding-left:1.2rem; padding-right:1.2rem; }
+  .counter { flex-wrap:wrap; }
+  .byline-bar .datestamp { margin-left:0; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">Opinion &amp; Commentary</span><span class="date-line">The Pitch Report · International Edition</span></div>
+      <div style="text-align:center"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">Opinion · No. 01</span><span class="issue">Test Cricket &amp; The Modern Age</span></div>
+    </div>
+  </div>
+  <nav class="nav-strip">
+    <span class="nav-lbl">Opinion Series:</span>
+    <a href="opinion_01_test_cricket.html" class="active">01 · Test Cricket</a>
+    <a href="opinion_02_ipl_averages.html">02 · IPL &amp; Averages</a>
+    <a href="opinion_03_steve_smith.html">03 · Steve Smith</a>
+    <a href="opinion_04_drs.html">04 · The DRS</a>
+  </nav>
+  <div class="section-strip"><span class="sec-label">Opinion</span><span class="breadcrumb">The Pitch Report <span>›</span> Opinion &amp; Commentary <span>›</span> Test Cricket</span></div>
+</header>
+
+<div class="hero">
+  <div class="op-kicker">Opinion · 01 of 04</div>
+  <h1 class="hl">Test cricket is not dying. It is finally becoming <em>what it always wanted to be.</em></h1>
+  <p class="deck">The eulogies have been written and filed and published at regular intervals for thirty years. Each time, Test cricket has declined to cooperate. We might consider, at some point, that we have been asking the wrong question.</p>
+  <div class="byline-bar">
+    <span class="by">By <strong>Muhammad Hamza</strong></span>
+    <span class="role">Senior Correspondent, The Pitch Report</span>
+    <span class="datestamp">The Pitch Report</span>
+  </div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>The argument has been made so many times and in so many registers — anxious, elegiac, contemptuous, resigned — that it has acquired the quality of a tradition in its own right. Test cricket, we are told, is dying. The crowds are thinning. The broadcasters are paying less. The players would rather play T20 franchise cricket, where the money is larger and the demands on the body less severe, than spend five days in the field on a flat pitch in Chittagong or Hamilton or Kandy for a draw. The argument is not without its evidence. There have been matches played in front of near-empty stands in grounds built for forty thousand. There have been series scheduled as afterthoughts between franchise tournaments, assigned the television slots that advertisers did not want and the preparation windows that the players resented. The five-day game has, at various moments in the last two decades, looked exactly as its critics described it: a relic being maintained out of sentiment rather than commercial or competitive logic, the cricket equivalent of a national museum that everyone agrees should remain open and almost no one actually visits.</p>
+
+    <p>I do not believe this. I have watched Test cricket for long enough to have seen it produce things that no other format has ever approached, and I have watched the current era closely enough to believe that what is happening to Test cricket right now is not decline but clarification — the format shedding the matches that should not have been played, the series that existed as contractual obligations rather than competitive events, and retaining the ones that deserve to exist: the Ashes, the India-Australia contests that stop subcontinental life, the South Africa-England series that produce the kind of seam-bowling conditions on which the game's physical arguments are made most clearly. The market, for once, is behaving rationally. It is making Test cricket smaller and, in making it smaller, it is making it better.</p>
+
+    <h2>What the Format Was Always For</h2>
+
+    <p>Test cricket was not designed for volume. It was designed — insofar as the Victorian gentlemen who codified it designed anything — for the examination of character across the longest available duration. The five-day match is, at its philosophical core, an investigation: does this batsman's technique hold when he is tired? Does this bowler's control survive the forty-fifth over of a second innings on a pitch that has been deteriorating since Wednesday? Does this captain's judgment remain sound when the draw is the only realistic outcome and his team's position in the series requires him to decide, in the third over after lunch on day four, whether to attack or consolidate? These are questions that can only be answered over time. They require duration in the way that architecture requires space. Reduce the available time and you do not produce a more concentrated version of the same thing; you produce a different thing altogether, with different virtues and different constraints, which is why T20 is not Test cricket played faster any more than a sprint is a marathon run at higher speed.</p>
+
+    <p>What has changed in the last decade is not the format's capacity to produce these examinations — it has never been more capable of doing so, with pitches more varied, player skill levels higher, and the tactical complexity of the game more elaborated than at any previous point in its history — but the surrounding context in which they occur. The audience that watches Test cricket now is a self-selected audience, which is to say it is an audience of people who actively want to watch Test cricket, who have arranged their lives around the television schedule or the ground attendance in a way that the casual viewer of twenty years ago, before the proliferation of competing entertainments, did not need to do. This audience is smaller than the general cricket audience. It is also, and this is the point that the eulogists routinely miss, more committed, more engaged, and more economically valuable per capita than the casual viewer who watched Test cricket in 1985 because it was the only cricket available.</p>
+
+    <div class="pq"><p>The Ashes of 2005 was watched by audiences that television executives described as the highest since the coverage of major national events. It was called a revival. What it actually was is a reminder that Test cricket, given the right conditions, requires no revival — it requires only the right match.</p></div>
+
+    <h2>The Franchise Revolution Has Done Test Cricket a Favour</h2>
+
+    <p>The argument that the IPL and its franchise equivalents have killed Test cricket is the most common version of the eulogist's position, and it is also the most demonstrably incorrect. What the franchise revolution has done is not to kill Test cricket but to kill bad Test cricket — or rather, to kill the conditions under which bad Test cricket could be scheduled and broadcast without consequence, because there was nothing else competing for the cricket viewer's attention. There was always bad Test cricket: series between unequal teams, played in empty stadiums, on surfaces prepared to produce draws, between sets of players who were representing their country as an obligation rather than as the fulfilment of an ambition. The franchise revolution has made the opportunity cost of watching bad Test cricket visible in a way that it was not previously, because the alternative — the IPL, the Big Bash, the Hundred — is available on the same devices. This has punished bad Test cricket and rewarded good Test cricket, which is precisely what a functional market is supposed to do.</p>
+
+    <p>The counter-argument — that franchise cricket is draining the player pool of the kind of batsmen who can survive for five days and the kind of bowlers who can maintain line and length for forty overs in an innings — has more merit. There is something real in the observation that the T20 batting template, with its emphasis on power hitting and aerial routes over the infield, produces batting instincts that are not entirely compatible with the Test match requirements of watchful accumulation and the management of risk over long periods. A batsman trained to hit sixes off good balls will find, in a Test match, that good balls must be defended rather than attacked, and that the temperamental adjustment required is not simply a matter of deciding to play differently but of having built, over years of practise, the instincts that defensive play requires. These instincts are not formed in the nets alone. They are formed in matches, and if the matches available to young cricketers are primarily or exclusively franchise T20 matches, the instincts they form will be T20 instincts.</p>
+
+    <h2>The Crowds Know Something the Analysts Do Not</h2>
+
+    <p>The evidence most frequently cited in the dying-Test-cricket argument is attendance figures: the empty stands at matches in the subcontinent outside the India-Pakistan fixture, the modest crowds at series between smaller nations, the general trend of declining stadium attendance in a world where streaming has made the couch a more comfortable vantage point than the ground. What this evidence does not capture is the quality of attention that the remaining audience brings. The person who has driven two hours to watch a day's play at Headingley and paid forty pounds for the privilege is not the same spectator as the person who was handed a free ticket to a weekday afternoon fixture in the 1970s and attended because they had nothing better to do. The Test match crowd of 2024 is, in aggregate, a crowd of believers — people who have chosen this format over the alternatives available to them, which were not available to their predecessors, and who have made that choice with a degree of deliberateness and commitment that the raw attendance figures do not convey.</p>
+
+    <div class="counter">
+      <div class="counter-item"><span class="n">147</span><span class="l">Years of Test cricket</span></div>
+      <div class="counter-item"><span class="n">2,479</span><span class="l">Tests played to date</span></div>
+      <div class="counter-item"><span class="n">59</span><span class="l">Tests in 2023 alone</span></div>
+    </div>
+
+    <p>The Ashes series of 2019 — in which Ben Stokes made three hundred and thirty-five runs across the series at an average of fifty-five, including the innings at Headingley that is already being cited as among the greatest in the format's history — was not watched by fewer people than its predecessors because Test cricket was declining. It was watched by fewer people because it was on a subscription broadcaster rather than free-to-air television, which is a distribution argument, not a quality argument and not a relevance argument. The cricket itself was magnificent. The financial model surrounding it was, and remains, imperfect. These are different problems.</p>
+
+    <p>What Test cricket is becoming, and what I believe it will be in twenty years, is a premium product in the precise sense that the word implies: something available to those who seek it out and are willing to pay for access to it, valued in proportion to its scarcity rather than degraded by its ubiquity. There will be fewer Tests. The series between genuinely competitive nations will be better attended, better produced, and better compensated than the obligatory fixtures that the current bilateral schedule requires. The players who commit to Test cricket will do so as a choice rather than as a default — which will mean, inevitably, that the ones who make that choice will be the ones whose temperament is suited to it, and the resulting cricket will be better for the self-selection. The format will not die. It will clarify. And what remains after the clarification will be, for those who love the game in its most complete expression, worth more than what preceded it — because it will have been chosen rather than inherited, valued rather than assumed, and protected rather than merely preserved.</p>
+
+    <hr>
+
+    <p>The eulogists, I suspect, will not be satisfied by this argument. They prefer the narrative of decline, because decline has the advantage of drama: it creates urgency, demands response, implies that something precious is being lost and that the people who love it must act to save it. The problem is that the patient keeps refusing to die. Test cricket, in the summer of 2019, produced Ben Stokes at Headingley. It produced, the following year, the Azaadi Test in which New Zealand beat Pakistan in conditions of such technical complexity that the match required five days to produce a result. It keeps producing, at intervals that no format could guarantee but that the five-day structure makes possible, the kind of cricket that those who have watched it for a lifetime describe, afterward, as the reason they watch. It is not dying. It is becoming, slowly and at some cost, exactly what it was always meant to be.</p>
+
+  </article>
+</div>
+
+<footer><span>The Pitch Report</span> · Opinion &amp; Commentary · No. 01<br>Test Cricket Is Not Dying · By Muhammad Hamza · Senior Correspondent</footer>
+</body>
+</html>
