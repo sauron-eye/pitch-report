@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs South Africa, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A3A6A;--fern-lt:#2255A0;--fern-pale:#E4EAF5;
+  --sage:#2A4A2A;--sage-lt:#3A6B3A;--sage-pale:#EAF2EA;
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#07101A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--sage-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--sage-lt);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--sage-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#07101A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--sage-lt);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--sage-pale);border-left:4px solid var(--sage-lt);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--sage)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#07101A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--sage-lt);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#07101A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4858;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Saturday, 6 July 2019 · Emirates Old Trafford, Manchester</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 45</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 45 <span>›</span> Australia vs South Africa</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 45 · Emirates Old Trafford, Manchester · 6 July 2019</span></div>
+  <h1 class="hl"><em>Faf's Farewell Century</em> Sends<br>Australia to Edgbaston — and<br><span class="accent">Warner's Third Hundred</span> That Still Wasn't Enough</h1>
+  <p class="deck">The final group game of the 2019 World Cup was, like most conclusions, retrospective in the satisfaction it provided: a match that did not determine who would qualify for the semi-finals — Australia had already done so, South Africa had long since been eliminated — but that determined, in the specific way that cricket arranges its consolations, what each side would carry forward and what they would leave behind. Faf du Plessis, whose World Cup had been a tour of personal disappointment compounded by collective failure, chose this occasion to produce the hundred he should have made in at least three earlier matches, batting with the authority of a captain who has been released from the weight of a tournament-long responsibility and is now playing purely for the pleasure of the thing. David Warner made a hundred and twenty-two — his third century of the tournament, the one that came against the side he had wronged in Cape Town fourteen months earlier, the one that in any other context would have been the day's decisive innings. South Africa won by ten runs, off the penultimate ball of the match. Australia, who knew before the first ball was bowled that they were heading to Edgbaston to face England in the semi-finals, gathered on the Old Trafford outfield at the end and consoled each other with the expressions of men who had just been reminded that cricket does not allow its practitioners, even the qualified ones, to stop paying attention.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Emirates Old Trafford, Manchester</span><span class="datestamp">6 July 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">South Africa</span><span class="total">325<small>/6</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">Australia</span><span class="total">315<small> ao</small></span><span class="overs">49.5 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>South Africa won by 10 runs<br>du Plessis 100 · van der Dussen 95 · de Kock 52 · Warner 122 · Carey 85 · Rabada 3/56 · MOM: Faf du Plessis</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>Emirates Old Trafford on a Saturday evening in early July is a ground that carries its light generously — the long northern English twilight filtering across the stands, the shadows lengthening slowly enough that the game's evening phase is played in a quality of illumination that flatters the batsmen and makes the fielders' tracking of the ball an act of slight heroism. It was here that Faf du Plessis chose, in the final group match of South Africa's worst World Cup campaign since their readmission to international cricket, to bat as he had occasionally threatened to throughout this tournament without ever quite delivering: with fluency, authority, and the specific kind of century that a senior professional produces when the external pressures have been removed and only the internal ones remain. South Africa had been eliminated for several days before this match was played. The stakes were purely private — pride, reputation, the question of whether a side that had been one of the tournament's most disappointing could at least end it with an account of themselves that justified some fraction of the confidence with which they had arrived in England. Du Plessis gave them that account, and then Kagiso Rabada and a bowling attack finally operating at something close to its potential gave them the ten-run victory that made it matter in the standings — determining, in the process, that India rather than Australia would finish at the top of the group table, and that Australia would face England rather than New Zealand in the semi-finals.</p>
+
+    <p>Du Plessis had won the toss — South Africa's first toss victory of the tournament, a statistical irrelevance that Hashim Amla's absence through a knee injury, sustained while playing football in a pre-match warm-up on the Friday, rendered bittersweet — and elected to bat on a pitch that Old Trafford had prepared as a batting surface but that Australia's spinners and the early-morning conditions would, in the first ten overs, treat with a seriousness that belied the pitch's later character. Quinton de Kock, opening in Amla's absence with Aiden Markram, produced a fifty from forty-three deliveries that was the tournament he might have had if the wicket-keeping burden had weighed less heavily across the preceding weeks: clean, authoritative, the seven fours and the occasional six distributed across the arc with the left-hander's natural instinct for the midwicket boundary and the cover region. Markram's thirty-four was the innings of a batsman batting at the top of the order for the first time in this tournament and finding, after some initial uncertainty, that the freedom of the opening slot suited his method in ways the number four position had not. He was stumped off Glenn Maxwell — who had returned to the side after an injury absence, his replacement by Peter Handscomb having been rendered temporarily necessary, his return immediately productive — when he gave Maxwell too much room and missed a full delivery that turned past the outside edge and into Carey's gloves.</p>
+
+    <h2>Du Plessis and Van der Dussen: The Partnership That Gave South Africa Something to Take Home</h2>
+
+    <p>What du Plessis and Rassie van der Dussen produced between the fall of de Kock in the twenty-second over and the fall of du Plessis in the forty-third was one hundred and fifty-one runs for the third wicket — a partnership that was, in its early stages, marked by van der Dussen's extraordinary personal struggle: five runs from his first twenty-five deliveries, a dropped stumping chance off Maxwell when Carey failed to collect cleanly, the specific kind of innings in which a batsman who has nothing immediately wrong with his technique is simply not finding the middle of the bat, and is doing nothing to remedy this except continuing to trust that the middle of the bat will eventually make itself available again. It did, gradually, and the van der Dussen who emerged from his difficult early passages was the same batsman who had impressed throughout this World Cup when given the opportunity to play long: composed, strong through the on side, hitting the ball through the gaps with a timing that made the Old Trafford outfield's pace work in his favour. He finished with ninety-five — the kind of score that haunts the cricketer who made it rather than the one that failed, since the six that would have brought his maiden ODI century came off the last ball of the innings from a Cummins full toss that he hit magnificently and that Mitchell Starc caught in the deep, the extra foot of carry the only difference between a century and this.</p>
+
+    <p>Du Plessis's hundred came off ninety-three deliveries — the fastest of his ODI career to that point — and was completed when he struck the ball through the covers for his seventh four with the authority of a batsman who has been waiting for this innings all tournament and has decided, with two-thirds of the group stage behind him and no tomorrow to prepare for, that the waiting is over. He was dismissed the very next delivery, slicing Jason Behrendorff to third man in the specific fashion of a batsman who has just reached a milestone and has, briefly and fatally, relaxed the concentration that the milestone required. The dismissal, from a broader vantage point, was almost beside the point: the hundred had been made, and the campaign's ledger had been partially balanced. South Africa finished on three hundred and twenty-five for six, a total that their bowlers would need to defend — and that, given the campaign's previous failure to do precisely this kind of defending, represented a not inconsiderable challenge.</p>
+
+    <div class="pq">
+      <p>"Always a pleasure playing against Australia. A nice, close game. We at least wanted to end with a small smile. Rassie's innings was a great example for young batters — to hang in during a difficult period shows maturity."</p>
+      <cite>Faf du Plessis, Player of the Match, post-match at Old Trafford</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>South Africa Batting — 1st Innings</h3><span class="innings-total">325/6 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">AK Markram<em>st Carey b Maxwell</em></span><span class="bat-runs">34</span><span class="bat-balls">41</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">Q de Kock†<em>c Finch b Lyon</em></span><span class="bat-runs hl">52</span><span class="bat-balls">43</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">F du Plessis (c)<em>c Starc b Behrendorff</em></span><span class="bat-runs hl">100</span><span class="bat-balls">94</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">HE van der Dussen<em>c Starc b Cummins</em></span><span class="bat-runs hl">95</span><span class="bat-balls">106</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">JP Duminy<em>c Stoinis b Starc (review)</em></span><span class="bat-runs">14</span><span class="bat-balls">13</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">D Pretorius<em>c Smith b Starc</em></span><span class="bat-runs">8</span><span class="bat-balls">11</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">AL Phehlukwayo<em>not out</em></span><span class="bat-runs">4</span><span class="bat-balls">5</span></div>
+      <div class="innings-extras"><span>Extras: 18 (b 1, lb 6, w 11)</span><strong>325/6</strong></div>
+    </div>
+
+    <h2>Warner's Third Hundred: The Innings That Came Too Late and Still Nearly Won the Match</h2>
+
+    <p>Australia's reply opened, as it has done with reliable unpredictability throughout this World Cup, in modest crisis. Aaron Finch, the captain, was dismissed in the third over for three: a drive off Imran Tahir — the South African leg-spinner playing his final ODI, and marking the occasion with the specific enthusiasm of a man who understands that he is performing a valedictory act and intends to make it count — that went straight to Markram at mid-off, producing from Tahir himself the kind of pirouetting, arms-spread, teeth-bared celebration that South African cricket will miss considerably. Steve Smith, whose return from the Cape Town suspension had been the other narrative thread of Australia's World Cup alongside Warner's, was lbw to Dwaine Pretorius for seven — a full, straight delivery that pitched on a good length and hit the front pad of a batsman who was still looking for the footwork that would allow him to get fully forward. Marcus Stoinis, at number six, departed soon after. Australia were forty-four for three after ten overs, chasing a total of three hundred and twenty-six, in conditions that were not yet in their favour and against a bowling attack that had, for once in this campaign, started well and intended to continue.</p>
+
+    <p>Warner, who was playing against the country in which the ball-tampering incident had occurred, whose relationship with South African cricket — its players, its supporters, its entire institutional consciousness of the Cape Town Test — had been the unspoken subtext of every mention of his name throughout this World Cup, chose this match above all others to bat with the specific controlled aggression that has always been his most recognisable quality. His fifty came from fifty-eight deliveries. His hundred came from a hundred deliveries — his twelfth four, an edge off Chris Morris that flew to the fine-leg boundary, completing the century with the kind of accidental authority that Warner's more violent shots lack but that carries, in its own way, the precision of a batsman who knows exactly where the gap is. He was past six hundred World Cup runs for the tournament — the highest aggregate in the competition at that point — and was batting as though the deficit could be eliminated by the simple application of the kind of technique and aggression that he had deployed to accumulate those six hundred runs. He was eventually dismissed for a hundred and twenty-two when Dwaine Pretorius's drive found Chris Morris diving to his left at mid-on — a sprawling, tumbling catch that was, in context, precisely the kind of athletic intervention that South Africa had needed throughout this tournament and had, in this match, finally been able to produce.</p>
+
+    <p>Alex Carey's eighty-five from sixty-nine deliveries was, in the cold statistical light of a World Cup group stage, the innings of the tournament's most remarkable emerging player: a wicketkeeper-batsman of just twenty-seven, playing only his twenty-fourth ODI, producing in high-pressure situations the kind of innings that senior batsmen with fifty caps to their names would be proud to have made. He and Warner added a hundred and eight for the fifth wicket — the stand that kept Australia in the chase after three early wickets had made the target appear prohibitive. When Carey was out — caught at point off Chris Morris, hooking at a short ball — the match was, functionally, over. Pat Cummins fell in the same over. Usman Khawaja, who had retired hurt in the field with a hamstring injury during South Africa's innings, hobbled back to the crease in the penultimate over with Mitchell Starc, and together they took seventeen off Andile Phehlukwayo's ninth over to keep arithmetic hope alive. Kagiso Rabada's double wicket in the fiftieth over — two wickets in the space of four deliveries that finished the game on the penultimate ball — was the decisive intervention of a fast bowler who had struggled throughout this tournament for the incision that had characterised his pre-tournament form and who, on this final evening, found it with the specific ruthlessness of a man who has been waiting for the moment and recognised it when it arrived.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Australia Batting — Chase</h3><span class="innings-total">315 ao in 49.5 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">DA Warner<em>c Morris b Pretorius</em></span><span class="bat-runs hl">122</span><span class="bat-balls">117</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">AJ Finch (c)<em>c Markram b Tahir</em></span><span class="bat-runs">3</span><span class="bat-balls">10</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">UT Khawaja<em>retired hurt / run out</em></span><span class="bat-runs">18</span><span class="bat-balls">27</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">SPD Smith<em>lbw b Pretorius</em></span><span class="bat-runs">7</span><span class="bat-balls">18</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">MP Stoinis<em>c de Kock b Rabada</em></span><span class="bat-runs">17</span><span class="bat-balls">18</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">AT Carey†<em>c point b Morris</em></span><span class="bat-runs hl">85</span><span class="bat-balls">69</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">GJ Maxwell<em>b Phehlukwayo</em></span><span class="bat-runs">10</span><span class="bat-balls">15</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">PJ Cummins<em>c de Kock b Rabada</em></span><span class="bat-runs">1</span><span class="bat-balls">3</span></div>
+      <div class="innings-row"><span class="bat-num">9</span><span class="bat-name">MA Starc<em>b Phehlukwayo</em></span><span class="bat-runs">24</span><span class="bat-balls">16</span></div>
+      <div class="innings-extras"><span>Extras: 28 (b 4, lb 5, w 19)</span><strong>315 ao</strong></div>
+    </div>
+
+    <h2>The Farewells, the Semi-Final Draw, and What Australia Carried Into It</h2>
+
+    <p>The match's conclusion resolved two questions that had been pending since India had beaten Sri Lanka at Headingley earlier in the same day. India, as group winners, would face New Zealand in the first semi-final at Old Trafford on the ninth. Australia would face England in the second semi-final at Edgbaston on the eleventh — the match that everyone in England had wanted since the tournament began, the miniature Ashes that the group stage's arithmetic had threatened several times to deny and that the final standings had ultimately delivered. Aaron Finch, receiving the news of his opponents on the outfield, said that it didn't get much bigger than England versus Australia in a World Cup semi-final, and that the Edgbaston atmosphere would be fantastic, and that the group stage had produced packed houses and no dull games, and that Australia were looking forward to getting their preparations underway. The remarks had the quality of a man performing the public function of a captain who has just lost a match he might have won and who is now required, immediately and in front of a television camera, to contextualise the loss within the broader campaign. The broader campaign had, objectively, been excellent. The loss to South Africa was the second of the group stage and cost Australia nothing material. It cost them, perhaps, something less tangible: the image of invincibility that winning teams prefer to carry into knockout cricket, the sense that opponents are playing for the minor honour of losing to you rather than the genuine possibility of beating you. South Africa, who had beaten Australia on a day when it mattered only to their own dignity, had demonstrated that the sense of invincibility was, like all such senses, provisional.</p>
+
+    <p>Imran Tahir — forty years old, South African cricket's most unlikely success story, a leg-spinner who arrived in Johannesburg from Lahore in his late twenties and built, across the subsequent decade and a half, a career of accumulated excellence in a country that is not, in the public imagination, primarily associated with the art of wrist-spin — played his final ODI and bowled his final over in his final match with the specific unselfconsciousness of a man who has decided that the farewell belongs entirely to the moment and not to the sentiment. He took one wicket — Finch's, the important one, early — and he celebrated it with the sprint around the boundary and the arms-outstretched pirouette that has been his celebratory signature since the beginning of the career whose end he was now marking. Jean-Paul Duminy, also playing his last ODI, made fourteen and caught Marcus Stoinis in the deep and received a standing ovation at the end of the match and was embraced by his teammates with the warmth that sporting retirements produce in those who remain. The ground gave them both the send-off that they had earned across years of representing the green jersey in conditions that this World Cup had, in its eventual mathematics, treated with less generosity than they deserved.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">Key Moments</div>
+      <div class="tl-item"><span class="tl-score">SA 79/1</span><span class="tl-text"><span class="who">Maxwell stumps Markram for 34.</span> <span class="note">The wicket that brought du Plessis and van der Dussen together. What followed: 151 for the 3rd wicket and South Africa's platform for 325.</span></span></div>
+      <div class="tl-item"><span class="tl-score">SA 265/3</span><span class="tl-text"><span class="who">Du Plessis c Starc b Behrendorff 100 (94).</span> <span class="note">Century off 93 balls — his fastest. Dismissed the very next delivery. A hundred that arrived at the end of his World Cup, too late for his tournament, exactly on time for his dignity.</span></span></div>
+      <div class="tl-item"><span class="tl-score">AUS 44/3</span><span class="tl-text"><span class="who">Australia 44/3 after 10 overs. Chase in peril.</span> <span class="note">Finch 3 (Tahir), Smith 7 (Pretorius), Stoinis gone early. Warner alone between the deficit and defeat.</span></span></div>
+      <div class="tl-item"><span class="tl-score">AUS 227/4</span><span class="tl-text"><span class="who">Warner c Morris b Pretorius 122 (117).</span> <span class="note">His 3rd WC century. Against the country where Cape Town happened. A brilliant, insufficient innings that leaves him on 647 tournament runs — the highest aggregate of 2019.</span></span></div>
+      <div class="tl-item"><span class="tl-score">AUS 315 ao</span><span class="tl-text"><span class="who">Rabada takes two in the final over. South Africa win by 10 runs.</span> <span class="note">Australia go to Edgbaston for the semi-final against England. India top the group. South Africa end seventh — their worst WC finish.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>The post-match images from Old Trafford carried, for those inclined to read them as harbingers rather than merely as photographs, a particular charge. Australia gathered in the outfield, shoulders dropped, consoling each other — a team that had won the group stage's qualification component with some comfort but had, in this final outing, been reminded that the gap between winning and losing is as narrow at the top of world cricket as it is at any level, and that the mood with which a side enters the knockout rounds can be established by the most recent result rather than the most significant one. England's management, watching this footage with the detachment of a coaching staff preparing for a semi-final, will have noted the expression. Australia were going to Edgbaston. They would face their oldest rivals in the most atmospheric ground in English cricket. The Ashes lay beyond the World Cup, seven weeks away. Everything was connected: the loss at Old Trafford, the semi-final at Edgbaston, the Test series that would follow, the bilateral rivalry that stretched back a hundred and forty years and that Warner himself embodied more completely than any player currently playing — having lived, in the space of fourteen months, through its most extreme recent manifestation, the one that had taken him out of the game for a year and brought him back to this tournament to score six hundred and forty-seven runs with something to prove that could not be proved in any currency other than runs. Whether it had been proven, by the end of Old Trafford, was a question that only Edgbaston could answer.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Emirates Old Trafford, MCR</strong></li>
+      <li><span class="lbl">Date</span><strong>6 July 2019 (D/N)</strong></li>
+      <li><span class="lbl">Toss</span><strong>SA won, elected to bat</strong></li>
+      <li><span class="lbl">South Africa</span><strong>325/6 (50 ov)</strong></li>
+      <li><span class="lbl">Australia</span><strong>315 ao (49.5 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>SA won by 10 runs</strong></li>
+      <li><span class="lbl">MOM</span><strong>Faf du Plessis (100)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Du Plessis's 100</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>100 (94 balls)</strong></li>
+      <li><span class="lbl">3rd wicket stand</span><strong>151 with van der Dussen</strong></li>
+      <li><span class="lbl">Context</span><strong>His fastest ODI century</strong></li>
+      <li><span class="lbl">Dismissed</span><strong>Next ball — c Starc b Behrendorff</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Warner's Tournament</div><div class="star-stat">
+      <span class="num">647</span>
+      <span class="desc">David Warner's total World Cup runs — highest aggregate of the 2019 tournament. Three centuries. The most complete batting performance of the group stage.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Australia Bowling</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Lyon</span><strong>2/53 (10 ov)</strong></li>
+      <li><span class="lbl">Starc</span><strong>2/59 (10 ov)</strong></li>
+      <li><span class="lbl">Cummins</span><strong>1/57 (10 ov)</strong></li>
+      <li><span class="lbl">Rabada (SA)</span><strong>3/56 (10 ov) — decisive</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"It doesn't get much bigger than England versus Australia in a World Cup semi-final. It'll be a blockbuster. Edgbaston, great atmosphere. We've got plenty to improve on."</p><cite>Aaron Finch, Australia captain, post-match at Old Trafford</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 45 · Emirates Old Trafford, Manchester · 6 July 2019<br>South Africa 325/6 defeated Australia 315 by 10 runs · du Plessis 100 · van der Dussen 95 · Warner 122 · Carey 85 · Rabada 3/56</footer>
+</body>
+</html>
