@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — Australia vs New Zealand, ICC World Cup 2015 Final</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A1A3A;--fern-lt:#1A1A8A;--fern-pale:#E8E8F5;
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#050510;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(255,255,255,0.01) 2px,rgba(255,255,255,0.01) 4px);pointer-events:none;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--gold-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--fern-lt);}
+.hl .accent{color:var(--red);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--gold-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#050510;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.attendance-bar{max-width:980px;margin:0 auto;background:#0C0C1E;padding:0.6rem 2rem;display:flex;align-items:center;gap:2rem;border-bottom:1px solid #1A1A2A;}
+.att-item{font-family:'Barlow Condensed',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#6A6888;}
+.att-item strong{color:var(--gold-lt);font-size:0.72rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--gold);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:var(--fern-pale);border-left:4px solid var(--fern);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--fern)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fern-lt);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#050510;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--gold);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+.farewell-box{background:#0C0C1E;border:1px solid #2A2A4A;padding:1.4rem 1.6rem;margin:2.5rem 0;}
+.farewell-box .farewell-head{font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:0.8rem;}
+.farewell-box p{font-family:'Spectral',serif;font-size:0.92rem;color:#C8C0B0;line-height:1.7;margin-bottom:0;}
+footer{background:#050510;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#4A3A38;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}.attendance-bar{flex-wrap:wrap;gap:1rem;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Final Edition</span><span class="date-line">Sunday, 29 March 2015 · Melbourne Cricket Ground</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">A$2.50 · International ₹60</span><span class="issue">ICC World Cup 2015 · Final</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Final Report</span><span class="breadcrumb">ICC World Cup 2015 <span>›</span> Final <span>›</span> Melbourne Cricket Ground <span>›</span> Australia vs New Zealand</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2015 · Final · Melbourne Cricket Ground · 29 March 2015</span></div>
+  <h1 class="hl"><em>The Fifth Crown:</em> Clarke's<br>Farewell, <span class="accent">Elliott's Resistance</span><br>and Australia's Mastery at the MCG</h1>
+  <p class="deck">Ninety-three thousand and thirteen people were inside the Melbourne Cricket Ground when Brendon McCullum walked out to open the batting in the World Cup final — the largest crowd ever to watch a day of cricket in Australia. He lasted five deliveries. Mitchell Starc bowled him for a duck, middle stump peeled back, and the MCG erupted with a sound that settled, in that first over, the essential question of the afternoon: this was not a match. It was a coronation.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Melbourne Cricket Ground, Melbourne</span><span class="datestamp">29 March 2015</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">New Zealand</span><span class="total">183<small>/10</small></span><span class="overs">45.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">Australia</span><span class="total">186<small>/3</small></span><span class="overs">33.1 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>Australia won by 7 wickets (101 balls remaining) · 5th World Cup title<br>Elliott 83 · Clarke 74 · Faulkner 3/36 · Johnson 3/30 · MOM: James Faulkner</div>
+</div>
+
+<div class="attendance-bar">
+  <span class="att-item">Attendance: <strong>93,013</strong></span>
+  <span class="att-item">Record crowd for a day of cricket in Australia</span>
+  <span class="att-item">Clarke's final ODI · Vettori retired after the match</span>
+  <span class="att-item">Australia's <strong>5th</strong> World Cup title</span>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>There are days in cricket that render the preparation of those who witness them inadequate to the occasion — days so large in their setting, so weighted in their consequence, so absolute in the manner of their conclusion that the language of the match report strains at its own conventions. The 2015 World Cup final was not one of those days. It was, rather, a day of clarity: the better team, on the larger ground, under the floodlights of the MCG, winning in a manner that was as complete and as unambiguous as a seven-wicket victory with a hundred and one balls remaining can be. What it lacked in competitive drama — and it lacked a great deal — it compensated for in setting, in ceremony, and in the particular poignancy of watching Michael Clarke, his body held together for one last tournament by pain management and application of will, walk off the MCG for the last time in an Australian ODI shirt with a World Cup medal around his neck and seventy-four runs to his name. The game was not a contest. The occasion, however, was enormous, and it deserves its record in those terms.</p>
+
+    <p>New Zealand had arrived at the MCG carrying the weight of a tournament that had, until this afternoon, been entirely their own: unbeaten through the pool stages, six wins from six on their home grounds, the semi-final against South Africa won off the penultimate ball when Grant Elliott — the man who would make the final's most significant batting contribution — struck Dale Steyn for six at Eden Park to complete one of the more extraordinary finishes in World Cup history. They had been, as a unit and as a collective character, the story of this World Cup: Brendon McCullum's aggressive captaincy, his willingness to chase at tempos that other captains would have refused; Martin Guptill's two hundred and thirty-seven against the West Indies in the quarter-final, the highest individual score in World Cup history, an innings so far beyond precedent that it had briefly made the tournament feel as though anything might happen. They were, in the MCG's shadow, a team that had never played a World Cup final, arriving at the largest cricket ground in the world after a tournament played on grounds a fraction of its size. They were, if the truth is stated clearly, beaten before the fifth ball of the game had been bowled.</p>
+
+    <h2>Starc's Opening Blow and the Architecture of New Zealand's Collapse</h2>
+
+    <p>Mitchell Starc's delivery to Brendon McCullum — full, angling in from around the wicket, precise in the manner that distinguishes the planned wicket-taking ball from its accidental cousin — was the fulcrum of the match. McCullum had said, in the days before the final, that his approach would be unchanged: aggressive, committed to the front foot, intent on destabilising the bowlers before they could settle into their lengths on a ground whose dimensions and surface were more sympathetic to pace and bounce than anything New Zealand had batted on across the previous six weeks. What Starc's delivery did was to make that strategy unavailable by the simple expedient of removing the man who would have enacted it before he had faced enough deliveries to attempt it. McCullum bowled for a duck. The MCG made a sound that is difficult to describe to someone who has not heard ninety-three thousand people expressing simultaneous satisfaction. The final, in that moment, had found its essential character.</p>
+
+    <p>Martin Guptill and Kane Williamson — New Zealand's two most authoritative batsmen, the pair on whom any recovery needed to rest — survived into the twelfth over before Guptill was caught at point off Josh Hazlewood for twenty-four and Williamson edged Mitchell Johnson to Brad Haddin behind the stumps for twelve. New Zealand were thirty-nine for three. The match was, by any reasonable measurement, already Australia's. What Grant Elliott then produced — eighty-three from a hundred and fifteen deliveries, the top score of the innings by a margin of fifty-nine runs, an innings assembled from concentration and craft on a surface that was assisting the Australian bowlers in their preferred methods — was the kind of batting that wins matches when the batting order around it is functioning and becomes, in different circumstances, the record of a man who gave his team something to remember even when the outcome was beyond recovery. Elliott drove cleanly, worked the ball to the leg side with the assured wristiness of a man who had been batting on these conditions for a lifetime, and accumulated at a rate that was — given the state of the innings, given the total that was already beginning to look insufficient — the only available rate: steady, defiant, insufficient.</p>
+
+    <div class="pq">
+      <p>"Grant Elliott played magnificently. He kept New Zealand alive. But on a day like this, against a bowling attack like this, you need partners — and we just didn't have them."</p>
+      <cite>Brendon McCullum, New Zealand captain, post-match at the MCG</cite>
+    </div>
+
+    <p>Ross Taylor made forty before becoming the fourth wicket at a hundred and fifty — caught at long-on attempting to accelerate, Hazlewood taking the catch — and Corey Anderson was lbw to James Faulkner two balls later without scoring, the collapse to one hundred and fifty for five occurring in a single over with the particular efficiency that Faulkner, operating at a canter with subtle variations of pace and angle, has made his tournament signature. Elliott was caught at fine leg for eighty-three off a Faulkner short ball in the thirty-ninth over with New Zealand still sixty from three hundred — a number that required, by this point, the imagination of a team that had already done the arithmetic and found it wanting. Daniel Vettori, playing what he knew to be the last match of an ODI career that spanned nineteen years, made two from nine with the composed acceptance of a man saying farewell to a format he had graced across its entire modern era. Mitchell Johnson took three for thirty from nine overs; Faulkner took three for thirty-six from his ten. New Zealand were all out for a hundred and eighty-three in forty-five overs. The sun was still above the horizon. The MCG lights would not be needed for the innings that followed.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>New Zealand Batting — 1st Innings</h3><span class="innings-total">183 ao in 45 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">BB McCullum (c)†<em>b Starc</em></span><span class="bat-runs">0</span><span class="bat-balls">5</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">MJ Guptill<em>c Maxwell b Hazlewood</em></span><span class="bat-runs">15</span><span class="bat-balls">24</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">KS Williamson<em>c †Haddin b Johnson</em></span><span class="bat-runs">12</span><span class="bat-balls">33</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">LRPL Taylor<em>c Hazlewood b Faulkner</em></span><span class="bat-runs">40</span><span class="bat-balls">72</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">GD Elliott<em>c Johnson b Faulkner</em></span><span class="bat-runs hl">83</span><span class="bat-balls">115</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">CJ Anderson<em>lbw b Faulkner</em></span><span class="bat-runs">0</span><span class="bat-balls">2</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">LJ Ronchi†<em>c Finch b Johnson</em></span><span class="bat-runs">7</span><span class="bat-balls">10</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">DL Vettori<em>b Johnson</em></span><span class="bat-runs">2</span><span class="bat-balls">9</span></div>
+      <div class="innings-row"><span class="bat-num">9</span><span class="bat-name">MJ Henry<em>c Warner b Starc</em></span><span class="bat-runs">2</span><span class="bat-balls">8</span></div>
+      <div class="innings-row"><span class="bat-num">10</span><span class="bat-name">TA Boult<em>c Smith b Starc</em></span><span class="bat-runs">0</span><span class="bat-balls">3</span></div>
+      <div class="innings-row"><span class="bat-num">11</span><span class="bat-name">TG Southee<em>not out</em></span><span class="bat-runs">11</span><span class="bat-balls">14</span></div>
+      <div class="innings-extras"><span>Extras: 11 (lb 4, w 6, nb 1)</span><strong>183 / 10</strong></div>
+    </div>
+
+    <h2>Clarke's Farewell and Smith's Authority: The Chase</h2>
+
+    <p>Australia needed a hundred and eighty-four. David Warner and Aaron Finch opened with the decisive aggression of a partnership that already knows the match is won and is interested primarily in making the chase as brief as the crowd's desire for ceremony will allow. Warner made forty-five from fifty-three deliveries before Trent Boult — the only New Zealand bowler to whom the surface offered consistent assistance — found his outside edge and Williamson took the catch at first slip. Finch went for a single: caught behind off Matt Henry, leg before the wicket overturned on review and then re-given when the ball-tracking confirmed what the umpire had initially suspected. Australia were sixty-one for two and Michael Clarke walked through the MCG's boundary rope for what he knew to be the last time in an Australian ODI, announced before the tournament that this would be his final campaign, his body carrying the legacy of several back surgeries and the accumulated toll of twelve years at the international level. He was greeted, by ninety-three thousand people, in a manner that transcended sport and entered the territory of national valediction.</p>
+
+    <p>What Clarke then produced — seventy-four from seventy-two deliveries, an innings of such clean striking and such obvious comfort in the situation that it looked nothing like a farewell and everything like a man in his prime — was the final match of a career that had, at various moments, been the most technically accomplished in Australian batting since Mark Taylor's retirement. He drove Southee through the covers with the full face of the bat in the way that is the signature of his on-side play. He cut Henry past point with the dismissiveness of a batsman who has long since ceased to regard that particular delivery as a test. He reached fifty to an ovation from ninety-three thousand people that — those who were present have since said — lasted longer than any of them had expected and seemed to carry, in its duration and its quality, everything that the MCG crowd wanted to say to a man who had given them a decade and a half of excellence and was now, in winning a World Cup, saying goodbye on the best possible terms. He was eventually caught at deep mid-on off Vettori for seventy-four, the dismissal met with a standing ovation that was, in its particular character, both a celebration of the innings and a farewell to the career.</p>
+
+    <p>Steven Smith, who had made a hundred and five in the semi-final against India and arrived in the final with the momentum of a batsman who has decided that this tournament is his moment of arrival, made fifty-six not out from seventy-one deliveries with the composed authority that has since become his defining quality — the bat meeting the ball with the considered deliberation of a man who trusts his method and is interested in the outcome rather than the performance. James Faulkner, the Player of the Match with three wickets and thirteen not out from eleven balls in the chase, struck the winning boundary in the thirty-third over. Australia had won by seven wickets with a hundred and one balls remaining. The MCG erupted, and the fireworks began, and Michael Clarke lifted the World Cup trophy with the particular quality of joy available only to those who have fought for a long time to hold a thing that they have held before and were not certain they would hold again.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Australia Batting — 2nd Innings</h3><span class="innings-total">186/3 in 33.1 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">DA Warner<em>c Williamson b Boult</em></span><span class="bat-runs">45</span><span class="bat-balls">53</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">AJ Finch<em>lbw b Henry</em></span><span class="bat-runs">0</span><span class="bat-balls">3</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">SPD Smith<em>not out</em></span><span class="bat-runs hl">56</span><span class="bat-balls">71</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">MJ Clarke (c)<em>c Guptill b Vettori</em></span><span class="bat-runs hl">74</span><span class="bat-balls">72</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">JW Faulkner<em>not out</em></span><span class="bat-runs">13</span><span class="bat-balls">11</span></div>
+      <div class="innings-extras"><span>Extras: 8 (lb 2, w 5, nb 1)</span><strong>186 / 3</strong></div>
+    </div>
+
+    <h2>New Zealand: A First Final and What Comes After</h2>
+
+    <p>It is worth dwelling, briefly, on what New Zealand achieved before considering what they lost. They won all six pool matches, including the match against Australia that the eventual champions cited as the jolt they needed. They progressed through the quarter-final, the semi-final — the Elliott six off Steyn, that extraordinary Eden Park evening — to a World Cup final that their country had never previously reached, in a tournament whose emotional arc, across forty-eight matches and forty-four days, had been constructed, in no small measure, around their improbable and endearing progress. That they lost the final by seven wickets with a hundred and one balls remaining, against a team whose home conditions and collective experience constituted advantages too large for the admirable collection of individuals that Brendon McCullum had assembled and inspired to overcome, does not diminish what preceded it. It contextualises it, which is not the same thing. What New Zealand showed across this World Cup, and specifically in their semi-final against South Africa, was a quality of collective determination under pressure that their opponents — and their supporters — will not quickly forget. They deserved to be in the final. The final simply belonged to Australia, as so many finals, across so many decades and so many grounds, have belonged to Australia.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">Moments That Defined the Final</div>
+      <div class="tl-item"><span class="tl-score">0/1</span><span class="tl-text"><span class="who">McCullum b Starc 0.</span> <span class="note">5th ball of the innings. Middle stump gone. 93,013 people roar. The final's character established before the sixth delivery is bowled.</span></span></div>
+      <div class="tl-item"><span class="tl-score">39/3</span><span class="tl-text"><span class="who">Williamson c †Haddin b Johnson 12.</span> <span class="note">Three wickets in thirteen overs. New Zealand's top three combined for 27 runs. The chase is over before it has begun.</span></span></div>
+      <div class="tl-item"><span class="tl-score">150/4</span><span class="tl-text"><span class="who">Taylor c Hazlewood b Faulkner 40; Anderson lbw b Faulkner 0.</span> <span class="note">Two wickets in two balls. The Taylor-Elliott partnership ends; Anderson goes for a duck. NZ 150/5 from 35 overs.</span></span></div>
+      <div class="tl-item"><span class="tl-score">150/5</span><span class="tl-text"><span class="who">Elliott c Johnson b Faulkner 83.</span> <span class="note">The final wicket of substance. Elliott's 83 — the only innings to give Australia genuine pause — ends at fine leg.</span></span></div>
+      <div class="tl-item"><span class="tl-score">186/3</span><span class="tl-text"><span class="who">Faulkner hits the winning runs. Clarke 74, Smith 56*.</span> <span class="note">33.1 overs. 101 balls to spare. Australia win their fifth World Cup. Clarke lifts the trophy in his last ODI.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <div class="farewell-box">
+      <div class="farewell-head">Michael Clarke · Final ODI · 29 March 2015</div>
+      <p>He played two hundred and forty-five ODIs across fourteen years. He made seven thousand one hundred and ninety-one runs at forty-four. He led Australia in one hundred and fifty matches across all formats. He won the World Cup in 2015 in conditions that suited his particular excellence and in a tournament that represented his last attempt at the thing. The farewell innings — seventy-four from seventy-two, cut, driven, glanced through the leg side on a Melbourne evening in front of ninety-three thousand people — was, as farewell innings go, precisely what the career deserved. Not every cricketer gets to write the final chapter himself. Clarke did. The MCG gave him what the MCG gives to the very few.</p>
+    </div>
+
+    <p>Mitchell Starc finished the tournament with twenty-two wickets — the Player of the Tournament, the most wickets taken by any bowler in a single World Cup at the time of the final — and the statistics, accurate though they are, do not quite convey what it meant to face Starc across this tournament: the left-arm angle, the seam movement, the pace that was consistently above ninety miles per hour, the yorker deployed with the precision of a bowler who knows exactly where the stumps are and is interested in hitting them with every delivery he bowls. The Australian bowling attack — Starc, Johnson, Hazlewood, Faulkner — was, across this World Cup, the most sustained and collectively formidable seam attack in tournament history since the great Australian sides of 1999 and 2003, and it earned, on this particular March evening in Melbourne, the trophy that its quality deserved. Australia were World Champions for the fifth time. The MCG had hosted another final, and another Australian victory, and another piece of cricket history — smaller than some it has witnessed, larger than most.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>MCG, Melbourne</strong></li>
+      <li><span class="lbl">Date</span><strong>29 March 2015 (D/N)</strong></li>
+      <li><span class="lbl">Toss</span><strong>Australia, elected to field</strong></li>
+      <li><span class="lbl">New Zealand</span><strong>183 ao (45 ov)</strong></li>
+      <li><span class="lbl">Australia</span><strong>186/3 (33.1 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>Australia won by 7 wkts</strong></li>
+      <li><span class="lbl">Attendance</span><strong>93,013 (record)</strong></li>
+      <li><span class="lbl">MOM</span><strong>James Faulkner (3/36)</strong></li>
+      <li><span class="lbl">MOTS</span><strong>Mitchell Starc (22 wkts)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Australia's Five Titles</div><div class="star-stat">
+      <span class="num">5th</span>
+      <span class="desc">1987 · 1999 · 2003 · 2007 · 2015. No other nation has won more than two World Cups. Australia's fifth, and most dominant.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Bowling Figures</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Faulkner</span><strong>3/36 (10 ov)</strong></li>
+      <li><span class="lbl">Johnson</span><strong>3/30 (9 ov)</strong></li>
+      <li><span class="lbl">Starc</span><strong>2/20 (9 ov)</strong></li>
+      <li><span class="lbl">Hazlewood</span><strong>1/25 (8 ov)</strong></li>
+      <li><span class="lbl">Maxwell</span><strong>1/26 (7 ov)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">NZ Fall of Wickets</div><div class="sbox-body"><ul>
+      <li><span class="lbl">1st wkt</span><strong>1 — McCullum 0</strong></li>
+      <li><span class="lbl">2nd wkt</span><strong>33 — Guptill 15</strong></li>
+      <li><span class="lbl">3rd wkt</span><strong>39 — Williamson 12</strong></li>
+      <li><span class="lbl">4th wkt</span><strong>150 — Taylor 40</strong></li>
+      <li><span class="lbl">5th wkt</span><strong>150 — Anderson 0</strong></li>
+      <li><span class="lbl">All out</span><strong>183 in 45 ov</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"I am over the moon. What a tournament. New Zealand and Brendon deserve so much credit. Thanks to every Australian and every cricket supporter. What a group of men."</p><cite>Michael Clarke, Australia captain, final post-match at the MCG</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2015 · Final · Melbourne Cricket Ground · 29 March 2015<br>New Zealand 183 ao vs Australia 186/3 · Australia won by 7 wickets · Clarke 74 · Faulkner 3/36 · Australia: 5-time World Champions</footer>
+</body>
+</html>
