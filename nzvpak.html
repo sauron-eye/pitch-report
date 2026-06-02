@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pitch Report — New Zealand vs Pakistan, ICC World Cup 2019</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#F8F5EF;--paper-warm:#F0EBE0;--ink:#151209;--ink-deep:#1E1912;--ink-mid:#3A342A;--ink-soft:#5C5448;--ink-ghost:#9A9288;
+  --rule:#D4CAB8;--rule-dark:#B0A898;--gold:#9B7C20;--gold-lt:#C4A040;--red:#8B1A10;
+  --fern:#1A3A6A;--fern-lt:#2255A0;--fern-pale:#E4EAF5;
+}
+html{font-size:17px;}
+body{background:var(--paper);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.8;-webkit-font-smoothing:antialiased;}
+.np-header{background:#07101A;border-bottom:6px double var(--gold-lt);position:relative;overflow:hidden;}
+.np-header-inner{max-width:980px;margin:0 auto;padding:2rem 2rem 1.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;position:relative;z-index:1;}
+.np-header-left,.np-header-right{display:flex;flex-direction:column;gap:0.3rem;}
+.edition-tag,.price{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.date-line,.issue{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:rgba(255,255,255,0.4);}
+.np-header-right{text-align:right;align-items:flex-end;}
+.masthead-title{text-align:center;}
+.pub-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:#FAF6EE;letter-spacing:0.02em;line-height:1;display:block;}
+.pub-sub{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold-lt);margin-top:0.35rem;display:block;}
+.section-strip{background:var(--ink);max-width:980px;margin:0 auto;padding:0.55rem 2rem;display:flex;align-items:center;gap:1.5rem;}
+.sec-label{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap;}
+.breadcrumb{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#6A6258;}
+.breadcrumb span{color:#8A8278;}
+.hero{max-width:980px;margin:0 auto;padding:2.5rem 2rem 2rem;border-bottom:3px double var(--rule-dark);}
+.match-flag{display:flex;align-items:center;gap:0.8rem;margin-bottom:1.2rem;}
+.flag-pip{display:inline-block;width:8px;height:8px;background:var(--gold-lt);border-radius:50%;}
+.match-flag-text{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lt);}
+.hl{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,3.2rem);font-weight:900;line-height:1.09;color:var(--ink);letter-spacing:-0.018em;margin-bottom:1.2rem;}
+.hl em{font-style:italic;color:var(--red);}
+.hl .accent{color:var(--fern-lt);}
+.deck{font-family:'Spectral',serif;font-size:1.12rem;font-style:italic;font-weight:300;line-height:1.65;color:var(--ink-mid);max-width:740px;padding-left:1.2rem;border-left:3px solid var(--gold-lt);margin-bottom:1.8rem;}
+.byline-bar{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding:1rem 0 0;border-top:1px solid var(--rule);}
+.byline-bar .by{font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);}
+.byline-bar .by strong{color:var(--ink);}
+.byline-bar .loc,.byline-bar .datestamp{font-family:'Barlow',sans-serif;font-size:0.68rem;color:var(--ink-ghost);}
+.byline-bar .datestamp{margin-left:auto;}
+.scoreboard{background:#07101A;max-width:980px;margin:0 auto;padding:1.4rem 2rem;display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:1.4rem;border-bottom:4px solid var(--gold-lt);}
+.sb-team .nation{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:0.4rem;}
+.sb-team .total{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:#F5F0E8;display:block;line-height:1;}
+.sb-team .total small{font-size:1.1rem;font-weight:400;color:#7A7060;}
+.sb-team .overs{font-family:'Barlow',sans-serif;font-size:0.65rem;font-weight:300;color:#6A6058;display:block;margin-top:0.22rem;}
+.sb-vs{font-family:'Barlow Condensed',sans-serif;font-size:0.62rem;letter-spacing:0.2em;color:#4A4438;font-weight:700;text-transform:uppercase;text-align:center;}
+.sb-result{font-family:'Spectral',serif;font-style:italic;color:#8A8070;font-size:0.88rem;line-height:1.65;border-left:1px solid #2A2820;padding-left:1.4rem;}
+.sb-result strong{font-style:normal;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;display:block;margin-bottom:0.3rem;}
+.body-wrap{max-width:980px;margin:0 auto;padding:3rem 2rem 4rem;display:grid;grid-template-columns:1fr 270px;gap:3.5rem;align-items:start;}
+.prose p{font-family:'Spectral',serif;font-size:1.02rem;line-height:1.9;color:var(--ink-mid);margin-bottom:1.4rem;}
+.prose p:first-child::first-letter{font-family:'Playfair Display',serif;font-size:4.8rem;font-weight:900;float:left;line-height:0.8;margin-right:0.1em;margin-top:0.1em;color:var(--red);}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--ink);line-height:1.3;margin:2.8rem 0 1rem;padding-top:2.2rem;border-top:2px solid var(--rule);letter-spacing:-0.01em;}
+.prose-rule{border:none;border-top:3px double var(--rule-dark);margin:2.2rem 0;}
+.pq{margin:2.5rem 0;padding:1.4rem 1.6rem;background:#FDF5E6;border-left:4px solid var(--gold-lt);border-right:1px solid var(--rule);}
+.pq p{font-family:'Playfair Display',serif!important;font-size:1.35rem!important;font-weight:700!important;font-style:italic;line-height:1.45!important;color:var(--gold)!important;margin-bottom:0.6rem!important;}
+.pq p::first-letter{font-size:inherit!important;float:none!important;color:inherit!important;margin:0!important;}
+.pq cite{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+.innings-box{background:var(--ink-deep);margin:2.5rem 0;overflow:hidden;}
+.innings-box-hd{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.5rem;border-bottom:1px solid #2A2820;}
+.innings-box-hd h3{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lt);}
+.innings-box-hd .innings-total{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:#7A7260;}
+.innings-row{display:grid;grid-template-columns:1.4rem 1fr auto auto;gap:0.7rem 0.9rem;padding:0.65rem 1.5rem;border-bottom:1px solid #1E1C16;align-items:baseline;}
+.innings-row.header{background:#1A1812;}
+.innings-row.header span{font-family:'Barlow Condensed',sans-serif!important;font-size:0.53rem!important;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#4A4840!important;}
+.innings-row:last-child{border-bottom:none;}
+.bat-num{font-family:'Barlow',sans-serif;font-size:0.62rem;color:#4A4438;font-weight:300;}
+.bat-name{font-family:'Spectral',serif;font-size:0.94rem;color:#D8D0C4;line-height:1.3;}
+.bat-name em{font-style:normal;font-size:0.75rem;color:#8A8278;display:block;}
+.bat-runs{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--gold-lt);text-align:right;}
+.bat-balls{font-family:'Barlow',sans-serif;font-size:0.7rem;font-weight:300;color:#5A5448;text-align:right;min-width:2.8rem;}
+.bat-runs.hl{color:#E8C060;}
+.innings-extras{padding:0.75rem 1.5rem;border-top:1px solid #2A2820;display:flex;justify-content:space-between;align-items:center;}
+.innings-extras span{font-family:'Barlow',sans-serif;font-size:0.68rem;color:#6A6258;}
+.innings-extras strong{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#F5F0E8;}
+.timeline{margin:2.5rem 0;}
+.timeline-head{font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:0.75rem;border-bottom:1px solid var(--rule);margin-bottom:0;}
+.tl-item{display:grid;grid-template-columns:4.2rem 1fr;gap:0.9rem;padding:0.7rem 0;border-bottom:1px dashed var(--rule);align-items:start;}
+.tl-item:last-child{border-bottom:none;}
+.tl-score{font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;font-weight:800;color:var(--red);letter-spacing:0.03em;}
+.tl-text{font-family:'Spectral',serif;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.tl-text .who{color:var(--ink);font-weight:600;}
+.tl-text .note{color:var(--ink-ghost);font-style:italic;font-size:0.85rem;}
+.sidebar{position:sticky;top:2rem;}
+.sbox{border:1px solid var(--rule);margin-bottom:1.8rem;overflow:hidden;}
+.sbox-hd{background:#07101A;color:var(--gold-lt);font-family:'Barlow Condensed',sans-serif;font-size:0.57rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:0.6rem 1rem;}
+.sbox-body{padding:0.75rem 0.9rem;background:var(--paper-warm);}
+.sbox-body ul{list-style:none;}
+.sbox-body li{font-family:'Spectral',serif;font-size:0.88rem;color:var(--ink-soft);padding:0.4rem 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:0.5rem;align-items:baseline;line-height:1.4;}
+.sbox-body li:last-child{border-bottom:none;}
+.sbox-body li .lbl{font-family:'Barlow',sans-serif;font-size:0.58rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-ghost);white-space:nowrap;}
+.sbox-body li strong{font-weight:600;color:var(--ink);text-align:right;}
+.star-stat{padding:1rem 0.9rem;background:var(--paper-warm);text-align:center;}
+.star-stat .num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:900;color:var(--red);line-height:1;display:block;margin-bottom:0.35rem;}
+.star-stat .desc{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.5;}
+.snote{padding:0.85rem 0.9rem;border:1px solid var(--rule);border-left:3px solid var(--gold);background:var(--paper-warm);margin-bottom:1.8rem;}
+.snote p{font-family:'Spectral',serif;font-style:italic;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;margin-bottom:0.35rem;}
+.snote cite{font-family:'Barlow Condensed',sans-serif;font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-style:normal;}
+footer{background:#07101A;border-top:4px double var(--gold-lt);padding:1.8rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#3A4858;}
+footer span{color:var(--gold-lt);}
+@media(max-width:740px){.np-header-inner{grid-template-columns:1fr;text-align:center;}.np-header-left,.np-header-right{display:none;}.body-wrap{grid-template-columns:1fr;gap:2rem;}.sidebar{position:static;}.scoreboard{grid-template-columns:1fr 1fr;}.sb-result{border-left:none;padding-left:0;border-top:1px solid #2A2820;padding-top:1rem;grid-column:1/-1;}.innings-row{grid-template-columns:1fr auto auto;}.innings-row .bat-num{display:none;}.byline-bar .datestamp{margin-left:0;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="np-header">
+    <div class="np-header-inner">
+      <div class="np-header-left"><span class="edition-tag">World Cup Edition</span><span class="date-line">Wednesday, 26 June 2019 · Edgbaston, Birmingham</span></div>
+      <div class="masthead-title"><span class="pub-name">The Pitch Report</span><span class="pub-sub">Cricket's Newspaper of Record</span></div>
+      <div class="np-header-right"><span class="price">£1.80 · International ₹60</span><span class="issue">ICC World Cup 2019 · Match No. 33</span></div>
+    </div>
+  </div>
+  <div class="section-strip"><span class="sec-label">Match Report</span><span class="breadcrumb">ICC World Cup 2019 <span>›</span> Group Stage <span>›</span> Match 33 <span>›</span> New Zealand vs Pakistan</span></div>
+</header>
+
+<div class="hero">
+  <div class="match-flag"><span class="flag-pip"></span><span class="match-flag-text">ICC Cricket World Cup 2019 · Match 33 · Edgbaston, Birmingham · 26 June 2019</span></div>
+  <h1 class="hl"><em>Pakistan's 1992 Shadow</em> Grows Longer:<br><span class="accent">Babar and Haris</span> Deny New Zealand<br>in the Match That Reopened Everything</h1>
+  <p class="deck">The most enduring story of this World Cup — Pakistan's improbable resurrection from near-certain elimination, their consciously invoked parallel with the 1992 campaign of Imran Khan, their capacity to play their very best cricket at the moment the tournament has apparently foreclosed their participation in it — acquired its most convincing chapter yet at Edgbaston on a Wednesday afternoon. New Zealand, who had arrived in Birmingham unbeaten across six matches and carrying the quietly confident air of a side that has already decided, in some essential interior way, that this tournament belongs to them, were beaten by six wickets with five balls to spare. Babar Azam's unbeaten hundred and one — a century of such unhurried quality, such disciplined elegance, such refusal to be hurried by a required rate that frequently threatened to outrun his method — was the innings that the match required and that Pakistan, in their circuitous, anxiety-inducing fashion, eventually produced. Shaheen Shah Afridi had taken three wickets in a new-ball spell of genuine menace to restrict New Zealand to two hundred and thirty-seven. Neesham's ninety-seven not out had made even that a stretch. And then Babar and Haris Sohail had made the chase feel, if not straightforward, then at least inhabited by the possibility of straightforwardness — which, for Pakistan at this tournament, amounted to roughly the same thing.</p>
+  <div class="byline-bar"><span class="by">By <strong>Muhammad Hamza</strong></span><span class="loc">Edgbaston, Birmingham</span><span class="datestamp">26 June 2019</span></div>
+</div>
+
+<div class="scoreboard">
+  <div class="sb-team"><span class="nation">New Zealand</span><span class="total">237<small>/6</small></span><span class="overs">50.0 overs</span></div>
+  <span class="sb-vs">vs</span>
+  <div class="sb-team"><span class="nation">Pakistan</span><span class="total">241<small>/4</small></span><span class="overs">49.1 overs</span></div>
+  <div class="sb-result"><strong>Result</strong>Pakistan won by 6 wickets (5 balls rem.)<br>Babar 101* · Haris 68 · Neesham 97* · de Grandhomme 64 · Shaheen 3/28 · MOM: Babar Azam</div>
+</div>
+
+<div class="body-wrap">
+  <article class="prose">
+
+    <p>Edgbaston has, across the World Cup's history, been the ground that matters — the venue at which the tournament has periodically chosen to make its most significant declarations. The 1999 semi-final, played here, eliminated South Africa in the manner that became one of the game's defining tragedies. The atmosphere at Edgbaston during major cricket is a thing apart from the game's quieter registers: loud, committed, occasionally hostile, and specifically on this Wednesday afternoon — with a majority of the crowd composed of Pakistani supporters, their green flags unfurled in the stands and their voices arranged into the particular collective noise of a fanbase that has been told, repeatedly, that their team is going home, and has declined to believe it — vibrating with something that resembled belief rather than hope. Belief is the quieter, more settled thing. Hope carries anxiety within it. What the Edgbaston crowd produced throughout this match was, by the time Babar Azam pushed the winning runs through the off side in the forty-ninth over, something closer to the former.</p>
+
+    <p>New Zealand's decision to bat after winning the toss on a pitch that Edgbaston's reputation had promised would offer something to the spinners — and that, in its early stages, offered considerably more to Mohammad Amir and Shaheen Shah Afridi than to anyone holding a bat — produced the kind of morning session that confirms, retrospectively, the value of match awareness above match plan. Martin Guptill, whose tournament had been a prolonged exercise in personal disappointment, dragged Amir's very first delivery of the second over onto his stumps for a duck — an inside-edge off a full, swinging delivery that had the Pakistani players in the kind of collective celebration that suggests the wicket was expected rather than merely hoped for. Amir's control of swing and length in the Edgbaston conditions had been, from his very first delivery, the kind that makes batsmen who have faced him previously exchange significant looks with their partners at the non-striker's end. Colin Munro edged Shaheen Shah Afridi to first slip in the sixth over for twelve, Tom Latham took a further edge to the same position off Shaheen in the thirteenth over, Ross Taylor was struck on the helmet by Lockie Ferguson — not from the bowling, which was New Zealand's, but metaphorically by the occasion's anxiety — before being dismissed by Shaheen as well, caught at first slip for fifteen. New Zealand were forty-six for four after twelve and a half overs, a position from which, on most days, a total of two hundred and thirty-seven would represent a significant overachievement.</p>
+
+    <h2>Neesham and de Grandhomme: The Partnership That Gave New Zealand Everything and Almost Enough</h2>
+
+    <p>Kane Williamson, whose batting in England across his career has been one of the sustained exhibitions of technical excellence in the contemporary game — a succession of hundreds and fifties at venues that challenge the finest batsmen in ways that expose technical deficiencies he appears not to have — constructed the innings around himself with the particular authority of a captain who has decided that the match will be played on his terms regardless of the situation's demands to the contrary. His forty-one, eventually caught behind off Shadab Khan as he attempted a cut shot, was the foundation that the lower order would need to build upon. What James Neesham and Colin de Grandhomme then constructed — a hundred and thirty-two in twenty-one overs, New Zealand's best sixth-wicket stand in World Cup history — was one of the tournament's most sustained passages of counter-attacking batting, both men playing with a lower-order freedom that the situation invited and that, it must be acknowledged, both were sufficiently skilled to exploit. De Grandhomme's sixty-four from seventy-one deliveries — composed, measured, finding the boundary when it was available and the single when it was not — was the innings of a batsman who understands his limitations and his strengths with equal clarity and operates unfailingly within the territory defined by their intersection. Neesham's ninety-seven not out from a hundred and twelve, unbeaten because he ran out of partners rather than because he was dismissed, was the innings of a lower-order batsman playing above himself — not in the sense of playing beyond his capacity, but in the rarer sense of playing at the absolute highest of it.</p>
+
+    <p>Shaheen Shah Afridi had finished with three for twenty-eight from ten overs, figures that represented the performance of a left-arm fast bowler operating with a discipline and intelligence considerably in advance of his twenty years — his extra bounce from a good length, his ability to shape the ball away from right-handers with the kind of outswing that left them playing and missing at deliveries that ought to have been comfortable to leave, his refusal to be taken off the line that had been productive even when it had not been productive for several overs. Pakistan's fielding, which had been a source of considerable anxiety throughout the tournament, dropped two catches and contributed to the general sense that the total New Zealand had achieved was somewhere between ten and twenty runs more than Pakistan's bowling fully deserved. The two hundred and thirty-eight New Zealand left as their target was, in the specific conditions of Edgbaston's surface, a total that the mathematics described as chaseable and the pitch's character rendered genuinely difficult.</p>
+
+    <div class="pq">
+      <p>"I think this is the best knock of mine in ODIs, because it was a must-win game. The wicket was turning and bouncing. I'm very happy we won."</p>
+      <cite>Babar Azam, Player of the Match, post-match at Edgbaston</cite>
+    </div>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>New Zealand Batting — 1st Innings</h3><span class="innings-total">237/6 in 50 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">MJ Guptill<em>b Amir</em></span><span class="bat-runs">5</span><span class="bat-balls">4</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">C Munro<em>c Haris b Shaheen</em></span><span class="bat-runs">12</span><span class="bat-balls">17</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">KS Williamson (c)<em>c Sarfaraz b Shadab</em></span><span class="bat-runs">41</span><span class="bat-balls">69</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">LRPL Taylor<em>c Haris b Shaheen</em></span><span class="bat-runs">15</span><span class="bat-balls">28</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">TW Latham†<em>c Haris b Shaheen</em></span><span class="bat-runs">1</span><span class="bat-balls">9</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">C de Grandhomme<em>run out (Sarfaraz)</em></span><span class="bat-runs hl">64</span><span class="bat-balls">71</span></div>
+      <div class="innings-row"><span class="bat-num">7</span><span class="bat-name">JDS Neesham<em>not out</em></span><span class="bat-runs hl">97</span><span class="bat-balls">112</span></div>
+      <div class="innings-row"><span class="bat-num">8</span><span class="bat-name">MJ Santner<em>not out</em></span><span class="bat-runs">5</span><span class="bat-balls">8</span></div>
+      <div class="innings-extras"><span>Extras: 17 (b 3, lb 4, w 10)</span><strong>237/6</strong></div>
+    </div>
+
+    <h2>The Chase: Chaos, Then Calm, Then Babar</h2>
+
+    <p>Pakistan's reply opened in the precisely chaotic fashion that their tournament had made characteristic. Fakhar Zaman — restored to the opening slot after a brief absence, a batsman whose contributions to Pakistan's campaign had oscillated between the marginal and the decisive without settling permanently in either register — fell in the first over for a duck, trapped lbw by Trent Boult in a delivery that swung late enough to beat the inside edge and hit the pad in front of middle stump. Imam-ul-Haq followed in the tenth over, caught at point off Matt Henry for eight. Mohammad Hafeez, at number four, played and missed with enough frequency in Lockie Ferguson's short-pitched spell to suggest that the pitch was offering the Pakistan batting order conditions that their collective technique was not equipped to navigate without significant attrition. He was also struck on the helmet by Ferguson — an event that, in retrospect, did more to clarify the surface's character than any number of overs from the spinners. When Hafeez departed for thirty — bowled by Williamson, which was itself a commentary on the pitch's assistance to spin — Pakistan were seventy-one for three after sixteen overs, and the target, while not impossible, carried the specific weight of a chase that requires something exceptional rather than merely very good.</p>
+
+    <p>What happened next was not, in the conventional sense, dramatic. It was, rather, the exercise of quality — sustained, patient, occasionally beautiful quality — in conditions that had, for most of the day, resisted it. Babar Azam, entering at the fall of Hafeez's wicket, played one of those innings that reminds the observer of how different the experience of watching a technically excellent batsman is from watching a powerful or aggressive one. The sixes were absent. The boundaries were present but measured — accumulated through placement and wristiness and the very particular skill of finding gaps that the fielding captain has not anticipated and reaching them with a ball hit with precisely the force required to reach the boundary rather than the boundary's vicinity. His fifty came from sixty-five deliveries. His century came from a hundred and twenty-seven. The hundred and twenty-seven deliveries contained, throughout, the quality of a batsman who had identified the pitch's challenges, made his own adjustments, and decided that patience was not merely a tactical choice but the only choice available to a side that needed to win and could not afford to attempt shortcuts.</p>
+
+    <p>Haris Sohail, recalled to the side after being dropped following the West Indies match, provided the partnership that the chase demanded. His sixty-eight from seventy-six deliveries — five fours and two sixes, the sixes both off deliveries that a right-hander might have defended and that Haris, with the left-hander's instinct for the on-side, deposited into the Edgbaston stands with a flat, clean violence — was the innings of a batsman who has been given a second chance and has chosen to treat it as a first one, approaching the opportunity with an appetite undimmed by the earlier disappointment of his omission. The partnership of a hundred and twenty-six for the fourth wicket was, in the context of the chase, the decisive passage of play: the period during which the target shifted from improbable to probable to inevitable in the slow arithmetic of a chase that both batsmen were navigating with exceptional clarity. Haris was run out in the forty-ninth over for sixty-eight — a direct-hit from mid-on that left him short of his ground by the minimum of margins — but by then Pakistan needed ten from fourteen, and Babar, unbeaten, ensured that the equation was resolved without ceremony. He pushed the winning runs through the covers in the final over with five balls remaining, a gentle, authoritative stroke that brought the Edgbaston crowd — the majority of it Pakistani, every one of them standing — to the kind of noise that Edgbaston produces when the stakes have been high enough and the outcome has justified everything they have invested in the day.</p>
+
+    <div class="innings-box">
+      <div class="innings-box-hd"><h3>Pakistan Batting — Chase</h3><span class="innings-total">241/4 in 49.1 overs</span></div>
+      <div class="innings-row header"><span></span><span>Batsman</span><span>R</span><span>B</span></div>
+      <div class="innings-row"><span class="bat-num">1</span><span class="bat-name">Fakhar Zaman<em>lbw b Boult</em></span><span class="bat-runs">0</span><span class="bat-balls">5</span></div>
+      <div class="innings-row"><span class="bat-num">2</span><span class="bat-name">Imam-ul-Haq<em>c point b Henry</em></span><span class="bat-runs">8</span><span class="bat-balls">17</span></div>
+      <div class="innings-row"><span class="bat-num">3</span><span class="bat-name">Babar Azam<em>not out</em></span><span class="bat-runs hl">101</span><span class="bat-balls">127</span></div>
+      <div class="innings-row"><span class="bat-num">4</span><span class="bat-name">M Hafeez<em>b Williamson</em></span><span class="bat-runs">30</span><span class="bat-balls">46</span></div>
+      <div class="innings-row"><span class="bat-num">5</span><span class="bat-name">Haris Sohail<em>run out (Henry)</em></span><span class="bat-runs hl">68</span><span class="bat-balls">76</span></div>
+      <div class="innings-row"><span class="bat-num">6</span><span class="bat-name">Sarfaraz Ahmed (c)†<em>not out</em></span><span class="bat-runs">0</span><span class="bat-balls">1</span></div>
+      <div class="innings-extras"><span>Extras: 34 (b 8, lb 6, w 20)</span><strong>241/4</strong></div>
+    </div>
+
+    <h2>The 1992 Question, and What It Actually Means</h2>
+
+    <p>Pakistan cricket has always had a complicated relationship with historical precedent. The 1992 World Cup — Imran Khan's improbable, grinding, occasionally miraculous tournament, in which Pakistan were placed ninth after five matches, defeated Australia in the semi-final, and beat England in the Melbourne final — has been invoked at every Pakistan World Cup since as simultaneously a template, a talisman, and a burden. The template says: start poorly, gather momentum, peak in the knockouts. The talisman says: what happened once can happen again. The burden says: the precedent creates expectations that the present team may not be capable of meeting, and the constant invocation of 1992 is, at some level, a displacement activity that substitutes historical analogy for present quality assessment. Sarfaraz Ahmed, asked about the 1992 parallel after the match, gave the diplomatically honest answer that any Pakistan captain must give at this stage of the tournament: acknowledging the parallel without committing to its conclusion.</p>
+
+    <p>What this result actually did, in practical terms, was move Pakistan to within one point of England in fifth place, with the qualification picture now depending on the outcomes of matches that neither Pakistan nor England entirely controlled. New Zealand, whose unbeaten record had been their primary competitive identity throughout the group stage, had now conceded their first defeat and would finish the group stage in circumstances slightly less settled than the previous six matches had suggested. The margin was six wickets, but the match had been considerably closer than that margin implies — closer in its early overs, when the surface had provided Pakistan's bowlers with conditions that New Zealand had not prepared for, and closer in its middle overs, when Neesham and de Grandhomme had built a total that made the chase genuinely difficult. Pakistan had won it by quality — the specific, irreducible quality of Babar Azam batting in conditions that demanded the very best of him, and producing exactly that, at the moment when his side and his tournament needed it most.</p>
+
+    <div class="timeline">
+      <div class="timeline-head">Key Moments</div>
+      <div class="tl-item"><span class="tl-score">5/1</span><span class="tl-text"><span class="who">Amir bowls Guptill for 5 in the second over.</span> <span class="note">Full, swinging, inside edge onto stumps. Guptill's tournament summed up in a single delivery. His 5th single-figure score in 7 innings.</span></span></div>
+      <div class="tl-item"><span class="tl-score">46/4</span><span class="tl-text"><span class="who">Shaheen 3/28: four top-order wickets for 46.</span> <span class="note">The new-ball spell that restricted New Zealand. Left-arm pace, extra bounce, a discipline uncommon in a twenty-year-old.</span></span></div>
+      <div class="tl-item"><span class="tl-score">83/5</span><span class="tl-text"><span class="who">New Zealand 83/5. Neesham and de Grandhomme begin.</span> <span class="note">What followed: 132 in 21 overs — the best 6th-wicket WC stand in New Zealand history. Neesham 97*, de Grandhomme 64.</span></span></div>
+      <div class="tl-item"><span class="tl-score">71/3</span><span class="tl-text"><span class="who">Pakistan 71/3 at 16 overs. Babar and Haris meet in the middle.</span> <span class="note">What followed: 126 for the 4th wicket. The partnership that won the match. The chase that kept Pakistan alive.</span></span></div>
+      <div class="tl-item"><span class="tl-score">241/4</span><span class="tl-text"><span class="who">Babar Azam pushes winning runs: 101* (127).</span> <span class="note">Ten-ball century, unbeaten, on a difficult surface. Pakistan's best ODI innings of the tournament. The match that reopened the semi-final race.</span></span></div>
+    </div>
+
+    <hr class="prose-rule">
+
+    <p>There is a quality to Pakistan cricket, in its best incarnations, that resists the rational account: the team that should have been eliminated, that appears incapable of organizing itself into anything resembling a coherent campaign, that drops catches and bowls wides and loses wickets it had no business losing — and then, without warning or preparation, produces an innings of the quality of Babar Azam's hundred and one, or a bowling spell of the quality of Shaheen Afridi's three for twenty-eight, and wins a match that the form-guide had said they would lose against a side the rankings had said was better. The quality of what Pakistan produced at Edgbaston was not accidental, and the consistency with which this team has produced moments of genuine excellence in the same matches in which it has also produced significant errors suggests, perhaps, that the errors and the excellence are not opposites but expressions of the same essential character: a team that is never quite fully in control, and that produces its best cricket precisely in the conditions of pressure that the absence of control creates. What Pakistan had done, at Edgbaston, was not merely beat New Zealand. They had given themselves the chance to do something much more significant — and had done so in the only way that Pakistan cricket has ever really known how to do anything significant at all: by refusing, with great obstinacy and at the very last moment, to accept that it was too late.</p>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sbox"><div class="sbox-hd">Match Summary</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Venue</span><strong>Edgbaston, Birmingham</strong></li>
+      <li><span class="lbl">Date</span><strong>26 June 2019</strong></li>
+      <li><span class="lbl">Toss</span><strong>NZ won, elected to bat</strong></li>
+      <li><span class="lbl">New Zealand</span><strong>237/6 (50 ov)</strong></li>
+      <li><span class="lbl">Pakistan</span><strong>241/4 (49.1 ov)</strong></li>
+      <li><span class="lbl">Result</span><strong>Pakistan won by 6 wkts</strong></li>
+      <li><span class="lbl">MOM</span><strong>Babar Azam (101*)</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Babar's 101*</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>101* (127 balls)</strong></li>
+      <li><span class="lbl">Stand with Haris</span><strong>126 — 4th wicket</strong></li>
+      <li><span class="lbl">Context</span><strong>Must-win game; difficult pitch</strong></li>
+      <li><span class="lbl">His verdict</span><strong>"Best ODI innings of my life"</strong></li>
+    </ul></div></div>
+    <div class="sbox"><div class="sbox-hd">Shaheen's Spell</div><div class="star-stat">
+      <span class="num">3/28</span>
+      <span class="desc">Shaheen Shah Afridi — 10 overs. Destroyed New Zealand's top order with outswing and extra bounce. The spell that set up Pakistan's win.</span>
+    </div></div>
+    <div class="sbox"><div class="sbox-hd">Neesham's 97*</div><div class="sbox-body"><ul>
+      <li><span class="lbl">Runs</span><strong>97* (112 balls)</strong></li>
+      <li><span class="lbl">6th wicket stand</span><strong>132 with de Grandhomme (64)</strong></li>
+      <li><span class="lbl">WC record</span><strong>NZ's best 6th-wkt WC stand</strong></li>
+      <li><span class="lbl">Final ball</span><strong>Muscled for six — 97, not out</strong></li>
+    </ul></div></div>
+    <div class="snote"><p>"Credit to Babar and Haris. One of the finest batting I've ever seen. We knew 240 was not an easy target. We just wanted to bat 50 overs."</p><cite>Sarfaraz Ahmed, Pakistan captain, post-match at Edgbaston</cite></div>
+  </aside>
+</div>
+<footer><span>The Pitch Report</span> · Cricket's Newspaper of Record<br>ICC Cricket World Cup 2019 · Match 33 · Edgbaston, Birmingham · 26 June 2019<br>Pakistan 241/4 defeated New Zealand 237/6 by 6 wickets · Babar 101* · Haris 68 · Neesham 97* · Shaheen 3/28</footer>
+</body>
+</html>
